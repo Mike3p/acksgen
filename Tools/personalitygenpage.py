@@ -4,9 +4,9 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 
-bp = Blueprint('mainpage', __name__)
+bp = Blueprint('personalitygenpage', __name__, url_prefix='/persgen')
 
 @bp.route('/', methods=('GET', 'POST'))
-def index():
-    return render_template('base.html')
+def page():
+    return render_template('personality.html')
     

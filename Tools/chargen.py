@@ -4,6 +4,7 @@ import random
 import copy
 import argparse
 
+
 def roll(dicecode):
     try:
         a = dicecode.split("d")
@@ -15,9 +16,6 @@ def roll(dicecode):
         return result
     except:
         return ("not a valid die code")
-
-
-# print(roll("3d6"))
 
 def createCharacter(cls, lvl, data):
 
@@ -267,7 +265,6 @@ def createCharacter(cls, lvl, data):
             equipment_formatted += str(x) + ", "
         #equipment_formatted += ", "
     equipment_formatted = equipment_formatted[:-2]
-    print(equipment_formatted)
 
     # some final minor formatting
     if stats['db'] >= 0: stats['db'] = "+" + str(stats['db'])
