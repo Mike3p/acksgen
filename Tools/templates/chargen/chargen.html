@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Class</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a method="post" href="{{url_for('chargenpage.generate', c = "fighter")}}">Fighter</a>
+    <a href="#">Thief</a>
+    <a href="#">Loremaster</a>
+  </div>
+</div> -->
+
+<form action="{{ url_for('chargenpage.generate')}}" method="POST">
+Class:
+{{ cfg.characterClass }}
+Level:
+{{ cfg.level }}
+
+Number:
+<input id="numberOfChars" name="noOfChars" size=2 value="{{ request.form.get['noOfChars'] }}">
+
+<input id="createButton" type="submit" value="CreateCharacter">
+</form>
+
+
+<div class="character">
+{% if char %}
+{{ char }}
+{% endif %} 
+</div>
+
+{% endblock %}

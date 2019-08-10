@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<title>{% block title %}{% endblock %} - ACKSGen</title>
+
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="header">
+    <a href="{{ url_for('index') }}">The Dungeon Show</a>
+    <div class="subtext"> The loot you seek is in another dungeon</div>
+</div>
+
+<nav class='sidebar' style="font-family:Arial">
+  <ul class='sidebar'>
+  <li class='sidebarElem'><h1>ACKSGen</h1></li>
+  <li class='sidebarElem'><a href="">About</a></li>
+  <li class='sidebarElem'><a href="{{ url_for('chargenpage.page') }}">Generate Character</a></li>
+  <li class='sidebarElem'><a href="">Generate Personality</a></li>
+  <li class='sidebarElem'><a href="">Generate Stat Array</a></li>
+  <li class='sidebarElem'><a href="">Generate Random Beard</a></li>
+</ul>
+</nav>
+
+<div class = pagecontent>
+  {% block content %}{% endblock %}
+</div>
+</body>
+
+</html>

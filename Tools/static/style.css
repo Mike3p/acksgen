@@ -1,0 +1,87 @@
+* {box-sizing: border-box;}
+
+.character {
+    padding-top: 20px;
+    padding-right: 10%;
+    font-family: Cambria;
+}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.header {
+  overflow: hidden;
+  background-color: black;
+  padding: 20px 10px;
+}
+
+.header {
+    text-align: center;
+}
+
+.header a {
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 32px; 
+  font-family:Calibri
+}
+
+.subtext {
+    padding-top: 5px;
+    font-style: italic;
+    color: grey;
+}
+
+.sidebar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+}
+
+.sidebarElem a {
+    display: block;
+    color: #000;
+    padding: 6px 16px;
+    text-decoration: none;
+}
+
+.sidebarElem h1 {
+    display: block;
+    color: #000;
+    padding: 10px 0px 0px 10px;
+    text-decoration: none;
+    background-color: #f1f1f1;
+    list-style-type: none;
+    width: 25%;
+    margin: 0;
+}
+
+.inlineForm {
+    display: inline;
+}
+
+.inlineInput {
+    display: inline;
+}
+
+.pagecontent {
+    padding-left: 30%;
+    padding-top: 3%;
+}
+
+/* Change the link color on hover */
+.sidebarElem a:hover {
+    background-color: #555;
+    color: white;
+}
