@@ -1,31 +1,43 @@
-<!doctype html>
-<html>
-<title>{% block title %}{% endblock %} - ACKSGen</title>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
+
 <div class="header">
-    <a href="{{ url_for('index') }}">The Dungeon Show</a>
-    <div class="subtext"> The loot you seek is in another dungeon</div>
+  <h2>The Dungeon Show</h2>
+  <p class="subtext">The Loot you seek is in another dungeon</p>
 </div>
 
-<nav class='sidebar' style="font-family:Arial">
-  <ul class='sidebar'>
-  <li class='sidebarElem'><h1>ACKSGen</h1></li>
-  <li class='sidebarElem'><a href="">About</a></li>
-  <li class='sidebarElem'><a href="{{ url_for('chargenpage.page') }}">Generate Character</a></li>
-  <li class='sidebarElem'><a href="">Generate Personality</a></li>
-  <li class='sidebarElem'><a href="">Generate Stat Array</a></li>
-  <li class='sidebarElem'><a href="">Generate Random Beard</a></li>
-</ul>
-</nav>
-
-<div class = pagecontent>
-  {% block content %}{% endblock %}
+<div class="navbar">
+  <a href="#">ACKS Generators</a>
+  <a href="#">MYZ Generators</a>
+  <a href="#">SotDL Generators</a>
+  <!-- <a href="#" class="right">About</a> -->
 </div>
+
+<div class="row">
+  <div class="side">
+    <ul>
+      <li class='sidebarElem'><h1>ACKSGen</h1></li>
+      <li class='sidebarElem'><a href="{{ url_for('chargenpage.page') }}">Generate Character</a></li>
+      <li class='sidebarElem'><a href="">Generate Personality</a></li>
+      <li class='sidebarElem'><a href="">Generate Stat Array</a></li>
+      <li class='sidebarElem'><a href="">Generate Random Beard</a></li>
+    </ul>
+  </div>
+  <div class="main">
+    {% block content %} {% endblock %}
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
 </body>
-
 </html>
