@@ -3,20 +3,9 @@ import yaml
 import random
 import copy
 import argparse
-from . import personalityGenerator
 
-
-def roll(dicecode):
-		try:
-				a = dicecode.split("d")
-				number = int(a[0])
-				die = int(a[1])
-				result = 0
-				for i in range(number):
-						result = result + random.randint(1, die)
-				return result
-		except:
-				return ("not a valid die code")
+from .dice import roll
+from .personalityGenerator import create_personality_string
 				
 def rollCharacters(cls, lvl, number, data):
 		charList = []
@@ -281,7 +270,7 @@ def createCharacter(cls, lvl, data):
 		if stats['ini'] >= 0: stats['ini'] = "+" + str(stats['ini'])
 		
 		#create personality
-		pers = personalityGenerator.createPersonality()
+		pers = create_personality_string()
 
 		character = "{}: {} {}: Str: {}, Dex: {}, Con: {}, Int: {}, Wis: {}, Cha {};\n" \
 								"MV {}, AC {} {}, HD {}, hp {}, SP {}+, INI {}, Save {}, AL {};\n" \
@@ -289,7 +278,7 @@ def createCharacter(cls, lvl, data):
 								"Special: {};\n" \
 								"Proficiencies: {};\n" \
 								"{}" \
-								"Gear: {}. [{}s];" \
+								"Gear: {}. [{}s];\n" \
 								"Personality: {}"
 		character = character.format("Name", stats['cls'], stats['lvl'],
 																 stats['str'], stats['dex'], stats['con'], stats['int'], stats['wis'], stats['cha'],
@@ -298,8 +287,9 @@ def createCharacter(cls, lvl, data):
 																 stats['save'], stats['al'],
 																 weapon_attack_string, weapon_damage_string, abilities_formatted,
 																 proficiencies_formatted, stats['spells'], equipment_formatted,"%.2f" % weight, pers)
+		character = character.split("\n")
 
-		return (character)
+		return character
 
 def run(args):
 		with open("./classes.yaml", 'r') as stream:

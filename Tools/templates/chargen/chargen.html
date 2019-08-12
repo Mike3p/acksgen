@@ -17,7 +17,9 @@ Personality:
 {% if char %}
 {% for character in char %}
 		<p>
-    {{character}}
+			{% for line in character %}
+			{{line}} <br>
+			{% endfor %}
 		</p>
 {% endfor %}
 {% endif %} 
