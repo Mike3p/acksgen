@@ -1,158 +1,446 @@
----
-#References:
-#Cprof: proficiency progression (C = F, T, M)
-#Cattack: attack progression (C = F, T, M)
-#loremaster: spell progression of loremaster
-allprofs:
-  &Acrobatics Acrobatics: 1
-  &Alchemy Alchemy: 3
-  &Alertness Alertness: 1
-  &Ambushing Ambushing: 1
-  &AnimalHusbandry Animal Husbandry: 3
-  &AnimalTraining Animal Training: 10
-  &Apostasy Apostasy: 1
-  &ArcaneDabbling Arcane Dabbling: 1
-  &Art Art: 3
-  &Bargaining Bargaining: 1
-  &BattleMagic Battle Magic: 1
-  &BeastFriendship Beast Friendship: 1
-  &Berserkergang Berserkergang: 1
-  &BlackLoreofZahar Black Lore of Zahar: 1
-  &BrightLoreofAura Bright Lore of Aura: 1
-  &BlindFighting Blind Fighting: 1
-  &Bribery Bribery: 1
-  &Caving Caving: 1
-  &CatBurglary Cat Burglary: 1
-  &CeremonialMagic Ceremonial Magic: 1
-  &Climbing Climbing: 1
-  &CollegiateWizardry Collegiate Wizardry: 10
-  &CombatReflexes Combat Reflexes: 1
-  &CombatTrickeryDisarm Combat Trickery(Disarm): 1
-  &CombatTrickeryForceBack Combat Trickery(Force Back): 1
-  &CombatTrickeryIncapacitate Combat Trickery(Incapacitate): 1
-  &CombatTrickeryKnockDown Combat Trickery(Knock Down): 1
-  &CombatTrickeryOverrun Combat Trickery(Overrun): 1
-  &CombatTrickerySunder Combat Trickery(Sunder): 1
-  &CombatTrickeryWrestle Combat Trickery(Wrestle): 1
-  &Command Command: 1
-  &Contemplation Contemplation: 1
-  &Contortionism Contortionism: 1
-  &Craft Craft: 3
-  &Diplomacy Diplomacy: 1
-  &Disguise Disguise: 1
-  &DivineBlessing Divine Blessing: 1
-  &DivineHealth Divine Health: 1
-  &DungeonBashing Dungeon Bashing: 1
-  &DwarvenBrewing Dwarven Brewing: 1
-  &Eavesdropping Eavesdropping: 1
-  &Elementalism Elementalism: 1
-  &ElvenBloodline Elven Bloodline: 1
-  &Endurance Endurance: 1
-  &Engineering Engineering: 4
-  &Familiar Familiar: 1
-  &Farseeing Farseeing: 1
-  &FightingStyle Fighting Style: 4
-  &Gambling Gambling: 10
-  &Goblin-Slaying Goblin-Slaying: 1
-  &Healing Healing: 3
-  &IllusionResistance Illusion Resistance: 1
-  &Intimidation Intimidation: 1
-  &Knowledge Knowledge: 10
-  &Labor Labor: 1
-  &LandSurveying Land Surveying: 1
-  &Language Language: 10
-  &LayingonHands Laying on Hands: 10
-  &Leadership Leadership: 1
-  &LipReading Lip Reading: 1
-  &Lockpicking Lockpicking: 1
-  &Loremastery Loremastery: 1
-  &MartialTraining Martial Training: 1
-  &MagicalEngineering Magical Engineering: 3
-  &MagicalMusic Magical Music: 1
-  &ManualofArms Manual of Arms: 2
-  &Mapping Mapping: 10
-  &MilitaryStrategy Military Strategy: 3
-  &Mimicry Mimicry: 1
-  &Mountaineering Mountaineering: 1
-  &MysticAura Mystic Aura: 1
-  &Naturalism Naturalism: 10
-  &PersonalTalisman Personal Talisman: 3
-  &Navigation Navigation: 1
-  &PassingWithoutTrace Passing Without Trace: 1
-  &Performance Performance: 3
-  &PreciseShooting Precise Shooting: 2
-  &Prestidigitation Prestidigitation: 1
-  &Profession Profession: 3
-  &Prophecy Prophecy: 1
-  &SecondSight Second Sight: 1
-  &QuietMagic Quiet Magic: 1
-  &Riding Riding: 1
-  &RighteousTurning Righteous Turning: 1
-  &Running Running: 1
-  &Seafaring Seafaring: 3
-  &Seduction Seduction: 1
-  &SensingEvil Sensing Evil: 1
-  &SensingPower Sensing Power: 1
-  &SiegeEngineering Siege Engineering: 2
-  &Signaling Signaling: 1
-  &Skirmishing Skirmishing: 1
-  &Skulking Skulking: 1
-  &Sniping Sniping: 1
-  &Soothsaying Soothsaying: 1
-  &Survival Survival: 1
-  &Swashbuckling Swashbuckling: 1
-  &Theology Theology: 10
-  &TrapFinding Trap Finding: 1
-  &Tracking Tracking: 1
-  &Transmogrification Transmogrification: 1
-  &Trapping Trapping: 1
-  &UnflappableCasting Unflappable Casting: 1
-  &Wakefulness Wakefulness: 1
-  &WeaponFinesse Weapon Finesse: 1
-  &WeaponFocus Weapon Focus: 1
-genprofs:
-  - *Alchemy
-  - *AnimalHusbandry
-  - *AnimalTraining
-  - *Art
-  - *Bargaining
-  - *Caving
-  - *CollegiateWizardry
-  - *Craft
-  - *Diplomacy
-  - *Disguise
-  - *Endurance
-  - *Engineering
-  - *Gambling
-  - *Healing
-  - *Intimidation
-  - *Knowledge
-  - *Labor
-  - *Language
-  - *Leadership
-  - *LipReading
-  - *ManualofArms
-  - *Mapping
-  - *MilitaryStrategy
-  - *Mimicry
-  - *Naturalism
-  - *Navigation
-  - *Performance
-  - *Profession
-  - *Riding
-  - *Seafaring
-  - *Seduction
-  - *SiegeEngineering
-  - *Signaling
-  - *Survival
-  - *Theology
-  - *Tracking
-  - *Trapping
-profprogressions:
-  F: &Fprof [1, 3, 6, 9, 12]
-  T: &Tprof [1, 4, 8, 12]
-  M: &Mprof [1, 6, 12]
-  G: &Gprof [1, 5, 9, 13]
+#strength, dexterity, constitution, intelligence, wisdom, charisma
+#mv: movement rate, ac: armor class
+#hd: hit die
+#hp: hit points
+#sp: surprise
+#ini: initiative
+#sv: saving throw
+#al: alignment
+#at: attack throw
+#mat: missile attack throw
+#ct: ceremony throw
+#cdb: melee damage bonus
+#mdb: missile damage bonus
+
+#Saving Throws:
+#pd: poison & death
+#pp: petrification & paralysis
+#bb: breath and blast
+#ma: magic spells
+#sw: staffs and wands
+
+abilities:
+  &damage_bonus Damage Bonus:
+    type: misc
+    modifies:
+      cdb: 1
+      mdb: 1
+    progression: [3, 6, 9, 12]
+  &move_silently Move Silently:
+    type: throwable
+    throw: 17
+    modifiedby: dexterity
+    progression: [2,3,4,5,6,7,7,8,8,9,9,10,10,11,11,13]
+  &open_locks Open Locks:
+    type: throwable
+    throw: 18
+    modifiedby: dexterity
+    progression: [2,3,4,5,6,6,7,7,8,8,9,9,10,10,11,12,13]
+  &find_and_remove_traps Find and Remove Traps:
+    type: throwable
+    throw: 18
+    modifiedby: dexterity
+    scale: lvl
+    progression: [2,3,4,5,6,7,8,8,9,9,10,10,11,11,12,14]
+  &pick_pockets Pick Pockets:
+    type: throwable
+    throw: 17
+    modifiedby: dexterity
+    scale: lvl
+    progression: [2,3,4,5,6,7,7,8,8,9,9,10,10,11,11,12,12,12,13,13,14,14]
+  &climb_walls Climb Walls:
+    type: throwable
+    throw: 6
+    modifiedby: dexterity
+    scale: lvl
+    progression: [2,4,7,11,13]
+  &hide_in_shadows Hide in Shadows:
+    type: throwable
+    throw: 19
+    modifiedby: dexterity
+    scale: lvl
+    progression: [2,3,4,5,6,7,7,8,8,9,9,10,10,11,11,12,13,14]
+  &hearnoise Hear Noise:
+    type: throwable
+    throw: 14
+    scale: lvl
+    progression: [2,3,4,5,6,7,8,9,10,11,12,13,14]
+  &read_languages Read Languages:
+    type: throwable
+    throw: 5
+  &use_scrolls Use Scrolls:
+    type: throwable
+    throw: 3
+profs:
+  &acrobatics Acrobatics:
+    max: 1
+    type: throwable
+    throw: 19
+    progression: [2,3,4,5,6,7,8,9,10,11,12,13,14]
+  &alchemy Alchemy:
+    type: throwable
+    throw: 11
+    max: 3
+  &alertness Alertness:
+    max: 1
+    type: misc
+    modifies:
+      sp: -1
+  &ambushing Ambushing:
+    type: misc
+    max: 1
+  &animal_husbandry Animal Husbandry:
+    type: misc
+    max: 3
+  &animal_training Animal Training:
+    type: misc
+    max: 10
+  &apostasy Apostasy:
+    type: misc
+    max: 1
+  &arcane_dabbling Arcane Dabbling:
+    type: throwable
+    throw: 18
+    max: 1
+    progression: [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8]
+  &art Art:
+    type: misc
+    max: 10
+  &bargaining Bargaining:
+    type: misc
+    max: 1
+  &battle_magic Battle Magic:
+    type: misc
+    max: 1
+  &beast_friendship Beast Friendship:
+    type: misc
+    max: 1
+  &berserkergang Berserkergang:
+    type: misc
+    max: 1
+  &black_lore_of_zahar Black Lore of the Void:
+    type: misc
+    max: 1
+  &bright_lore_of_aura Bright Lore of the Dawn:
+    type: misc
+    max: 1
+  &blind_fighting Blind Fighting:
+    type: misc
+    max: 1
+  &bribery Bribery:
+    type: misc
+    max: 1
+  &caving Caving:
+    type: misc
+    max: 1
+  &cat_burglary Cat Burglary:
+    type: misc
+    max: 1
+  &climbing Climbing:
+    max: 1
+    type: throwable
+    throw: 6
+    modifiedby: dexterity
+    scale: lvl
+    progression: [2,4,7,11,13]
+  &collegiate_wizardry Collegiate Wizardry:
+    max: 3
+    type: throwable
+    throw: 11
+  &combat_reflexes Combat Reflexes:
+    max: 1
+    type: misc
+    value: 1
+    modifies:
+      sp: -1
+      ini: +1
+  &combat_trickery_disarm Combat Trickery (disarm):
+    type: misc
+    max: 1
+  &combat_trickery_force_back Combat Trickery (force Back):
+    type: misc
+    max: 1
+  &combat_trickery_incapacitate Combat Trickery (incapacitate):
+    type: misc
+    max: 1
+  &combat_trickery_knock_down Combat Trickery (knock down):
+    type: misc
+    max: 1
+  &combat_trickery_overrun Combat Trickery (overrun):
+    type: misc
+    max: 1
+  &combat_trickery_sunder Combat Trickery (sunder):
+    type: misc
+    max: 1
+  &combat_trickery_wrestle Combat Trickery (wrestle):
+    type: misc
+    max: 1
+  &command Command:
+    type: misc
+    max: 1
+  &contemplation Contemplation:
+    type: misc
+    max: 1
+  &contortionism Contortionism:
+    type: misc
+    max: 1
+  &craft Craft:
+    type: misc
+    max: 10
+  &diplomacy Diplomacy:
+    type: misc
+    max: 1
+  &disguise Disguise:
+    type: misc
+    max: 1
+  &divine_blessing Divine Blessing:
+    type: misc
+    max: 1
+  &divine_health Divine Health:
+    type: misc
+    max: 1
+  &dungeon_bashing Dungeon Bashing:
+    type: misc
+    max: 1
+  &eavesdropping Eavesdropping:
+    type: misc
+    max: 1
+  &elementalism Elementalism:
+    type: misc
+    max: 1
+  &endurance Endurance:
+    type: misc
+    max: 1
+  &engineering Engineering:
+    type: misc
+    max: 4
+  &familiar Familiar:
+    type: misc
+    max: 1
+  &farseeing Farseeing:
+    type: misc
+    max: 1
+  &fighting_style Fighting Style:
+    type: misc
+    max: 6
+  &gambling Gambling:
+    type: misc
+    max: 10
+  &healing Healing:
+    type: misc
+    max: 10
+  &intimidation Intimidation:
+    type: misc
+    max: 1
+  &knowledge Knowledge:
+    type: misc
+    max: 10
+  &labor Labor:
+    type: misc
+    max: 1
+  &land_surveying Land Surveying:
+    type: misc
+    max: 1
+  &language Language:
+    type: misc
+    max: 10
+  &laying_on_hands Laying on Hands:
+    type: misc
+    max: 10
+  &leadership Leadership:
+    type: misc
+    max: 1
+  &lip_reading Lip Reading:
+    type: misc
+    max: 1
+  &lockpicking Lockpicking:
+    type: misc
+    max: 1
+    modifies:
+      *open_locks: -2
+  &loremastery Loremastery:
+    type: throwable
+    max: 1
+    throw: 18
+    progression: [2,3,4,5,6,7,8,9,10,11,12,13,14]
+  &martial_training Martial Training:
+    type: misc
+    max: 1
+  &kagical_engineering Magical Engineering:
+    type: misc
+    max: 3
+  &magical_music Magical Music:
+    type: misc
+    max: 1
+  &manual_of_arms Manual of Arms:
+    type: misc
+    max: 2
+  &mapping Mapping:
+    type: misc
+    max: 10
+  &military_strategy Military Strategy:
+    type: misc
+    max: 3
+  &mimicry Mimicry:
+    type: misc
+    max: 1
+  &mountaineering Mountaineering:
+    type: misc
+    max: 1
+  &mystic_aura Mystic Aura:
+    type: misc
+    max: 1
+  &naturalism Naturalism:
+    type: misc
+    max: 10
+  &personal_talisman Personal Talisman:
+    type: misc
+    max: 3
+  &navigation Navigation:
+    type: misc
+    max: 1
+  &passing_without_trace Passing Without Trace:
+    type: misc
+    max: 1
+  &performance Performance:
+    type: misc
+    max: 10
+  &precise_shooting Precise Shooting:
+    type: misc
+    max: 3
+  &prestidigitation Prestidigitation:
+    type: misc
+    max: 1
+  &profession Profession:
+    type: misc
+    max: 1
+  &prophecy Prophecy:
+    type: misc
+    max: 1
+  &second_sight Second Sight:
+    type: misc
+    max: 1
+  &quiet_magic Quiet Magic:
+    type: misc
+    max: 1
+  &riding Riding:
+    type: misc
+    max: 1
+  &righteous_turning Righteous Turning:
+    type: misc
+    max: 1
+  &running Running:
+    type: misc
+    max: 1
+  &seafaring Seafaring:
+    type: misc
+    max: 3
+  &seduction Seduction:
+    type: misc
+    max: 1
+  &sensing_evil Sensing Evil:
+    type: misc
+    max: 1
+  &sensing_power Sensing Power:
+    type: misc
+    max: 1
+  &siege_engineering Siege Engineering:
+    type: misc
+    max: 2
+  &signaling Signaling:
+    type: misc
+    max: 1
+  &skirmishing Skirmishing:
+    type: misc
+    max: 1
+  &skulking Skulking:
+    type: misc
+    max: 1
+    modifies:
+      *move_silently: -2
+      *hide_in_shadows: -2
+  &sniping Sniping:
+    type: misc
+    max: 1
+  &soothsaying Soothsaying:
+    type: misc
+    max: 1
+  &survival Survival:
+    type: misc
+    max: 1
+  &swashbuckling Swashbuckling:
+    max: 1
+    type: misc
+    modifies:
+      ac: 1
+    progression: [7, 13]
+  &theology Theology:
+    type: misc
+    max: 10
+  &trap_finding Trap Finding:
+    type: misc
+    max: 1
+  &tracking Tracking:
+    type: misc
+    max: 3
+  &transmogrification Transmogrification:
+    type: misc
+    max: 1
+  &trapping Trapping:
+    type: misc
+    max: 3
+  &unflappable_casting Unflappable Casting:
+    type: misc
+    max: 1
+  &weapon_finesse Weapon Finesse:
+    type: misc
+    max: 1
+  &weapon_focus Weapon Focus:
+    type: misc
+    max: 1
+generalprofs:
+  - *alchemy
+  - *animal_husbandry
+  - *animal_training
+  - *art
+  - *bargaining
+  - *caving
+  - *collegiate_wizardry
+  - *craft
+  - *diplomacy
+  - *disguise
+  - *endurance
+  - *engineering
+  - *gambling
+  - *healing
+  - *intimidation
+  - *knowledge
+  - *labor
+  - *language
+  - *leadership
+  - *lip_reading
+  - *manual_of_arms
+  - *mapping
+  - *military_strategy
+  - *mimicry
+  - *naturalism
+  - *navigation
+  - *performance
+  - *profession
+  - *riding
+  - *seafaring
+  - *seduction
+  - *siege_engineering
+  - *signaling
+  - *survival
+  - *theology
+  - *tracking
+  - *trapping
+profprogression:
+  fighter: &fighterprofprog [1, 3, 6, 9, 12]
+  thief: &thiefprofprog [1, 4, 8, 12]
+  mage: &mageprofs [1, 6, 12]
+  general: &generalprofprog [1, 1, 5, 9, 13]
 spellprogressions:
   loremaster: &loremaster
     1:
@@ -358,737 +646,369 @@ spellprogressions:
       4: 3
       5: 3
       6: 2
-attackprogressions:
-  F: &Fattack
-    1: 10
-    2: 9
-    3: 9
-    4: 8
-    5: 7
-    6: 7
-    7: 6
-    8: 5
-    9: 5
-    10: 4
-    11: 3
-    12: 3
-    13: 2
-    14: 1
-  T: &Tattack
-    1: 10
-    2: 10
-    3: 9
-    4: 9
-    5: 8
-    6: 8
-    7: 7
-    8: 7
-    9: 6
-    10: 6
-    11: 5
-    12: 5
-    13: 4
-    14: 4
-  M: &Mattack
-    1: 10
-    2: 10
-    3: 10
-    4: 9
-    5: 9
-    6: 9
-    7: 8
-    8: 8
-    9: 8
-    10: 7
-    11: 7
-    12: 7
-    13: 6
-    14: 6
-modifiers:
-  3: -3
-  4: -2
-  5: -2
-  6: -1
-  7: -1
-  8: -1
-  9: 0
-  10: 0
-  11: 0
-  12: 0
-  13: 1
-  14: 1
-  15: 1
-  16: 2
-  17: 2
-  18: 3
-statmods:
-  Damage Bonus:
+spells:
+  black:
     1:
-      db: +1
-      mdb: +1
-  Alertness:
-    1:
-      sp: -1
-  Combat Reflexes:
-    1:
-      ini: +1
-      sp: -1
-  Swashbuckling:
-    1:
-      ac: +1
-    7:
-      ac: +1
-    13:
-      ac: +1
-  Melee Damage Bonus:
-    1:
-      db: +1
-  Missile Damage Bonus:
-    1:
-      mdb: +1
-  &missileAttackBonus Missile Attack Bonus:
-    1:
-      mat: -1
-  Animal Reflexes:
-    1:
-      sp: +1
-      ini: +1
-  AC Bonus:
-    1:
-      ac: +1
-  Acrobatics:
-    1:
-      acrobatics: 20
+      - Charm Person
+      - Cause Fear
+      - Cause Light Wounds
+      - Choking Grip
+      - Conjure Cacodemon Spawn
+      - Destroy Dead
+      - Frighten Beasts
+      - Incite Madness
+      - Infuriate Person
+      - Protection from Good
+      - Putrefy Food & Water
+      - Slicing Blow
+      - Summon Manes
+      - Tenebrosity
+      - Unliving Puppet
     2:
-      acrobatics: -1
+      - Bane
+      - Blindness
+      - Bloody Flux
+      - Cause Moderate Wounds
+      - Conjure Imp
+      - Continual Tenebrosity
+      - Dark Whisper
+      - Deafness
+      - Deathless Minion
+      - Drain Life
+      - Gentle Repose
+      - Infuriate Beast
+      - Necromantic Potence
+      - Summon Insect Swarm
+      - Undetectable Charm
     3:
-      acrobatics: -1
+      - Bestow Curse
+      - Cause Disease
+      - Cause Major Wounds
+      - Command Person
+      - Conjure Hellion
+      - Dismember
+      - Enervate
+      - Invulnerability to Good
+      - Infuriate Crowd
+      - Inspire Horror
+      - Sorcerous Bolt
+      - Speak with Dead
+      - Strengthen the Unliving
     4:
-      acrobatics: -1
+      - Animate Dead
+      - Charm Monster
+      - Control Undead
+      - Cause Serious Wounds
+      - Conjure Dybbuk
+      - Drain Life II
+      - Fear
+      - Flesh to Ashes
+      - Endless Slumber
+      - Iron Maiden
+      - Poison
+      - Protection from Good, Sustained
+      - Shrieking Skull
+      - Summon Shadows
+      - Wizard Eye
     5:
-      acrobatics: -1
+      - Cause Critical Wounds
+      - Circle of Agony
+      - Conjure Elemental
+      - Contact Other Sphere
+      - Curse of Swine
+      - Feeblemind
+      - Fillet and Serve
+      - Flay the Slain
+      - Inflict Lycanthropy
+      - Magic Jar
+      - Panic
+      - Phantasmal Killer
+      - Sorcerous Blast
+      - Summon Hell Hounds
+      - Weakness of Mind
     6:
-      acrobatics: -1
-    7:
-      acrobatics: -1
-    8:
-      acrobatics: -1
-    9:
-      acrobatics: -1
-    10:
-      acrobatics: -1
-    11:
-      acrobatics: -1
-    12:
-      acrobatics: -1
-    13:
-      acrobatics: -1
-    14:
-      acrobatics: -1
-  &charismaticFer Charismatic Feroricity:
+      - Body Swap
+      - Conjure Genie
+      - Conjure Fiend
+      - Corrupting Dream
+      - Death Spell
+      - Disintegrate
+      - Drain Life III
+      - Enslave
+      - Geas
+      - Necromantic Invulnerability
+      - Reflesh of the Bones
+      - Restore Semblance of Life
+      - Soul Eating
+      - Summon Invisible Stalker
+      - Torpor
+  grey:
     1:
-      at: -[cha]
-      db: +[cha]
-equipment:
-  melee weapons: &meleeWeapons
-    staff: &staff
-      d: d6
-      w: 6
-    dagger: &dagger
-      d: d4
-      w: 1
-    sword: &sword
-      d: d6(8)
-      w: 1
-    two-Handed Sword: &2hsword
-      d: d10
-      w: 6
-    mace: &mace
-      d: d6(8)
-      w: 1
-    sword +1: &sword1
-      d: d6(8)
-      w: 1
-      mod:
-        db: +1
-        at: -1
-  ranged weapons: &rangedWeapons
-    sling: &sling
-      type: ranged
-      d: d4
-      w: 1
-    short bow: &shortbow
-      type: ranged
-      d: d6
-      w: 6
-    crossbow: &crossbow
-      type: ranged
-      d: d8
-      w: 6
-      mod:
-        mat: -2
-    aralabeste: &aralabeste
-      type: ranged
-      d: d10
-      w: 6
-      mod:
-        mat: -4
-    longbow:
-      type: ranged
-      d: d6
-      w: 6
-    javelin:
-      type: ranged
-      d: d6
-      w: 1
-  no armor: &noArmor
-    none: 0
-  light armor: &lightArmor
-    hide: 1
-    leather: 2
-  medium armor: &mediumArmor
-    scale: 3
-    chain: 4
-  heavy armor: &heavyArmor
-    banded plate: 5
-    banded plate, helmet: 6
-  shields: &shield
-    shield: 1
-  no shields: &noOther
-    none: 0
-  general items: &generalItems
-    backpack: 0
-    rope: 1
-    torch: 1
-    ration: 1
-    tent: 6
-  fighter items: &fighterItems
-    military oil: 1
-  caster weapons: &casterWeapons
-    ceremonial dagger: *dagger
-    rune-etched-staff: *staff
-    crossbow: *crossbow
+      - Auditory Illusion
+      - Blinding Flash
+      - Command Word
+      - Display of Power
+      - Ensorcellement
+      - Faerie Fire
+      - Hypnotism
+      - Ice Floe
+      - Kindle Flame
+      - Shatter Blade
+      - Sling Stone
+      - Slipperiness
+      - Slumber
+      - Thunderclap
+      - Weave Smoke
+      - Unseen Servant
+    2:
+      - Burning Sparks
+      - Charm Animal
+      - Circling Winds
+      - Earth's Excrescence
+      - Enthrall
+      - ESP
+      - Hold Person
+      - Mirror Image
+      - Illusory Interior
+      - Phantasmal Force
+      - Shrouding Fog
+      - Ring of Fire
+      - Snake Charm
+      - Vitriolic Infusion
+      - Voice of Persuation
+      - Wave of Earth
+    3:
+      - Battering Ram
+      - Brazen Bull
+      - Call Lightning
+      - Command Animals
+      - Chimerical Force
+      - Earth's Maw
+      - Fangs of the Earth
+      - Gaseous Form
+      - Glitterdust
+      - Glyph of Warding
+      - Hypnotic Pattern
+      - Noxious Cloud
+      - Paralyze
+      - Rain of Vitriol
+      - Slag Armor
+      - Telepathy
+    4:
+      - Command Plant
+      - Control Animals
+      - Gusting Gale
+      - Hallucinatory Terrain
+      - Hold Monster
+      - Inaudibility
+      - Invisibility
+      - Massmorph
+      - Scry
+      - Spectral Force
+      - Sticks to Snakes
+      - Uncanny Gyration
+      - Voice of Command
+      - Weave Fire
+      - Weave Wood
+      - Weave Water
+attackprogressions:
+  fighter: &fighterattacks [2,4,5,7,8,10,11,13,14]
+  thief: &thiefattacks [3,5,7,9,11,13]
+  mage: &mageattacks [4,7,10,13]
+saves:
+#order: pp, pd, bb, sw, ma
+  fighter: &fightersaves
+    initial: [15, 14, 16, 16, 17]
+    progression: [2,4,5,7,8,10,11,13,14]
+  thief: &thiefsaves
+    initial: [13, 13, 16, 14, 15]
+    progression: [3,5,7,9,11,13]
+  divine: &divinesaves
+    initial: [13, 10, 16, 13, 15]
+    progression: [3,5,7,9,11,13]
+  arcane: &arcanesaves
+    initial: [13, 13, 15, 11, 12]
+    progression: [4,7,10,13]
+  eldritch: &eldritchsaveprog
+    initial: [13, 10, 16, 13, 15]
+    progression: [3,5,7,9,11,13]
 classes:
-  fighter:
-    maxlevel: 14
-    hd: d8
-    armor:
-      suit:
-        - *lightArmor
-        - *mediumArmor
-        - *heavyArmor
-      other:
-        - *shield
-    weapons:
-      - *meleeWeapons
-      - *meleeWeapons
-      - *rangedWeapons
-    items:
-      - *generalItems
-      - *fighterItems
-    minreq:
-      str: 9
-    attackprog: *Fattack
-    profprog: *Fprof
-    save: F
-    profs:
-      - *Acrobatics
-      - *Alertness
-      - *Berserkergang
-      - *BlindFighting
-      - *CombatReflexes
-      - *CombatTrickeryDisarm
-      - *CombatTrickeryForceBack
-      - *CombatTrickeryKnockDown
-      - *CombatTrickeryOverrun
-      - *CombatTrickerySunder
-      - *Command
-      - *DungeonBashing
-      - *Endurance
-      - *FightingStyle
-      - *Gambling
-      - *Intimidation
-      - *Leadership
-      - *ManualofArms
-      - *MilitaryStrategy
-      - *PreciseShooting
-      - *Riding
-      - *Running
-      - *SiegeEngineering
-      - *Skirmishing
-      - *Survival
-      - *Swashbuckling
-      - *WeaponFinesse
-      - *WeaponFocus
-    abilities:
-      1:
-        - Damage Bonus
-      3:
-        - Damage Bonus
-      5:
-        - Morale Bonus
-      6:
-        - Damage Bonus
-      9:
-        - Fort and Followers
-        - Damage Bonus
-      12:
-        - Damage Bonus
   assassin:
     maxlevel: 14
     hd: d6
-    armor:
-      suit:
-        - *lightArmor
-        - *mediumArmor
-        - *heavyArmor
-      other:
-        - *shield
-    weapons:
-      - *meleeWeapons
-      - *meleeWeapons
-      - *meleeWeapons
-      - *rangedWeapons
-    items:
-      - *generalItems
-      - *generalItems
-      - *generalItems
-      - *fighterItems
     minreq:
-      str: 9
-      dex: 9
-    attackprog: *Fattack
-    profprog: *Fprof
-    save: F
-    profs:
-      - *Acrobatics
-      - *Alchemy
-      - *Alertness
-      - *ArcaneDabbling
-      - *BlindFighting
-      - *Bribery
-      - *CatBurglary
-      - *Climbing
-      - *CombatReflexes
-      - *CombatTrickeryDisarm
-      - *CombatTrickeryIncapacitate
-      - *Contortionism
-      - *Disguise
-      - *Eavesdropping
-      - *FightingStyle
-      - *Gambling
-      - *Intimidation
-      - *Mimicry
-      - *PreciseShooting
-      - *Running
-      - *Seduction
-      - *Skirmishing
-      - *Skulking
-      - *Sniping
-      - *Swashbuckling
-      - *TrapFinding
-      - *WeaponFinesse
-      - *WeaponFocus
+      strength: 9
+      dexterity: 9
+    attackprogression: *fighterattacks
+    saves: *fightersaves
+    profprogression: *fighterprofprog
+    proficiencies:
+      - *acrobatics
+      - *alchemy
+      - *alertness
+      - *arcane_dabbling
+      - *blind_fighting
+      - *bribery
+      - *cat_burglary
+      - *climbing
+      - *combat_reflexes
+      - *contortionism
+      - *disguise
+      - *eavesdropping
+      - *fighting_style
+      - *gambling
+      - *intimidation
+      - *mimicry
+      - *precise_shooting
+      - *running
+      - *seduction
+      - *skirmishing
+      - *skulking
+      - *sniping
+      - *swashbuckling
+      - *trap_finding
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_disarm
+      - *combat_trickery_incapacitate
     abilities:
       1:
-        - Damage Bonus
-        - Move Silently
-        - Hide in Shadows
-        - Backstab
-      3:
-        - Damage Bonus
-      5:
-        - Morale Bonus
-      6:
-        - Damage Bonus
-      9:
-        - Fort and Followers
-        - Damage Bonus
-      12:
-        - Damage Bonus
-  loremaster:
+        - *damage_bonus
+  fighter:
     maxlevel: 14
-    hd: d4
-    armor:
-      suit:
-        - *noArmor
-      other:
-        - *noOther
-    weapons:
-      - *casterWeapons
-    items:
-      - *generalItems
+    hd: d8
     minreq:
-      int: 9
-    attackprog: *Mattack
-    profprog: *Tprof
-    save: T
-    spellcasting: *loremaster
-    profs:
-      - *Alchemy
-      - *BattleMagic
-      - *BeastFriendship
-      - *BlackLoreofZahar
-      - *BrightLoreofAura
-      - *CeremonialMagic
-      - *CollegiateWizardry
-      - *Contemplation
-      - *Craft
-      - *Diplomacy
-      - *Elementalism
-      - *ElvenBloodline
-      - *Engineering
-      - *Familiar
-      - *Farseeing
-      - *Healing
-      - *Knowledge
-      - *MagicalEngineering
-      - *MysticAura
-      - *Naturalism
-      - *PersonalTalisman
-      - *Prestidigitation
-      - *Prophecy
-      - *SecondSight
-      - *SensingPower
-      - *Transmogrification
-      - *Soothsaying
-      - *UnflappableCasting
+      strength: 9
+    attackprogression: *fighterattacks
+    saves: *fightersaves
+    profprogression: *fighterprofprog
+    proficiencies:
+      - *acrobatics
+      - *alertness
+      - *berserkergang
+      - *blind_fighting
+      - *combat_reflexes
+      - *command
+      - *dungeon_bashing
+      - *endurance
+      - *fighting_style
+      - *gambling
+      - *intimidation
+      - *leadership
+      - *manual_of_arms
+      - *military_strategy
+      - *precise_shooting
+      - *riding
+      - *running
+      - *siege_engineering
+      - *skirmishing
+      - *survival
+      - *swashbuckling
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_disarm
+      - *combat_trickery_force_back
+      - *combat_trickery_knock_down
+      - *combat_trickery_overrun
+      - *combat_trickery_sunder
     abilities:
       1:
-        - Loremastery
-        - Personal Talisman
-        - Read Languages
-      3:
-        - Personal Talisman
+        - *damage_bonus
       5:
-        - Magic Research
-      9:
-        - Athenaeum
-        - Magic Research
-      11:
-        - Magic Research
-        - Personal Talisman
+        - Battlefield Prowess
   thief:
     maxlevel: 14
     hd: d4
-    armor:
-      suit:
-        - *lightArmor
-      other:
-        - *noOther
-    weapons:
-      - *meleeWeapons
-      - *meleeWeapons
-      - *rangedWeapons
-      - *rangedWeapons
-    items:
-      - *generalItems
     minreq:
-      dex: 9
-    attackprog: *Tattack
-    profprog: *Tprof
-    save: T
-    profs:
-      - *Acrobatics
-      - *Alertness
-      - *ArcaneDabbling
-      - *BlindFighting
-      - *Bribery
-      - *CatBurglary
-      - *CombatReflexes
-      - *CombatTrickeryIncapacitate
-      - *CombatTrickeryKnockDown
-      - *Contortionism
-      - *Diplomacy
-      - *FightingStyle
-      - *Gambling
-      - *Intimidation
-      - *LipReading
-      - *Lockpicking
-      - *Mapping
-      - *PreciseShooting
-      - *Riding
-      - *Running
-      - *Seafaring
-      - *Skirmishing
-      - *Skulking
-      - *Sniping
-      - *Swashbuckling
-      - *TrapFinding
-      - *WeaponFinesse
-      - *WeaponFocus
+      dexterity: 9
+    attackprogression: *thiefattacks
+    saves: *thiefsaves
+    profprogression: *thiefprofprog
+    proficiencies:
+      - *acrobatics
+      - *alertness
+      - *arcane_dabbling
+      - *blind_fighting
+      - *bribery
+      - *cat_burglary
+      - *combat_reflexes
+      - *contortionism
+      - *diplomacy
+      - *fighting_style
+      - *gambling
+      - *intimidation
+      - *lip_reading
+      - *lockpicking
+      - *mapping
+      - *precise_shooting
+      - *riding
+      - *running
+      - *seafaring
+      - *skirmishing
+      - *skulking
+      - *sniping
+      - *swashbuckling
+      - *trap_finding
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_disarm
+      - *combat_trickery_incapacitate
     abilities:
       1:
-        - Open Locks
-        - Find and Remove Traps
-        - Pick Pockets
-        - Move Silently
-        - Climb Walls
-        - Hide in Shadows
-        - Hear Noise
-        - Backstab
+        - *damage_bonus
+        - *open_locks
+        - *find_and_remove_traps
+        - *pick_pockets
+        - *move_silently
+        - *climb_walls
+        - *hide_in_shadows
+        - *hearnoise
+        - *theology
       4:
-        - Read Languages
-      9:
-        - Hideout
+        - *read_languages
       10:
-        - Read Magic Scrolls
-      12:
-        - Damage Bonus
-  ecclesiastic:
-    maxlevel: 14
-    hd: d4
-    armor:
-      suit:
-        - *noArmor
-      other:
-        - *noOther
-    weapons:
-      - *casterWeapons
-    items:
-      - *generalItems
-    minreq:
-      wis: 9
-    attackprog: *Mattack
-    profprog: *Tprof
-    save: T
-    spellcasting: *ecclesiastic
-    profs:
-      - *Alchemy
-      - *AnimalHusbandry
-      - *Apostasy
-      - *BeastFriendship
-      - *CeremonialMagic
-      - *Command
-      - *DivineBlessing
-      - *DivineHealth
-      - *Farseeing
-      - *Healing
-      - *Knowledge
-      - *LayingonHands
-      - *Loremastery
-      - *MagicalEngineering
-      - *MagicalMusic
-      - *MysticAura
-      - *Naturalism
-      - *Performance
-      - *PersonalTalisman
-      - *Prestidigitation
-      - *Profession
-      - *Prophecy
-      - *QuietMagic
-      - *RighteousTurning
-      - *SecondSight
-      - *SensingEvil
-      - *SensingPower
-      - *UnflappableCasting
-    abilities:
-      1:
-        - Comfort & Console
-        - Rally the Faithful
-        - Theology
-        - Turn Undead
+        - *use_scrolls
+tables:
+  classes:
+    die: 3d6
+    results:
+      3-4: Eldritch Rogue
       5:
-        - Magic Research
-      9:
-        - Cathedral
-        - Magic Research
-      11:
-        - Magic Research
-  explorer:
-    maxlevel: 14
-    hd: d6
-    armor:
-      suit:
-        - *lightArmor
-        - *mediumArmor
-      other:
-        - *shield
-    weapons:
-      - *meleeWeapons
-      - *rangedWeapons
-    items:
-      - *generalItems
-      - *generalItems
-      - *generalItems
-      - *fighterItems
-    minreq:
-      str: 9
-      dex: 9
-    attackprog: *Fattack
-    profprog: *Fprof
-    save: F
-    profs:
-      - *Alertness
-      - *Ambushing
-      - *BeastFriendship
-      - *BlindFighting
-      - *Climbing
-      - *CombatReflexes
-      - *CombatTrickeryDisarm
-      - *CombatTrickeryKnockDown
-      - *Eavesdropping
-      - *Endurance
-      - *FightingStyle
-      - *LandSurveying
-      - *Mapping
-      - *Mountaineering
-      - *Naturalism
-      - *Navigation
-      - *PassingWithoutTrace
-      - *PreciseShooting
-      - *Riding
-      - *Running
-      - *Seafaring
-      - *Skirmishing
-      - *Sniping
-      - *Survival
-      - *Swashbuckling
-      - *Trapping
-      - *WeaponFinesse
-      - *WeaponFocus
-    abilities:
-      1:
-        - Damage Bonus
-        - *missileAttackBonus
-        - Difficult to Spot
-        - Avoid Getting Lost
-        - Evade Wilderness Encounters
-      3:
-        - Damage Bonus
-      5:
-        - Morale Bonus
+        die: 1d20
+        results:
+          1-15: Runemaster
+          16-20: Shaman
       6:
-        - Damage Bonus
-      9:
-        - Fort and Followers
-        - Damage Bonus
-      12:
-        - Damage Bonus
-  bard:
-    maxlevel: 14
-    hd: d6
-    armor:
-      suit:
-        - *lightArmor
-      other:
-        - *noOther
-    weapons:
-      - *meleeWeapons
-      - *meleeWeapons
-      - *rangedWeapons
-      - *rangedWeapons
-    items:
-      - *generalItems
-    minreq:
-      dex: 9
-      cha: 9
-    attackprog: *Tattack
-    profprog: *Tprof
-    save: T
-    profs:
-      - *Acrobatics
-      - *Art
-      - *Bargaining
-      - *BeastFriendship
-      - *CombatTrickeryDisarm
-      - *Command
-      - *Diplomacy
-      - *Eavesdropping
-      - *ElvenBloodline
-      - *FightingStyle
-      - *Healing
-      - *Knowledge
-      - *Language
-      - *Leadership
-      - *LipReading
-      - *MagicalEngineering
-      - *MagicalMusic
-      - *Mimicry
-      - *MysticAura
-      - *Performance
-      - *PreciseShooting
-      - *Prestidigitation
-      - *Running
-      - *Seduction
-      - *Skirmishing
-      - *Swashbuckling
-      - *WeaponFinesse
-      - *WeaponFocus
-    abilities:
-      1:
-        - Inspire Courage
-        - Loremastery
-        - Dabble in the Arcane
-      4:
-        - Read Languages
-      5:
-        - Morale Bonus
-      9:
-        - Hall and Followers
-      10:
-        - Read Magic Scrolls
-  bladedancer:
-    maxlevel: 14
-    hd: d6
-    armor:
-      suit:
-        - *lightArmor
-      other:
-        - *noOther
-    weapons:
-      - *meleeWeapons
-    items:
-      - *generalItems
-    minreq:
-        dex: 9
-        wis: 9
-    attackprog: *Tattack
-    profprog: *Tprof
-    save: T
-    spellcasting: *runemaker
-    profs:
-      - *Acrobatics
-      - *Apostasy
-      - *BattleMagic
-      - *BeastFriendship
-      - *CombatReflexes
-      - *CombatTrickeryKnockDown
-      - *Contemplation
-      - *Diplomacy
-      - *DivineBlessing
-      - *DivineHealth
-      - *FightingStyle
-      - *LayingonHands
-      - *MagicalMusic
-      - *MartialTraining
-      - *Performance
-      - *Prestidigitation
-      - *Prophecy
-      - *QuietMagic
-      - *RighteousTurning
-      - *Running
-      - *Seduction
-      - *Skirmishing
-      - *Swashbuckling
-      - *Theology
-      - *UnflappableCasting
-      - *WeaponFinesse
-      - *WeaponFocus
-    abilities:
-      1:
-        - AC Bonus
-        - Loremastery
-        - *charismaticFer
-        - (choose 2 of Alluring Beauty, Charismatic Ferocity, Classical Weapons Training, Personal Talisman, Study of War, Weapon Finesse)
-      5:
-        - Magic Research
-      7:
-        - AC Bonus
-      9:
-        - Magic Research
-        - Temple and Followers
-      11:
-        - Magic Research
+        die: 1d20
+        results:
+          1-19: Explorer
+          20: Beastmaster
+      7: Bladedancer
+      8:
+        die: 1d20
+        results:
+          1-15: Ecclesiastic
+          16-20: Shaman
+      9-11:
+        die: 1d20
+        results:
+          1-15: Fighter
+          16-17: Barbarian
+          18: Berserker
+          19: Herold
+          20: Paladin
+      12: Thief
       13:
-        - AC Bonus
+        die: 1d20
+        results:
+          1-15: Loremaster
+          16-18: Witch
+          19-20: Occultist
+      14:
+        die: 1d20
+        results:
+          1-15: Assassin
+          16-20: Gladiator
+      15: Bard
+      16: Venturer
+      17-18: Warmistress

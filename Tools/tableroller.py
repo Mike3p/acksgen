@@ -1,7 +1,6 @@
 import yaml
 from dice import roll
 
-
 data = ""
 
 def loadTables(s):
@@ -41,14 +40,6 @@ def rollOnTable(table, modifier = 0):
         return rollOnTable(rolledResult)
     else:
         return rolledResult
-
-
-
-loadTables("classes.yaml")
-for i in range(21):
-    a = rollOnTable(data['tables']['classes'])
-    print(a)
-
 
 
 

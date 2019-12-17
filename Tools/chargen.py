@@ -4,142 +4,184 @@ import random
 import copy
 import argparse
 
-from .personalityGenerator import create_personality_string
-from .dice import roll
-from .character import Character
+from personalityGenerator import create_personality_string
+from dice import roll
+from character import Character
+from skill import Skill
+from tableroller import rollOnTable
+
 
 # ackstools 0.3 Dungeon compatible build
 # TODO: replace strings to yaml with static vars
-CLASSES = 'classes'
-HD = 'hd'
-MOD = 'modifiers'
-SV = 'save'
-AP = 'attackprog'
-AB = 'abilities'
-MR = 'minreq'
-PROFS = 'profs'
-GPROFS = 'generalproficiencies'
-PPROG = 'proficiencyprogression'
 
 
-def rollCharacters(cls, lvl, number, data):
+def loadCharacterFile(d: dict):
+    global data
+    try:
+        data = d
+    except yaml.YAMLError as exc:
+        print(exc)
+
+
+def rollCharacters(cls, baseLevel, number, deviation=False):
+    global data
     charList = []
     for i in range(0, number):
-        charList.append(createCharacter(cls, lvl, data))
+        deviator = 0
+        if deviation:
+            deviator = rollOnTable({'die': '1d6', 'results': {1: -2, 2: -1, 3: 0, 4: 0, 5: 1, 6: 2}})
+        charList.append(createCharacter(cls, baseLevel + deviator))
 
     return charList
 
 
-def createCharacter(cls, lvl, data):
+def addSkills(c: Character):
+    global data, classDict, classAttProg, classInitialSaves, classSaveProg, classMinReq, \
+        allProfs, genProfs, classProfs, classProfProg, genProfProg, allAbilities, classAbilities
 
-    c = Character
-    c.level = lvl
+    tempAllProfs = copy.deepcopy(allProfs)
+    tempClassProfs = copy.deepcopy(classProfs)
+    tempGeneralProfs = copy.deepcopy(genProfs)
 
+    addAbilities(c, tempAllProfs, tempGeneralProfs, tempClassProfs)
+    addProficiencies(c, tempAllProfs, tempGeneralProfs, tempClassProfs)
+
+def addSkillToCharacter(c: Character, s: Skill, tap, tgp, tcp):
+    global data, classDict, classAttProg, classInitialSaves, classSaveProg, classMinReq, \
+        allProfs, genProfs, classProfs, classProfProg, genProfProg, allAbilities, classAbilities
+
+    if s.name in allProfs:
+        tap[s.name]['max'] += -1
+        if tap[s.name]['max'] <= 0:
+            try: tcp.remove(s.name)
+            except: pass
+            try: tgp.remove(s.name)
+            except: pass
+        c.proficiencies.setdefault(s.name, s)
+        c.proficiencies[s.name].ranks += 1
+    else:
+        c.abilities.append(s)
+
+
+def addAbilities(c: Character, tap, tgp, tcp):
+    global data, classDict, classAttProg, classInitialSaves, classSaveProg, classMinReq, \
+        allProfs, genProfs, classProfs, classProfProg, genProfProg, allAbilities, classAbilities
+
+    # level hochzählen. für jedes level in der klasse die abilities uplooken und auf stats draufrechnen
+    for i in range(1, c.lvl + 1):
+        # i geht alle level des charakters durch
+        if i in classAbilities:
+            # true wenn charakter auf dem level ein ability bekommt
+            for j in classAbilities[i]:
+                try: ca = allAbilities[j]
+                except: pass
+                try: ca = allProfs[j]
+                except: pass
+                # iteriert über die abilities die der charakter auf dem level bekommt
+                # erstellt einen skill mit allen nötigen infos
+                ability = Skill(j, ca.get('type', ''), ca.get('throw', 0), ca.get('modifiedby', ''),
+                                ca.get('modifies', {}), ca.get('progression', []))
+                addSkillToCharacter(c, ability, tap, tgp, tcp)
+
+
+def addProficiencies(c: Character, tap, tgp, tcp):
+    # anzahl der proficiencies berechnen die den charakter zustehen
+    no_of_class_profs = sum(c.lvl >= i for i in classProfProg)
+    no_of_general_profs = sum(c.lvl >= i for i in genProfProg)
+
+    if c.getIntMod() > 0:
+        no_of_general_profs + c.getIntMod()
+
+    def addProfs(x, profList, c):
+        for i in range(x):
+            rndProf = random.choice(profList)
+            cp = allProfs[rndProf]
+            proficiency = Skill(rndProf, cp.get('type', ''), cp.get('throw', 0), cp.get('modifiedby', ''),
+                                cp.get('modifies', {}), cp.get('progression', []))
+            addSkillToCharacter(c, proficiency, tap, tgp, tcp)
+
+    addProfs(no_of_class_profs, tcp, c)
+    addProfs(no_of_general_profs, tgp, c)
+
+def createCharacter(cls, lvl):
+    global data, classDict, classAttProg, classInitialSaves, classSaveProg, classMinReq, \
+        allProfs, genProfs, classProfs, classProfProg, genProfProg, allAbilities, classAbilities
     character_class = cls
 
     if character_class == "random":
-        character_class = random.choice(list(data[CLASSES].keys()))
+        character_class = random.choice(list(data['classes'].keys()))
 
-    if not character_class in data[CLASSES]:
+    if not character_class in data['classes']:
         return "this is not a class"
 
-    c.cclass = cls
+    # load confic dict into vars
+
+    classDict = data['classes'][character_class]
+    classHD = classDict['hd']
+    classAttProg = classDict['attackprogression']
+    classInitialSaves = classDict['saves']['initial']
+    classSaveProg = classDict['saves']['progression']
+    classMinReq = classDict['minreq']
+    allProfs = data['profs']
+    genProfs = data['generalprofs']
+    classProfs = classDict['proficiencies']
+    classProfProg = classDict['profprogression']
+    genProfProg = data['profprogression']['general']
+    allAbilities = data['abilities']
+    classAbilities = classDict['abilities']
+
+    # build character object
+    c = Character()
+
+    # set class and level
+    c.cls = character_class
+    c.lvl = lvl
 
     # roll ability scores
     c.strength = roll("3d6")
     c.dexterity = roll("3d6")
     c.constitution = roll("3d6")
-    c.int = roll("3d6")
-    c.wis = roll("3d6")
-    c.cha = roll("3d6")
+    c.intelligence = roll("3d6")
+    c.wisdom = roll("3d6")
+    c.charisma = roll("3d6")
+
+    # check minimum requirements to belong to class
+    for i in classMinReq:
+        if getattr(c, i) < classMinReq[i]:
+            setattr(c, i, classMinReq[i])
 
     # get base stats
     c.mv = 120
-    c.hd = data[CLASSES][c.cclass][HD]
-    c.hp = roll(str(lvl) + c.hd) + c.level * data[MOD][c.constitution]
-    c.ini = data[MOD][c.dexterity]
-    c.al = random.choice(['N', 'N', 'N', 'N', 'N', 'N', 'L', 'L', "L", 'C'])
+    c.hd = classHD
+    c.ac = c.getDexMod()
+    c.hp = roll(str(lvl) + c.hd) + c.lvl * c.getConMod()
+    c.ini = c.getDexMod()
+    c.sp = 3
+    c.al = random.choice(['N', 'N', 'N', 'L', "L", 'C'])
 
-    c.sv = data[CLASSES][c.cclass][SV] + str(lvl)
-    if data[MOD][c.wis] < 0:
-        c.sv = c.sv + str(data[MOD][c.wis])
-    if data[MOD][c.wis] > 0:
-        c.sv = c.sv + "+" + str(data[MOD][c.wis])
+    # get saving throws
+    increase = sum(i <= lvl for i in classSaveProg) + c.getWisMod()
+    c.saves = [x - increase for x in classInitialSaves]
 
     # get base attack throw and damage bonus
-    c.at = data[CLASSES][c.cclass][AP][c.level] - int(data[MOD][c.strength])
-    c.mat = data[CLASSES][c.cclass][AP][c.level] - int(data[MOD][c.dexterity])
-    c.cdb = data[MOD][c.strength]
+    baseAttack = 10 - sum(i <= lvl for i in classAttProg)
+    c.at = baseAttack - c.getStrMod()
+    c.mat = baseAttack - c.getDexMod()
+    c.cdb = c.getStrMod()
     c.mdb = 0
 
     # check if char is caster
     spellcaster = False
-    if 'spellcasting' in data[CLASSES][character_class]: spellcaster = True
+    if 'spellprog' in classDict: spellcaster = True
 
-    # check minimum requirements to belong to class
-    for i in data[CLASSES][c.cclass][MR]:
-        if getattr(c, i) < data[CLASSES][character_class][MR][i]:
-            return createCharacter(c.cclass, c.level, data)
+    # hier werden abilities und proficiencies behandelt
+    addSkills(c)
 
-    # get abilities and write them into the stat array
-    #level hochzählen. für jedes level in der klasse die abilities uplooken und auf stats draufrechnen
-    for i in range(1, c.level + 1):
-        if i in data[CLASSES][c.cclass][AB]:
-            for x in data[CLASSES][c.cclass][AB][i]:
-                c.abilities.setdefault(x, 0)
-                c.abilities[x] += 1
+    c.applyModifications()
 
-    # get some random proficiencies
-    no_of_class_profs = sum(c.level >= i for i in data[CLASSES][c.cclass]['profprog'])
-    no_of_gen_profs = sum(c.level >= i for i in data['profprogressions']['general'])
-    if data[MOD][c.int] > 0:
-        no_of_gen_profs += data[MOD][c.int]
+    return c.getFormattedCharacter()
 
-    tempAP = copy.deepcopy(data[PROFS])
-    tempCP = copy.deepcopy(data[CLASSES][c.cclass][PROFS])
-    tempGP = copy.deepcopy(data[GPROFS])
-    #get class proficiencies and delete them from the temp. list if they were chosen too often
-    for i in range(0, no_of_class_profs):
-        p = random.choice(tempCP)
-        tempAP[p][max] += -1
-        if tempAP[p][max] == 0:
-            tempCP.remove(p)
-            if p in tempGP:
-                tempGP.remove(p)
-        c.proficiencies.setdefault(p, 0)
-        c.proficiencies[p] += 1
-
-    #get general profs and delete them as above
-    for i in range(0, no_of_gen_profs):
-        p = random.choice(tempGP)
-        tempAP[p] += -1
-        if tempAP[p] == 0:
-            tempGP.remove(p)
-            if p in tempCP:
-                tempCP.remove(p)
-        c.proficiencies.setdefault(p, 0)
-        c.proficiencies[p] += 1
-
-    # modify character stats according to the yaml document
-    for charAbility in c.abilities:
-        for ability in charAbility['modifies'].keys():
-            for charLevel in range(1, c.level+1):
-                if charLevel in charAbility['modifies'][charAbility]:
-                    setattr(c,ability,getattr(c,ability)+1)
-
-
-    for charProficiency in character['proficiencies']:
-        if charProficiency in list(data['statmods']):
-            for charLevel in range(1, character['lvl'] + 1):
-                if charLevel in data['statmods'][charProficiency]:
-                    for stat_to_modify in list(data['statmods'][charProficiency][charLevel]):
-                        rank_of_modifying_ability = character['proficiencies'][charProficiency]
-                        rank_of_modifying_ability = rank_of_modifying_ability * \
-                                                    data['statmods'][charProficiency][charLevel][stat_to_modify]
-                        if stat_to_modify in character:
-                            character[stat_to_modify] = int(character[stat_to_modify]) + rank_of_modifying_ability
-                        rank_of_modifying_ability = 0
-
+'''
     # if character is spellcaster, check progression
     if spellcaster:
         spellstring = ""
@@ -256,12 +298,11 @@ def createCharacter(cls, lvl, data):
                                  proficiencies_formatted, character['spells'], equipment_formatted, "%.2f" % weight,
                                  pers)
     character = character.split("\n")
-
-    return character
+'''
 
 
 def run(args):
-    with open("./classes.yaml", 'r') as stream:
+    with open("../classes.yaml", 'r') as stream:
         try:
             data = yaml.safe_load(stream)
         except yaml.YAMLError as exc:

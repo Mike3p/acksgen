@@ -1,6 +1,6 @@
 import copy
 import argparse
-from .dice import roll, get_ability_mod
+from dice import roll, get_ability_mod
 
 
 def create_personality():
@@ -19,15 +19,15 @@ def create_personality():
 
     return personality
 
-def create_personality_string():
 
-	p = create_personality()
-	s = ""
-	for i in p:
-		s = s + i + ": " + str(p[i]) + ", "
-	if s:
-		s=s[:-2]
-		s=s+";"
-	if s == "":
-		s= "Average"
-	return s
+def create_personality_string():
+    p = create_personality()
+    s = ""
+    for i in p:
+        s = s + i + ": " + str(p[i]) + ", "
+    if s:
+        s = s[:-2]
+        s = s + ";"
+    if s == "":
+        s = "Average"
+    return s
