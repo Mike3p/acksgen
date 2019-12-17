@@ -811,6 +811,160 @@ spells:
       - Weave Fire
       - Weave Wood
       - Weave Water
+equipment:
+  adventuring equipment:
+    &backpack Backpack:
+      cost: 2
+      weight: 0
+    &barrel Barrel:
+      cost: 0.3
+      weight: 60
+    &belladonna Belladonna:
+      cost: 10
+      weight: 1
+    &blanket Blanket:
+      cost: 2
+      weight: 1
+    &birthwort Birthwort:
+      cost: 10
+      weight: 1
+    &candle Candle:
+      cost: 0.6
+      weight: 1
+    &chest Chest:
+      cost: 22
+      weight: 18
+    &comfrey Comfrey:
+      cost: 10
+      weight: 1
+    &crowbar Crowbar:
+      cost: 1
+      weight: 1
+    &common_oil Common Oil:
+      cost: 0.3
+      weight: 1
+    &military_oil Military Oil:
+      cost: 2
+      weight: 1
+    &garlic Garlic:
+      cost: 5
+      weight: 1
+    &goldenrod Goldenrod:
+      cost: 10
+      weight: 1
+    &grappling_hook Grappling Hook:
+      cost: 25
+      weight: 1
+    &hammer Hammer (small):
+      cost: 2
+      weight: 1
+    &holy_symbol Holy Symbol:
+      cost: 25
+      weight: 1
+    &holy_water Holy Water:
+      cost: 20
+      weight: 1
+    &ink Ink:
+      cost: 8
+      weight: 1
+    &iron_spikes Iron Spikes (12):
+      cost: 1
+      weight: 1
+    &lantern Lantern:
+      cost: 10
+      weight: 1
+    &lock Lock:
+      cost: 20
+      weight: 1
+    &mirror Mirror:
+      cost: 5
+      weight: 1
+    &musical_instrument_common Musical Instrument (common):
+      cost: 25
+      weight: 1
+    &musical_instrument_superior Musical Instrument (superior):
+      cost: 50
+      weight: 1
+    &musical_instrument_mastercraft Musical Instrument (mastercrafted):
+      cost: 100
+      weight: 1
+    &pouch Pouch:
+      cost: 0.5
+      weight: 0
+    &ten_foot_pole Ten Foot Pole:
+      cost: 0.1
+      weight: 6
+    &one_week_rations_iron One Week Rations (iron):
+      cost: 3.5
+      weight: 6
+    &one_week_rations_standard One Week Rations (standard):
+      cost: 1
+      weight: 6
+    &rope Rope:
+      cost: 1
+      weight: 1
+    &sack_small Sack (small):
+      cost: 0.3
+      weight: 1
+    &sack_large Sack (large):
+      cost: 0.8
+      weight: 1
+    &spell_book Spell Book:
+      cost: 20
+      weight: 1
+    &stakes_and_mallet Stakes (4) and Mallet:
+      cost: 3
+      weight: 1
+    &tent Tent:
+      cost: 20
+      weight: 6
+    &thieves_tools Thieves' Tools:
+      cost: 25
+      weight: 1
+    &tinder_box Tinder Box:
+      cost:
+      weight:
+    &torches Torches (6):
+      cost: 0.1
+      weight: 1
+    &waterskin Waterskin:
+      cost: 0.6
+      weight: 1
+    &wolfsbane Wolfsbane:
+      cost: 10
+      weight: 1
+    &woundwart Woundwart:
+      cost: 10
+      weight: 1
+  armor:
+    &hide_armor Hide Armor:
+      ac: 1
+      cost: 10
+      weight: 6
+    &leather_armor Leather Armor:
+      ac: 2
+      weight: 12
+      cost: 20
+    &ring_mail Ring Mail:
+      ac: 3
+      weight: 18
+      cost: 20
+    &chain_mail Chain Mail:
+      ac: 4
+      weight: 24
+      cost: 40
+    &lamellar_armor Lamellar Armor:
+      ac: 5
+      weight: 30
+      cost: 50
+    &plate_armor Plate Armor:
+      ac: 6
+      weight: 36
+      cost: 6
+    &shield Shield:
+      ac: 1
+      weight: 6
+      cost: 10
 attackprogressions:
   fighter: &fighterattacks [2,4,5,7,8,10,11,13,14]
   thief: &thiefattacks [3,5,7,9,11,13]
