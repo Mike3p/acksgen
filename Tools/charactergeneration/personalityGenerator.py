@@ -4,27 +4,30 @@ from dice import roll, get_ability_mod
 
 
 def create_personality():
-    personality_factors = {('Honorable', 'Treacherous'): roll("3d6"), ('Humble', 'Arrogant'): roll("3d6"),
+    personality_factors = {('Honorable', 'Treacherous'): roll("3d6"), ('Humble', 'Proud'): roll("3d6"),
                            ('Kind', 'Spiteful'): roll("3d6"), ('Moderate', 'Gluttonous'): roll("3d6"),
                            ('Chaste', 'Lustful'): roll("3d6"), ('Patient', 'Wrathful'): roll("3d6"),
-                           ('Generous', 'Avaricious'): roll("3d6"),
-                           ('Determined', 'Slothful'): roll("3d6")}
+                           ('Determined', 'Slothful'): roll("3d6"), ('Brave', 'Cowardly'): roll("3d6"),
+                           ('Humorous', 'Serious'): roll("3d6")}
     personality = {}
     for k in personality_factors.keys():
         m = get_ability_mod(personality_factors[k])
-        if m > 0:
-            personality[k[0]] = abs(m)
-        elif m < 0:
-            personality[k[1]] = abs(m)
+        personality[k] = m
 
     return personality
 
 
-def create_personality_string():
-    p = create_personality()
+def create_personality_string(pers):
+    p = {}
+    for k in pers:
+        if pers[k] > 0:
+            p[k[0]] = abs(pers[k])
+        if pers[k] < 0:
+            p[k[1]] = abs(pers[k])
+
     s = ""
     for i in p:
-        s = s + i + ": " + str(p[i]) + ", "
+        s = s + i + ": " + str(abs(p[i])) + ", "
     if s:
         s = s[:-2]
         s = s + ";"

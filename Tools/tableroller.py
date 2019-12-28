@@ -1,7 +1,7 @@
 import yaml
 from dice import roll
 
-data = ""
+data = {}
 
 def loadTables(s):
     global data
@@ -26,6 +26,8 @@ def formatTable(table):
     return formattedTable
 
 def rollOnTable(table, modifier = 0):
+
+    if(isinstance(table, str)): return table
     f_table = formatTable(table)
     die = f_table['die']
     resultList = f_table['results']
@@ -36,10 +38,19 @@ def rollOnTable(table, modifier = 0):
     if dieRoll > max(keyList):
         dieRoll = max(keyList)
     rolledResult = resultList[dieRoll]
-    if isinstance(rolledResult, dict):
-        return rollOnTable(rolledResult)
+    prefix = ''
+    if isinstance(rolledResult, list):
+        prefix = rolledResult[0]
+        rolledResult = rolledResult[1]
+
+    if isinstance(rolledResult, dict) & \
+            ('die' in rolledResult) & \
+            ('results' in rolledResult):
+        return prefix + rollOnTable(rolledResult)
+
     else:
-        return rolledResult
+        return prefix + str(rolledResult)
 
 
-
+loadTables("../data.yaml")
+print(rollOnTable(data['randomtables']['styles']['belongings any']))

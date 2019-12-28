@@ -2,22 +2,25 @@ import random
 import re
 
 def roll(dicecode):
-		try:
-				a = re.split('d|-|\+', dicecode)
-				number = int(a[0])
-				die = int(a[1])
-				modifier = 0
-				if "-" in dicecode:
-					modifier = -int(a[2])
-				if "+" in dicecode:
-					modifier = int(a[2])
-				result = 0
-				for i in range(number):
-						result = result + random.randint(1, die)+modifier
-				return result
-		except:
-			raise
-			return ("not a valid die code")
+	if isinstance(dicecode, int):
+		return dicecode
+	try:
+			#a = re.split('d|-|\+', dicecode)
+			a = re.split('[d\-+]', dicecode)
+			number = int(a[0])
+			die = int(a[1])
+			modifier = 0
+			if "-" in dicecode:
+				modifier = -int(a[2])
+			if "+" in dicecode:
+				modifier = int(a[2])
+			result = 0
+			for i in range(number):
+					result = result + random.randint(1, die)+modifier
+			return result
+	except:
+		raise
+		return ("not a valid die code")
 
 
 def get_ability_mod(a):

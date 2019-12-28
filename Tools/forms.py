@@ -1,4 +1,4 @@
-from wtforms import (Form, SelectField, StringField, validators, IntegerField, SubmitField, BooleanField)
+from wtforms import (Form, SelectField, StringField, validators, IntegerField, SubmitField, BooleanField, TextAreaField)
 
 #form to generate classed characters
 class CharacterGenerationForm(Form):
@@ -7,4 +7,9 @@ class CharacterGenerationForm(Form):
         (8,'8'), (9,'9'), (10,'10'), (11,'11'), (12,'12'), (13,'13'), (14,'14'), ])
     characterNumber = IntegerField(u'Number', default = 1)
     submit = SubmitField(u'Generate')
-    characterPersonality = BooleanField(u'Personality', default="checked")
+    rollForParty = BooleanField(u'Personality')
+    ethnicity = SelectField(u'Ethnicity')
+
+
+class InitiativeForm(Form):
+    initiativeInput = TextAreaField(u'Initiative')

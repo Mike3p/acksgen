@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{{ url_for('chargenpage.generate')}}" method="POST">
+    Class:
+    {{ cfg.characterClass }}
+    Level:
+    {{ cfg.characterLevel }}
+    Ethnicity:
+    {{ cfg.ethnicity }}
+    Number:
+    {{ cfg.characterNumber(size=2) }}
+    Create Party:
+    {{ cfg.rollForParty }}
+<input id="createButton" type="submit" value="Create Character">
+</form>
+
+<div class="character">
+{% if char %}
+{% for character in char %}
+		<p>
+			{% for line in character %}
+			{{line | safe}} <br>
+			{% endfor %}
+		</p>
+{% endfor %}
+{% endif %} 
+</div>
+
+{% endblock %}

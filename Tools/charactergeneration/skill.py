@@ -10,16 +10,21 @@ class Skill:
         self.ranks = 0
         self.progression = progression
 
-    def formatAbility(self):
+    def __repr__(self):
+
         name = self.name
         output = name
-        if self.skillLevel <= 1: levelOfAbility = ''
-        else: levelOfAbility = " (" + str(self.skillLevel) + ")"
+        if self.skillLevel <= 1:
+            levelOfAbility = ''
+        else:
+            levelOfAbility = " (" + str(self.skillLevel) + ")"
 
         throw = " (" + str(self.throw) + "+)"
 
-        if self.ranks <= 1: rank = ''
-        else: rank = " " + str(self.ranks)
+        if self.ranks <= 1:
+            rank = ''
+        else:
+            rank = " " + str(self.ranks)
 
         if self.ctype == "throwable":
             output = name + rank + throw

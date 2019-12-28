@@ -22,6 +22,8 @@ def getProficienciesFromStrings():
             x = x.replace(" ", "_")
             x = x.replace("(", "")
             x = x.replace(")", "")
+            if x.endswith("*"):
+                x = x[:-1]
             o.write("- *"+x+"\n")
 
 getProficienciesFromStrings()

@@ -137,6 +137,12 @@ body {
    }
 }
 
-.character {
-	font-family: Cambria;
+.ini {
+    font-family: Cambria, serif;
 }
+
+.character {
+	font-family: Cambria, serif;
+}
+
+

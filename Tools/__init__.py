@@ -1,7 +1,9 @@
 import os
 
 from flask import Flask
-from . import chargenpage, mainpage
+import mainpage
+from initiative import initiativepage
+from charactergeneration import chargenpage
 
 
 def create_app(test_config=None):
@@ -28,6 +30,7 @@ def create_app(test_config=None):
     
     app.register_blueprint(mainpage.bp)
     app.register_blueprint(chargenpage.bp)
+    app.register_blueprint(initiativepage.bp)
     #app.register_blueprint(blog.bp)
     
     app.add_url_rule('/', endpoint='index')
