@@ -169,13 +169,17 @@ def addSpells(c):
                     for j in range(0, amountOfSpells):
                         x = roll("1d100")
                         spellColor = "grey"
+                        shortHand = "g"
                         if x <= spellChance[0]:
                             spellColor = "white"
+                            shortHand = "w"
                         elif x <= spellChance[1]:
                             spellColor = "grey"
+                            shortHand = "g"
                         elif x <= spellChance[2]:
                             spellColor = "black"
-                        spell = random.choice(allSpells[spellColor][spellLevel])
+                            shortHand = "b"
+                        spell = random.choice(allSpells[spellColor][spellLevel]) + " ("+shortHand+")"
                         if not spell in spellList:
                             spellList.append(spell)
                     c.spells[spellLevel] = spellList
