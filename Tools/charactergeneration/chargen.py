@@ -8,7 +8,7 @@ from dice import roll
 from charactergeneration.character import Character
 from charactergeneration.item import Item, Weapon, Armor
 from charactergeneration.skill import Skill
-from tableroller import rollOnTable
+from tableroller import getTableResultString
 from charactergeneration.personalityGenerator import create_personality_string, create_personality
 
 
@@ -29,15 +29,18 @@ def loadCharacterFile(d: dict):
 def rollCharacters(cls, baseLevel, number, deviation=False, ethnicity='random'):
     global data
     charList = []
+    alignment = random.choice(['L', 'L', 'N', 'N', 'N', 'C'])
+    print ('alignment: '+ alignment)
     for i in range(0, number):
         deviator = 0
         if deviation:
             deviator = random.choice([-2, -1, 0, 0, 1, 2])
+            baseLevel = baseLevel + deviator
 
-        if baseLevel + deviator <= 0:
-            deviator = 0
+        if baseLevel < 0:
+            baseLevel = 0
 
-        charList.append(createCharacter(cls, baseLevel + deviator, ethnicity))
+        charList.append(createCharacter(cls, baseLevel, ethnicity, alignment))
 
     return charList
 
@@ -97,7 +100,7 @@ def addAbilities(c: Character, tap, tgp, tcp):
         return abilities
 
     # level hochzählen. für jedes level in der klasse die abilities uplooken und auf stats draufrechnen
-    for i in range(1, c.lvl + 1):
+    for i in range(0, c.lvl + 1):
         # i geht alle level des charakters durch
         if i in classAbilities:
             # true wenn charakter auf dem level ein ability bekommt
@@ -125,8 +128,10 @@ def addAbilities(c: Character, tap, tgp, tcp):
 
 def addProficiencies(c: Character, tap, tgp, tcp):
     # anzahl der proficiencies berechnen die den charakter zustehen
+    genmod = c.getIntMod()
+    if genmod < 0: genmod = 0
     no_of_class_profs = sum(c.lvl >= i for i in classProfProg)
-    no_of_general_profs = sum(c.lvl >= i for i in genProfProg) + c.getIntMod()
+    no_of_general_profs = sum(c.lvl >= i for i in genProfProg) + genmod
 
     if c.getIntMod() > 0:
         no_of_general_profs + c.getIntMod()
@@ -188,7 +193,7 @@ def addEquipment(c: Character):
                 noOfItems = 1
             if noOfItems < 0: noOfItems = 0
             for j in range(noOfItems):
-                itemName = rollOnTable(i[0])
+                itemName = getTableResultString(i[0])
                 if itemName:
                     choices.setdefault(itemName, 0)
                     choices[itemName] += 1
@@ -231,36 +236,39 @@ def addEquipment(c: Character):
 
 
 def addLooks(character):
-    character.build = rollOnTable(data['randomtables']['human build'])
-    character.eyec = rollOnTable(data['randomtables']['eye color'][character.ethnicity]).lower()
-    character.hairc = rollOnTable(data['randomtables']['hair color'][character.ethnicity]).lower()
-    character.hairt = rollOnTable(data['randomtables']['hair texture'][character.ethnicity]).lower()
+    character.build = getTableResultString(data['randomtables']['human build'])
+    character.eyec = getTableResultString(data['randomtables']['eye color'][character.ethnicity]).lower()
+    character.hairc = getTableResultString(data['randomtables']['hair color'][character.ethnicity]).lower()
+    character.hairt = getTableResultString(data['randomtables']['hair texture'][character.ethnicity]).lower()
     chm = character.getChaMod()
     if chm > 0:
         for i in range(chm):
-            character.features.append(rollOnTable(data['randomtables']['features']['positive']))
+            character.features.append(getTableResultString(data['randomtables']['features']['positive']))
     elif chm < 0:
         for i in range(abs(chm)):
-            character.features.append(rollOnTable(data['randomtables']['features']['negative']))
+            character.features.append(getTableResultString(data['randomtables']['features']['negative']))
     else:
         for i in range(random.choice([1, 1, 1, 1, 1, 1, 1, 2, 2, 3])):
-            character.features.append(rollOnTable(data['randomtables']['features']['average']))
+            character.features.append(getTableResultString(data['randomtables']['features']['average']))
 
-    for i in range(random.choice([0, 0, 0, 0, 1, 1, 1, 1, 1, 2])):
+    for i in range(random.choice([0,1,1,1,1,1,2,2,2,3])):
         if character.al == 'L':
-            character.style.append(rollOnTable(data['randomtables']['styles']['belongings lawful']))
+            character.style.append(getTableResultString(data['randomtables']['styles']['belongings lawful']))
         elif character.al == 'C':
-            character.style.append(rollOnTable(data['randomtables']['styles']['belongings chaotic']))
+            character.style.append(getTableResultString(data['randomtables']['styles']['belongings chaotic']))
         else:
-            character.style.append(rollOnTable(data['randomtables']['styles']['belongings any']))
+            character.style.append(getTableResultString(data['randomtables']['styles']['belongings any']))
 
 
-def createCharacter(cls, lvl, ethnicity):
+def createCharacter(cls, lvl, ethnicity, partyAL = 'N'):
     global data, classDict, classAttProg, classInitialSaves, classSaveProg, classMinReq, \
         allProfs, genProfs, classProfs, classProfProg, genProfProg, allAbilities, classAbilities, allSpells
 
     character_class = cls
+    if lvl == 0:
+        character_class = 'normal man'
 
+    # roll ability scores
     strength = roll("3d6")
     dexterity = roll("3d6")
     constitution = roll("3d6")
@@ -272,7 +280,6 @@ def createCharacter(cls, lvl, ethnicity):
 
     character.al = 'N'
 
-    # roll ability scores
     character.strength = strength
     character.dexterity = dexterity
     character.constitution = constitution
@@ -280,8 +287,31 @@ def createCharacter(cls, lvl, ethnicity):
     character.wisdom = wisdom
     character.charisma = charisma
 
+    #persönlichkeit bauen und verwerfen wenn der dude net den richtlinien entspricht.
+    while True:
+        character.personality = create_personality()
+        pers = character.personality
+
+        alignments = ['N', 'N']
+        alFacts = [pers.get(('Honorable', 'Treacherous'), 0), pers.get(('Kind', 'Spiteful'), 0)]
+        for f in alFacts:
+            l = []
+            if f > 0:
+                l = ['L'] * abs(f)
+            if f < 0:
+                l = ['C'] * abs(f)
+            alignments.extend(l)
+
+        character.al = random.choice(alignments)
+        if ((partyAL == 'L') & (character.al == 'C')) | ((partyAL == 'C') & (character.al == 'L')):
+            continue
+        else:
+            print(partyAL + " " + character.al)
+            break
+
+
     if character_class == "random":
-        character_class = rollOnTable(data['randomtables']['classes'])
+        character_class = getTableResultString(data['randomtables']['classes'])
 
     # hier werden erst scores gewürfelt und dann geschaut welche klassen man nehmen darf
     # wir gucken uns alle klassen an und entfernen alle klassen und paths die die minrequs nicht erfüllen
@@ -362,20 +392,21 @@ def createCharacter(cls, lvl, ethnicity):
         classDict = newClassDict
         # print(newClassDict)
 
-    # load confic dict into vahrs
-    classHD = classDict['hd']
-    classAttProg = classDict['attackprogression']
-    classInitialSaves = classDict['saves']['initial']
-    classSaveProg = classDict['saves']['progression']
-    classMinReq = classDict['minreq']
-    allProfs = data['profs']
-    genProfs = data['generalprofs']
-    classProfs = classDict['proficiencies']
-    classProfProg = classDict['profprogression']
-    genProfProg = data['profprogression']['general']
-    allAbilities = data['abilities']
-    classAbilities = classDict['abilities']
-    allSpells = data['spells']
+    #todo nochmal angucken
+    #load confic dict into vahrs
+    classHD = classDict.get('hd', 'd6')
+    classAttProg = classDict.get('attackprogression',[])
+    classInitialSaves = classDict.get('saves').get('initial', ['20', '20', '20', '20', '20'])
+    classSaveProg = classDict.get('saves').get('progression', [])
+    classMinReq = classDict.get('minreq', '')
+    allProfs = data.get('profs', [])
+    genProfs = data.get('generalprofs', [])
+    classProfs = classDict.get('proficiencies', [])
+    classProfProg = classDict.get('profprogression', [])
+    genProfProg = data.get('profprogression').get('general')
+    allAbilities = data.get('abilities')
+    classAbilities = classDict.get('abilities',[])
+    allSpells = data.get('spells')
 
     # build add class path if exists
 
@@ -409,40 +440,31 @@ def createCharacter(cls, lvl, ethnicity):
 
     # check minimum requirements to belong to class
     for c_class in classMinReq:
-        if getattr(character, c_class) < classMinReq[c_class]:
-            setattr(character, c_class, classMinReq[c_class])
+        while getattr(character, c_class) < classMinReq[c_class]:
+            setattr(character, c_class, roll("3d6"))
 
     # get base stats
     character.mv = 120
     character.hd = classHD
     character.ac = character.getDexMod()
-    character.hp = roll(str(lvl) + character.hd) + character.lvl * character.getConMod()
-    if character.hp < character.lvl: character.hp = character.lvl
+    character.hp = 0
+    for i in range(character.lvl):
+        hpgain = roll(str(1) + character.hd) + character.getConMod()
+        if hpgain < 1: hpgain = 1
+        character.hp = character.hp + hpgain
+    if character.lvl == 0:
+        character.hp = roll(str(1) + character.hd) + character.getConMod()
+        if character.hp < 1: character.hp = 1
     character.ini = character.getDexMod()
     character.sp = 3
     character.ct = 11 - character.lvl
-    character.personality = create_personality()
-
-    pers = character.personality
-    print(pers)
-    alignments = ['N','N']
-    alFacts = [pers.get(('Honorable', 'Treacherous'), 0), pers.get(('Kind', 'Spiteful'), 0)]
-    for f in alFacts:
-        l = []
-        if f > 0:
-            l = ['L'] * abs(f)
-        if f < 0:
-            l = ['C'] * abs(f)
-        alignments.extend(l)
-
-    character.al = random.choice(alignments)
 
     # get saving throws
     increase = sum(i <= lvl for i in classSaveProg) + character.getWisMod()
     character.saves = [x - increase for x in classInitialSaves]
 
     # get base attack throw and damage bonus
-    baseAttack = 10 - sum(i <= lvl for i in classAttProg)
+    baseAttack = 11 - sum(i <= lvl for i in classAttProg)
     character.at = baseAttack - character.getStrMod()
     character.mat = baseAttack - character.getDexMod()
     character.cdb = character.getStrMod()

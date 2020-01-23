@@ -1054,14 +1054,14 @@ generalprofs:
   - *tracking
   - *trap_finding
 attackprogressions:
-  fighter: &fighter_attack_throw_progression [2,4,5,7,8,10,11,13,14]
-  thief: &thief_attack_throw_progression [3,5,7,9,11,13]
-  mage: &mage_attack_throw_progression [4,7,10,13]
+  fighter: &fighter_attack_throw_progression [1,2,4,5,7,8,10,11,13,14]
+  thief: &thief_attack_throw_progression [1,3,5,7,9,11,13]
+  mage: &mage_attack_throw_progression [1,4,7,10,13]
 profprogression:
   fighter: &fighter_proficiency_progression [1, 3, 6, 9, 12]
   thief: &thief_proficiency_progression [1, 4, 8, 12]
   mage: &mage_proficiency_progression [1, 6, 12]
-  general: &general_proficiency_progression [1, 1, 5, 9, 13]
+  general: &general_proficiency_progression [0, 0, 5, 9, 13]
 spellprogressions:
   loremaster: &loremaster_spellprogression
     1:
@@ -1947,112 +1947,114 @@ equipment:
       weight: 1
       cost: 5
       damage: 1d2
-tables:
-  tiny melee weapons: &table_tiny_melee_weapons
-    die: 1d10
-    results:
-      1-8: *dagger
-      9: *silver_dagger
-      10: *club
-  small melee weapons: &table_small_melee_weapons
-    die: 1d2
-    results:
-      1: *hand_axe
-      2: *short_sword
-  medium melee weapons: &table_medium_melee_weapons
-    die: 1d6
-    results:
-      1: *battle_axe
-      2: *flail
-      3: *mace
-      4: *war_hammer
-      5: *spear
-      6: *sword
-  large melee weapons: &table_large_melee_weapons
-    die: 1d3
-    results:
-      1: *two_handed_sword
-      2: *pole_arm
-      3: *great_axe
-  crossbows: &table_crossbows
-    die: 1d2
-    results:
-      1: *crossbow
-      2: *arbalest
-  bows: &table_bows
-    die: 1d3
-    results:
-      1: *shortbow
-      2: *longbow
-      3: *composite_bow
-  special weapons: &table_special_weapons
-    die: 1d6
-    results:
-      1: *bola
-      2: *net
-      3: *sap
-      4: *whip
-  full caster weapons: &table_mage_weapons
-    die: 1d6
-    results:
-      1: *dagger
-      2: *crossbow
-      3: *staff
-      4: *sap
-      5: *darts
-      6: *arbalest
-  heavy armor: &table_heavy_armor
-    die: 1d6
-    results:
-      1-2: *chain_mail
-      3-5: *lamellar_armor
-      6: *plate_armor
-  medium armor: &table_medium_armor
-    die: 1d6
-    results:
-      1-2: *leather_armor
-      3-6: *chain_mail
-  light armor: &table_light_armor
-    die: 1d6
-    results:
-      1-2: *hide_armor
-      3-6: *leather_armor
-  healing herbs: &table_healing_herbs
-    die: 1d12
-    results:
-      1: *belladonna
-      2: *birthwort
-      3-5: *comfrey
-      6-7: *woundwart
-      8-9: *horsetail
-      10-11: *bitterwood
-      12: *aloe
-  tools: &table_tools
-    die: 1d17
-    results:
-      1-2: *crowbar
-      3-4: *rope
-      5: *mirror
-      6: *ten_foot_pole
-      7: *grappling_hook
-      8: *iron_spikes
-      9-10: *common_oil
-      11-12: *sack_large
-      13-14: *sack_small
-      15-16: *tinder_box
-      17: *hammer
-  sleeping: &table_sleeping
-    die: 1d6
-    results:
-      1-5: *blanket
-      6: *tent
-  light: &table_light
-    die: 1d6
-    results:
-      1-3: *torch
-      4-6: *lantern
+  tables:
+    tiny melee weapons: &table_tiny_melee_weapons
+      die: 1d10
+      res:
+        1-8: *dagger
+        9: *silver_dagger
+        10: *club
+    small melee weapons: &table_small_melee_weapons
+      die: 1d2
+      res:
+        1: *hand_axe
+        2: *short_sword
+    medium melee weapons: &table_medium_melee_weapons
+      die: 1d6
+      res:
+        1: *battle_axe
+        2: *flail
+        3: *mace
+        4: *war_hammer
+        5: *spear
+        6: *sword
+    large melee weapons: &table_large_melee_weapons
+      die: 1d3
+      res:
+        1: *two_handed_sword
+        2: *pole_arm
+        3: *great_axe
+    crossbows: &table_crossbows
+      die: 1d2
+      res:
+        1: *crossbow
+        2: *arbalest
+    bows: &table_bows
+      die: 1d3
+      res:
+        1: *shortbow
+        2: *longbow
+        3: *composite_bow
+    special weapons: &table_special_weapons
+      die: 1d6
+      res:
+        1: *bola
+        2: *net
+        3: *sap
+        4: *whip
+    full caster weapons: &table_mage_weapons
+      die: 1d6
+      res:
+        1: *dagger
+        2: *crossbow
+        3: *staff
+        4: *sap
+        5: *darts
+        6: *arbalest
+    heavy armor: &table_heavy_armor
+      die: 1d6
+      res:
+        1-2: *chain_mail
+        3-5: *lamellar_armor
+        6: *plate_armor
+    medium armor: &table_medium_armor
+      die: 1d6
+      res:
+        1-2: *leather_armor
+        3-6: *chain_mail
+    light armor: &table_light_armor
+      die: 1d6
+      res:
+        1-2: *hide_armor
+        3-6: *leather_armor
+    healing herbs: &table_healing_herbs
+      die: 1d12
+      res:
+        1: *belladonna
+        2: *birthwort
+        3-5: *comfrey
+        6-7: *woundwart
+        8-9: *horsetail
+        10-11: *bitterwood
+        12: *aloe
+    tools: &table_tools
+      die: 1d11
+      res:
+        1: *crowbar
+        2: *rope
+        3: *mirror
+        4: *ten_foot_pole
+        5: *grappling_hook
+        6: *iron_spikes
+        7: *common_oil
+        8: *sack_large
+        9: *sack_small
+        10: *tinder_box
+        11: *hammer
+    sleeping: &table_sleeping
+      die: 1d6
+      res:
+        1-5: *blanket
+        6: *tent
+    light: &table_light
+      die: 1d6
+      res:
+        1-3: *torch
+        4-6: *lantern
 saves:
 #order: pp, pd, bb, sw, ma
+  normalman: &normalman_saving_throws
+    initial: [16, 15, 17, 17, 18]
   fighter: &fighter_saving_throws
     initial: [15, 14, 16, 16, 17]
     progression: [2,4,5,7,8,10,11,13,14]
@@ -2069,6 +2071,37 @@ saves:
     initial: [13, 10, 16, 13, 15]
     progression: [3,5,7,9,11,13]
 classes:
+  &normalman normal man:
+    maxlevel: 0
+    hd: d8-1
+    saves: *normalman_saving_throws
+    minreq:
+      strength: 3
+      dexterity: 3
+      constitution: 3
+      intelligence: 3
+      wisdom: 3
+      charisma: 3
+    abilities:
+      0:
+        - {choice: ['Quivering in fear', 'Panicking', 'Being instakilled by terrible monsters', 'Running away'], number: 1}
+    equipment:
+      weapons:
+        - [*table_tiny_melee_weapons, 1d3-1]
+        - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: *table_large_melee_weapons}}, 1]
+        - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
+        - [*javelin, 1d4-1]
+      armor:
+        - [*shield, 1d2-1]
+        - [*table_heavy_armor, 1]
+      gear:
+        - [*backpack, 1]
+        - [*table_healing_herbs, 1d10-9]
+        - [*table_tools, 1d3]
+        - [*table_sleeping, 1]
+        - [*military_oil, 1d6-4]
+        - [*table_light, 1d2-1]
+        - [*torch, 1d6-2]
   &thief thief:
     maxlevel: 14
     hd: d4
@@ -2125,12 +2158,12 @@ classes:
         - [*table_tiny_melee_weapons, 1]
         - [*table_tiny_melee_weapons, 1d4-2]
         - [*table_small_melee_weapons, 1d4-2]
-        - [{die: 1d4, results: {1: *table_bows, 2-3: *table_crossbows, 4: ''}}, 1]
+        - [{die: 1d4, res: {1: *table_bows, 2-3: *table_crossbows, 4: ''}}, 1]
       armor:
-        - [{die: 1d6, results: {1: '', 2-6: *table_light_armor}}, 1]
+        - [{die: 1d6, res: {1: '', 2-6: *table_light_armor}}, 1]
       gear:
         - [*backpack, 1]
-        - [{die: 1d6, results: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
+        - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
         - [*table_healing_herbs, 1d3-1]
         - [*table_tools, 2d4]
         - [*table_sleeping, 1]
@@ -2183,14 +2216,14 @@ classes:
     equipment:
       weapons:
         - [*table_tiny_melee_weapons, 1d3-1]
-        - [{die: 1d10, results:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
-        - [{die: 1d6, results: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
-        - [{die: 1d4, results: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
+        - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+        - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+        - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
         - [*javelin, 1d4-1]
         - [*table_special_weapons, 1d10-8]
       armor:
         - [*shield, 1d3-2]
-        - [{die: 1d3, results: {1: *table_light_armor, 2: *table_medium_armor, 3: *table_heavy_armor}}, 1]
+        - [{die: 1d3, res: {1: *table_light_armor, 2: *table_medium_armor, 3: *table_heavy_armor}}, 1]
       gear:
         - [*backpack, 1]
         - [*table_healing_herbs, 1d3-1]
@@ -2244,9 +2277,9 @@ classes:
     equipment:
       weapons:
         - [*table_tiny_melee_weapons, 1d3-1]
-        - [{die: 1d10, results:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
-        - [{die: 1d6, results: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
-        - [{die: 1d4, results: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
+        - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+        - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+        - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
         - [*javelin, 1d4-1]
         - [*table_special_weapons, 1d10-8]
       armor:
@@ -2390,7 +2423,7 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
         - [*ink, 1]
-        - [{die: 1d6, results: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
+        - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
   &runemaker runemaker:
     path:
       - *varn
@@ -2473,7 +2506,7 @@ classes:
         *varn:
           weapons:
             - [*dagger, 1d2-1]
-            - [{die: 1d4, results: {1: *battle_axe, 2: *spear, 3: *sword, 4: *war_hammer}}, 1]
+            - [{die: 1d4, res: {1: *battle_axe, 2: *spear, 3: *sword, 4: *war_hammer}}, 1]
             - [*shortbow, 1d2-1]
           armor:
             - [*table_medium_armor, 1]
@@ -2491,7 +2524,7 @@ classes:
         *surga:
           weapons:
             - [*dagger, 1d2]
-            - [{die: 1d4, results: {1: *hand_axe, 2: *javelin, 3: *lance, 4: *short_sword}}, 1d2-1]
+            - [{die: 1d4, res: {1: *hand_axe, 2: *javelin, 3: *lance, 4: *short_sword}}, 1d2-1]
             - [*composite_bow, 1]
           armor:
             - [*table_medium_armor, 1]
@@ -2509,7 +2542,7 @@ classes:
         *bosk:
           weapons:
             - [*dagger, 1d2-1]
-            - [{die: 1d4, results: {1: *battle_axe, 2: *spear, 3: *sword, 4: *hand_axe}}, 1]
+            - [{die: 1d4, res: {1: *battle_axe, 2: *spear, 3: *sword, 4: *hand_axe}}, 1]
             - [*longbow, 1d2-1]
           armor:
             - [*table_medium_armor, 1]
@@ -2577,12 +2610,12 @@ classes:
         - [*table_tiny_melee_weapons, 1]
         - [*table_tiny_melee_weapons, 1d4-2]
         - [*table_small_melee_weapons, 1d4-2]
-        - [{die: 1d4, results: {1: *table_bows, 2-3: *table_crossbows, 4: ''}}, 1]
+        - [{die: 1d4, res: {1: *table_bows, 2-3: *table_crossbows, 4: ''}}, 1]
       armor:
-        - [{die: 1d6, results: {1: '', 2-6: *table_light_armor}}, 1]
+        - [{die: 1d6, res: {1: '', 2-6: *table_light_armor}}, 1]
       gear:
         - [*backpack, 1]
-        - [{die: 1d10, results: {1-6: *musical_instrument_common, 7-9: *musical_instrument_superior, 10: *musical_instrument_mastercraft}}, 1]
+        - [{die: 1d10, res: {1-6: *musical_instrument_common, 7-9: *musical_instrument_superior, 10: *musical_instrument_mastercraft}}, 1]
         - [*table_healing_herbs, 1d10-2]
         - [*table_tools, 2d4]
         - [*table_sleeping, 1]
@@ -2640,7 +2673,7 @@ classes:
     equipment:
       weapons:
         - [*dagger, 1d2-1]
-        - [{die: 1d4, results: {1: *sword, 2: *spear, 3: *battle_axe, 4: *hand_axe}}, 2]
+        - [{die: 1d4, res: {1: *sword, 2: *spear, 3: *battle_axe, 4: *hand_axe}}, 2]
       armor:
         - [*table_light_armor, 1]
       gear:
@@ -2707,9 +2740,9 @@ classes:
         - Morale Bonus
     equipment:
       weapons:
-        - [{die: 1d10, results:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
-        - [{die: 1d6, results: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
-        - [{die: 1d4, results: {1-2: *table_bows, 3-5: *table_crossbows, 5: ''}},1]
+        - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+        - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+        - [{die: 1d4, res: {1-2: *table_bows, 3-5: *table_crossbows, 5: ''}},1]
         - [*javelin, 1d4]
         - [*table_special_weapons, 1d4-2]
       armor:
@@ -2807,7 +2840,7 @@ classes:
         *varn:
           weapons:
             - [*dagger, 1d2]
-            - [{die: 1d6, results:{
+            - [{die: 1d6, res:{
                             1: *battle_axe,
                             2: *club,
                             3: *hand_axe,
@@ -2815,11 +2848,11 @@ classes:
                             5: *sword,
                             6: *war_hammer
             }}, 1d2]
-            - [{die: 1d6, results: {1-2: *great_axe,
+            - [{die: 1d6, res: {1-2: *great_axe,
                                     3-4: *two_handed_sword,
                                     5-6: ''
             }}, 1d2]
-            - [{die: 1d6, results: {1-3: *shortbow,
+            - [{die: 1d6, res: {1-3: *shortbow,
                                     3-6: ''
             }}, 1]
           armor:
@@ -2836,8 +2869,8 @@ classes:
         *bosk:
           weapons:
             - [*dagger, 1d2]
-            - [{die: 1d6, results: {1: *whip, 2: *net, 3-6: ''}}, 1]
-            - [ {die: 1d6, results: {
+            - [{die: 1d6, res: {1: *whip, 2: *net, 3-6: ''}}, 1]
+            - [ {die: 1d6, res: {
               1: *short_sword,
               2: *javelin,
               3: *hand_axe,
@@ -2846,10 +2879,10 @@ classes:
               6: *war_hammer
             }}, 1d2]
             - [*javelin, 1d4-1]
-            - [ {die: 1d6, results: {1-3: *two_handed_sword,
+            - [ {die: 1d6, res: {1-3: *two_handed_sword,
                                      4-6: ''
             }}, 1]
-            - [{die: 1d6, results: {1-4: *shortbow,
+            - [{die: 1d6, res: {1-4: *shortbow,
                                      5-6: ''
             }}, 1]
           armor:
@@ -2865,9 +2898,9 @@ classes:
             - [*torch, 1d6-3]
         *surga:
           weapons:
-            - [{die: 1d6, results: {1: *whip, 2: *net, 3: *sling, 4-6: ''}}, 1]
+            - [{die: 1d6, res: {1: *whip, 2: *net, 3: *sling, 4-6: ''}}, 1]
             - [*dagger, 1d2]
-            - [ {die: 1d6, results: {
+            - [ {die: 1d6, res: {
               1: *javelin,
               2: *lance,
               3: *hand_axe,
@@ -2875,7 +2908,7 @@ classes:
               5: *short_sword,
               6: *dagger
             }}, 1d2]
-            - [ {die: 1d5, results: {1: *composite_bow,
+            - [ {die: 1d5, res: {1: *composite_bow,
                                      2: *shortbow,
                                      3: *crossbow,
                                      4: *arbalest,
@@ -2953,8 +2986,8 @@ classes:
         - Animal Magnetism
     equipment:
       weapons:
-        - [{die: 1d5, results:{1: *spear, 2: *hand_axe, 3: *dagger, 4: *sling, 5: *staff}}, 1d2+1]
-        - [{die: 1d4, results:{1: *bola, 2: *darts, 3: *net, 4: *sap}}, 1d2]
+        - [{die: 1d5, res:{1: *spear, 2: *hand_axe, 3: *dagger, 4: *sling, 5: *staff}}, 1d2+1]
+        - [{die: 1d4, res:{1: *bola, 2: *darts, 3: *net, 4: *sap}}, 1d2]
       armor: []
       gear:
         - [*backpack, 1]
@@ -3035,7 +3068,7 @@ classes:
         *varn:
           weapons:
             - [*dagger, 1d2]
-            - [{die: 1d6, results: {
+            - [{die: 1d6, res: {
                             1: *battle_axe,
                             2: *club,
                             3: *hand_axe,
@@ -3043,11 +3076,11 @@ classes:
                             5: *sword,
                             6: *war_hammer
             }}, 1d2]
-            - [{die: 1d6, results: {1-2: *great_axe,
+            - [{die: 1d6, res: {1-2: *great_axe,
                                     3-4: *two_handed_sword,
                                     5-6: ''
             }}, 1d2]
-            - [{die: 1d6, results: {1-3: *shortbow,
+            - [{die: 1d6, res: {1-3: *shortbow,
                                     3-6: ''
             }}, 1]
           armor:
@@ -3064,8 +3097,8 @@ classes:
         *bosk:
           weapons:
             - [*dagger, 1d2]
-            - [{die: 1d6, results: {1: *whip, 2: *net, 3-6: ''}}, 1]
-            - [ {die: 1d6, results: {
+            - [{die: 1d6, res: {1: *whip, 2: *net, 3-6: ''}}, 1]
+            - [ {die: 1d6, res: {
               1: *short_sword,
               2: *javelin,
               3: *hand_axe,
@@ -3074,10 +3107,10 @@ classes:
               6: *war_hammer
             }}, 1d2]
             - [*javelin, 1d4-1]
-            - [ {die: 1d6, results: {1-3: *two_handed_sword,
+            - [ {die: 1d6, res: {1-3: *two_handed_sword,
                                      4-6: ''
             }}, 1]
-            - [ {die: 1d6, results: {1-4: *shortbow,
+            - [ {die: 1d6, res: {1-4: *shortbow,
                                      5-6: ''
             }}, 1]
           armor:
@@ -3093,9 +3126,9 @@ classes:
             - [*torch, 1d6-3]
         *surga:
           weapons:
-            - [{die: 1d6, results: {1: *whip, 2: *net, 3: *sling, 4-6: ''}}, 1]
+            - [{die: 1d6, res: {1: *whip, 2: *net, 3: *sling, 4-6: ''}}, 1]
             - [*dagger, 1d2]
-            - [ {die: 1d6, results: {
+            - [ {die: 1d6, res: {
               1: *javelin,
               2: *lance,
               3: *hand_axe,
@@ -3103,7 +3136,7 @@ classes:
               5: *short_sword,
               6: *dagger
             }}, 1d2]
-            - [ {die: 1d5, results: {1: *composite_bow,
+            - [ {die: 1d5, res: {1: *composite_bow,
                                      2: *shortbow,
                                      3: *crossbow,
                                      4: *arbalest,
@@ -3288,15 +3321,15 @@ classes:
       weapons:
         - [*table_tiny_melee_weapons, 1]
         - [*table_tiny_melee_weapons, 1d4-2]
-        - [*table_small_melee_weapons, 1d4-2]
-        - [*table_medium_melee_weapons, 1d2-1]
-        - [*table_special_weapons, 1d3-1]
-        - [{die: 1d4, results: {1: *shortbow, 2-3: *crossbow, 4: ''}}, 1]
+        - [*table_small_melee_weapons, 1]
+        - [*table_medium_melee_weapons, 1d3-2]
+        - [*table_special_weapons, 1d4-3]
+        - [{die: 1d4, res: {1: *shortbow, 2-3: *crossbow, 4: ''}}, 1]
       armor:
         - [*table_light_armor, 1]
       gear:
         - [*backpack, 1]
-        - [{die: 1d6, results: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
+        - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
         - [*table_healing_herbs, 1d3-1]
         - [*table_tools, 2d4]
         - [*table_sleeping, 1]
@@ -3431,7 +3464,7 @@ classes:
         - [*table_tiny_melee_weapons, 1d4-2]
         - [*table_small_melee_weapons, 1d2-1]
         - [*table_medium_melee_weapons, 1]
-        - [{die: 1d3, results: {1: *table_bows, 2-3: *table_crossbows}}, 1]
+        - [{die: 1d3, res: {1: *table_bows, 2-3: *table_crossbows}}, 1]
       armor:
         - [*table_medium_armor, 1]
       gear:
@@ -3495,8 +3528,8 @@ classes:
         - Fiery Spirit
     equipment:
       weapons:
-        - [{die: 1d10, results:{1: *dagger, 2: *short_sword, 3: *sword, 4: *spear, 5: *whip}}, 1d2+1]
-        - [{die: 1d4, results: {1: *table_bows, 2-3: *table_crossbows, 4: ''}},1]
+        - [{die: 1d10, res:{1: *dagger, 2: *short_sword, 3: *sword, 4: *spear, 5: *whip}}, 1d2+1]
+        - [{die: 1d4, res: {1: *table_bows, 2-3: *table_crossbows, 4: ''}},1]
         - [*javelin, 1d4-1]
       armor:
         - [*table_light_armor, 1]
@@ -3560,9 +3593,9 @@ classes:
     equipment:
       weapons:
         - [*table_tiny_melee_weapons, 1d3-1]
-        - [{die: 1d10, results:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
-        - [{die: 1d6, results: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
-        - [{die: 1d4, results: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
+        - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+        - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+        - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
         - [*javelin, 1d4-1]
         - [*table_special_weapons, 1d10-8]
       armor:
@@ -3631,9 +3664,9 @@ classes:
     equipment:
       weapons:
         - [*table_tiny_melee_weapons, 1d3-1]
-        - [{die: 1d10, results:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
-        - [{die: 1d6, results: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
-        - [{die: 1d4, results: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
+        - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+        - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+        - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
         - [*javelin, 1d4-1]
         - [*table_special_weapons, 1d10-8]
       armor:
@@ -3715,7 +3748,7 @@ classes:
       weapons:
         - [*dagger, 1d2-1]
         - [*staff, 1d2-1]
-        - [{die: 1d5, results: {1: *club, 2: *dagger, 3: *hand_axe, 4: *short_sword, 5: *spear}}, 1]
+        - [{die: 1d5, res: {1: *club, 2: *dagger, 3: *hand_axe, 4: *short_sword, 5: *spear}}, 1]
       armor:
         - [*shield, 1d2-1]
         - [*table_light_armor, 1]
@@ -3818,7 +3851,7 @@ classes:
       weapons:
         - [*dagger, 1d2-1]
         - [*staff, 1d2-1]
-        - [{die: 1d5, results: {1: *club, 2: *dagger, 3: *hand_axe, 4: *short_sword, 5: *spear}}, 1]
+        - [{die: 1d5, res: {1: *club, 2: *dagger, 3: *hand_axe, 4: *short_sword, 5: *spear}}, 1]
       armor: []
       gear:
         - [*backpack, 1]
@@ -3835,37 +3868,41 @@ classes:
 randomtables:
   classes:
     die: 3d6
-    results:
+    res:
       3-4: *eldritch_rogue
       5:
         die: 1d20
-        results:
+        res:
           1-15: *runemaker
           16-20: *shaman
       6:
         die: 1d20
-        results:
+        res:
           1-19: *explorer
           20: *beastmaster
       7: *bladedancer
       8: *ecclesiastic
       9-11:
         die: 1d20
-        results:
+        res:
           1-15: *fighter
           16-17: *barbarian
           18: *berserker
           19-20: *herald
-      12: *thief
+      12:
+        die: 1d20
+        res:
+          1-15: *thief
+          16-20: *freebooter
       13:
         die: 1d20
-        results:
+        res:
           1-15: *loremaster
           16-18: *witch
           19-20: *occultist
       14:
         die: 1d20
-        results:
+        res:
           1-15: *assassin
           16-20: *gladiator
       15: *bard
@@ -3873,7 +3910,7 @@ randomtables:
       17-18: *warmistress
   human build:
     die: 2d6
-    results:
+    res:
       1: Small
       2-4: Slim
       5-8: Average
@@ -3883,7 +3920,7 @@ randomtables:
   eye color:
     ilian:
       die: 1d20
-      results:
+      res:
         1-3: Blue-Gray, Medium
         4-6: Brown, Dark
         7-9: Brown, Medium
@@ -3894,7 +3931,7 @@ randomtables:
         18-20: Gray-Brown, Medium
     acheron:
       die: 1d20
-      results:
+      res:
         1: Blue, Medium
         2-4: Blue, Light
         5: Blue-Gray, Medium
@@ -3908,12 +3945,12 @@ randomtables:
         18-20: Hazel, Light
     langun:
       die: 1d20
-      results:
+      res:
         1-10: Black
         11-20: Brown, Dark
     opelean:
       die: 1d20
-      results:
+      res:
         1-4: Brown, Dark
         5-8: Brown, Medium
         9-12: Brown, Light
@@ -3921,7 +3958,7 @@ randomtables:
         17-20: Hazel, Medium
     varn:
       die: 1d20
-      results:
+      res:
         1-2: Blue, Medium
         3-5: Blue, Light
         6-7: Blue-Gray, Medium
@@ -3936,7 +3973,7 @@ randomtables:
         20: Violet, Light
     bosk:
       die: 1d20
-      results:
+      res:
         1-4: Brown, Dark
         5-8: Brown, Medium
         9-10: Brown, Light
@@ -3946,7 +3983,7 @@ randomtables:
         18-20: Hazel, Medium
     surga:
       die: 1d20
-      results:
+      res:
         1-9: Black
         10: Blue, Light
         11-13: Brown, Dark
@@ -3955,14 +3992,14 @@ randomtables:
         20: Gray, Medium
     heron:
       die: 1d20
-      results:
+      res:
         1-5: Black
         6-10: Brown, Dark
         11-15: Brown, Medium
         16-20: Brown, Light
     sargon:
       die: 1d20
-      results:
+      res:
         1-3: Amber, Dark
         4-6: Amber, Medium
         7-10: Brown, Dark
@@ -3973,14 +4010,14 @@ randomtables:
   hair color:
     ilian:
       die: 1d20
-      results:
+      res:
         1-5: Black
         6-10: Brown, Ash
         11-15: Brown, Dark
         16-20: Blonde, Dark
     acheron:
       die: 1d20
-      results:
+      res:
         1-2: Auburn, Dark
         3-5: Auburn, Medium
         6-8: Blonde, Golden
@@ -3991,18 +4028,18 @@ randomtables:
         19-20: Red, Medium
     langun:
       die: 1d20
-      results:
+      res:
         1-20: black
     opelean:
       die: 1d20
-      results:
+      res:
         1-9: Black
         10: Brown, Ash
         11-19: Brown, Dark
         20: Blonde, Dark
     varn:
       die: 1d20
-      results:
+      res:
         1-5: Blonde, Dark
         6-10: Blonde, Golden
         11-12: Blonde, Platinum
@@ -4010,77 +4047,77 @@ randomtables:
         17-20: Brown, Rufous
     bosk:
       die: 1d20
-      results:
+      res:
         1-5: Auburn, Dark
         6-10: Auburn, Medium
         11-15: Brown, Rufous
         16-20: Brown-Black
     surga:
       die: 1d20
-      results:
+      res:
         1-8: Black
         9-12: Blue-Black
         13-20: Brown, Dark
     heron:
       die: 1d20
-      results:
+      res:
         1-10: Black
         11-20: Brown, Dark
     sargon:
       die: 1d20
-      results:
+      res:
         1-20: black
   hair texture:
     ilian:
       die: 1d20
-      results:
+      res:
         1-5: Curly
         6-12: Straight
         13-20: Wavy
     acheron:
       die: 1d20
-      results:
+      res:
         1-5: Curly
         6-12: Straight
         13-20: Wavy
     langun:
       die: 1d20
-      results:
+      res:
         1-20: Straight
     opelean:
       die: 1d20
-      results:
+      res:
         1-10: Curly
         11-20: Wavy
     varn:
       die: 1d20
-      results:
+      res:
         1-16: Straight
         17-20: Wavy
     bosk:
       die: 1d20
-      results:
+      res:
         1-10: Straight
         11-20: Wavy
     surga:
       die: 1d20
-      results:
+      res:
         1-20: Straight
     heron:
       die: 1d20
-      results:
+      res:
         1-10: Tightly Curled/Kinky
         11-20: Wavy
     sargon:
       die: 1d20
-      results:
+      res:
         1-5: Curly
         6-12: Straight
         13-20: Wavy
   features:
     negative:
       die: 1d100
-      results:
+      res:
         1-2: Build - Obese
         3-4: Build - Hunchback
         5-6: Build - Skeletal
@@ -4130,10 +4167,10 @@ randomtables:
         93-94: Skin - Peeling
         95-96: Skin - Scabrous
         97-98: Skin - Pock Marked
-        99-100: Skin – Warty
+        99-100: Skin - Warty
     average:
       die: 1d100
-      results:
+      res:
         1-2: Build - Barrel-Chested
         3-4: Build - Chubby
         5-6: Build - Skinny
@@ -4186,7 +4223,7 @@ randomtables:
         99-100: Skin - Weather-Beaten
     positive:
       die: 1d100
-      results:
+      res:
         1-3: Build - Athletic
         4-6: Build - Broad-Chested/Bosomy
         7-9: Build - Good Posture
@@ -4223,104 +4260,122 @@ randomtables:
   styles:
     gear chaotic: &table_gear_chaotic
       die: 1d8
-      results:
-        1: Adorned, e.g. Bones, Teeth, Fingers
-        2: Bent/Slightly Twisted
-        3: Blood-Stained
-        4: Dented
-        5: Fire-Blackened
-        6: Notched, e.g. Damaged/Nicked, Kill Notches
-        7: Rusted/Pitted/Tarnished
-        8: Scratched, e.g. Damaged, Crude Designs
+      res:
+        1: ['adorned with ', {die: 1d3, res:{1: 'bones', 2: 'teeth', 3: 'fingers'}}]
+        2: {die: 1d2, res: {1: bent, 2: slightly twieted}}
+        3: blood stained
+        4: dented
+        5: fire-blackened
+        6: {die: 1d3, res: {1: damaged, 2: nicked, 3: marked with kill notches}}
+        7: {die: 1d3, res: {1: rusted, 2: pitted, 3: tarnished}}
+        8: {die: 1d3, res: {1: scratched, 2: damaged, 3: crudely designed}}
     gear any: &table_gear_any
       die: 1d10
-      results:
-        1-2: [Adorned, e.g. Beads, Fabric Strips, Feathers
+      res:
+        1-2: ['adorned with ', {die: 1d3, res:{1: 'beads', 2: 'fabric strips', 3: 'feathers'}}]
         3-4: Dented
         5-6: Etched
-        7-8: Notched, e.g. Damaged/Nicked, Kill Notches
-        9-10: Well-Maintained
+        7-8: {die: 1d3, res: {1: damaged, 2: nicked, 3: marked with kill notches}}
+        9-10: well-maintained
     gear lawful: &table_gear_lawful
       die: 1d4
-      results:
-        1: Adorned, e.g. Pennants, Ribbons
-        2: Etched/Enameled
-        3: Highly Polished
-        4: Well-Maintained
+      res:
+        1: ['adorned with ', {die: 1d3, res:{1: 'pennants', 2: 'ribbons', 3: 'colorful feathers'}}]
+        2: {die: 1d2, res: {1: etched, 2: enameled}}
+        3: highly polished
+        4: well-maintained
     clothing chaotic: &table_clothing_chaotic
       die: 1d6
-      results:
-        1: Absent, e.g. Naked or Partially Naked!
-        2: Garish - Clashing Colors, Sickly Colors
-        3: Falling Apart
-        4: Filthy, e.g. Blood-Stained, Encrusted
-        5: Ill-Fitting, e.g. Badly Made, Made for Another Race, Too Large, Too Small
-        6: Oddly Chosen, e.g. Sage’s Robe on a Warrior
+      res:
+        1: ['body is ',{die: 1d2, res: {1: naked, 2: half-naked}}]
+        2: ['clothing has ', {die: 1d2, res: {1: clashing colors, 2: sickly colors}}]
+        3: clothing is falling apart
+        4: ['clothing is ', {die: 1d2, res: {1: blood stained, 2: encrusted}}]
+        5: ['clothing is ', {die: 1d2, res: {1: badly made, 2: ill-fitting}}]
+        6: clothing is oddly chosen
     clothing any: &table_clothing_any
       die: 1d4
-      results:
-        1: Adorned, e.g. Beadwork, Decorative Stitching, Tassels
-        2: Brightly Colored, e.g. Jester-Like Motley
-        3: Poor-Fitting, e.g. Slightly Too Big/Small
-        4: Stained - Alchemical Discoloration, Travel-Stained
+      res:
+        1: ['clothing is adorned with ', {die: 1d3, res:{1: 'beadwork', 2: 'decorative stitching', 3: 'tassels'}}]
+        2: clothing is brightly colored
+        3: ['clothing is ', {die: 1d2, res:{1: slightly too small, 2: slightly too big}}]
+        4: ['clothing is stained with ', {die: 1d3, res:{1: alchemical discolorations, 2: dust, 3: earth}}]
     clothing lawful: &table_clothing_lawful
       die: 1d10
-      results:
-        1-2: Adorned, e.g. Fine Embroidery
-        3-4: Bright, Attractive Colors
-        5-6: Luxurious, e.g. Fine Fabrics, Fur-Lined, Silk-Lined
-        7-8: Perfectly Fitted
-        9-10: Well-Maintained
+      res:
+        1-2: ['clothing is adorned with ', {die: 1d2, res:{1: 'fine embroidery', 2: 'silver stitching'}}]
+        3-4: clothing has bright, attractive colors
+        5-6: ['clothing ', {die: 1d3, res:{1: is made from fine fabrics, 2: is fur-lined, 3: is silk lined}}]
+        7-8: clothing is perfectly fitted
+        9-10: clothing is well-maintained
     headwear any: &table_headwear_any
       die: 1d12
-      results:
-        1: Bandana
-        2: Circlet, e.g. Bone, Brass, Iron, Pewter, Vines
-        3: Coif
-        4: Fabric Cap
-        5: Fur Cap
-        6: Headband
-        7: Hood
-        8: Mask, e.g. Animalistic, Caricature, Domino, Featureless, Monstrous, Ritual
-        9: Pointy Hat
-        10: Skullcap, e.g. Fabric, Iron
-        11: Veil
-        12: Wide-Brimmed Hat
+      res:
+        1: a bandana
+        2: ['a circlet made of ', {die: 1d5, res: {1: bone, 2: brass, 3: iron, 4: pewter, 5: vines}}]
+        3: a coif
+        4: a fabric Cap
+        5: a fur Cap
+        6: a headband
+        7: a hood
+        8: [{die: 1d6, res:{1: an animalistic, 2: a caricatured, 3: a domino, 4: a featureless, 5: a monstrous, 6: a ritualistic}},' mask']
+        9: a pointy Hat
+        10: [{die: 1d5, res:{1: a clothen, 2: a silken, 3: a silver, 4: a golden, 5: an iron}},' skullcap']
+        11: a veil
+        12: a wide-brimmed hat
     adornments chaotic: &table_adornments_chaotic
       die: 1d4
-      results:
-        1-2: Grotesque Belt Hangings
-        3-4: Grotesque Necklace
+      res:
+        1-2: ['has belt hangings made from ', {die: 1d3, res:{1: dead animals, 2: hands, 3: heads}}]
+        3-4: ['wears a grotesque necklace ', {die: 1d4, res:{1: made of ears, 2: made of fingers, 3: made of teeth, 4: with an unholy symbol}}]
     adornments any: &table_adornments_any
       die: 1d8
-      results:
-        1: Armbands/Bracers, e.g. Bone, Fabric Strips, Leather, Metal, Wood
-        2: Belt, e.g. Braided, Broad, Ornamental Buckle, Studded
-        3: Belt Hangings, e.g. Animal Tails, Pouches
-        4: Bracelets, e.g. Bone, Fabric Strips, Leather, Metal, Wood
-        5: Folding Fan
-        6: Necklace, e.g. Beads, Claws/Fangs, Holy Symbol, Locket
-        7: Sash
-        8: Smoking Pipe
+      res:
+        1: ['wears ', {die: 1d2, res: {1: armbands, 2: bracers}}, ' made from ', {die: 1d5, res:{1: bone, 2: fabric, 3: leather, 4: metal, 5: wood}}]
+        2: ['wears a ', {die: 1d4, res: {1: braided, 2: broad, 3: ornamental, 4: studded}},' belt']
+        3: ['has ',{die: 1d2, res:{1: animal tails, 2: pouches}},' hanging from the belt']
+        4: ['wears bracelets made of ', {die: 1d5, res:{1: bone, 2: fabric, 3: leather, 4: metal, 5: wood}}]
+        5: has a folding Fan
+        6: ['wears a necklace ', {die: 1d3, res:{1: made from beads, 2: made from claws and fangs, 3: with a locket, 4: with a holy symbol}}]
+        7: wears a sash
+        8: has a smoking pipe
     belongings any: &table_belongings_any
       die: 1d4
-      results:
-        1: ['Gear: ', *table_gear_any]
-        2: ['Gear: ', *table_clothing_any]
-        3: ['Gear: ', *table_headwear_any]
-        4: ['Gear: ', *table_adornments_any]
+      res:
+        1: ['[GENDERPOSS] gear is ', *table_gear_any]
+        2: ['[GENDERPOSS] ', *table_clothing_any]
+        3: ['[GENDERPERS] is wearing ', *table_headwear_any]
+        4: ['[GENDERPERS] ', *table_adornments_any]
     belongings chaotic: &table_belongings_chaotic
       die: 1d4
-      results:
-        1: ['Gear: ', *table_gear_chaotic]
-        2: ['Gear: ', *table_clothing_chaotic]
-        3: ['Gear: ', *table_headwear_any]
-        4: ['Gear: ', *table_adornments_chaotic]
+      res:
+        1: ['[GENDERPOSS] gear is ', *table_gear_chaotic]
+        2: ['[GENDERPOSS] ', *table_clothing_chaotic]
+        3: ['[GENDERPERS] is wearing ', *table_headwear_any]
+        4: ['[GENDERPERS] ', *table_adornments_chaotic]
     belongings lawful: &table_belongings_lawful
       die: 1d4
-      results:
-        1: ['Gear: ', *table_gear_lawful]
-        2: ['Gear: ', *table_clothing_lawful]
-        3: ['Gear: ', *table_headwear_any]
-        4: ['Gear: ', *table_adornments_any]
-
+      res:
+        1: ['[GENDERPOSS] gear is ', *table_gear_lawful]
+        2: ['[GENDERPOSS] ', *table_clothing_lawful]
+        3: ['[GENDERPERS] is wearing ', *table_headwear_any]
+        4: ['[GENDERPERS] ', *table_adornments_any]
+  treasure:
+    ornamentals:
+      die: 1d100
+      res:
+        01–10: 10 Azurite, hematite, malachite, obsidian, quartz
+        11–25: 25 Agate, lapis lazuli, tiger eye, turquoise
+        26–40: 50 Bloodstone, crystal, citrine, jasper, moonstone, onyx
+        41–55: 75 Carnelian, chalcedony, sardonyx, zircon
+        56–70: 100 Amber, amethyst, coral, jade, jet, tourmaline
+        71–80: 250 Garnet, pearl, spinel
+        81–90: 500 Aquamarine, alexandrite, topaz
+        91–95: 750 Opal, star ruby, star sapphire, sunset amethyst, imperial topaz
+        96–00: 1,000 Black sapphire, diamond, emerald, jacinth, ruby
+        101–110: 1,500 Amber with preserved extinct creatures, whorled nephrite jade
+        111–125: 2,000 Black pearl, baroque pearl, crystal geode
+        126–145: 4,000 Facet cut imperial topaz, flawless diamond
+        146–165: 6,000 Facet cut star sapphire or star ruby
+        166–175: 8,000 Flawless facet cut diamond, emerald, jacinth or ruby
+        176–180: 10,000 Flawless facet cut black sapphire or blue diamond

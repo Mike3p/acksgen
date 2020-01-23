@@ -196,8 +196,13 @@ class Character:
         if len(self.style) > 0:
             style = "\n<b>Style:</b>"
             for s in self.style:
-                style = style + " " + s + ", "
-            style = style[:-2] + ";"
+                if self.sex == 'male':
+                    s = s.replace('[GENDERPOSS]', 'his')
+                    s = s.replace('[GENDERPERS]', 'he')
+                if self.sex == 'female':
+                    s = s.replace('[GENDERPOSS]', 'her')
+                    s = s.replace('[GENDERPERS]', 'she')
+                style = style + " " + s.capitalize() + ". "
             character = character + style
 
         character = character.split("\n")
@@ -232,7 +237,7 @@ class Character:
         elif stat >= 4:
             return -2
         else:
-            return 3
+            return -3
 
     def getModByString(self, abilityName):
         try:

@@ -6,18 +6,35 @@ def roll(dicecode):
 		return dicecode
 	try:
 			#a = re.split('d|-|\+', dicecode)
-			a = re.split('[d\-+]', dicecode)
+			a = re.split('[d\-+*]', dicecode)
+			#print(a)
 			number = int(a[0])
 			die = int(a[1])
 			modifier = 0
+			result = 0
+
 			if "-" in dicecode:
-				modifier = -int(a[2])
+				modifier = int(a[2])
+				for i in range(number):
+					result = result + random.randint(1, die)
+				return result - modifier
 			if "+" in dicecode:
 				modifier = int(a[2])
-			result = 0
-			for i in range(number):
-					result = result + random.randint(1, die)+modifier
-			return result
+				for i in range(number):
+					result = result + random.randint(1, die)
+				return result + modifier
+			if "*" in dicecode:
+				modifier = int(a[2])
+				for i in range(number):
+					result = result + random.randint(1, die)
+				return result * modifier
+			else:
+				for i in range(number):
+					result = result + random.randint(1, die)
+				return result
+
+
+
 	except:
 		raise
 		return ("not a valid die code")

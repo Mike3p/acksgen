@@ -13,44 +13,61 @@ def loadTables(s):
 
 def formatTable(table):
     formattedTable: dict
-    formattedTable = {'die': table['die'], 'results': {}}
-    tableResults = table['results']
+    formattedTable = {'die': table['die'], 'res': {}}
+    tableResults = table['res']
     for i in tableResults:
         if "-" in str(i):
             x = i.split("-")
             dieCodes = list(range(int(x[0]), int(x[1])+1))
             for j in dieCodes:
-                formattedTable['results'][int(j)] = tableResults[i]
+                formattedTable['res'][int(j)] = tableResults[i]
         else:
-            formattedTable['results'][int(i)] = tableResults[i]
+            formattedTable['res'][int(i)] = tableResults[i]
     return formattedTable
 
-def rollOnTable(table, modifier = 0):
+def getTableResultList(table, modifier = 0):
+    res = []
 
-    if(isinstance(table, str)): return table
+    if isinstance(table, str):
+        if '[ROLL]' in table:
+            table = table.replace('[ROLL]', '')
+            return roll(table)
+        return table
+    elif isinstance(table, list) :
+        for t in table:
+            res.append(getTableResultList(t))
+        return res
     f_table = formatTable(table)
-    die = f_table['die']
-    resultList = f_table['results']
-    dieRoll = roll(die)+modifier
+    resultList = f_table['res']
+    dieRoll = roll(f_table['die']) + modifier
+    times = f_table.get('times', 1)
+    if '[ROLL]' in str(times):
+        times.replace('[ROLL]', '')
+        times = roll(times)
     keyList = list(resultList.keys())
     if dieRoll < min(keyList):
         dieRoll = min(keyList)
     if dieRoll > max(keyList):
         dieRoll = max(keyList)
-    rolledResult = resultList[dieRoll]
-    prefix = ''
-    if isinstance(rolledResult, list):
-        prefix = rolledResult[0]
-        rolledResult = rolledResult[1]
+    rolledResults = resultList[dieRoll]
+    #for i in range(times):
+    #    rolledResults.append(resultList[dieRoll])
+    #return getTableResultList(rolledResults)
+    return getTableResultList(rolledResults)
 
-    if isinstance(rolledResult, dict) & \
-            ('die' in rolledResult) & \
-            ('results' in rolledResult):
-        return prefix + rollOnTable(rolledResult)
+def getTableResultString(table, modifier = 0):
+    results = getTableResultList(table)
+    out = ''
+    for r in results:
+        if isinstance(r, list):
+            for x in r:
+                out = out + str(x)
+        else:
+            out = out + str(r)
+    print(out)
+    return out
 
-    else:
-        return prefix + str(rolledResult)
 
-
-loadTables("../data.yaml")
-print(rollOnTable(data['randomtables']['styles']['belongings any']))
+#loadTables("../data.yaml")
+#for i in range(10):
+#    print(rollOnTable(data['randomtables']['treasure']['a incidental']))
