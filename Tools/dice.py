@@ -1,44 +1,43 @@
 import random
 import re
+import operator
 
-def roll(dicecode):
-	if isinstance(dicecode, int):
-		return dicecode
-	try:
-			#a = re.split('d|-|\+', dicecode)
-			a = re.split('[d\-+*]', dicecode)
-			#print(a)
-			number = int(a[0])
-			die = int(a[1])
-			modifier = 0
-			result = 0
 
-			if "-" in dicecode:
-				modifier = int(a[2])
-				for i in range(number):
-					result = result + random.randint(1, die)
-				return result - modifier
-			if "+" in dicecode:
-				modifier = int(a[2])
-				for i in range(number):
-					result = result + random.randint(1, die)
-				return result + modifier
-			if "*" in dicecode:
-				modifier = int(a[2])
-				for i in range(number):
-					result = result + random.randint(1, die)
-				return result * modifier
+
+def roll(dicecode: str):
+	def calculate(input):
+		ans = 0
+		op = operator.add
+		for item in input:
+
+			if isInt(item):
+				ans = op(ans,item)
 			else:
-				for i in range(number):
-					result = result + random.randint(1, die)
-				return result
+				op = item
+		return ans
 
-
-
-	except:
-		raise
-		return ("not a valid die code")
-
+	def isInt(n: str):
+		try:
+			int(n)
+			return True
+		except:
+			return False
+	rollelements = re.findall('\d+d\d+|[\+\-\*]|\d', dicecode)
+	rollformatted = []
+	ops = {"+": operator.add, "-": operator.sub, "*": operator.mul}
+	for e in rollelements:
+		if 'd' in e:
+			r = 0
+			nd = e.split('d')[0]
+			dt = e.split('d')[1]
+			for i in range(int(nd)):
+				r += random.randint(1,int(dt))
+			rollformatted.append(r)
+		elif isInt(e):
+			rollformatted.append(int(e))
+		elif e in ops:
+			rollformatted.append(ops[e])
+	return calculate(rollformatted)
 
 def get_ability_mod(a):
 	if a >= 18: return 3
@@ -48,4 +47,5 @@ def get_ability_mod(a):
 	elif a >= 6: return -1
 	elif a >= 4: return -2
 	else: return 3
+
 

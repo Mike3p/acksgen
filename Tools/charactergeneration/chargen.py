@@ -3,20 +3,21 @@ import yaml
 import random
 import copy
 import argparse
+import openpyxl
 
-from dice import roll
-from charactergeneration.character import Character
-from charactergeneration.item import Item, Weapon, Armor
-from charactergeneration.skill import Skill
-from tableroller import getTableResultString
-from charactergeneration.personalityGenerator import create_personality_string, create_personality
+from ..dice import roll
+from .character import Character
+from ..charactergeneration.item import Item, Weapon, Armor
+from ..charactergeneration.skill import Skill
+from ..tableroller import getTableResultString
+from ..charactergeneration.personalityGenerator import create_personality_string, create_personality
+from shutil import copyfile
 
 
 # ackstools 0.3 Dungeon compatible build
 # TODO: replace strings to yaml with static vars
 
 data = {}
-
 
 def loadCharacterFile(d: dict):
     global data
@@ -26,21 +27,22 @@ def loadCharacterFile(d: dict):
         print(exc)
 
 
-def rollCharacters(cls, baseLevel, number, deviation=False, ethnicity='random'):
+def rollCharacters(cls, baseLevel, number, createExcelSheet, deviation=False, ethnicity='random'):
     global data
     charList = []
     alignment = random.choice(['L', 'L', 'N', 'N', 'N', 'C'])
-    print ('alignment: '+ alignment)
+    #print ('alignment: '+ alignment)
     for i in range(0, number):
+        actualLevel = baseLevel
         deviator = 0
         if deviation:
             deviator = random.choice([-2, -1, 0, 0, 1, 2])
-            baseLevel = baseLevel + deviator
+            actualLevel = actualLevel + deviator
 
-        if baseLevel < 0:
-            baseLevel = 0
+        if actualLevel < 0:
+            actualLevel = 0
 
-        charList.append(createCharacter(cls, baseLevel, ethnicity, alignment))
+        charList.append(createCharacter(cls, actualLevel, ethnicity, createExcelSheet, alignment))
 
     return charList
 
@@ -55,7 +57,6 @@ def addSkills(c: Character):
 
     addAbilities(c, tempAllProfs, tempGeneralProfs, tempClassProfs)
     addProficiencies(c, tempAllProfs, tempGeneralProfs, tempClassProfs)
-
 
 def addSkillToCharacter(c: Character, s: Skill, tap, tgp, tcp):
     global data, classDict, classAttProg, classInitialSaves, classSaveProg, classMinReq, \
@@ -77,7 +78,6 @@ def addSkillToCharacter(c: Character, s: Skill, tap, tgp, tcp):
         c.proficiencies[s.name].ranks += 1
     else:
         c.abilities.append(s)
-
 
 def addAbilities(c: Character, tap, tgp, tcp):
     global data, classDict, classAttProg, classInitialSaves, classSaveProg, classMinReq, \
@@ -125,7 +125,6 @@ def addAbilities(c: Character, tap, tgp, tcp):
                                     ca.get('modifies', {}), ca.get('progression', []))
                     addSkillToCharacter(c, ability, tap, tgp, tcp)
 
-
 def addProficiencies(c: Character, tap, tgp, tcp):
     # anzahl der proficiencies berechnen die den charakter zustehen
     genmod = c.getIntMod()
@@ -147,7 +146,6 @@ def addProficiencies(c: Character, tap, tgp, tcp):
 
     addProfs(no_of_class_profs, tcp, c)
     addProfs(no_of_general_profs, tgp, c)
-
 
 def addSpells(c):
     global classDict, allSpells
@@ -185,7 +183,6 @@ def addSpells(c):
                     c.spells[spellLevel] = spellList
             except:
                 pass
-
 
 def addEquipment(c: Character):
     def chooseEquipment(equipmentList: dict):
@@ -238,7 +235,6 @@ def addEquipment(c: Character):
             gear = Item(itemChoices.get(item), item, itemDict.get('weight', 0), itemDict.get('cost', 0))
             c.gear.append(gear)
 
-
 def addLooks(character):
     character.build = getTableResultString(data['randomtables']['human build'])
     character.eyec = getTableResultString(data['randomtables']['eye color'][character.ethnicity]).lower()
@@ -263,8 +259,7 @@ def addLooks(character):
         else:
             character.style.append(getTableResultString(data['randomtables']['styles']['belongings any']))
 
-
-def createCharacter(cls, lvl, ethnicity, partyAL = 'N'):
+def createCharacter(cls, lvl, ethnicity, createExcelSheet, partyAL = 'N'):
     global data, classDict, classAttProg, classInitialSaves, classSaveProg, classMinReq, \
         allProfs, genProfs, classProfs, classProfProg, genProfProg, allAbilities, classAbilities, allSpells
 
@@ -310,7 +305,7 @@ def createCharacter(cls, lvl, ethnicity, partyAL = 'N'):
         if ((partyAL == 'L') & (character.al == 'C')) | ((partyAL == 'C') & (character.al == 'L')):
             continue
         else:
-            print(partyAL + " " + character.al)
+            #print(partyAL + " " + character.al)
             break
 
 
@@ -320,7 +315,7 @@ def createCharacter(cls, lvl, ethnicity, partyAL = 'N'):
     # hier werden erst scores gewürfelt und dann geschaut welche klassen man nehmen darf
     # wir gucken uns alle klassen an und entfernen alle klassen und paths die die minrequs nicht erfüllen
     if character_class == "generate from scores":
-        temp_classes = copy.deepcopy(data['classes'])
+        temp_classes : dict = copy.deepcopy(data['classes'])
         temp_classlist = []
         for c_class in data['classes']:
             # minreqs checken für klasse c
@@ -332,31 +327,30 @@ def createCharacter(cls, lvl, ethnicity, partyAL = 'N'):
                         if data['classes'][c_class]['minreq']['path'][path].get(ability, 3) > locals()[ability]:
                             try:
                                 temp_classes[c_class]['path'].remove(path)
-                                print("deleted path " + str(path))
+                                #print("deleted path " + str(path))
+                                if not (temp_classes[c_class]['path']):
+                                    del temp_classes[c_class]
                             except: pass
 
                         for i in range(character.getModByString(ability) * 2):
                             temp_classes[c_class]['path'].append(path)
 
                 if data['classes'][c_class]['minreq'].get(ability, 3) > locals()[ability]:
-                    print("class " + str(c_class) + " has a lower " + ability + " than required.")
+                    #print("class " + str(c_class) + " has a lower " + ability + " than required.")
                     try:
                         del temp_classes[c_class]
-                        print("deleted class " + str(c_class))
+                        #print("deleted class " + str(c_class))
                         break
                     except: pass
                         # hat eine klasse positive modifier in ihren minreqs sollte die chance sie zu wählen höher sein
-
-
-
-                if ability in data['classes'][c_class]['minreq']:
+                if (ability in data['classes'][c_class]['minreq']) & (c_class != 'normal man'):
                     if not (c_class, temp_classes[c_class]) in temp_classlist:
                         temp_classlist.append((c_class, temp_classes[c_class]))
                     for i in range((character.getModByString(ability) * 2)):
                         temp_classlist.append((c_class, temp_classes[c_class]))
 
         #for i in temp_classlist:
-        #   print(i[0])
+        #    print(i[0])
 
         if temp_classlist:
             randomChoice = random.choice(temp_classlist)
@@ -376,7 +370,7 @@ def createCharacter(cls, lvl, ethnicity, partyAL = 'N'):
     # check if class has multiple paths
     if 'path' in classDict:
         classPath = random.choice(classDict.get('path', ''))
-        print("classpath chosen: " + classPath)
+        #print("classpath chosen: " + classPath)
         newClassDict = copy.deepcopy(classDict)
 
         for key1 in classDict.keys():
@@ -489,7 +483,113 @@ def createCharacter(cls, lvl, ethnicity, partyAL = 'N'):
     # jetzt noch aussehen und sowas machen
     addLooks(character)
 
-    return character.getFormattedCharacter()
+    finishedCharacter = character.getFormattedCharacter()
+
+    if createExcelSheet:
+        def getCell(workbook, name:str):
+           return list(workbook.defined_names[name].destinations)[0][1].replace('$', '')
+        def getTable(workbook, worksheet:str, name:str):
+            sheet = workbook[worksheet]
+            for tbl in sheet._tables:
+                if tbl.displayName == name:
+                    return tbl
+        def getTableRange(workbook,worksheet:str,name:str):
+            tbl = getTable(workbook,worksheet,name)
+            return wb[worksheet][tbl.ref.split(":")[0]:tbl.ref.split(":")[1]]
+        def getTableColumnIndex(workbook, worksheet, tablename, columnname):
+            table = getTable(workbook,worksheet,tablename)
+            index = 1
+            for col in table.tableColumns:
+                if col.name == columnname:
+                    return index
+                index = index+1
+
+
+        copyfile("C:/Users/mhoh1/Google Drive/Circle of Dawn Campaign/DM Folder/Documents/Character Sheet.xlsx","C:/Users/mhoh1/PycharmProjects/acksgenerator/Characters/"+character.name+".xlsx")
+
+        wb = openpyxl.load_workbook("C:/Users/mhoh1/PycharmProjects/acksgenerator/Characters/"+character.name+".xlsx")
+        excelCharSheet = wb['Character Sheet']
+
+        excelCharSheet[getCell(wb,'name')] = character.name
+        excelCharSheet[getCell(wb, 'class')] = character.cls
+        excelCharSheet[getCell(wb, 'level')] = character.lvl
+        excelCharSheet[getCell(wb, 'hd')] = character.hd
+        excelCharSheet[getCell(wb, 'hp')] = character.hp
+        if character.spells:
+            excelCharSheet[getCell(wb, 'casterlevel')] = character.lvl
+
+        excelCharSheet[getCell(wb, 'strength')] = character.strength
+        excelCharSheet[getCell(wb, 'dexterity')] = character.dexterity
+        excelCharSheet[getCell(wb, 'constitution')] = character.constitution
+        excelCharSheet[getCell(wb, 'intelligence')] = character.intelligence
+        excelCharSheet[getCell(wb, 'wisdom')] = character.wisdom
+        excelCharSheet[getCell(wb, 'charisma')] = character.charisma
+
+        i = 1
+        j = 1
+        invRange = getTableRange(wb,'Character Sheet','inventory')
+        weprange = getTableRange(wb,'Character Sheet','attacks')
+        for item in character.armor:
+            excelCharSheet[invRange[i][getTableColumnIndex(wb,'Character Sheet','inventory','Item')-1].coordinate] = item.name
+            excelCharSheet[invRange[i][getTableColumnIndex(wb,'Character Sheet','inventory','#')-1].coordinate] = item.amount
+            excelCharSheet[invRange[i][getTableColumnIndex(wb, 'Character Sheet', 'inventory', 'Wt.') - 1].coordinate] = item.weight
+            excelCharSheet[invRange[i][getTableColumnIndex(wb, 'Character Sheet', 'inventory', 'Mods') - 1].coordinate] = "(AC)"
+            excelCharSheet[invRange[i][getTableColumnIndex(wb, 'Character Sheet', 'inventory', 'By') - 1].coordinate] = item.ac
+            i =i+1
+        for item in character.weapons:
+            excelCharSheet[invRange[i][getTableColumnIndex(wb,'Character Sheet','inventory','Item')-1].coordinate] = item.name
+            excelCharSheet[invRange[i][getTableColumnIndex(wb,'Character Sheet','inventory','#')-1].coordinate] = item.amount
+            excelCharSheet[invRange[i][getTableColumnIndex(wb, 'Character Sheet', 'inventory', 'Wt.') - 1].coordinate] = item.weight
+
+            excelCharSheet[weprange[j][getTableColumnIndex(wb, 'Character Sheet', 'attacks', 'Attack') - 1].coordinate] = item.name
+            if item.mod:
+                if item.mod.get("throw"):
+                    excelCharSheet[weprange[j][
+                        getTableColumnIndex(wb, 'Character Sheet', 'attacks', '+Hit') - 1].coordinate] = -1*item.mod.get("throw")
+                if item.mod.get("damage"):
+                    excelCharSheet[weprange[j][
+                        getTableColumnIndex(wb, 'Character Sheet', 'attacks', '+Dmg') - 1].coordinate] = item.mod.get("damage")
+            if item.type == "missile":
+                excelCharSheet[
+                    weprange[j][getTableColumnIndex(wb, 'Character Sheet', 'attacks', 'Rng') - 1].coordinate] = "Yes"
+
+            i =i+1
+            j =j+1
+        for item in character.gear:
+            excelCharSheet[invRange[i][getTableColumnIndex(wb,'Character Sheet','inventory','Item')-1].coordinate] = item.name
+            excelCharSheet[invRange[i][getTableColumnIndex(wb,'Character Sheet','inventory','#')-1].coordinate] = item.amount
+            excelCharSheet[invRange[i][getTableColumnIndex(wb, 'Character Sheet', 'inventory', 'Wt.') - 1].coordinate] = item.weight
+            i =i+1
+
+        abrange = getTableRange(wb, 'Character Sheet', 'abilities')
+        i = 1
+        for skill in character.proficiencies:
+            excelCharSheet[abrange[i][getTableColumnIndex(wb, 'Character Sheet', 'abilities', 'Ability / Proficiency') - 1].coordinate] = skill
+            excelCharSheet[abrange[i][getTableColumnIndex(wb, 'Character Sheet', 'abilities',
+                                                           'Rank') - 1].coordinate] = character.proficiencies[skill].ranks
+            i = i+1
+        for skill in character.abilities:
+            excelCharSheet[abrange[i][getTableColumnIndex(wb, 'Character Sheet', 'abilities', 'Ability / Proficiency') - 1].coordinate] = skill.name
+            excelCharSheet[abrange[i][getTableColumnIndex(wb, 'Character Sheet', 'abilities',
+                                                          'Rank') - 1].coordinate] = 1
+            i = i+1
+
+
+        k = 1
+        spellrange = getTableRange(wb,'Character Sheet', 'spells')
+        for spellLevel in character.spells:
+            for spell in character.spells[spellLevel]:
+                spellname = spell.split(" (")[0].strip()
+                excelCharSheet[spellrange[k][getTableColumnIndex(wb, 'Character Sheet', 'spells', 'Spell') - 1].coordinate] = spellname
+                k = k+1
+
+        excelCharSheet['F31'] = "Personality: "+character.personalityString
+        excelCharSheet['F32'] = "Description: "+character.descriptionString
+        excelCharSheet['F33'] = "Notable Features: " + character.featureString
+        excelCharSheet['F34'] = "Style: " + character.styleString
+
+        wb.save("C:/Users/mhoh1/PycharmProjects/acksgenerator/Characters/"+character.name+".xlsx")
+    return finishedCharacter
 
 
 def run(args):

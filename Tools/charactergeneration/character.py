@@ -1,5 +1,6 @@
-from charactergeneration.personalityGenerator import create_personality_string
+from ..charactergeneration.personalityGenerator import create_personality_string
 import math
+import pickle
 
 class Character:
     # spells, special abilities and equipment
@@ -12,7 +13,7 @@ class Character:
         self.ethnicity = "ethnicity"
         self.sex = "none"
 
-        #personality and looks
+        # personality and looks
         self.personality = ''
         self.build = 'Average'
         self.hairc = 'Black'
@@ -20,6 +21,10 @@ class Character:
         self.eyec = 'Brown'
         self.features = []
         self.style = []
+        self.descriptionString = ""
+        self.styleString = ""
+        self.featureString = ""
+        self.personalityString = ""
 
         # core abilities
         self.strength: int = 0
@@ -72,11 +77,11 @@ class Character:
 
         def getMovementRate(weight):
             move = 120
-            if weight > 30:
+            if weight > 35:
                 move += -30
-            if weight > 42:
+            if weight > 53:
                 move += -30
-            if weight > 60:
+            if weight > 65:
                 move += -30
             if weight > 120 + self.strength*6:
                 move += -30
@@ -155,15 +160,15 @@ class Character:
 
         pathString = (" ("+ self.path.capitalize() +") " if self.path else ' ')
 
-        character = "<b>{}:</b> {}{}{}: Str: {}, Dex: {}, Con: {}, Int: {}, Wis: {}, Cha {};\n" \
+        character = "<b>{}:</b> {}{}{}: Str: {}, Dex: {}, Con: {}, Int: {}, Wis: {}, Cha: {};\n" \
                     "<b>MV</b> {}, <b>AC</b> {}, <b>HD</b> {}, <b>hp</b> {}, <b>SP</b> {}+, <b>INI</b> {}, " \
                     "<b>PP</b> {}+, <b>PD</b> {}+, <b>BB</b> {}+, <b>SW</b> {}+, <b>M</b> {}+, <b>AL</b> {};\n" \
                     "<b>Attacks:</b> (<b>Melee:</b> {}+, {} dmg; <b>Missile:</b> {}+, {} dmg);\n" \
-                    "<b>Weapons:</b> {}; " \
+                    "<b>Weapons:</b> {}. " \
                     "<b>Armor:</b> {};\n" \
                     "<b>Class Abilities:</b> {};\n" \
                     "<b>Proficiencies:</b> {};\n" \
-                    "<b>Equipment:</b> {}; {}"
+                    "<b>Equipment:</b> {}. {};"
         character = character.format(
             self.name, self.cls.capitalize(), pathString,self.lvl,
             self.strength, self.dexterity, self.constitution, self.intelligence, self.wisdom, self.charisma,
@@ -179,11 +184,13 @@ class Character:
             spellstring = spellstring.format(spells_formatted)
             character = character + spellstring
 
-        perString = create_personality_string(self.personality)
+        perString = create_personality_string()
+        self.personalityString = perString
         character = character + "\n" + "<b>Personality:</b> " + perString
 
         description = "\n<b>Desc:</b> {} {} {} with {} hair of {} texture and {} eyes;"
         description = description.format(self.build, self.sex, self.ethnicity.capitalize(), self.hairc, self.hairt, self.eyec)
+        self.descriptionString = description.split("</b>")[1]
         character = character + description
 
         if len(self.features) > 0:
@@ -191,6 +198,7 @@ class Character:
             for f in self.features:
                 features = features + " " + f + ", "
             features = features[:-2] + ";"
+            self.featureString = features.split("</b>")[1]
             character = character + features
 
         if len(self.style) > 0:
@@ -203,6 +211,7 @@ class Character:
                     s = s.replace('[GENDERPOSS]', 'her')
                     s = s.replace('[GENDERPERS]', 'she')
                 style = style + " " + s.capitalize() + ". "
+                self.styleString = style.split("</b>")[1]
             character = character + style
 
         character = character.split("\n")

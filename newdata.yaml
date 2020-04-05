@@ -1,6 +1,6 @@
-names:
+ethnicity:
   &ilian ilian:
-    male:
+    male names:
       - Aetius Avilius
       - Gnaeus Priscilla
       - Hilaria Calvus
@@ -31,7 +31,27 @@ names:
       - Quintis Turullius Florus
       - Caius Laberius Vulso
       - Septimus Volumnius Eonus
-    female:
+      - Thales Demetrius
+      - Hermes Hippolytos
+      - Varinius Hektor
+      - Kreios Timotheos
+      - Alexius Pollux
+      - Neilos Turnus
+      - Iovita Dionysos
+      - Aurelius Antipatros
+      - Seleukos Thracius
+      - Sosigenes Simonides
+      - Cassius Tychon
+      - Jason Nettuno
+      - Kleitos Theodotus
+      - Cassander Anastasios
+      - Iovis Pythagoras
+      - Nikandros Solon
+      - Achaikos Heroides
+      - Alexandros Loukianos
+      - Epiphanios Kreios
+      - Kyriakos Polycarp
+    female names:
       - Salvia Iuniana
       - Quinctia Trimalchio
       - Flavonia Reburra
@@ -62,8 +82,28 @@ names:
       - Palpellia Caranta
       - Carvilia Agelasta
       - Tremellia Litumaris
+      - Maxima Ligeia
+      - Eurydike Europe
+      - Augusta Herais
+      - Gratiana Flavia
+      - Hortensia Halcyone
+      - Hadriana Thisbe
+      - Europa Iris
+      - Nausikaa Terpsichore
+      - Aoide Enyo
+      - Medusa Hippolyte
+      - Lysistrate Korë
+      - Dione Augusta
+      - Caesonia Pherenike
+      - Melissa Eugeneia
+      - Elpis Iulia
+      - Lysistrate Korë
+      - Dione Augusta
+      - Caesonia Pherenike
+      - Melissa Eugeneia
+      - Elpis Iulia
   &varn varn:
-    male:
+    male names:
       - Fridmund Svalfisson
       - Tryggvi Aslaksson
       - Balli Borstigsson
@@ -94,7 +134,7 @@ names:
       - Bretakollr Thrainsson
       - Gaetir Sigeheahsson
       - Grani Illugisson
-    female:
+    female names:
       - Fridgerd Herjolfdottir
       - Hungerd Thorbrandottir
       - Audhild Svipdaydottir
@@ -126,7 +166,7 @@ names:
       - Asdis Liutdottir
       - Halldora Wengodottir
   &bosk bosk:
-    male:
+    male names:
       - Donnotaurus
       - Megaravico
       - Doninas
@@ -157,7 +197,7 @@ names:
       - Borvonicus
       - Taurio
       - Metilius
-    female:
+    female names:
       - Comatia
       - Andeca
       - Vena
@@ -189,7 +229,7 @@ names:
       - Atebodua
       - Valicinia
   &surga surga:
-    male:
+    male names:
       - Togh
       - Kinggiyadai Bukha
       - Khabul
@@ -220,7 +260,7 @@ names:
       - Khal
       - Khada
       - Bujir
-    female:
+    female names:
       - Sorghaghtani Beki
       - Maral
       - Khenbish
@@ -252,7 +292,7 @@ names:
       - Alan
       - Jiguur
   &opelean opelean:
-    male:
+    male names:
       - Muthanna el-Mohammad
       - Kabeer al-Pashia
       - Maisoon el-Khalid
@@ -283,7 +323,7 @@ names:
       - Muhaajir al-Mohamed
       - Mastoor el-Saad
       - Abdul Baari el-Popal
-    female:
+    female names:
       - Mushtaaqa el-Sulaiman
       - Hikma al-Yousef
       - Raabia el-Sultan
@@ -315,7 +355,7 @@ names:
       - Shafaaa el-Hashem
       - Sabriyya el-Moustafa
   &heron heron:
-    male:
+    male names:
       - Uab-tot
       - Sahura
       - Haka
@@ -346,7 +386,7 @@ names:
       - Hakizimana
       - Bau
       - Auu
-    female:
+    female names:
       - Auset
       - Hathor-sakmet
       - Cleopatra
@@ -378,7 +418,7 @@ names:
       - Shen-pe-uts-neter
       - Shani
   &langun langun:
-    male:
+    male names:
       - Naruse Mochimune
       - Shigenoi Tokikore
       - Tokudaiji Mochitsune
@@ -409,7 +449,7 @@ names:
       - Kawahire Terusane
       - Tozawa Tomohiko
       - Wada Motomori
-    female:
+    female names:
       - Itagaki Sho
       - Nishitouin Niku
       - Yamana Hinshi
@@ -441,7 +481,7 @@ names:
       - Umewaka Ginko
       - Toudou Shimano
   &acheron acheron:
-    male:
+    male names:
       - Geralt
       - Notker
       - Sieger
@@ -472,7 +512,7 @@ names:
       - Gotthard
       - Adelgis
       - Ottokar
-    female:
+    female names:
       - Sieglinde
       - Gunthilde
       - Edeltraud
@@ -504,7 +544,7 @@ names:
       - Adolfa
       - Rolanda
   &sargon sargon:
-    male:
+    male names:
       - Ripaa
       - Dii'duuresu
       - Deemethresu
@@ -535,7 +575,7 @@ names:
       - Numunia
       - Deemuukratee
       - Kadashman-Enlil
-    female:
+    female names:
       - Ettu
       - Kullaa
       - Mushezibitu
@@ -567,481 +607,598 @@ names:
       - Enheduana
       - Gemekaa
 abilities:
-  &death_dealing_dance Death Dealing Dance:
-    type: misc
-    progression: [7, 11]
-  &damage_bonus Fighter Damage Bonus:
-    type: misc
+  Death Dealing Dance: &death_dealing_dance
+    name: Death Dealing Dance
+    levelprogression: [7, 11]
+  Fighter Damage Bonus: &fighter_damage_bonus
+    name: Fighter Damage Bonus
     modifies:
-      cdb: 1
-      mdb: 1
-    progression: [3, 6, 9, 12]
-  &melee_damage_bonus Fighter Melee Damage Bonus:
-    type: misc
+      meleedamage: 1
+      missiledamage: 1
+    levelprogression: [1, 3, 6, 9, 12]
+  Fighter Melee Damage Bonus: &fighter_melee_damage_bonus
+    name: Fighter Melee Damage Bonus
     modifies:
-      cdb: 1
-    progression: [3, 6, 9, 12]
-  &missile_damage_bonus Fighter Missile Damage Bonus:
-    type: misc
+      meleedamage: 1
+    progression: [1,3, 6, 9, 12]
+  Fighter Missile Damage Bonus: &fighter_missile_damage_bonus
+    name: Fighter Missile Damage Bonus
     modifies:
-      mdb: 1
-    progression: [3, 6, 9, 12]
-  &backstab Backstab:
-    type: misc
-    progression: [1, 5, 9, 13]
-  &move_silently "TS: Move Silently":
-    type: throwable
+      missiledamage: 1
+    levelprogression: [1, 3, 6, 9, 12]
+  Backstab: &backstab
+    name: backstab
+    levelprogression: [1, 5, 9, 13]
+  Move Silently: &move_silently
+    name: Move Silently
     throw: 17
-    modifiedby: dexterity
-    progression: [2,3,4,5,6,7,7,8,8,9,9,10,10,11,11,13]
-  &open_locks "TS: Open Locks":
-    type: throwable
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,3,4,5,6,7,7,8,8,9,9,10,10,11,11,13]
+  Open Locks: &open_locks
+    name: Open Locks
     throw: 18
-    modifiedby: dexterity
-    progression: [2,3,4,5,6,6,7,7,8,8,9,9,10,10,11,12,13]
-  &find_and_remove_traps "TS: Find and Remove Traps":
-    type: throwable
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,3,4,5,6,6,7,7,8,8,9,9,10,10,11,12,13]
+  Find Traps: &find_traps
+    name: Find Traps
     throw: 18
-    modifiedby: dexterity
-    scale: lvl
-    progression: [2,3,4,5,6,7,8,8,9,9,10,10,11,11,12,14]
-  &pick_pockets "TS: Pick Pockets":
-    type: throwable
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,3,4,5,6,7,8,8,9,9,10,10,11,11,12,14]
+  Remove Traps: &remove_traps
+    name: Remove Traps
+    throw: 18
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,3,4,5,6,7,8,8,9,9,10,10,11,11,12,14]
+  Pick Pockets: &pick_pockets
+    name: Pick Pockets
     throw: 17
-    modifiedby: dexterity
-    scale: lvl
-    progression: [2,3,4,5,6,7,7,8,8,9,9,10,10,11,11,12,12,12,13,13,14,14]
-  &climb_walls "TS: Climb Walls":
-    type: throwable
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,3,4,5,6,7,7,8,8,9,9,10,10,11,11,12,12,12,13,13,14,14]
+  Climb Walls: &climb_walls
+    name: Climb Walls
     throw: 6
-    modifiedby: dexterity
-    scale: lvl
-    progression: [2,4,7,11,13]
-  &hide_in_shadows "TS: Hide in Shadows":
-    type: throwable
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,4,7,11,13]
+  Hide in Shadows: &hide_in_shadows
+    name: Hide in Shadows
     throw: 19
-    modifiedby: dexterity
-    scale: lvl
-    progression: [2,3,4,5,6,7,7,8,8,9,9,10,10,11,11,12,13,14]
-  &hearnoise "TS: Hear Noise":
-    type: throwable
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,3,4,5,6,7,7,8,8,9,9,10,10,11,11,12,13,14]
+  Hear Noise: &hear_noise
+    name: Hear Noise
     throw: 14
-    scale: lvl
-    progression: [2,3,4,5,6,7,8,9,10,11,12,13,14]
-  &read_languages Read Languages:
-    type: throwable
+    levelprogression: [2,3,4,5,6,7,8,9,10,11,12,13,14]
+  Read Languages: &read_languages
+    name: Read Languages
     throw: 5
-  &use_scrolls Use Magic Scrolls:
-    type: throwable
+  Use Magic Scrolls: &use_magic_scrolls
+    name: Use Magic Scrolls
     throw: 3
-  &graceful_fighting Graceful Fighting:
-    max: 1
-    type: misc
+  Graceful Fighting: &graceful_fighting
+    name: Graceful Fighting
     modifies:
       ac: 1
-    progression: [7, 13]
-  &accuracy_bonus Accuracy Bonus:
-    type: misc
+    levelprogression: [7, 13]
+  Accuracy Bonus: &accuracy_bonus
+    name: Accuracy Bonus
     modifies:
-      mat: -1
-  &animal_reflexes Animal Reflexes:
-    type: misc
+      missileattack: -1
+  Animal Reflexes: &animal_reflexes
+    name: Animal Reflexes
     modifies:
-      ini: +1
+      ini: 1
       sp: -1
-profs:
-  &acrobatics Acrobatics:
+  Kin Slaying: &kin_slaying
+    name: Kin Slaying
+  Greater Berserkergang: &greater_berserkergang
+    name: Greater Berserkergang
+classproficiencies:
+  #proficiency attributes:
+  #type, name, max, throw, levelprogression, mofifies, class, subskills
+  Acrobatics: &acrobatics
+    type: classprof
+    name: Acrobatics
     max: 1
-    type: throwable
     throw: 19
-    progression: [2,3,4,5,6,7,8,9,10,11,12,13,14]
-  &alchemy Alchemy:
-    type: throwable
-    throw: 11
-    max: 3
-  &alertness Alertness:
+    levelprogression: [2,3,4,5,6,7,8,9,10,11,12,13,14]
+  Alertness: &alertness
+    name: Alertness
     max: 1
-    type: misc
+    type: classprof
     modifies:
-      sp: -1
-  &ambushing Ambushing:
-    type: misc
+      surprise: -1
+      Hear Noise: -4
+      Eavesdropping: -4
+  Ambushing: &ambushing
+    name: Ambushing
+    type: classprof
     max: 1
-  &animal_husbandry Animal Husbandry:
-    type: misc
-    max: 3
-  &animal_training Animal Training:
-    type: misc
-    max: 10
-  &apostasy Apostasy:
-    type: misc
+  Arcane Dabbling: &arcane_dabbling
+    name: Arcane Dabbling
+    type: classprof
     max: 1
-  &arcane_dabbling Arcane Dabbling:
-    type: throwable
     throw: 18
+    levelprogression: [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8]
+  Armor Training: &armor_training
+    name: Armor Training
+    type: classprof
+    max: 3
+  Battle Magic: &battle_magic
+    name: Battle Magic
+    type: classprof
     max: 1
-    progression: [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8]
-  &art Art:
-    type: misc
-    max: 10
-  &armor_training Armor Training:
-    type: misc
+  Beast Friendship: &beast_friendship
+    name: Beast Friendship
+    type: classprof
     max: 1
-  &bargaining Bargaining:
-    type: misc
+  Berserkergang: &berserkergang
+    name: Berserkergang
+    type: classprof
     max: 1
-  &battle_magic Battle Magic:
-    type: misc
+  Black Lore: &black_lore
+    name: Black Lore
+    type: classprof
     max: 1
-  &beast_friendship Beast Friendship:
-    type: misc
+  Blind Fighting: &blind_fighting
+    name: Blind Fighting
+    type: classprof
     max: 1
-  &berserkergang Berserkergang:
-    type: misc
+  Bribery: &bribery
+    name: Bribery
+    type: classprof
     max: 1
-  &black_lore_of_zahar Black Lore of the Void:
-    type: misc
+  Bright Lore: &bright_lore
+    name: Bright Lore
+    type: classprof
     max: 1
-  &bright_lore_of_aura Bright Lore of the Dawn:
-    type: misc
+  Cat Burglary: &cat_burglary
+    name: Cat Burglary
+    type: classprof
     max: 1
-  &blind_fighting Blind Fighting:
-    type: misc
-    max: 1
-  &bribery Bribery:
-    type: misc
-    max: 1
-  &caving Caving:
-    type: misc
-    max: 1
-  &cat_burglary Cat Burglary:
-    type: misc
-    max: 1
-  &climbing Climbing:
-    max: 1
-    type: throwable
     throw: 6
-    modifiedby: dexterity
-    scale: lvl
-    progression: [2,4,7,11,13]
-  &collegiate_wizardry Collegiate Wizardry:
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,4,7,11,13]
+  Ceremonial Magic: &ceremonial_magic
+    name: Ceremonial Magic
+    type: classprof
     max: 3
-    type: throwable
-    throw: 11
-  &combat_reflexes Combat Reflexes:
+  Climbing: &climbing
+    name: Climbing
+    type: classprof
     max: 1
-    type: misc
-    value: 1
-    modifies:
-      sp: -1
-      ini: +1
-  &combat_trickery_disarm Combat Trickery (disarm):
-    type: misc
+    throw: 6
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,4,7,11,13]
+  Combat Reflexes: &combat_reflexes
+    name: Combat Reflexes
+    type: classprof
     max: 1
-  &combat_trickery_force_back Combat Trickery (force Back):
-    type: misc
+  Combat Trickery (Disarm): &combat_trickery_disarm
+    name: Combat Trickery (Disarm)
+    type: classprof
     max: 1
-  &combat_trickery_incapacitate Combat Trickery (incapacitate):
-    type: misc
+  Combat Trickery (Force Back): &combat_trickery_force_back
+    name: Combat Trickery (Force Back)
+    type: classprof
     max: 1
-  &combat_trickery_knock_down Combat Trickery (knock down):
-    type: misc
+  Combat Trickery (Incapacitate): &combat_trickery_incapacitate
+    name: Combat Trickery (Incapacitate)
+    type: classprof
     max: 1
-  &combat_trickery_overrun Combat Trickery (overrun):
-    type: misc
+  Combat Trickery (Knock Down): &combat_trickery_knock_down
+    name: Combat Trickery (Knock Down)
+    type: classprof
     max: 1
-  &combat_trickery_sunder Combat Trickery (sunder):
-    type: misc
+  Combat Trickery (Overrun): &combat_trickery_overrun
+    name: Combat Trickery (Overrun)
+    type: classprof
     max: 1
-  &combat_trickery_wrestle Combat Trickery (wrestle):
-    type: misc
+  Combat Trickery (Sunder): &combat_trickery_sunder
+    name: Combat Trickery (Sunder)
+    type: classprof
     max: 1
-  &command Command:
-    type: misc
+  Combat Trickery (Wrestle): &combat_trickery_wrestle
+    name: Combat Trickery (Wrestle)
+    type: classprof
     max: 1
-  &contemplation Contemplation:
-    type: misc
+  Command: &command
+    name: Command
+    type: classprof
     max: 1
-  &contortionism Contortionism:
-    type: misc
+  Contemplation: &contemplation
+    name: Contemplation
+    type: classprof
     max: 1
-  &craft Craft:
-    type: misc
-    max: 10
-  &diplomacy Diplomacy:
-    type: misc
-    max: 1
-  &disguise Disguise:
-    type: misc
-    max: 1
-  &divine_blessing Divine Blessing:
-    type: misc
-    max: 1
-  &divine_health Divine Health:
-    type: misc
-    max: 1
-  &dungeon_bashing Dungeon Bashing:
-    type: misc
-    max: 1
-  &eavesdropping Eavesdropping:
-    type: misc
-    max: 1
-  &elementalism Elementalism:
-    type: misc
-    max: 1
-  &elven_bloodline Exhalted Bloodline:
-    type: misc
-    max: 1
-  &ceremonial_magic Ceremonial Magic:
-    type: throwable
-    max: 10
-  &endurance Endurance:
-    type: misc
-    max: 1
-  &engineering Engineering:
-    type: misc
-    max: 4
-  &familiar Familiar:
-    type: misc
-    max: 1
-  &farseeing Farseeing:
-    type: misc
-    max: 1
-  &fighting_style Fighting Style:
-    type: misc
-    max: 6
-  &gambling Gambling:
-    type: misc
-    max: 10
-  &greater_berserkergang Greater Berserkergang:
-    type: misc
-    max: 10
-  &healing Healing:
-    type: misc
-    max: 10
-  &intimidation Intimidation:
-    type: misc
-    max: 1
-  &knowledge Knowledge:
-    type: misc
-    max: 10
-  &kin_slaying Kin Slaying:
-    max: 1
-    type: misc
-    progression: [7, 13]
-  &labor Labor:
-    type: misc
-    max: 1
-  &land_surveying Land Surveying:
-    type: misc
-    max: 1
-  &language Language:
-    type: misc
-    max: 10
-  &laying_on_hands Laying on Hands:
-    type: misc
-    max: 10
-  &leadership Leadership:
-    type: misc
-    max: 1
-  &lip_reading Lip Reading:
-    type: misc
-    max: 1
-  &lockpicking Lockpicking:
-    type: misc
-    max: 1
-    modifies:
-      *open_locks: -2
-  &loremastery Loremastery:
-    type: throwable
+  Contortionism: &contortionism
+    name: Contortionism
+    type: classprof
     max: 1
     throw: 18
-    progression: [2,3,4,5,6,7,8,9,10,11,12,13,14]
-  &martial_training Martial Training:
-    type: misc
+    modifyingabilityscore:
+      dexmod: -1
+  Divine Blessing: &divine_blessing
+    name: Divine Blessing
+    type: classprof
     max: 1
-  &magical_engineering Magical Engineering:
-    type: misc
-    max: 3
-  &magical_music Magical Music:
-    type: misc
+  Divine Health: &divine_health
+    name: Divine Health
+    type: classprof
     max: 1
-  &manual_of_arms Manual of Arms:
-    type: misc
-    max: 2
-  &mapping Mapping:
-    type: misc
-    max: 10
-  &mastery_of_charms_and_illusions Mastery of Charms and Illusions:
-    type: misc
+  Dungeon Bashing: &dungeon_bashing
+    name: Dungeon Bashing
+    type: classprof
     max: 1
-  &military_strategy Military Strategy:
-    type: misc
-    max: 3
-  &mimicry Mimicry:
-    type: misc
+    throw: 18
+    modifyingabilityscore:
+      strmod: -4
+  Eavesdropping: &eavesdropping
+    name: Eavesdropping
+    type: classprof
     max: 1
-  &mountaineering Mountaineering:
-    type: misc
+    throw: 14
+    levelprogression: [2,3,4,5,6,7,8,9,10,11,12,13,14]
+  Elementalism: &elementalism
+    name: Elementalism
+    type: classprof
     max: 1
-  &mystic_aura Mystic Aura:
-    type: misc
+  Exhalted Bloodline: &exhalted_bloodline
+    name: Exhalted Bloodline
+    type: classprof
     max: 1
-  &naturalism Naturalism:
-    type: misc
-    max: 10
-  &personal_talisman Personal Talisman:
-    type: misc
-    max: 3
-  &navigation Navigation:
-    type: misc
+  Familiar: &familiar
+    name: Familiar
+    type: classprof
     max: 1
-  &passing_without_trace Passing Without Trace:
-    type: misc
+  Farseeing: &farseeing
+    name: Farseeing
+    type: classprof
     max: 1
-  &performance Performance:
-    type: misc
-    max: 10
-  &precise_shooting Precise Shooting:
-    type: misc
-    max: 3
-  &prestidigitation Prestidigitation:
-    type: misc
+  Fighting Style: &fighting_style
+    name: Fighting Style
+    type: classprof
     max: 1
-  &profession Profession:
-    type: misc
+  Beastman Slaying: &beastman_slaying
+    name: Beastman Slaying
+    type: classprof
     max: 1
-  &prophecy Prophecy:
-    type: misc
+  Illusion Resistance: &illusion_resistance
+    name: Illusion Resistance
+    type: classprof
     max: 1
-  &second_sight Second Sight:
-    type: misc
+    #todo land surv hat noch subskill +4 av. det in dung.
+  Land Surveying: &land_surveying
+    name: Land Surveying
+    type: classprof
     max: 1
-  &quiet_magic Quiet Magic:
-    type: misc
+    throw: 11
+    modifies:
+  Laying on Hands: &laying_on_hands
+    name: Laying on Hands
+    type: classprof
     max: 1
-  &riding Riding:
-    type: misc
-    max: 1
-  &righteous_turning Righteous Turning:
-    type: misc
-    max: 1
-  &running Running:
-    type: misc
-    max: 1
-  &seafaring Seafaring:
-    type: misc
-    max: 3
-  &seduction Seduction:
-    type: misc
-    max: 1
-  &sensing_evil Sensing Evil:
-    type: misc
-    max: 1
-  &sensing_power Sensing Power:
-    type: misc
-    max: 1
-  &siege_engineering Siege Engineering:
-    type: misc
-    max: 2
-  &signaling Signaling:
-    type: misc
-    max: 1
-  &skirmishing Skirmishing:
-    type: misc
-    max: 1
-  &skulking Skulking:
-    type: misc
+  Lockpicking: &lockpicking
+    name: Lockpicking
+    type: classprof
     max: 1
     modifies:
-      *move_silently: -2
-      *hide_in_shadows: -2
-  &sniping Sniping:
-    type: misc
+      Open Locks: -2
+  Loremastery: &loremastery
+    name: Loremastery
+    type: classprof
     max: 1
-  &soothsaying Soothsaying:
-    type: misc
+    throw: 18
+    levelprogression: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+  Magical Engineering: &magical_engineering
+    name: Magical Engineering
+    type: classprof
+    max: 3
+    throw: 11
+  Magical Music: &magical_music
+    name: Magical Music
+    type: classprof
     max: 1
-  &survival Survival:
-    type: misc
+  Martial Training: &martial_training
+    name: Martial Training
+    type: classprof
     max: 1
-  &swashbuckling Swashbuckling:
+  Mastery of Charms and Illusions: &mastery_of_charms_and_illusions
+    name: Mastery of Charms and Illusions
+    type: classprof
     max: 1
-    type: misc
+  Mountaineering: &mountaineering
+    name: Mountaineering
+    type: classprof
+    max: 1
+    throw: 6
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,4,7,11,13]
+  Mystic Aura: &mystic_aura
+    name: Mystic Aura
+    type: classprof
+    max: 1
+  Passing Without Trace: &passing_without_trace
+    name: Passing Without Trace
+    type: classprof
+    max: 1
+  Personal Talisman: &personal_talisman
+    name: Personal Talisman
+    type: classprof
+    max: 1
+  Precise Shooting: &precise_shooting
+    name: Precise Shooting
+    type: classprof
+    max: 2
+  Prestidigation: &prestidigation
+    name: Prestidigation
+    type: classprof
+    max: 1
+  Prophecy: &prophecy
+    name: Prophecy
+    type: classprof
+    max: 1
+  Quiet Magic: &quiet_magic
+    name: Quiet Magic
+    type: classprof
+    max: 1
+  Righteous Turning: &righteous_turning
+    name: Righteous Turning
+    type: classprof
+    max: 1
+  Running: &running
+    name: Running
+    type: classprof
+    max: 1
+  Second Sight: &second_sight
+    name: Second Sight
+    type: classprof
+    max: 1
+  Sensing Evil: &sensing_evil
+    name: Sensing Evil
+    type: classprof
+    max: 1
+  Sensing Power: &sensing_power
+    name: Sensing Power
+    type: classprof
+    max: 1
+  Skirmishing: &skirmishing
+    name: Skirmishing
+    type: classprof
+    max: 1
+  Skulking: &skulking
+    name: Skulking
+    type: classprof
+    max: 1
+    modifies:
+      Move Silently: -2
+      Hide in Shadows: -2
+  Sniping: &sniping
+    name: Sniping
+    type: classprof
+    max: 1
+  Soothsaying: &soothsaying
+    name: Soothsaying
+    type: classprof
+    max: 1
+  Swashbuckling: &swashbuckling
+    max: 1
+    type: classprof
+    name: Swashbuckling
     modifies:
       ac: 1
-    progression: [7, 13]
-  &theology Theology:
-    type: misc
+    levelprogression: [7,13]
+  Trap Finding: &trap_finding
+    name: Trap Finding
+    type: classprof
+    max: 1
+    modifies:
+      Find Traps: -2
+      Remove Traps: -2
+  Transmogrification: &transmogrification
+    name: Transmogrification
+    type: classprof
+    max: 1
+  Unflappable Casting: &unflappable_casting
+    name: Unflappable Casting
+    type: classprof
+    max: 1
+  Wakefulness: &wakefulness
+    name: Wakefulness
+    type: classprof
+    max: 1
+  Weapon Finesse: &weapon_finesse
+    name: Weapon Finesse
+    type: classprof
+    max: 1
+  Weapon Focus: &weapon_focus
+    name: Weapon Focus
+    type: classprof
+    max: 1
+generalproficiencies:
+  - &alchemy
+    name: Alchemy
+    type: genprof
+    throw: 11
+    max: 3
+  - &healing  
+    name: Healing
+    type: genprof
+    max: 3
+    throw: 22
+    subskills:
+      Diagnose: 11
+      Wounds: 22
+      Poison: 22
+      Disease: 22
+  - &animal_husbandry
+    name: Animal Husbandry
+    type: genprof
+    max: 3
+    subskills:
+      Diagnose: 11
+      Wounds: 22
+      Poison: 22
+      Disease: 22
+  - &animal_training
+    name: Animal Training
+    type: genprof
+    max: 4
+  - &art
+    name: Art
+    type: genprof
+    max: 4
+  - &bargaining
+    name: Bargaining
+    type: genprof
+    max: 3
+  - &caving
+    name: Caving
+    type: genprof
+    max: 3
+    throw: 11
+  - &collegiate_wizardry
+    name: Collegiate Wizardry
+    type: genprof
+    max: 3
+    throw: 11
+  - &craft
+    name: Craft
+    type: genprof
+    max: 4
+  - &diplomacy
+    name: Diplomacy
+    type: genprof
+    max: 3
+  - &disguise
+    name: Disguise
+    type: genprof
+    max: 1
+  - &endurance
+    name: Endurance
+    type: genprof
+    max: 1
+  - &engineering
+    name: Engineering
+    type: genprof
+    max: 3
+    throw: 11
+  - &gambling
+    name: Gambling
+    type: genprof
+    max: 3
+  - &intimidation
+    name: Intimidation
+    type: genprof
+    max: 1
+  - &knowledge
+    name: Knowledge
+    type: genprof
+    max: 4
+  - &labor
+    name: Labor
+    type: genprof
+    max: 1
+    throw: 11
+  - &language
+    name: Language
+    type: genprof
     max: 10
-  &trap_finding Trap Finding:
-    type: misc
+  - &leadership
+    name: Leadership
+    type: genprof
     max: 1
-  &tracking Tracking:
-    type: misc
+  - &lip_reading
+    name: Lip Reading
+    type: genprof
+    max: 1
+  - &manual_of_arms
+    name: Manual of Arms
+    type: genprof
     max: 3
-  &transmogrification Transmogrification:
-    type: misc
-    max: 1
-  &trapping Trapping:
-    type: misc
+  - &mapping
+    name: Mapping
+    type: genprof
     max: 3
-  &unflappable_casting Unflappable Casting:
-    type: misc
+  - &military_strategy
+    name: Military Strategy
+    type: genprof
+    max: 3
+    throw: 11
+  - &mimicry
+    name: Mimicry
+    type: genprof
+    max: 3
+    throw: 11
+  - &naturalism
+    name: Naturalism
+    type: genprof
+    max: 3
+    throw: 11
+  - &navigation
+    name: Navigation
+    type: genprof
     max: 1
-  &weapon_finesse Weapon Finesse:
-    type: misc
+  - &performance
+    name: Performance
+    type: genprof
+    max: 4
+  - &profession
+    name: Profession
+    type: genprof
+    max: 4
+  - &riding
+    name: Riding
+    type: genprof
+    max: 3
+  - &seafaring
+    name: Seafaring
+    type: genprof
+    max: 3
+  - &seduction
+    name: Seduction
+    type: genprof
     max: 1
-  &weapon_focus Weapon Focus:
-    type: misc
+  - &siege_engineering
+    name: Siege Engineering
+    type: genprof
+    max: 2
+  - &survival
+    name: Survival
+    type: genprof
     max: 1
-generalprofs:
-  - *alchemy
-  - *animal_husbandry
-  - *animal_training
-  - *art
-  - *bargaining
-  - *caving
-  - *collegiate_wizardry
-  - *craft
-  - *diplomacy
-  - *disguise
-  - *endurance
-  - *engineering
-  - *gambling
-  - *healing
-  - *intimidation
-  - *knowledge
-  - *labor
-  - *language
-  - *leadership
-  - *lip_reading
-  - *manual_of_arms
-  - *mapping
-  - *military_strategy
-  - *mimicry
-  - *naturalism
-  - *navigation
-  - *performance
-  - *profession
-  - *riding
-  - *seafaring
-  - *seduction
-  - *siege_engineering
-  - *signaling
-  - *survival
-  - *theology
-  - *tracking
-  - *trap_finding
+  - &theology
+    name: Theology
+    type: genprof
+    max: 3
+    throw: 11
+  - &tracking
+    name: Tracking
+    type: genprof
+    max: 3
+    throw: 11
+  - &trapping
+    name: Trapping
+    type: genprof
+    max: 3
+    throw: 11
 attackprogressions:
   fighter: &fighter_attack_throw_progression [1,2,4,5,7,8,10,11,13,14]
   thief: &thief_attack_throw_progression [1,3,5,7,9,11,13]
   mage: &mage_attack_throw_progression [1,4,7,10,13]
-profprogression:
+proficiencyprogression:
   fighter: &fighter_proficiency_progression [1, 3, 6, 9, 12]
   thief: &thief_proficiency_progression [1, 4, 8, 12]
   mage: &mage_proficiency_progression [1, 6, 12]
-  general: &general_proficiency_progression [0, 0, 5, 9, 13]
+  general: &general_proficiency_progression [1, 1, 5, 9, 13]
 spellprogressions:
   loremaster: &loremaster_spellprogression
     1:
@@ -1597,215 +1754,283 @@ spells:
       - Trollblood
 equipment:
   ammo:
-    &case_with_20_bolts Case (20 Bolts):
+    &case_with_20_bolts
+    - name: Case (20 Bolts)
       weight: 1
       cost: 2
-    &quiver_with_20_arrows Quiver (20 Arrows):
+    - &quiver_with_20_arrows
+      name: Quiver (20 Arrows)
       weight: 1
       cost: 1
-    &silver_tipped_arrow Silver Tipped Arrow:
+    - &silver_tipped_arrow
+      name: Silver Tipped Arrow
       weight: 0
       cost: 5
-    &30_bullets Bullets (30):
+    - &30_bullets
+      name: Bullets (30)
       weight: 1
       cost: 0.1
   adventuring equipment:
-    &aloe Aloe:
+    - &aloe
+      name: Aloe
       weight: 1
       cost: 10
-    &bitterwood Bitterwood:
+    - &bitterwood
+      name: Bitterwood
       weight: 1
       cost: 10
-    &black_lotus Black Lotus:
+    - &black_lotus
+      name: Black Lotus
       weight: 1
       cost: 200
-    &blessed_thistle Blessed Thistle:
+    - &blessed_thistle
+      name: Blessed Thistle
       weight: 1
       cost: 10
-    &horsetail Horsetail:
+    - &horsetail
+      name: Horsetail
       weight: 1
       cost: 15
-    &lungwort Lungwort:
+    - &lungwort
+      name: Lungwort
       weight: 1
       cost: 5
-    &willow_bark Willowbark:
+    - &willow_bark
+      name: Willowbark
       weight: 1
       cost: 5
-    &backpack Backpack:
+    - &backpack
+      name: Backpack
       cost: 2
       weight: 0
-    &barrel Barrel:
+    - &barrel
+      name: Barrel
       cost: 0.3
       weight: 60
-    &belladonna Belladonna:
+    - &belladonna
+      name: Belladonna
       cost: 10
       weight: 1
-    &blanket Blanket:
+    - &blanket
+      name: Blanket
       cost: 2
       weight: 1
-    &birthwort Birthwort:
+    - &birthwort
+      name: Birthwort
       cost: 10
       weight: 1
-    &candle Candle:
+    - &candle
+      name: Candle
       cost: 0.6
       weight: 1
-    &chest Chest:
+    - &chest
+      name: Chest
       cost: 22
       weight: 18
-    &comfrey Comfrey:
+    - &comfrey
+      name: Comfrey
       cost: 10
       weight: 1
-    &crowbar Crowbar:
+    - &crowbar
+      name: Crowbar
       cost: 1
       weight: 1
-    &common_oil Common Oil:
+    - &common_oil
+      name: Common Oil
       cost: 0.3
       weight: 1
-    &military_oil Military Oil:
+    - &military_oil
+      name: Military Oil
       cost: 2
       weight: 1
-    &garlic Garlic:
+    - &garlic
+      name: Garlic
       cost: 5
       weight: 1
-    &goldenrod Goldenrod:
+    - &goldenrod
+      name: Goldenrod
       cost: 10
       weight: 1
-    &grappling_hook Grappling Hook:
+    - &grappling_hook
+      name: Grappling Hook
       cost: 25
       weight: 1
-    &hammer Hammer (small):
+    - &hammer
+      name: Hammer (small)
       cost: 2
       weight: 1
-    &holy_symbol Holy Symbol:
+    - &holy_symbol
+      name: Holy Symbol
       cost: 25
       weight: 1
-    &holy_water Holy Water:
+    - &holy_water
+      name: Holy Water
       cost: 20
       weight: 1
-    &ink Ink:
+    - &ink
+      name: Ink
       cost: 8
       weight: 1
-    &iron_spikes Iron Spikes (12):
+    - &iron_spikes
+      name: Iron Spikes (12)
       cost: 1
       weight: 1
-    &lantern Lantern:
+    - &lantern
+      name: Lantern
       cost: 10
       weight: 1
-    &lock Lock:
+    - &lock
+      name: Lock
       cost: 20
       weight: 1
-    &mirror Mirror:
+    - &mirror
+      name: Mirror
       cost: 5
       weight: 1
-    &musical_instrument_common Musical Instrument (common):
+    - &musical_instrument_common
+      name: Musical Instrument (common)
       cost: 25
       weight: 1
-    &musical_instrument_superior Musical Instrument (superior):
+    - &musical_instrument_superior
+      name: Musical Instrument (superior)
       cost: 50
       weight: 1
-    &musical_instrument_mastercraft Musical Instrument (mastercrafted):
+    - &musical_instrument_mastercraft
+      name: Musical Instrument (mastercrafted)
       cost: 100
       weight: 1
-    &pouch Pouch:
+    - &pouch Pouch:
       cost: 0.5
       weight: 0
-    &ten_foot_pole Ten Foot Pole:
+    - &ten_foot_pole
+      name: Ten Foot Pole
       cost: 0.1
       weight: 6
-    &one_week_rations_iron One Week Rations (iron):
+    - &one_week_rations_iron
+      name: One Week Rations (iron)
       cost: 3.5
       weight: 6
-    &one_week_rations_standard One Week Rations (standard):
+    - &one_week_rations_standard
+      name: One Week Rations (standard)
       cost: 1
       weight: 6
-    &rope Rope:
+    - &rope
+      name: Rope
       cost: 1
       weight: 1
-    &sack_small Sack (small):
+    - &sack_small
+      name: Sack (small)
       cost: 0.3
       weight: 1
-    &sack_large Sack (large):
+    - &sack_large
+      name: Sack (large)
       cost: 0.8
       weight: 1
-    &spell_book Spell Book:
+    - &spell_book
+      name: Spell Book
       cost: 20
       weight: 1
-    &ceremonial_codex Ceremonial Codex:
+    - &ceremonial_codex
+      name: Ceremonial Codex
       cost: 20
       weight: 1
-    &traditional_implements Traditional Implements:
+    - &traditional_implements
+      name: Traditional Implements
       cost: 20
       weight: 6
-    &stakes_and_mallet Stakes (4) and Mallet:
+    - &stakes_and_mallet
+      name: Stakes (4) and Mallet
       cost: 3
       weight: 1
-    &tent Tent:
+    - &tent
+      name: Tent
       cost: 20
       weight: 6
-    &thieves_tools Thieves' Tools:
+    - &thieves_tools
+      name: Thieves' Tools
       cost: 25
       weight: 1
-    &good_thieves_tools Good Thieves' Tools:
+    - &good_thieves_tools
+      name: Good Thieves' Tools
       cost: 200
       weight: 1
-    &tinder_box Tinder Box:
+    - &tinder_box
+      name: Tinder Box
       cost: 0.8
       weight: 1
-    &torch Torch:
+    - &torch
+      name: Torch
       cost: 0.1
       weight: 1
-    &waterskin Waterskin:
+    - &waterskin
+      name: Waterskin
       cost: 0.6
       weight: 1
-    &wolfsbane Wolfsbane:
+    - &wolfsbane
+      name: Wolfsbane
       cost: 10
       weight: 1
-    &woundwart Woundwart:
+    - &woundwart
+      name: Woundwart
       cost: 10
       weight: 1
   armor:
-    &hide_armor Hide Armor:
+    - &hide_armor
+      name: Hide Armor
       ac: 1
       cost: 10
       weight: 6
-    &leather_armor Leather Armor:
+    - &leather_armor
+      name: Leather Armor
       ac: 2
       weight: 12
       cost: 20
-    &ring_mail Ring Mail:
+    - &ring_mail
+      name: Ring Mail
       ac: 3
       weight: 18
       cost: 20
-    &chain_mail Chain Mail:
+    - &chain_mail
+      name: Chain Mail
       ac: 4
       weight: 24
       cost: 40
-    &lamellar_armor Lamellar Armor:
+    - &lamellar_armor
+      name: Lamellar Armo
       ac: 5
       weight: 30
       cost: 50
-    &plate_armor Plate Armor:
+    - &plate_armor
+      name: Plate Armor
       ac: 6
       weight: 36
       cost: 6
-    &shield Shield:
+    - &shield
+      name: Shield
       ac: 1
       weight: 6
       cost: 10
   weapons:
-    &battle_axe Battle Axe:
+    - &battle_axe
+      name: Battle Axe
+      type: melee
       weight: 1
       cost: 7
       damage: 1d6/8
-    &great_axe Great Axe:
+    - &great_axe
+      name: Great Axe
+      type: melee
       weight: 6
       cost: 10
       damage: 1d10
-    &hand_axe Hand Axe:
+    - &hand_axe
+      name: Hand Axe
+      type: melee
       weight: 1
       cost: 4
       damage: 1d6
-    &arbalest Arabalest:
+    - &arbalest
+      name: Arabalest
       weight: 6
       cost: 50
       damage: 1d10
@@ -1813,7 +2038,8 @@ equipment:
       type: missile
       modifies:
         throw: -4
-    &crossbow Crossbow:
+    - &crossbow
+      name: Crossbow
       weight: 6
       cost: 30
       damage: 1d8
@@ -1821,112 +2047,253 @@ equipment:
       type: missile
       modifies:
         throw: -2
-    &composite_bow Composite Bow:
+    - &composite_bow
+      name: Composite Bow
       weight: 6
       cost: 40
       damage: 1d6
       type: missile
       ammo: *quiver_with_20_arrows
-    &longbow Longbow:
+    - &longbow
+      name: Longbow
       weight: 6
       cost: 7
       damage: 1d6
       type: missile
       ammo: *quiver_with_20_arrows
-    &shortbow Shortbow:
+    - &shortbow
+      name: Shortbow
       weight: 6
       cost: 3
       damage: 1d6
       type: missile
       ammo: *quiver_with_20_arrows
-    &club Club:
+    - &club
+      name: Club
+      type: melee
       weight: 1
       cost: 1
       damage: 1d4
-    &flail Flail:
+    - &flail
+      name: Flail
+      type: melee
       weight: 1
       cost: 5
       damage: 1d6/8
-    &mace Mace:
+    - &mace
+      name: Mace
+      type: melee
       weight: 1
       cost: 5
       damage: 1d6/8
-    &morning_star Morning Star:
+    - &morning_star
+      name: Morning Star
+      type: melee
       weight: 6
       cost: 5
       damage: 1d10
-    &war_hammer War Hammer:
+    - &war_hammer
+      name: War Hammer
+      type: melee
       weight: 1
       cost: 5
       damage: 1d6/8
-    &lance Lance:
+    - &lance
+      name: Lance
+      type: melee
       weight: 6
       cost: 5
       damage: 1d10
-    &javelin Javelin:
+    - &javelin
+      name: Javelin
       weight: 1
       cost: 1
       damage: 1d6
       type: missile
-    &pole_arm Pole Arm:
+    - &pole_arm
+      name: Pole Arm
+      type: melee
       weight: 6
       cost: 7
       damage: 1d10
-    &spear Spear:
+    - &spear
+      name: Spear
+      type: melee
       weight: 6
       cost: 3
       damage: 1d6/8
-    &dagger Dagger:
+    - &dagger
+      name: Dagger
+      type: melee
       weight: 1
       cost: 3
       damage: 1d4
-    &silver_dagger Silver Dagger:
+    - &silver_dagger
+      name: Silver Dagger
+      type: melee
       weight: 1
       cost: 30
       damage: 1d4
-    &short_sword Short Sword:
+    - &short_sword
+      name: Short Sword
+      type: melee
       weight: 1
       cost: 6
       damage: 1d6
-    &sword Sword:
+    - &sword
+      name: Sword
+      type: melee
       weight: 1
       cost: 10
       damage: 1d6/8
-    &two_handed_sword Two Handed Sword:
+    - &two_handed_sword
+      name: Two Handed Sword
+      type: melee
       weight: 6
       cost: 15
       damage: 1d10
-    &bola Bola:
+    - &bola
+      name: Bola
       weight: 1
       cost: 5
       type: missile
       damage: 1d2
-    &darts Darts (5):
+    - &darts
+      name: Darts (5)
       weight: 1
       cost: 2
       damage: 1d4
       type: missile
-    &net Net:
+    - &net
+      name: Net
+      type: missile
       weight: 1
       cost: 1
       damage: 0
-    &sling Sling:
+    - &sling
+      name: Sling
       weight: 1
       cost: 2
       damage: 1d4
       type: missile
-    &sap Sap:
+    - &sap
+      name: Sap
+      type: melee
       weight: 1
       cost: 1
       damage: 1d4
-    &staff Staff:
+    - &staff
+      name: Staff
+      type: melee
       weight: 6
       cost: 1
       damage: 1d4/6
-    &whip Whip:
+    - &whip
+      name: Whip
+      type: melee
       weight: 1
       cost: 5
       damage: 1d2
+  potions:
+    - &pot_animalcontrol
+      name: Potion of Animal Control
+      weight: 1
+    - &pot_clairaudience
+      name: Potion of Clairaudience
+      weight: 1
+    - &pot_climbing
+      name: Potion of Climbing
+      weight: 1
+    - &pot_delusion
+      name: Potion of Delusion
+      weight: 1
+    - &pot_diminuition
+      name: Potion of Diminuition
+      weight: 1
+    - &pot_dragoncontrol
+      name: Potion of Dragon Control
+      weight: 1
+    - &pot_esp
+      name: Potion of ESP
+      weight: 1
+    - &pot_extrahealing
+      name: Potion of Extra Healing
+      weight: 1
+    - &pot_fireresistance
+      name: Potion of Fire Resistance
+      weight: 1
+    - &pot_flying
+      name: Potion of Flying
+      weight: 1
+    - &pot_gaseousform
+      name: Potion of Gaseous Form
+      weight: 1
+    - &pot_giantcontrol
+      name: Potion of Giant Control
+      weight: 1
+    - &pot_giantstrength
+      name: Potion of Giant Strength
+      weight: 1
+    - &pot_growth
+      name: Potion of Growth
+      weight: 1
+    - &pot_healing
+      name: Potion of Healing
+      weight: 1
+    - &pot_heroism
+      name: Potion of Heroism
+      weight: 1
+    - &pot_humancontrol
+      name: Potion of Human Control
+      weight: 1
+    - &pot_invisibility
+      name: Potion of Invisibility
+      weight: 1
+    - &pot_invulnerability
+      name: Potion of Invulnerability
+      weight: 1
+    - &pot_levitation
+      name: Potion of Levitation
+      weight: 1
+    - &pot_longlivety
+      name: Potion of Longlivety
+      weight: 1
+    - &pot_oilofsharpness
+      name: Oil of Sharpness
+      weight: 1
+    - &pot_oilofslipperiness
+      name: Oil of Slipperiness
+      weight: 1
+    - &pot_philteroflove
+      name: Philter of Love
+      weight: 1
+    - &pot_plantcontrol
+      name: Potion of Plant Control
+      weight: 1
+    - &pot_poison
+      name: Potion of Poison
+      weight: 1
+    - &pot_polymorph
+      name: Potion of Polymorph
+      weight: 1
+    - &pot_speed
+      name: Potion of Speed
+      weight: 1
+    - &pot_superheroism
+      name: Potion of Super-Heroism
+      weight: 1
+    - &pot_sweetwater
+      name: Potion of Sweet Water
+      weight: 1
+    - &pot_treasurefinding
+      name: Potion of Treasure Finding
+      weight: 1
+    - &pot_undeadcontrol
+      name: Potion of Undead Control
+      weight: 1
+    - &pot_waterbreathing
+      name: Potion of Water Breathing
+      weight: 1
   tables:
     tiny melee weapons: &table_tiny_melee_weapons
       die: 1d10
@@ -2033,64 +2400,35 @@ equipment:
         4-6: *lantern
 saves:
 #order: pp, pd, bb, sw, ma
-  normalman: &normalman_saving_throws
-    initial: [16, 15, 17, 17, 18]
   fighter: &fighter_saving_throws
-    initial: [15, 14, 16, 16, 17]
-    progression: [2,4,5,7,8,10,11,13,14]
+    initial: [16, 15, 17, 17, 18]
+    progression: [1,2,4,5,7,8,10,11,13,14]
   thief: &thief_saving_throws
-    initial: [13, 13, 16, 14, 15]
-    progression: [3,5,7,9,11,13]
+    initial: [14, 14, 17, 15, 16]
+    progression: [1,3,5,7,9,11,13]
   divine: &divine_saving_throws
-    initial: [13, 10, 16, 13, 15]
-    progression: [3,5,7,9,11,13]
+    initial: [14, 11, 17, 14, 16]
+    progression: [1,3,5,7,9,11,13]
   arcane: &arcane_saving_throws
-    initial: [13, 13, 15, 11, 12]
-    progression: [4,7,10,13]
+    initial: [14, 14, 16, 12, 13]
+    progression: [1,4,7,10,13]
   eldritch: &eldritch_saving_throws
-    initial: [13, 10, 16, 13, 15]
-    progression: [3,5,7,9,11,13]
+    initial: [14, 11, 17, 14, 16]
+    progression: [1,3,5,7,9,11,13]
 classes:
-  &normalman normal man:
-    maxlevel: 0
-    hd: d8-1
-    saves: *normalman_saving_throws
-    minreq:
-      strength: 3
-      dexterity: 3
-      constitution: 3
-      intelligence: 3
-      wisdom: 3
-      charisma: 3
-    abilities:
-      0:
-        - {choice: ['Quivering in fear', 'Panicking', 'Being instakilled by terrible monsters', 'Running away'], number: 1}
-    equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1d3-1]
-        - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: *table_large_melee_weapons}}, 1]
-        - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
-        - [*javelin, 1d4-1]
-      armor:
-        - [*shield, 1d2-1]
-        - [*table_heavy_armor, 1]
-      gear:
-        - [*backpack, 1]
-        - [*table_healing_herbs, 1d10-9]
-        - [*table_tools, 1d3]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d6-4]
-        - [*table_light, 1d2-1]
-        - [*torch, 1d6-2]
   &thief thief:
+    experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0.5
     maxlevel: 14
     hd: d4
-    minreq:
+    minimumrequirements:
       dexterity: 9
     attackprogression: *thief_attack_throw_progression
-    saves: *thief_saving_throws
+    savingthrows: *thief_saving_throws
     profprogression: *thief_proficiency_progression
-    proficiencies:
+    proficiencylist:
       - *acrobatics
       - *alertness
       - *arcane_dabbling
@@ -2119,20 +2457,21 @@ classes:
       - *weapon_focus
       - *combat_trickery_disarm
       - *combat_trickery_incapacitate
-    abilities:
+    abilityprogression:
       1:
         - *open_locks
-        - *find_and_remove_traps
+        - *find_traps
+        - *remove_traps
         - *pick_pockets
         - *move_silently
         - *climb_walls
         - *hide_in_shadows
-        - *hearnoise
+        - *hear_noise
         - *backstab
       4:
         - *read_languages
       10:
-        - *use_scrolls
+        - *use_magic_scrolls
     equipment:
       weapons:
         - [*table_tiny_melee_weapons, 1]
@@ -2150,15 +2489,19 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &assassin assassin:
+    experienceforlevel: [0,1700,3400,6800,14000,28000,55000,110000,230000,350000,470000,590000,710000,830000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
     maxlevel: 14
     hd: d6
-    minreq:
+    minimumrequirements:
       strength: 9
       dexterity: 9
     attackprogression: *fighter_attack_throw_progression
-    saves: *fighter_saving_throws
-    profprogression: *fighter_proficiency_progression
-    proficiencies:
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
       - *acrobatics
       - *alchemy
       - *alertness
@@ -2187,9 +2530,9 @@ classes:
       - *weapon_focus
       - *combat_trickery_disarm
       - *combat_trickery_incapacitate
-    abilities:
+    abilityprogression:
       1:
-        - *damage_bonus
+        - *fighter_damage_bonus
         - *move_silently
         - *hide_in_shadows
         - *backstab
@@ -2213,14 +2556,18 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &fighter fighter:
+    experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
     maxlevel: 14
     hd: d8
-    minreq:
+    minimumrequirements:
       strength: 9
     attackprogression: *fighter_attack_throw_progression
-    saves: *fighter_saving_throws
-    profprogression: *fighter_proficiency_progression
-    proficiencies:
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
       - *acrobatics
       - *alertness
       - *berserkergang
@@ -2249,9 +2596,9 @@ classes:
       - *combat_trickery_knock_down
       - *combat_trickery_overrun
       - *combat_trickery_sunder
-    abilities:
+    abilityprogression:
       1:
-        - *damage_bonus
+        - *fighter_damage_bonus
       5:
         - Battlefield Prowess
     equipment:
@@ -2274,28 +2621,32 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &loremaster loremaster:
+    experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0
     maxlevel: 14
     hd: d4
-    minreq:
+    minimumrequirements:
       intelligence: 9
       wisdom: 9
     attackprogression: *mage_attack_throw_progression
-    saves: *thief_saving_throws
-    profprogression: *thief_proficiency_progression
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
     spellprogression: *loremaster_spellprogression
-    proficiencies:
+    proficiencylist:
       - *alchemy
       - *battle_magic
       - *beast_friendship
-      - *black_lore_of_zahar
-      - *bright_lore_of_aura
+      - *black_lore
+      - *bright_lore
       - *ceremonial_magic
       - *collegiate_wizardry
       - *contemplation
       - *craft
       - *diplomacy
       - *elementalism
-      - *elven_bloodline
+      - *exhalted_bloodline
       - *engineering
       - *familiar
       - *farseeing
@@ -2305,14 +2656,14 @@ classes:
       - *mystic_aura
       - *naturalism
       - *personal_talisman
-      - *prestidigitation
+      - *prestidigation
       - *prophecy
       - *second_sight
       - *sensing_power
       - *transmogrification
       - *soothsaying
       - *unflappable_casting
-    abilities:
+    abilityprogression:
       1:
         - *loremastery
         - *personal_talisman
@@ -2338,22 +2689,26 @@ classes:
         - [*torch, 1d6-3]
         - [*ink, 1]
   &eldritch_rogue eldritch rogue:
+    experienceforlevel: [0,1000,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0
     maxlevel: 14
     hd: d4
-    minreq:
+    minimumrequirements:
       wisdom: 9
       intelligence: 9
     attackprogression: *mage_attack_throw_progression
-    saves: *thief_saving_throws
-    profprogression: *thief_proficiency_progression
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
     spellprogression: *runemaker_spellprogression
-    proficiencies:
+    proficiencylist:
       - *acrobatics
       - *alchemy
       - *battle_magic
       - *beast_friendship
-      - *black_lore_of_zahar
-      - *bright_lore_of_aura
+      - *black_lore
+      - *bright_lore
       - *climbing
       - *contemplation
       - *craft
@@ -2376,15 +2731,16 @@ classes:
       - *skulking
       - *trap_finding
       - *second_sight
-    abilities:
+    abilityprogression:
       1:
         - *open_locks
-        - *find_and_remove_traps
+        - *find_traps
+        - *remove_traps
         - *pick_pockets
         - *move_silently
         - *climb_walls
         - *hide_in_shadows
-        - *hearnoise
+        - *hear_noise
         - *loremastery
         - *read_languages
     equipment:
@@ -2405,6 +2761,10 @@ classes:
         - [*ink, 1]
         - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
   &runemaker runemaker:
+    experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0.5
     path:
       - *varn
       - *bosk
@@ -2419,14 +2779,14 @@ classes:
           - *surga
     maxlevel: 14
     hd: d6
-    minreq:
+    minimumrequirements:
       strength: 9
       wisdom: 9
     attackprogression: *thief_attack_throw_progression
-    saves: *eldritch_saving_throws
-    profprogression: *thief_proficiency_progression
+    savingthrows: *eldritch_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
     spellprogression: *runemaker_spellprogression
-    proficiencies:
+    proficiencylist:
       - *armor_training
       - *battle_magic
       - *beast_friendship
@@ -2443,7 +2803,7 @@ classes:
       - *laying_on_hands
       - *martial_training
       - *personal_talisman
-      - *prestidigitation
+      - *prestidigation
       - *prophecy
       - *running
       - *second_sight
@@ -2455,7 +2815,7 @@ classes:
       - *weapon_focus
       - *combat_trickery_disarm
       - *combat_trickery_knock_down
-    abilities:
+    abilityprogression:
       path:
         *varn:
           1:
@@ -2540,12 +2900,12 @@ classes:
   &bard bard:
     maxlevel: 14
     hd: d6
-    minreq:
+    minimumrequirements:
       charisma: 9
     attackprogression: *thief_attack_throw_progression
-    saves: *thief_saving_throws
-    profprogression: *thief_proficiency_progression
-    proficiencies:
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    proficiencylist:
       - *acrobatics
       - *art
       - *bargaining
@@ -2553,7 +2913,7 @@ classes:
       - *command
       - *diplomacy
       - *eavesdropping
-      - *elven_bloodline
+      - *exhalted_bloodline
       - *fighting_style
       - *healing
       - *knowledge
@@ -2566,7 +2926,7 @@ classes:
       - *mystic_aura
       - *performance
       - *precise_shooting
-      - *prestidigitation
+      - *prestidigation
       - *running
       - *seduction
       - *skirmishing
@@ -2574,7 +2934,7 @@ classes:
       - *weapon_finesse
       - *weapon_focus
       - *combat_trickery_disarm
-    abilities:
+    abilityprogression:
       1:
         - Inspire Courage
         - *loremastery
@@ -2584,7 +2944,7 @@ classes:
       5:
         - Chronicles of Battle
       10:
-        - *use_scrolls
+        - *use_magic_scrolls
     equipment:
       weapons:
         - [*table_tiny_melee_weapons, 1]
@@ -2601,22 +2961,30 @@ classes:
         - [*table_sleeping, 1]
         - [*table_light, 1]
         - [*torch, 1d6-3]
+    experienceforlevel: [0,1400,2800,5600,11200,22400,45000,90000,190000,290000,390000,490000,590000,690000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 0.5
   &bladedancer bladedancer:
+    experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0.5
     ethnicity:
       - *ilian
-    sex: female
+    gender: female
     maxlevel: 14
     hd: d6
-    minreq:
+    minimumrequirements:
       dexterity: 9
       wisdom: 9
     attackprogression: *thief_attack_throw_progression
-    saves: *eldritch_saving_throws
-    profprogression: *thief_proficiency_progression
+    savingthrows: *eldritch_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
     spellprogression: *runemaker_spellprogression
-    proficiencies:
+    proficiencylist:
       - *acrobatics
-      - *apostasy
+      - *ceremonial_magic
       - *battle_magic
       - *beast_friendship
       - *combat_reflexes
@@ -2629,7 +2997,7 @@ classes:
       - *magical_music
       - *martial_training
       - *performance
-      - *prestidigitation
+      - *prestidigation
       - *prophecy
       - *quiet_magic
       - *righteous_turning
@@ -2642,7 +3010,7 @@ classes:
       - *weapon_finesse
       - *weapon_focus
       - *combat_trickery_knock_down
-    abilities:
+    abilityprogression:
       1:
         - *graceful_fighting
         - {choice: [Alluring Beauty, Charismatic Ferocity, Classical Weapons Training, *personal_talisman, Study of War, Weapon Finesse], number: 2}
@@ -2668,15 +3036,19 @@ classes:
         - [*torch, 1d6-3]
         - [*ink, 1d2-1]
   &explorer explorer:
+    experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
     maxlevel: 14
     hd: d8
-    minreq:
+    minimumrequirements:
       strength: 9
       dexterity: 9
     attackprogression: *fighter_attack_throw_progression
-    saves: *fighter_saving_throws
-    profprogression: *fighter_proficiency_progression
-    proficiencies:
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
       - *alertness
       - *ambushing
       - *beast_friendship
@@ -2705,9 +3077,9 @@ classes:
       - *weapon_focus
       - *combat_trickery_disarm
       - *combat_trickery_knock_down
-    abilities:
+    abilityprogression:
       1:
-        - *damage_bonus
+        - *fighter_damage_bonus
         - *accuracy_bonus
         - *animal_reflexes
         - Difficult to Spot (3+ or 14+)
@@ -2735,6 +3107,10 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &barbarian barbarian:
+    experienceforlevel: [0,2600,5200,10400,20800,41600,85000,170000,290000,410000,530000,650000,770000,890000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
     path:
       - *varn
       - *bosk
@@ -2749,13 +3125,13 @@ classes:
           - *surga
     maxlevel: 14
     hd: d8
-    minreq:
+    minimumrequirements:
       strength: 9
       constitution: 9
     attackprogression: *fighter_attack_throw_progression
-    saves: *fighter_saving_throws
-    profprogression: *fighter_proficiency_progression
-    proficiencies:
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
       - *alertness
       - *ambushing
       - *armor_training
@@ -2784,11 +3160,11 @@ classes:
       - *combat_trickery_knock_down
       - *combat_trickery_overrun
       - *combat_trickery_wrestle
-    abilities:
+    abilityprogression:
       path:
         *varn:
           1:
-            - *damage_bonus
+            - *fighter_damage_bonus
             - *animal_reflexes
             - Naturally Stealthy
             - Savage Resilience
@@ -2797,7 +3173,7 @@ classes:
             - Animal Magnetism
         *surga:
           1:
-            - *damage_bonus
+            - *fighter_damage_bonus
             - *animal_reflexes
             - Naturally Stealthy
             - Savage Resilience
@@ -2806,7 +3182,7 @@ classes:
             - Animal Magnetism
         *bosk:
           1:
-            - *damage_bonus
+            - *fighter_damage_bonus
             - *animal_reflexes
             - Naturally Stealthy
             - Savage Resilience
@@ -2905,17 +3281,21 @@ classes:
             - [*table_light, 1]
             - [*torch, 1d6-3]
   &beastmaster beastmaster:
+    experienceforlevel: [0,2900,5800,11600,23200,46400,95000,190000,310000,430000,550000,670000,790000,910000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
     maxlevel: 14
     hd: d6
-    minreq:
+    minimumrequirements:
       strength: 9
       dexterity: 9
       constitution: 9
       charisma: 9
     attackprogression: *fighter_attack_throw_progression
-    saves: *fighter_saving_throws
-    profprogression: *fighter_proficiency_progression
-    proficiencies:
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
       - *alertness
       - *animal_husbandry
       - *animal_training
@@ -2944,12 +3324,12 @@ classes:
       - *combat_trickery_incapacitate
       - *combat_trickery_knock_down
       - *combat_trickery_overrun
-    abilities:
+    abilityprogression:
       1:
-        - *damage_bonus
+        - *fighter_damage_bonus
         - *backstab
         - *animal_reflexes
-        - *hearnoise
+        - *hear_noise
         - Savage Resilience
         - *climb_walls
         - *acrobatics
@@ -2974,6 +3354,10 @@ classes:
         - [*table_sleeping, 1]
         - [*torch, 1d6-2]
   &berserker berserker:
+    experienceforlevel: [0,2750,5500,11000,22000,44000,90000,180000,300000,420000,540000,660000,780000,900000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
     path:
       - *varn
       - *bosk
@@ -2988,13 +3372,13 @@ classes:
           - *surga
     maxlevel: 14
     hd: d8
-    minreq:
+    minimumrequirements:
       strength: 9
       constitution: 9
     attackprogression: *fighter_attack_throw_progression
-    saves: *fighter_saving_throws
-    profprogression: *fighter_proficiency_progression
-    proficiencies:
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
       - *alertness
       - *ambushing
       - *beast_friendship
@@ -3023,9 +3407,9 @@ classes:
       - *combat_trickery_knock_down
       - *combat_trickery_overrun
       - *combat_trickery_wrestle
-    abilities:
+    abilityprogression:
       1:
-        - *damage_bonus
+        - *fighter_damage_bonus
         - *animal_reflexes
         - Savage Resilience
         - *greater_berserkergang
@@ -3133,18 +3517,22 @@ classes:
             - [*table_light, 1]
             - [*torch, 1d6-3]
   &ecclesiastic ecclesiastic:
+    experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0
     maxlevel: 14
     hd: d4
-    minreq:
+    minimumrequirements:
       wisdom: 9
     attackprogression: *mage_attack_throw_progression
-    saves: *thief_saving_throws
-    profprogression: *thief_proficiency_progression
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
     spellprogression: *loremaster_spellprogression
-    proficiencies:
+    proficiencylist:
       - *alchemy
       - *animal_husbandry
-      - *apostasy
+      - *martial_training
       - *beast_friendship
       - *ceremonial_magic
       - *command
@@ -3161,7 +3549,7 @@ classes:
       - *naturalism
       - *performance
       - *personal_talisman
-      - *prestidigitation
+      - *prestidigation
       - *profession
       - *prophecy
       - *quiet_magic
@@ -3170,7 +3558,7 @@ classes:
       - *sensing_evil
       - *sensing_power
       - *unflappable_casting
-    abilities:
+    abilityprogression:
       1:
         - *theology
         - Comfort and Console the Wounded
@@ -3196,14 +3584,18 @@ classes:
         - [*holy_water, 2d2]
         - [*ink, 1]
   &freebooter freebooter:
+    experienceforlevel: [0,2150,4300,8600,17200,34400,70000,140000,240000,340000,440000,540000,640000,740000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 0.5
     path:
       - &exp Expeditionary
       - &ruf Ruffian
       - &sco Scoundrel
-      - &way Wayfarer*
+      - &way Wayfarer
     maxlevel: 14
     hd: d4
-    minreq:
+    minimumrequirements:
       dexterity: 9
       path:
         *exp: {wisdom: 9}
@@ -3211,9 +3603,9 @@ classes:
         *sco: {charisma: 9}
         *way: {constitution: 9}
     attackprogression: *fighter_attack_throw_progression
-    saves: *thief_saving_throws
-    profprogression: *thief_proficiency_progression
-    proficiencies:
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    proficiencylist:
       - *acrobatics
       - *alertness
       - *arcane_dabbling
@@ -3242,12 +3634,13 @@ classes:
       - *weapon_focus
       - *combat_trickery_disarm
       - *combat_trickery_incapacitate
-    abilities:
+    abilityprogression:
       path:
         *exp:
           1:
-            - {choice: [*melee_damage_bonus, *missile_damage_bonus], number: 1}
-            - *find_and_remove_traps
+            - {choice: [*fighter_melee_damage_bonus, *fighter_missile_damage_bonus], number: 1}
+            - *find_traps
+            - *remove_traps
             - *open_locks
             - *move_silently
             - *alertness
@@ -3258,7 +3651,7 @@ classes:
             - *backstab
         *ruf:
           1:
-            - *melee_damage_bonus
+            - *fighter_melee_damage_bonus
             - *hide_in_shadows
             - *move_silently
             - *open_locks
@@ -3271,7 +3664,7 @@ classes:
             - *backstab
         *sco:
           1:
-            - {choice: [*melee_damage_bonus, *missile_damage_bonus], number: 1}
+            - {choice: [*fighter_melee_damage_bonus, *fighter_missile_damage_bonus], number: 1}
             - *hide_in_shadows
             - *move_silently
             - *open_locks
@@ -3284,9 +3677,9 @@ classes:
             - *backstab
         *way:
           1:
-            - *missile_damage_bonus
+            - *fighter_missile_damage_bonus
             - *climb_walls
-            - *hearnoise
+            - *hear_noise
             - *hide_in_shadows
             - *move_silently
             - *land_surveying
@@ -3314,16 +3707,20 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &occultist occultist:
+    experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0
     maxlevel: 14
     hd: d4
-    minreq:
+    minimumrequirements:
       intelligence: 9
       wisdom: 9
     attackprogression: *mage_attack_throw_progression
-    saves: *thief_saving_throws
-    profprogression: *thief_proficiency_progression
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
     spellprogression: *loremaster_spellprogression
-    proficiencies:
+    proficiencylist:
       - *alchemy
       - *battle_magic
       - *ceremonial_magic
@@ -3331,7 +3728,7 @@ classes:
       - *contemplation
       - *craft
       - *elementalism
-      - *elven_bloodline
+      - *exhalted_bloodline
       - *engineering
       - *familiar
       - *farseeing
@@ -3344,7 +3741,7 @@ classes:
       - *mystic_aura
       - *naturalism
       - *personal_talisman
-      - *prestidigitation
+      - *prestidigation
       - *prophecy
       - *second_sight
       - *sensing_evil
@@ -3352,7 +3749,7 @@ classes:
       - *transmogrification
       - *soothsaying
       - *unflappable_casting
-    abilities:
+    abilityprogression:
       1:
         - Secret of the Dark Arts
         - *personal_talisman
@@ -3383,14 +3780,18 @@ classes:
         - [*torch, 1d6-3]
         - [*ink, 1]
   &venturer venturer:
+    experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 0.5
     maxlevel: 14
     hd: d4
-    minreq:
+    minimumrequirements:
       charisma: 9
     attackprogression: *thief_attack_throw_progression
-    saves: *thief_saving_throws
-    profprogression: *thief_proficiency_progression
-    proficiencies:
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    proficiencylist:
       - *alertness
       - *ambushing
       - *arcane_dabbling
@@ -3413,17 +3814,17 @@ classes:
       - *riding
       - *running
       - *seafaring
-      - *signaling
+      - *fighting_style
       - *skirmishing
       - *swashbuckling
       - *weapon_finesse
       - *combat_trickery_disarm
       - *combat_trickery_incapacitate
-    abilities:
+    abilityprogression:
       1:
         - Mercantile Network
         - Expert Bargainer
-        - *hearnoise
+        - *hear_noise
         - *language
         - *language
         - *language
@@ -3436,7 +3837,7 @@ classes:
       4:
         - *read_languages
       10:
-        - *use_scrolls
+        - *use_magic_scrolls
     equipment:
       weapons:
         - [*table_tiny_melee_weapons, 1d4-2]
@@ -3453,17 +3854,21 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &warmistress warmistress:
+    experienceforlevel: [0,2450,4900,9800,19600,39200,80000,160000,280000,400000,520000,640000,760000,880000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
     ethnicity: [*surga, *bosk, *varn, *acheron, *heron, *ilian, *langun, *opelean, *sargon]
-    sex: female
+    gender: female
     maxlevel: 14
     hd: d6
-    minreq:
+    minimumrequirements:
       dexterity: 9
       charisma: 9
     attackprogression: *fighter_attack_throw_progression
-    saves: *fighter_saving_throws
-    profprogression: *fighter_proficiency_progression
-    proficiencies:
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
       - *acrobatics
       - *alertness
       - *armor_training
@@ -3492,9 +3897,9 @@ classes:
       - *combat_trickery_disarm
       - *combat_trickery_knock_down
       - *combat_trickery_overrun
-    abilities:
+    abilityprogression:
       1:
-        - *damage_bonus
+        - *fighter_damage_bonus
         - Charismatic Ferocity
         - *weapon_finesse
         - *graceful_fighting
@@ -3520,17 +3925,21 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &herald herald:
+    experienceforlevel: [0,1850,3700,7400,14800,29600,60000,120000,240000,360000,480000,600000,720000,840000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
     maxlevel: 14
     ethnicity:
       - *ilian
     hd: d6
-    minreq:
+    minimumrequirements:
       charisma: 9
       strength: 9
     attackprogression: *fighter_attack_throw_progression
-    saves: *fighter_saving_throws
-    profprogression: *fighter_proficiency_progression
-    proficiencies:
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
       - *acrobatics
       - *alertness
       - *berserkergang
@@ -3559,9 +3968,9 @@ classes:
       - *combat_trickery_knock_down
       - *combat_trickery_overrun
       - *combat_trickery_sunder
-    abilities:
+    abilityprogression:
       1:
-        - *damage_bonus
+        - *fighter_damage_bonus
         - Inspire Courage
         - Rally to the Righteous Cause
         - *diplomacy
@@ -3588,14 +3997,18 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &gladiator gladiator:
+    experienceforlevel: [0,1700,3400,6800,14000,28000,55000,110000,230000,350000,470000,590000,710000,830000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
     maxlevel: 14
     hd: d6
-    minreq:
+    minimumrequirements:
       strength: 9
     attackprogression: *fighter_attack_throw_progression
-    saves: *fighter_saving_throws
-    profprogression: *fighter_proficiency_progression
-    proficiencies:
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
       - *acrobatics
       - *alertness
       - *berserkergang
@@ -3624,9 +4037,9 @@ classes:
       - *military_strategy
       - *precise_shooting
       - *performance
-    abilities:
+    abilityprogression:
       1:
-        - *damage_bonus
+        - *fighter_damage_bonus
         - {choice: [*combat_trickery_wrestle,
                     *combat_trickery_disarm,
                     *combat_trickery_force_back,
@@ -3659,22 +4072,26 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &shaman shaman:
+    experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0.5
     ethnicity:
       - *bosk
       - *varn
       - *surga
     maxlevel: 14
     hd: d6
-    minreq:
+    minimumrequirements:
       wisdom: 9
     attackprogression: *thief_attack_throw_progression
-    saves: *eldritch_saving_throws
-    profprogression: *thief_proficiency_progression
+    savingthrows: *eldritch_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
     spellprogression: *runemaker_spellprogression
-    proficiencies:
+    proficiencylist:
       - *alchemy
       - *animal_husbandry
-      - *apostasy
+      - *martial_training
       - *arcane_dabbling
       - *beast_friendship
       - *contemplation
@@ -3691,7 +4108,7 @@ classes:
       - *mystic_aura
       - *naturalism
       - *performance
-      - *prestidigitation
+      - *prestidigation
       - *profession
       - *prophecy
       - *quiet_magic
@@ -3700,7 +4117,7 @@ classes:
       - *sensing_power
       - *theology
       - *unflappable_casting
-    abilities:
+    abilityprogression:
       1:
         - *personal_talisman
         - Commune with Ancestral Spirits
@@ -3710,7 +4127,7 @@ classes:
                     [Totem Animal (Eagle), *command],
                     [Totem Animal (Horse), *running],
                     [Totem Animal (Lion), *divine_health],
-                    [Totem Animal (Monkey), *prestidigitation],
+                    [Totem Animal (Monkey), *prestidigation],
                     [Totem Animal (Rat), *quiet_magic],
                     [Totem Animal (Owl), *sensing_power],
                     [Totem Animal (Python), *laying_on_hands],
@@ -3743,6 +4160,10 @@ classes:
         - [*torch, 1d6-3]
         - [*ink, 1d2-1]
   &witch witch:
+    experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0
     path:
       - &antiq Antiquarian
       - &chtho Chthonic
@@ -3757,17 +4178,17 @@ classes:
           *sargon
     maxlevel: 14
     hd: d4
-    minreq:
+    minimumrequirements:
       wisdom: 9
       charisma: 9
     attackprogression: *mage_attack_throw_progression
-    saves: *eldritch_saving_throws
-    profprogression: *thief_proficiency_progression
+    savingthrows: *eldritch_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
     spellprogression: *loremaster_spellprogression
-    proficiencies:
+    proficiencylist:
       - *alchemy
       - *animal_husbandry
-      - *apostasy
+      - *martial_training
       - *arcane_dabbling
       - *beast_friendship
       - *contemplation
@@ -3784,7 +4205,7 @@ classes:
       - *mystic_aura
       - *naturalism
       - *performance
-      - *prestidigitation
+      - *prestidigation
       - *profession
       - *prophecy
       - *quiet_magic
@@ -3793,7 +4214,7 @@ classes:
       - *sensing_power
       - *theology
       - *unflappable_casting
-    abilities:
+    abilityprogression:
       path:
         *antiq:
           1:
@@ -3810,7 +4231,7 @@ classes:
             - *personal_talisman
             - *seduction
           3:
-            - *black_lore_of_zahar
+            - *black_lore
           5:
             - *mystic_aura
           7:
@@ -3843,49 +4264,7 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
         - [*ink, 1d2-1]
-randomtables:
-  classes:
-    die: 3d6
-    res:
-      3-4: *eldritch_rogue
-      5:
-        die: 1d20
-        res:
-          1-15: *runemaker
-          16-20: *shaman
-      6:
-        die: 1d20
-        res:
-          1-19: *explorer
-          20: *beastmaster
-      7: *bladedancer
-      8: *ecclesiastic
-      9-11:
-        die: 1d20
-        res:
-          1-15: *fighter
-          16-17: *barbarian
-          18: *berserker
-          19-20: *herald
-      12:
-        die: 1d20
-        res:
-          1-15: *thief
-          16-20: *freebooter
-      13:
-        die: 1d20
-        res:
-          1-15: *loremaster
-          16-18: *witch
-          19-20: *occultist
-      14:
-        die: 1d20
-        res:
-          1-15: *assassin
-          16-20: *gladiator
-      15: *bard
-      16: *venturer
-      17-18: *warmistress
+desctables:
   human build:
     die: 2d6
     res:
@@ -4338,6 +4717,49 @@ randomtables:
         2: ['[GENDERPOSS] ', *table_clothing_lawful]
         3: ['[GENDERPERS] is wearing ', *table_headwear_any]
         4: ['[GENDERPERS] ', *table_adornments_any]
+tables:
+  classes:
+    die: 3d6
+    res:
+      3-4: *eldritch_rogue
+      5:
+        die: 1d20
+        res:
+          1-15: *runemaker
+          16-20: *shaman
+      6:
+        die: 1d20
+        res:
+          1-19: *explorer
+          20: *beastmaster
+      7: *bladedancer
+      8: *ecclesiastic
+      9-11:
+        die: 1d20
+        res:
+          1-15: *fighter
+          16-17: *barbarian
+          18: *berserker
+          19-20: *herald
+      12:
+        die: 1d20
+        res:
+          1-15: *thief
+          16-20: *freebooter
+      13:
+        die: 1d20
+        res:
+          1-15: *loremaster
+          16-18: *witch
+          19-20: *occultist
+      14:
+        die: 1d20
+        res:
+          1-15: *assassin
+          16-20: *gladiator
+      15: *bard
+      16: *venturer
+      17-18: *warmistress
   treasure:
     gems:
       die: 1d100
@@ -4361,17 +4783,3 @@ randomtables:
       die: 1d100
       res:
         1-10: {die: 1d3, res:{1: bone, 2: scrimshaw, 3: beast parts}}
-    test:
-      die: 1d2
-      times: 1d3
-      res:
-        1: ["a strong ", {die: 1d3, res:{1: "elf ", 2: "dwarf ", 3: "human "}}, "with ", {die: 1d2, res:{1: "short ", 2: "long "}}, "hair."]
-        2: ["a weak ", {die: 1d3, res:{1: "elf ", 2: "dwarf ", 3: "human "}}, "with ", {die: 1d2, res:{1: "short ", 2: "long "}}, "hair."]
-    test2:
-      die: 1d4
-      times: 1d6
-      res:
-        1: ["[ROLL]1d4 "," orc, "]
-        2: ["[ROLL]1d4 "," goblin, "]
-        3: ["[ROLL]1d4 "," gnoll, "]
-        4: ["[ROLL]1d4 "," bugbear, "]

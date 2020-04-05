@@ -1,7 +1,7 @@
 import yaml
 from flask import (Blueprint, render_template, request, session)
-from forms import CharacterGenerationForm
-from charactergeneration import chargen
+from ..forms import CharacterGenerationForm
+from ..charactergeneration import chargen
 
 
 bp = Blueprint('chargenpage', __name__, url_prefix='/chargen')
@@ -29,14 +29,16 @@ def generate():
     characterLevel = int(request.form.get('characterLevel'))
     rollForParty = request.form.get('rollForParty')
     characterNumber = request.form.get('characterNumber')
+    createExcelSheet = request.form.get('createExcelSheet')
     ethnicity = request.form.get('ethnicity')
+    loadedCharacter = request.form.get('loadCharacter')
 
     chargen.loadCharacterFile(session['data'])
     generateParty = False
     if rollForParty:
         generateParty = True
 
-    characters = chargen.rollCharacters(characterClass, characterLevel, int(characterNumber), generateParty, ethnicity)
+    characters = chargen.rollCharacters(characterClass, characterLevel, int(characterNumber), createExcelSheet, generateParty, ethnicity)
 
     charGenForm = CharacterGenerationForm()
     charGenForm.ethnicity.choices = [('random', 'random')]
@@ -49,6 +51,7 @@ def generate():
     charGenForm.characterLevel.process_data(characterLevel)
     charGenForm.characterNumber.process_data(characterNumber)
     charGenForm.rollForParty.process_data(rollForParty)
+    charGenForm.createExcelSheet.process_data(createExcelSheet)
 
     return render_template('pages/chargen.html', char=characters, cfg=charGenForm)
 

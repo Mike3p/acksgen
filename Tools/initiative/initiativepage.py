@@ -1,7 +1,7 @@
 from flask import (Blueprint, render_template, request, session)
-from forms import InitiativeForm
-from dice import roll
-from initiative import initiative
+from ..forms import InitiativeForm
+from ..dice import roll
+from ..initiative import initiative
 
 bp = Blueprint('initiativepage', __name__, url_prefix='/initiative')
 data = {}
@@ -11,6 +11,7 @@ data = {}
 def page():
 
     initiativeTextbox = InitiativeForm()
+    session['initiativeField'] = request.form.get('initiativeInput')
     initiativeTextbox.initiativeInput.process_data(session['initiativeField'])
 
     return render_template('pages/initiative.html', cfg = initiativeTextbox)
