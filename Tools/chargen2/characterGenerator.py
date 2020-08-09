@@ -48,10 +48,11 @@ def load_character(name: str):
         setattr(c, k, x[k])
     return c
 
-stream = open("C:/Users/mhoh1/PycharmProjects/acksgenerator/newdata.yaml", 'r')
+stream = open("C:/Users/mhoh1/PycharmProjects/acksgen/newdata.yaml", 'r')
 data = yaml.safe_load(stream)
 
 for i in range(1):
     a = create_character(data, "ilian", "tristan", 7, "loremaster", "L", "male", 13, 13, 13, 13, 9, 9)
     dump_character(a)
     print(a)
+    print(a.proficiencies)

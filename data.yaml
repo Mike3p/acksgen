@@ -3138,7 +3138,7 @@ classes:
     minreq:
       wisdom: 9
     attackprogression: *mage_attack_throw_progression
-    saves: *thief_saving_throws
+    saves: *eldritch_saving_throws
     profprogression: *thief_proficiency_progression
     spellprogression: *loremaster_spellprogression
     proficiencies:

@@ -9,7 +9,7 @@ class Character:
 
     # noinspection PyAttributeOutsideInit
     def createFromScratch(self, classdict, generalprofs, styletables, spelllist, ethnicity, name, cclass, level, alignment, gender,
-                          strength, dexterity, constitution, intelligence, wisdom, charisma, pathname = None):
+                          strength, dexterity, constitution, intelligence, wisdom, charisma, pathname = None, prob_to_double_dip=20):
         # load dictionary with all relevant infos
         self.classdict: dict = classdict
 
@@ -92,16 +92,16 @@ class Character:
         self.features = ''
         self.personality = ''
 
-        #todo not sure if there is a better solution. i need computestatistics in case of changing attributes, levels, proficiencies, etc.
+        #todo not sure if there is a better solution. i need compute statistics in case of changing attributes, levels, proficiencies, etc.
         if self.intelligence >= 13:
-            self.chooseProficiency("general", "random")
+            self.chooseProficiency("general", "random",prob_to_double_dip)
         if self.intelligence >= 16:
-            self.chooseProficiency("general", "random")
+            self.chooseProficiency("general", "random",prob_to_double_dip)
         if self.intelligence >= 18:
-            self.chooseProficiency("general", "random")
+            self.chooseProficiency("general", "random",prob_to_double_dip)
 
         # this is for normalmen
-        self.getAbilitiesForCurrentLevel()
+        self.getAbilitiesForCurrentLevel(prob_to_double_dip)
         self.getEquipment()
 
         delattr(self,"classdict")
@@ -119,7 +119,7 @@ class Character:
                 print("maxlevel reached")
                 return
 
-            # level, exp und basehp muss ich hier tracken weil davon ja alles berechnet wird
+            # level, exp und base hp muss ich hier tracken weil davon ja alles berechnet wird
             self.level += 1
             if hasattr(self, "casterlevel"): self.casterlevel+=1
             if self.level < 9: self.basehp = self.basehp + roll("1"+self.hdtype)
@@ -131,10 +131,11 @@ class Character:
 
             # und zauber nicht vergessen
             self.getSpellsForCurrentLevel()
+
         # nach dem leveln berechnen wir die abilities!
         self.computeStatistics()
 
-    def getAbilitiesForCurrentLevel(self):
+    def getAbilitiesForCurrentLevel(self, prob_to_double_dip = 25):
         lvl = self.level
         for entry in self.abilityprogression.get(lvl,{}):
             def chooseRandomAbility(abilitydict: dict):
@@ -159,11 +160,11 @@ class Character:
 
         numberofgeneralprofs = sum(i == lvl for i in self.genprofprogression)
         for i in range(numberofgeneralprofs):
-            self.chooseProficiency("general", "random")
+            self.chooseProficiency("general", "random", prob_to_double_dip)
 
         numberofclassprofs = sum(i == lvl for i in self.classprofprogression)
         for i in range(numberofclassprofs):
-            self.chooseProficiency("class", "random")
+            self.chooseProficiency("class", "random", prob_to_double_dip)
 
     def addAbility(self, entry):
         if isinstance(entry, str):
@@ -173,8 +174,7 @@ class Character:
         else:
             self.abilities[entry['name']] = entry
 
-    def chooseProficiency(self, type:str, proficiencyToChoose):
-        chosenfrom = []
+    def chooseProficiency(self, type:str, proficiencyToChoose, prob_intent_doubledip = 0):
         if type == "class":
             chosenfrom: list = self.classproficiencylist
         elif type == "general":
@@ -186,20 +186,32 @@ class Character:
             raise Exception("character has no choices left?")
 
         proficiency:dict = {}
-        profname = ''
         if proficiencyToChoose == "random":
             choice = random.randrange(len(chosenfrom))
+
+            if roll("1d100") <= prob_intent_doubledip:
+                profs_char_can_double_dip = []
+                for key in self.proficiencies:
+                    if self.proficiencies[key]['ranks'] < self.proficiencies[key]['max']:
+                        profs_char_can_double_dip.append(self.proficiencies[key])
+                if profs_char_can_double_dip:
+                    choice = random.randrange(len(profs_char_can_double_dip))
+                    prof_to_double_dip = profs_char_can_double_dip[choice]
+                    print("character has double dipped " + prof_to_double_dip['name'])
+                    self.giveProficiencyToCharacter(prof_to_double_dip)
+                    return
+
             proficiency = chosenfrom[choice]
-            profname = proficiency['name']
+
         else:
             for p in chosenfrom:
                 if p['name'] == proficiencyToChoose:
                     proficiency = p
 
         if not proficiency:
-            raise Exception("a proficiency of this name does not exist")
+            raise Exception("a proficiency of this name does not exist in the specified list: "+proficiencyToChoose)
 
-        print("character has chosen proficiency: " + profname)
+        print("character has chosen proficiency: " + proficiency['name'])
         self.giveProficiencyToCharacter(proficiency)
 
     def giveProficiencyToCharacter(self, proficiency):
@@ -361,7 +373,6 @@ class Character:
         self.moralemodifier = self.chamod
         self.unitmorale = self.chamod
 
-
     def __init__(self):
         pass
 
@@ -380,8 +391,6 @@ class Character:
                         item.setdefault('amount',0)
                         item['amount'] +=1
                         out[item['name']] = item
-
-
 
             return out
 

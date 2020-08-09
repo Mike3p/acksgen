@@ -1111,7 +1111,7 @@ generalproficiencies:
   - &language
     name: Language
     type: genprof
-    max: 10
+    max: 3
   - &leadership
     name: Leadership
     type: genprof
