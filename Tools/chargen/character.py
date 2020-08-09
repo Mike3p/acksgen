@@ -1,6 +1,6 @@
-from ..charactergeneration.personalityGenerator import create_personality_string
+from Tools.chargen.personalityGenerator import create_personality_string
 import math
-import pickle
+
 
 class Character:
     # spells, special abilities and equipment

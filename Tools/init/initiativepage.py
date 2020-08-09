@@ -1,7 +1,7 @@
 from flask import (Blueprint, render_template, request, session)
-from ..forms import InitiativeForm
-from ..dice import roll
-from ..initiative import initiative
+from Tools.forms import InitiativeForm
+from Tools.dice import roll
+from Tools.init import initiative
 
 bp = Blueprint('initiativepage', __name__, url_prefix='/initiative')
 data = {}

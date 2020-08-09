@@ -1,4 +1,4 @@
-from ..dice import roll
+from Tools.dice import roll
 
 
 def rollInitiative(inis: list):

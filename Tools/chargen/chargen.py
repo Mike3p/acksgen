@@ -5,12 +5,12 @@ import copy
 import argparse
 import openpyxl
 
-from ..dice import roll
+from Tools.dice import roll
 from .character import Character
-from ..charactergeneration.item import Item, Weapon, Armor
-from ..charactergeneration.skill import Skill
-from ..tableroller import getTableResultString
-from ..charactergeneration.personalityGenerator import create_personality_string, create_personality
+from Tools.chargen.item import Item, Weapon, Armor
+from Tools.chargen.skill import Skill
+from Tools.tableroller import getTableResultString
+from Tools.chargen.personalityGenerator import create_personality
 from shutil import copyfile
 
 

@@ -1,8 +1,7 @@
 import yaml
-from flask import (Blueprint, render_template, request, session)
-from ..forms import CharacterGenerationForm
-from ..charactergeneration import chargen
-
+from flask import (Blueprint, render_template, request)
+from Tools.forms import CharacterGenerationForm
+from Tools.chargen import chargen
 
 bp = Blueprint('chargenpage', __name__, url_prefix='/chargen')
 data = {}
