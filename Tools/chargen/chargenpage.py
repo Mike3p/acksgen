@@ -51,7 +51,7 @@ def generate():
     charGenForm.characterLevel.process_data(characterLevel)
     charGenForm.characterNumber.process_data(characterNumber)
     charGenForm.rollForParty.process_data(rollForParty)
-    charGenForm.createExcelSheet.process_data(createExcelSheet)
+    #charGenForm.createExcelSheet.process_data(createExcelSheet)
 
     return render_template('pages/chargen.html', char=characters, cfg=charGenForm)
 
