@@ -1,2 +1,3 @@
 #ignore python cache files
 *.pyc
+/linux-env/
