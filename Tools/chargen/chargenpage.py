@@ -2,6 +2,7 @@ import yaml
 from flask import (Blueprint, render_template, request)
 from Tools.forms import CharacterGenerationForm
 from Tools.chargen import chargen
+from pathlib import Path
 
 bp = Blueprint('chargenpage', __name__, url_prefix='/chargen')
 data = {}
@@ -59,11 +60,14 @@ def loadData():
 
     if not 'data' in session:
         print("fresh reload")
-        with open("data.yaml", 'r') as stream:
-            try:
-                session['data'] = yaml.safe_load(stream)
-            except yaml.YAMLError as exc:
-                print(exc)
+
+    path = Path(__file__).parent / "../../data.yaml"
+    a = path.open()
+    with open(a.name, 'r') as stream:
+        try:
+            session['data'] = yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
 
     character_list = sorted(list(session['data']['classes'].keys()))
     character_list.append('random')
