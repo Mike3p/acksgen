@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Flask (C:\Users\mhoh1\PycharmProjects\acksgen\Tools\__init__.py)" type="Python.FlaskServer" nameIsGenerated="true">
+  <configuration default="false" name="Flask (C:\Users\mhoh1\PycharmProjects\acksgen\Tools\wsgi.py)" type="Python.FlaskServer" nameIsGenerated="true">
     <module name="acksgenerator" />
-    <option name="target" value="C:\Users\mhoh1\PycharmProjects\acksgen\Tools\__init__.py" />
+    <option name="target" value="C:\Users\mhoh1\PycharmProjects\acksgen\Tools\wsgi.py" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <option name="SDK_HOME" value="C:\Users\mhoh1\PycharmProjects\acksgen\venv\Scripts\python.exe" />

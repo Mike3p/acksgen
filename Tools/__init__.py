@@ -1,9 +1,9 @@
 import os
 
 from flask import Flask
-from .mainpage import *
-from .init import initiativepage
-from .chargen import chargenpage
+from Tools import mainpage
+from Tools.init import initiativepage
+from Tools.chargen import chargenpage
 
 
 def create_app(test_config=None):
