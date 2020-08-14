@@ -60,15 +60,15 @@ def loadData():
     if not 'data' in session:
         print("fresh reload")
 
-    path = Path(__file__).parent / "../../data.yaml"
-    a = path.open()
-    with open(a.name, 'r') as stream:
-        try:
-            session['data'] = yaml.safe_load(stream)
-        except yaml.YAMLError as exc:
-            print(exc)
+        path = Path(__file__).parent / "../../data.yaml"
+        a = path.open()
+        with open(a.name, 'r') as stream:
+            try:
+                session['data'] = yaml.safe_load(stream)
+            except yaml.YAMLError as exc:
+                print(exc)
 
     character_list = sorted(list(session['data']['classes'].keys()))
     character_list.append('random')
-    character_list.append('generate from scores')
+    character_list.append('smart random')
     session['choices'] = character_list

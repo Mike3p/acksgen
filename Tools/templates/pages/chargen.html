@@ -1,17 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 <form action="{{ url_for('chargenpage.generate')}}" method="POST">
-    Class:
-    {{ cfg.characterClass }}
-    Level:
-    {{ cfg.characterLevel }}
-    Ethnicity:
-    {{ cfg.ethnicity }}
-    Number:
-    {{ cfg.characterNumber(size=2) }}
-    Create Party:
-    {{ cfg.rollForParty }}
-<input id="createButton" type="submit" value="Create Character">
+    <b class="bigtext">Class:</b>
+    {{ cfg.characterClass(class_="dropdown") }}
+    <b class="bigtext">Ethnicity:</b>
+    {{ cfg.ethnicity(class_="dropdown") }}
+    <b class="bigtext">Level:</b>
+    {{ cfg.characterLevel(class_="dropdownsmall") }}
+    <b class="bigtext">Number:</b>
+    {{ cfg.characterNumber(size=2, class_="textnumber") }}
+    <b class="bigtext">Create Party:</b>
+    <label class="switch">
+        {{ cfg.rollForParty }}
+        <span class="slider round"></span>
+    </label>
+<input class="button" id="createButton" type="submit" value="Create Character">
 </form>
 
 <div class="character">
