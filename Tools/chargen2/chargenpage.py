@@ -1,7 +1,7 @@
 import yaml
 from flask import (Blueprint, render_template, request)
 from Tools.forms import CharacterGenerationForm
-from Tools.chargen import chargen
+from Tools.chargen2 import character
 from pathlib import Path
 
 bp = Blueprint('chargenpage', __name__, url_prefix='/chargen')

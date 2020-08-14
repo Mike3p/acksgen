@@ -1805,7 +1805,7 @@ equipment:
       weight: 1
       cost: 4
       damage: 1d6
-    &arbalest Arabalest:
+    &arbalest Arbalest:
       weight: 6
       cost: 50
       damage: 1d10

@@ -3,7 +3,7 @@ import os
 from flask import Flask
 from Tools import mainpage
 from Tools.init import initiativepage
-from Tools.chargen import chargenpage
+from Tools.chargen2 import chargenpage
 
 
 def create_app(test_config=None):
