@@ -1,7 +1,7 @@
 import yaml
 from flask import (Blueprint, render_template, request)
 from Tools.forms import CharacterGenerationForm
-from Tools.chargen import chargen
+from Tools.chargen2 import characterGenerator
 from pathlib import Path
 
 bp = Blueprint('chargenpage', __name__, url_prefix='/chargen')
@@ -15,7 +15,7 @@ def page():
 
     charGenForm = CharacterGenerationForm()
     charGenForm.ethnicity.choices = [('random','random')]
-    charGenForm.ethnicity.choices.extend([(x, x) for x in list(session['data']['names'].keys())])
+    charGenForm.ethnicity.choices.extend([(x, x) for x in list(session['data']['ethnicity'].keys())])
     charGenForm.characterClass.choices = [(x, x) for x in session['choices']]
     return render_template('pages/chargen.html', cfg=charGenForm)
 
@@ -29,19 +29,19 @@ def generate():
     characterLevel = int(request.form.get('characterLevel'))
     rollForParty = request.form.get('rollForParty')
     characterNumber = request.form.get('characterNumber')
-    createExcelSheet = request.form.get('createExcelSheet')
+    #createExcelSheet = request.form.get('createExcelSheet')
     ethnicity = request.form.get('ethnicity')
 
-    chargen.loadCharacterFile(session['data'])
     generateParty = False
     if rollForParty:
         generateParty = True
 
-    characters = chargen.rollCharacters(characterClass, characterLevel, int(characterNumber), createExcelSheet, generateParty, ethnicity)
+    characters = characterGenerator.roll_party(int(characterNumber),generateParty, session['data'], characterLevel, characterClass,
+                                               ethnicity)
 
     charGenForm = CharacterGenerationForm()
     charGenForm.ethnicity.choices = [('random', 'random')]
-    charGenForm.ethnicity.choices.extend([(x, x) for x in list(session['data']['names'].keys())])
+    charGenForm.ethnicity.choices.extend([(x, x) for x in list(session['data']['ethnicity'].keys())])
     charGenForm.characterClass.choices = [(x, x) for x in session['choices']]
 
     #todo das is bisschen unhübsch. könnte man evtl mal auftrennen in ethnicities und namen und dann richtig machen
@@ -60,15 +60,14 @@ def loadData():
     if not 'data' in session:
         print("fresh reload")
 
-    path = Path(__file__).parent / "../../data.yaml"
-    a = path.open()
-    with open(a.name, 'r') as stream:
-        try:
-            session['data'] = yaml.safe_load(stream)
-        except yaml.YAMLError as exc:
-            print(exc)
+        path = Path(__file__).parent / "../../newdata.yaml"
+        a = path.open()
+        with open(a.name, 'r') as stream:
+            try:
+                session['data'] = yaml.safe_load(stream)
+            except yaml.YAMLError as exc:
+                print(exc)
 
     character_list = sorted(list(session['data']['classes'].keys()))
     character_list.append('random')
-    character_list.append('generate from scores')
     session['choices'] = character_list

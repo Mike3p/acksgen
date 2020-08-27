@@ -1,4 +1,4 @@
-import yaml, math, random
+import math, random
 from Tools.dice import roll
 from Tools.tablerollerv2 import rollOnTable_string, rollOnTable
 from Tools.chargen2.personalityGenerator import create_personality_string
@@ -8,11 +8,12 @@ from Tools.chargen2.personalityGenerator import create_personality_string
 class Character:
 
     # noinspection PyAttributeOutsideInit
-    def createFromScratch(self, classdict, generalprofs, styletables, spelllist, ethnicity, name, cclass, level, alignment, gender,
-                          strength, dexterity, constitution, intelligence, wisdom, charisma, pathname = None, prob_to_double_dip=20):
+    def createFromScratch(self, classdict, generalprofs, styletables, ethnicity, name, cclass, level, alignment, gender,
+                          strength, dexterity, constitution, intelligence, wisdom, charisma, path = None, prob_to_double_dip=20):
+
+
         # load dictionary with all relevant infos
         self.classdict: dict = classdict
-
         # ability scores
         self.strength = strength
         self.dexterity = dexterity
@@ -22,17 +23,19 @@ class Character:
         self.charisma = charisma
 
         # process class dict and apply paths
-        self.pathname = pathname
-        if pathname:
-            if not(pathname in classdict.get('path', '')):
-                raise Exception("this class does not have the path " + str(pathname))
+        self.pathname = ''
+        if path:
+            self.pathname = " ("+str.capitalize(path)+")"
+            if not(path in classdict.get('path', '')):
+                raise Exception("this class does not have the path " + str(path))
             del self.classdict['path']
             for k in self.classdict:
                 if isinstance(self.classdict[k],dict):
                     if 'path' in self.classdict[k]:
-                        chosenpath = classdict[k]['path'][pathname]
+                        chosenpath = classdict[k]['path'][path]
                         classdict[k] = chosenpath
-        if not(pathname):
+        #print(cclass + " " + self.pathname)
+        if not(path):
             if 'path' in self.classdict:
                 raise Exception('this class has to choose a path')
 
@@ -75,16 +78,26 @@ class Character:
         self.initialsaves = self.classdict['savingthrows']['initial']
         self.genprofprogression = [0, 0, 5, 9, 13]
         self.classprofprogression = self.classdict['proficiencyprogression']
-        self.minimumrequirements = self.classdict['minimumrequirements']
+        self.primerequisites = self.classdict.get('primerequisites', [])
+        self.minrequisites = self.classdict.get('minrequisites',[])
         self.abilityprogression = self.classdict['abilityprogression']
 
+        for r in [self.minrequisites, self.primerequisites]:
+            for a in r:
+                while getattr(self, a) < r[a]:
+                    setattr(self, a, roll("3d6"))
+
+
         # spellcasting
-        if 'spellprogression' in self.classdict:
+        if 'magictypes' in self.classdict:
             self.casterlevel = 0
             self.ceremonythrow = 11
-            self.spellprogression = self.classdict['spellprogression']
-            self.spelllist = spelllist
-            self.spells = {1: [], 2: [], 3: [], 4: [], 5: [], 6: []}
+            self.magictypes = self.classdict['magictypes']
+            self.spells = {}
+            self.spellprogressions = {}
+            for mt in self.magictypes:
+                self.spellprogressions[mt['name']] = {"progression": mt['progression'], "type": mt['type']}
+
 
         # descriptive
         self.description = ''
@@ -106,6 +119,7 @@ class Character:
 
         delattr(self,"classdict")
 
+        self.computeStatistics()
         self.levelup(level)
 
         # add looks. depends on charisma mod.
@@ -113,7 +127,7 @@ class Character:
         self.personality = create_personality_string()
 
     def levelup(self, to:int):
-        self.computeStatistics()
+
         for i in range(to):
             if self.level >= self.maxlevel:
                 print("maxlevel reached")
@@ -197,7 +211,7 @@ class Character:
                 if profs_char_can_double_dip:
                     choice = random.randrange(len(profs_char_can_double_dip))
                     prof_to_double_dip = profs_char_can_double_dip[choice]
-                    print("character has double dipped " + prof_to_double_dip['name'])
+                    #print("character has double dipped " + prof_to_double_dip['name'])
                     self.giveProficiencyToCharacter(prof_to_double_dip)
                     return
 
@@ -211,7 +225,7 @@ class Character:
         if not proficiency:
             raise Exception("a proficiency of this name does not exist in the specified list: "+proficiencyToChoose)
 
-        print("character has chosen proficiency: " + proficiency['name'])
+        #print("character has chosen proficiency: " + proficiency['name'])
         self.giveProficiencyToCharacter(proficiency)
 
     def giveProficiencyToCharacter(self, proficiency):
@@ -227,31 +241,34 @@ class Character:
             if proficiency in self.classproficiencylist: self.classproficiencylist.remove(proficiency)
 
     def getSpellsForCurrentLevel(self):
-        if not(hasattr(self,"spellprogression")):
+        if not(hasattr(self,"spells")):
             return
-        spellsperlevel = self.spellprogression[self.casterlevel]
-        for spelllevel in spellsperlevel.keys():
-            numberofspellstoget = spellsperlevel[spelllevel]+self.intmod - (len(self.spells.get(spelllevel,[])))
-            spellChance = [34,33,33]
-            if self.alignment == 'N': spellChance = [40, 90, 100]
-            if self.alignment == 'L': spellChance = [60, 98, 100]
-            if self.alignment == 'C': spellChance = [30, 60, 100]
-            for j in range(numberofspellstoget):
-                x = roll("1d100")
-                spellColor = "grey"
-                shortHand = "g"
-                if x <= spellChance[0]:
-                    spellColor = "white"
-                    shortHand = "w"
-                elif x <= spellChance[1]:
-                    spellColor = "grey"
-                    shortHand = "g"
-                elif x <= spellChance[2]:
-                    spellColor = "black"
-                    shortHand = "b"
-                spell = random.choice(self.spelllist[spellColor][spelllevel]) + " (" + shortHand + ")"
-                if not spell in self.spells[spelllevel]:
-                    self.spells[spelllevel].append(spell)
+
+        for magictype in self.magictypes:
+            spellsperlevel = magictype['progression'].get(self.casterlevel,{1: 0})
+            mname = magictype['name']
+            self.spells[mname] = {1: [], 2: [], 3: [], 4: [], 5: [], 6: []}
+            for spelllevel in spellsperlevel.keys():
+                #rechnet aus wieviele zauber man noch zu bekommen hat
+                numberofspellstoget = spellsperlevel[spelllevel]+max(self.intmod,0) - (len(self.spells.get(spelllevel, [])))
+                c_spell_list = magictype['list']
+
+                if "divine" in str.lower(mname):
+                    if numberofspellstoget > 1:
+                        self.spells[mname][spelllevel] = c_spell_list[spelllevel]
+                else:
+                    for j in range(numberofspellstoget):
+
+                        al = self.alignment
+
+                        if al in c_spell_list:
+                            spell = random.choice(rollOnTable(c_spell_list[al])[spelllevel])
+                        elif ('die' in c_spell_list) & ('res' in c_spell_list):
+                            spell = random.choice(rollOnTable(c_spell_list)[spelllevel])
+                        else: spell = random.choice(c_spell_list[spelllevel])
+
+                        if not spell in self.spells[mname][spelllevel]:
+                            self.spells[mname][spelllevel].append(spell)
 
     # noinspection PyAttributeOutsideInit
     def computeStatistics(self):
@@ -272,7 +289,7 @@ class Character:
             elif ability >= 4:
                 return -2
             else:
-                return 3
+                return -3
         self.strmod = getabilitymodifier(self.strength)
         self.dexmod = getabilitymodifier(self.dexterity)
         self.conmod = getabilitymodifier(self.constitution)
@@ -414,7 +431,7 @@ class Character:
                 self.features = self.features + (rollOnTable_string(desctables['features']['positive']))+". "
         elif chm < 0:
             for i in range(abs(chm)):
-                self.features = self.features + (rollOnTable_string(desctables['features']['negativ']))+". "
+                self.features = self.features + (rollOnTable_string(desctables['features']['negative']))+". "
         else:
             for i in range(random.choice([1, 1, 1, 1, 1, 1, 1, 2, 2, 3])):
                 self.features = self.features + (rollOnTable_string(desctables['features']['average']))+". "
@@ -434,14 +451,19 @@ class Character:
             self.style = str.replace(self.style, '[GENDERPOSS]', ('His' if self.gender == 'male' else 'Her')).strip()
 
     def __repr__(self):
-        def formatSpells(spells):
+        def formatSpells(magic_type, spells):
             output = ""
             for i in spells:
                 if spells[i]:
-                    output = output + "L" + str(i) + ": ["
+                    number_of_casts = ''
+                    if "ceremonial" in str.lower(self.spellprogressions[magic_type]['type']):
+                        number_of_casts = str(self.ceremonythrow + ((i-1)*2)) + "+"
+                    else:
+                        number_of_casts = "x"+str(self.spellprogressions[magic_type]['progression'][self.level][i])
+                    output = output + "<b>L" + str(i)+"</b>" +" ("+number_of_casts +"): <b>[</b>"
                     for j in spells[i]:
                         output += j + ", "
-                    output = output[:-2] + "]; "
+                    output = output[:-2] + "<b>]</b>; "
             output = output[:-2]
             return output
 
@@ -462,9 +484,10 @@ class Character:
                 throw = (" ("+str(x['throw'])+"+"+")" if 'throw' in x else '')
                 output += x + rank + throw + ", "
             output = output[:-2]
+            if output == "": output = "None"
             return output
 
-        character = "<b>{}:</b> {} {}: Str: {}, Dex: {}, Con: {}, Int: {}, Wis: {}, Cha: {}; <b>XP:</b> {}\n" \
+        character = "<b>{}:</b> {}{} {}: Str: {}, Dex: {}, Con: {}, Int: {}, Wis: {}, Cha: {}; <b>XP:</b> {}\n" \
                     "<b>MV</b> {}, <b>AC</b> {}, <b>HD</b> {}, <b>hp</b> {}, <b>SP</b> {}+, <b>INI</b> {}, " \
                     "<b>PP</b> {}+, <b>PD</b> {}+, <b>BB</b> {}+, <b>SW</b> {}+, <b>S</b> {}+, <b>AL</b> {};\n" \
                     "<b>Attacks:</b> (<b>Melee:</b> {}+, {} dmg; <b>Missile:</b> {}+, {} dmg);\n" \
@@ -475,16 +498,19 @@ class Character:
                     "<b>Equipment:</b> {}. {};"
 
         character = character.format(
-            self.name, self.cclass, self.level, self.strength, self.dexterity, self.constitution, self.intelligence, self.wisdom, self.charisma, self.experiencepoints,
+            self.name, str.capitalize(self.cclass), self.pathname, self.level, self.strength, self.dexterity, self.constitution, self.intelligence, self.wisdom, self.charisma, self.experiencepoints,
             self.mv, self.ac, self.hdtype, self.hp, self.surprise, self.initiative,
             self.PP, self.PD, self.BB, self.SW, self.S, self.alignment,
             self.meleethrow, self.meleedamage, self.missilethrow, self.missiledamage,
             formatItems(self.weapons), formatItems(self.armor), formatSkills(self.abilities), formatSkills(self.proficiencies), formatItems(self.gear), self.encumbrance)
 
         if hasattr(self,'casterlevel'):
-            spellstring = "\n<b>Spells</b>: {};"
-            spellstring = spellstring.format(formatSpells(self.spells))
-            character = character + spellstring
+            for mt in self.spells:
+                spellstring = ""
+                if self.spells[mt][1]:
+                    spellstring = "\n<b>"+str.capitalize(mt)+" Spells</b>: {};"
+                    spellstring = spellstring.format(formatSpells(mt, self.spells[mt]))
+                character = character + spellstring
 
         character = character + "\n<b>Personality:</b> " + self.personality
 
@@ -493,5 +519,7 @@ class Character:
 
         if len(self.style) > 0:
             character = character + "\n<b>Style:</b> " + self.style
+
+        character = character.split("\n")
 
         return character

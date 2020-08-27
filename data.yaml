@@ -3200,7 +3200,7 @@ classes:
       - &exp Expeditionary
       - &ruf Ruffian
       - &sco Scoundrel
-      - &way Wayfarer*
+      - &way Wayfarer
     maxlevel: 14
     hd: d4
     minreq:

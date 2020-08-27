@@ -21,7 +21,7 @@ def rollOnTable(table, mod=0, die=None):
     # initialize resultlist
     res = []
     if isinstance(table, dict):
-        if 'name' in table:
+        if ('die' not in table) & ('res' not in table):
             return table
 
     if isinstance(table, str):
@@ -49,21 +49,16 @@ def rollOnTable(table, mod=0, die=None):
     return rollOnTable(rolledresult)
 
 
-def rollOnTable_string(table, mod=0, die=None,):
+def rollOnTable_string(table, mod=0, die=None, ):
     results = rollOnTable(table, mod, die)
     out = ''
     for r in results:
         if isinstance(r, list):
             for x in r:
                 out = out + str(x)
-        elif isinstance(r,dict):
+        elif isinstance(r, dict):
             out = out + r.get('name', 'unnamed roll object')
         else:
             out = out + str(r)
     # print(out)
     return out
-
-# loadTables("./data.yaml")
-# print(data)
-# for i in range(10):
-#    print(getTableResultString(data['randomtables']['treasure']['test'])+"\n")

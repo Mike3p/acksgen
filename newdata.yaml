@@ -627,7 +627,7 @@ abilities:
       missiledamage: 1
     levelprogression: [1, 3, 6, 9, 12]
   Backstab: &backstab
-    name: backstab
+    name: Backstab
     levelprogression: [1, 5, 9, 13]
   Move Silently: &move_silently
     name: Move Silently
@@ -699,6 +699,7 @@ abilities:
     name: Kin Slaying
   Greater Berserkergang: &greater_berserkergang
     name: Greater Berserkergang
+    max: 10
 classproficiencies:
   #proficiency attributes:
   #type, name, max, throw, levelprogression, mofifies, class, subskills
@@ -880,7 +881,6 @@ classproficiencies:
     type: classprof
     max: 1
     throw: 11
-    modifies:
   Laying on Hands: &laying_on_hands
     name: Laying on Hands
     type: classprof
@@ -1200,6 +1200,75 @@ proficiencyprogression:
   mage: &mage_proficiency_progression [1, 6, 12]
   general: &general_proficiency_progression [1, 1, 5, 9, 13]
 spellprogressions:
+  mage: &mage_spellprogression
+    1:
+      1: 1
+    2:
+      1: 2
+    3:
+      1: 2
+      2: 1
+    4:
+      1: 2
+      2: 2
+    5:
+      1: 2
+      2: 2
+      3: 1
+    6:
+      1: 2
+      2: 2
+      3: 2
+    7:
+      1: 3
+      2: 2
+      3: 2
+      4: 1
+    8:
+      1: 3
+      2: 3
+      3: 2
+      4: 2
+    9:
+      1: 3
+      2: 3
+      3: 3
+      4: 2
+      5: 1
+    10:
+      1: 3
+      2: 3
+      3: 3
+      4: 3
+      5: 2
+    11:
+      1: 4
+      2: 3
+      3: 3
+      4: 3
+      5: 2
+      6: 1
+    12:
+      1: 4
+      2: 4
+      3: 3
+      4: 3
+      5: 3
+      6: 2
+    13:
+      1: 4
+      2: 4
+      3: 4
+      4: 3
+      5: 3
+      6: 2
+    14:
+      1: 4
+      2: 4
+      3: 4
+      4: 4
+      5: 3
+      6: 3
   loremaster: &loremaster_spellprogression
     1:
       1: 2
@@ -1402,356 +1471,844 @@ spellprogressions:
       4: 3
       5: 3
       6: 2
-spells:
-  black:
+spelllists:
+  black: &spells_black
     1:
+      - Charm Person (b)
+      - Cause Fear (b)
+      - Cause Light Wounds (b)
+      - Choking Grip (b)
+      - Conjure Cacodemon Spawn (b)
+      - Destroy Dead (b)
+      - Frighten Beasts (b)
+      - Incite Madness (b)
+      - Infuriate Person (b)
+      - Protection from Good (b)
+      - Putrefy Food & Water (b)
+      - Slicing Blow (b)
+      - Summon Manes (b)
+      - Tenebrosity (b)
+      - Unliving Puppet (b)
+    2:
+      - Bane (b)
+      - Blindness (b)
+      - Bloody Flux (b)
+      - Cause Moderate Wounds (b)
+      - Conjure Imp (b)
+      - Continual Tenebrosity (b)
+      - Dark Whisper (b)
+      - Deafness (b)
+      - Deathless Minion (b)
+      - Drain Life (b)
+      - Gentle Repose (b)
+      - Infuriate Beast (b)
+      - Necromantic Potence (b)
+      - Summon Insect Swarm (b)
+      - Undetectable Charm (b)
+    3:
+      - Bestow Curse (b)
+      - Cause Disease (b)
+      - Cause Major Wounds (b)
+      - Command Person (b)
+      - Conjure Hellion (b)
+      - Dismember (b)
+      - Enervate (b)
+      - Invulnerability to Good (b)
+      - Infuriate Crowd (b)
+      - Inspire Horror (b)
+      - Sorcerous Bolt (b)
+      - Speak with Dead (b)
+      - Strengthen the Unliving (b)
+      - Summon Ooze (b)
+      - Undetectable Curse (b)
+    4:
+      - Animate Dead (b)
+      - Charm Monster (b)
+      - Control Undead (b)
+      - Cause Serious Wounds (b)
+      - Conjure Dybbuk (b)
+      - Drain Life II (b)
+      - Fear (b)
+      - Flesh to Ashes (b)
+      - Endless Slumber (b)
+      - Iron Maiden (b)
+      - Poison (b)
+      - Protection from Good (Sustained) (b)
+      - Shrieking Skull (b)
+      - Summon Shadows (b)
+      - Wizard Eye (b)
+    5:
+      - Cause Critical Wounds (b)
+      - Circle of Agony (b)
+      - Conjure Elemental (b)
+      - Contact Other Sphere (b)
+      - Curse of Swine (b)
+      - Feeblemind (b)
+      - Fillet and Serve (b)
+      - Flay the Slain (b)
+      - Inflict Lycanthropy (b)
+      - Magic Jar (b)
+      - Panic (b)
+      - Phantasmal Killer (b)
+      - Sorcerous Blast (b)
+      - Summon Hell Hounds (b)
+      - Weakness of Mind (b)
+    6:
+      - Body Swap (b)
+      - Conjure Genie (b)
+      - Conjure Fiend (b)
+      - Corrupting Dream (b)
+      - Death Spell (b)
+      - Disintegrate (b)
+      - Drain Life III (b)
+      - Enslave (b)
+      - Geas (b)
+      - Necromantic Invulnerability (b)
+      - Reflesh of the Bones (b)
+      - Restore Semblance of Life (b)
+      - Soul Eating (b)
+      - Summon Invisible Stalker (b)
+      - Torpor (b)
+  grey: &spells_grey
+    1:
+      - Auditory Illusion (g)
+      - Blinding Flash (g)
+      - Command Word (g)
+      - Display of Power (g)
+      - Ensorcellement (g)
+      - Faerie Fire (g)
+      - Hypnotism (g)
+      - Ice Floe (g)
+      - Kindle Flame (g)
+      - Shatter Blade (g)
+      - Sling Stone (g)
+      - Slipperiness (g)
+      - Slumber (g)
+      - Thunderclap (g)
+      - Weave Smoke (g)
+      - Unseen Servant (g)
+    2:
+      - Burning Sparks (g)
+      - Charm Animal (g)
+      - Circling Winds (g)
+      - Earth's Excrescence (g)
+      - Enthrall (g)
+      - ESP (g)
+      - Hold Person (g)
+      - Mirror Image (g)
+      - Illusory Interior (g)
+      - Phantasmal Force (g)
+      - Shrouding Fog (g)
+      - Ring of Fire (g)
+      - Snake Charm (g)
+      - Vitriolic Infusion (g)
+      - Voice of Persuation (g)
+      - Wave of Earth (g)
+    3:
+      - Battering Ram (g)
+      - Brazen Bull (g)
+      - Call Lightning (g)
+      - Command Animals (g)
+      - Chimerical Force (g)
+      - Earth's Maw (g)
+      - Fangs of the Earth (g)
+      - Gaseous Form (g)
+      - Glitterdust (g)
+      - Glyph of Warding (g)
+      - Hypnotic Pattern (g)
+      - Noxious Cloud (g)
+      - Paralyze (g)
+      - Rain of Vitriol (g)
+      - Slag Armor (g)
+      - Telepathy (g)
+    4:
+      - Command Plant (g)
+      - Control Animals (g)
+      - Gusting Gale (g)
+      - Hallucinatory Terrain (g)
+      - Hold Monster (g)
+      - Inaudibility (g)
+      - Invisibility (g)
+      - Massmorph (g)
+      - Scry (g)
+      - Spectral Force (g)
+      - Sticks to Snakes (g)
+      - Uncanny Gyration (g)
+      - Voice of Command (g)
+      - Weave Fire (g)
+      - Weave Wood (g)
+      - Weave Water (g)
+    5:
+      - Blood Boil (g)
+      - Control Winds (g)
+      - Cone of Frost (g)
+      - Cone of Paralysis (g)
+      - Force of Impetus (g)
+      - Forest Enchantment (g)
+      - Forgetfulness (g)
+      - Ice Sheet (g)
+      - Mirage (g)
+      - Pillar of Fire (g)
+      - Phoenix Aura (g)
+      - Scouring Zephyr (g)
+      - Spectral Legion (g)
+      - Summon Weather (g)
+      - Tremor (g)
+      - Weave Stone (g)
+    6:
+      - Arrows of the Sun (g)
+      - Capsizing Wave (g)
+      - Control Plangs (g)
+      - Control Weather (g)
+      - Cloud of Poison (g)
+      - Ice Storm (g)
+      - Inferno (g)
+      - Lower Water (g)
+      - Move Earth (g)
+      - Permanent Illusion (g)
+      - Programmed Illusion (g)
+      - Starfall (g)
+      - Sunder Structure (g)
+      - Thunderbolt (g)
+      - Transform Other (g)
+      - Weave Metal (g)
+  white: &spells_white
+    1:
+      - Angelic Choir (w)
+      - Bane-rune (w)
+      - Call of the Wolf (w)
+      - Chameleon (w)
+      - Counterspell (w)
+      - Cure Light Wounds (w)
+      - Delay Disease (w)
+      - Detect Evil (w)
+      - Detect Magic (w)
+      - Detect Poison (w)
+      - Hold Portal (w)
+      - Illumination (w)
+      - Locate Animal or Plant (w)
+      - Jump (w)
+      - Magic Mouth (w)
+      - Magic Rope (w)
+      - Pass Without Trace (w)
+      - Predict Weather (w)
+      - Protection from Evil (w)
+      - Purify Food and Water (w)
+      - Remove Fear (w)
+      - Salving Rest (w)
+      - Sharpness (w)
+      - Spider Climb (w)
+      - Trance (w)
+      - Ventriloquism (w)
+    2:
+      - Alter Self (w)
+      - Bless (w)
+      - Call of the Wolf Pack (w)
+      - Continual Illumination (w)
+      - Cure Moderate Wounds (w)
+      - Delay Poison (w)
+      - Detect Charm (w)
+      - Detect Invisible (w)
+      - Detect Secret Doors (w)
+      - Divine Grace (w)
+      - Eldritch Armor (w)
+      - Find Traps (w)
+      - Holy Chant (w)
+      - Knock (w)
+      - Locate Object (w)
+      - Noiselessness (w)
+      - Ogre Power (w)
+      - Resist Acid (w)
+      - Resist Cold (w)
+      - Resist Electricity (w)
+      - Resist Fire (w)
+      - Righteous Wrath (w)
+      - Speak with Animals (w)
+      - Swift Sword (w)
+      - Swimming (w)
+      - Warp Wood (w)
+      - Wizard Lock (w)
+    3:
+      - Augury (w)
+      - Avian Messenger (w)
+      - Call of the Wild Bear (w)
+      - Clairvoyance (w)
+      - Clairaudience (w)
+      - Cure Blindness (w)
+      - Cure Disease (w)
+      - Cure Major Wounds (w)
+      - Detect Curse (w)
+      - Dispel Magic (w)
+      - Eldritch Protection (w)
+      - Eyes of the Eagle (w)
+      - Growth (w)
+      - Growth of Animals (w)
+      - Inspire Awe (w)
+      - Invulnerability to Evil (w)
+      - Nondetection (w)
+      - Prayer (w)
+      - Protection from Evil (Sustained) (w)
+      - Protection from Normal Missiles (w)
+      - Remove Curse (w)
+      - Shared Dream (w)
+      - Skinchange (w)
+      - Spellward (w)
+      - Sphere of Visibility (w)
+      - Striking (w)
+      - Water Breathing (w)
+    4:
+      - Call of the Galloping Herd (w)
+      - Cure Serious Wounds (w)
+      - Crafting (w)
+      - Death Ward (w)
+      - Find Treasure (w)
+      - Giant Strength (w)
+      - Growth of Plants (w)
+      - Guise Self (w)
+      - Immunity to Acid (w)
+      - Immunity to Cold (w)
+      - Immunity to Electricity (w)
+      - Immunity to Fire (w)
+      - Infravision (w)
+      - Levitate (w)
+      - Minor Globe of Invulnerability (w)
+      - Neutralize Poison (w)
+      - Safe Travels (w)
+      - Spellward Other (w)
+      - Smite Undead (w)
+      - Speak with Plants (w)
+      - Vigor (w)
+      - Water Walking (w)
+    5:
+      - Angelic Aura (w)
+      - Bath of the Goddess (w)
+      - Call of the Great Cats (w)
+      - Call of the Ancient Tusk (w)
+      - Cure Critical Wounds (w)
+      - Delay Death (w)
+      - Locate Haunting (w)
+      - Dispel Evil (w)
+      - Divination (w)
+      - Fate (w)
+      - Guise Other (w)
+      - Haste (w)
+      - Healing Circle (w)
+      - Lay of the Land (w)
+      - Protection from Blast (w)
+      - Protection from Normal Weapons (w)
+      - Spirit Walk (w)
+      - Strength of Mind (w)
+      - Transmute Rock to Mud (w)
+      - True Seeing (w)
+      - Turn to Dust (w)
+      - Winged Flight (w)
+    6:
+      - Anti Magic Shell (w)
+      - Atonement (w)
+      - Banner of Invincibility (w)
+      - Call of the Giant Eagle (w)
+      - Call of the Leviathan (w)
+      - Greater Clairvoyance (w)
+      - Greater Clairaudience (w)
+      - Detect Ritual Magic (w)
+      - Find Place of Power (w)
+      - Fly (w)
+      - Globe of Invulnerability (w)
+      - Home Ward (w)
+      - Locate Distant Object (w)
+      - Prophetic Dream (w)
+      - Protection from Blast (Sustained) (w)
+      - Projected Image (w)
+      - Reincarnation (w)
+      - Remove Geas (w)
+      - Spellwarded Zone (w)
+      - Stone to Flesh (w)
+      - Transform Self (w)
+      - Trollblood (w)
+  arcane: &spells_arcane
+    1:
+      - Burning Hands
       - Charm Person
-      - Cause Fear
-      - Cause Light Wounds
-      - Choking Grip
-      - Conjure Cacodemon Spawn
-      - Destroy Dead
-      - Frighten Beasts
-      - Incite Madness
-      - Infuriate Person
-      - Protection from Good
-      - Putrefy Food & Water
-      - Slicing Blow
-      - Summon Manes
-      - Tenebrosity
-      - Unliving Puppet
-    2:
-      - Bane
-      - Blindness
-      - Bloody Flux
-      - Cause Moderate Wounds
-      - Conjure Imp
-      - Continual Tenebrosity
-      - Dark Whisper
-      - Deafness
-      - Deathless Minion
-      - Drain Life
-      - Gentle Repose
-      - Infuriate Beast
-      - Necromantic Potence
-      - Summon Insect Swarm
-      - Undetectable Charm
-    3:
-      - Bestow Curse
-      - Cause Disease
-      - Cause Major Wounds
-      - Command Person
-      - Conjure Hellion
-      - Dismember
-      - Enervate
-      - Invulnerability to Good
-      - Infuriate Crowd
-      - Inspire Horror
-      - Sorcerous Bolt
-      - Speak with Dead
-      - Strengthen the Unliving
-    4:
-      - Animate Dead
-      - Charm Monster
-      - Control Undead
-      - Cause Serious Wounds
-      - Conjure Dybbuk
-      - Drain Life II
-      - Fear
-      - Flesh to Ashes
-      - Endless Slumber
-      - Iron Maiden
-      - Poison
-      - Protection from Good (Sustained)
-      - Shrieking Skull
-      - Summon Shadows
-      - Wizard Eye
-    5:
-      - Cause Critical Wounds
-      - Circle of Agony
-      - Conjure Elemental
-      - Contact Other Sphere
-      - Curse of Swine
-      - Feeblemind
-      - Fillet and Serve
-      - Flay the Slain
-      - Inflict Lycanthropy
-      - Magic Jar
-      - Panic
-      - Phantasmal Killer
-      - Sorcerous Blast
-      - Summon Hell Hounds
-      - Weakness of Mind
-    6:
-      - Body Swap
-      - Conjure Genie
-      - Conjure Fiend
-      - Corrupting Dream
-      - Death Spell
-      - Disintegrate
-      - Drain Life III
-      - Enslave
-      - Geas
-      - Necromantic Invulnerability
-      - Reflesh of the Bones
-      - Restore Semblance of Life
-      - Soul Eating
-      - Summon Invisible Stalker
-      - Torpor
-  grey:
-    1:
-      - Auditory Illusion
-      - Blinding Flash
-      - Command Word
-      - Display of Power
-      - Ensorcellement
-      - Faerie Fire
-      - Hypnotism
-      - Ice Floe
-      - Kindle Flame
-      - Shatter Blade
-      - Sling Stone
-      - Slipperiness
-      - Slumber
-      - Thunderclap
-      - Weave Smoke
-      - Unseen Servant
-    2:
-      - Burning Sparks
-      - Charm Animal
-      - Circling Winds
-      - Earth's Excrescence
-      - Enthrall
-      - ESP
-      - Hold Person
-      - Mirror Image
-      - Illusory Interior
-      - Phantasmal Force
-      - Shrouding Fog
-      - Ring of Fire
-      - Snake Charm
-      - Vitriolic Infusion
-      - Voice of Persuation
-      - Wave of Earth
-    3:
-      - Battering Ram
-      - Brazen Bull
-      - Call Lightning
-      - Command Animals
-      - Chimerical Force
-      - Earth's Maw
-      - Fangs of the Earth
-      - Gaseous Form
-      - Glitterdust
-      - Glyph of Warding
-      - Hypnotic Pattern
-      - Noxious Cloud
-      - Paralyze
-      - Rain of Vitriol
-      - Slag Armor
-      - Telepathy
-    4:
-      - Command Plant
-      - Control Animals
-      - Gusting Gale
-      - Hallucinatory Terrain
-      - Hold Monster
-      - Inaudibility
-      - Invisibility
-      - Massmorph
-      - Scry
-      - Spectral Force
-      - Sticks to Snakes
-      - Uncanny Gyration
-      - Voice of Command
-      - Weave Fire
-      - Weave Wood
-      - Weave Water
-    5:
-      - Cause Critical Wounds
-      - Circle of Agony
-      - Conjure Elemental
-      - Contact Other Sphere
-      - Curse of Swine
-      - Feeblemind
-      - Fillet and Serve
-      - Flay the Slain
-      - Inflict Lycanthropy
-      - Magic Jar
-      - Panic
-      - Phantasmal Killer
-      - Sorcerous Blast
-      - Summon Hell Hounds
-      - Weakness of Mind
-    6:
-      - Body Swap
-      - Conjure Genie
-      - Conjure Fiend
-      - Corrupting Dream
-      - Death Spell
-      - Disintegrate
-      - Drain Life III
-      - Enslave
-      - Geas
-      - Necromantic Invulnerability
-      - Reflesh of the Bones
-      - Restore Semblance of Life
-      - Soul Eating
-      - Summon Invisible Stalker
-      - Torpor
-  white:
-    1:
-      - Angelic Choir
-      - Bane-rune
-      - Call of the Wolf
       - Chameleon
-      - Counterspell
-      - Cure Light Wounds
-      - Delay Disease
-      - Detect Evil
+      - Choking Grip
       - Detect Magic
-      - Detect Poison
+      - Floating Disc
       - Hold Portal
-      - Illumination
-      - Locate Animal or Plant
       - Jump
+      - Light
+      - Magic Missile
       - Magic Mouth
       - Magic Rope
-      - Pass Without Trace
-      - Predict Weather
+      - Protection from Evil
+      - Read Languages
+      - Sharpness
+      - Shield
+      - Silent Step
+      - Sleep
+      - Slipperiness
+      - Spider Climb
+      - Summon Berserkers
+      - Unseen Servant
+      - Ventriloquism
+      - Wall of Smoke
+    2:
+      - Alter Self
+      - Continual Light
+      - Deathless Minion
+      - Detect Evil
+      - Detect Invisible
+      - Detect Secret Doors
+      - ESP
+      - Glitterdust
+      - Gust of Wind
+      - Hypnotic Pattern
+      - Inaudibility
+      - Invisibility
+      - Knock
+      - Levitate
+      - Locate Object
+      - Mirror Image
+      - Necromantic Potence
+      - Ogre Power
+      - Phantasmal Force
+      - Stinking Cloud
+      - Summon Hero
+      - Uncanny Gyration
+      - Web
+      - Wizard Lock
+    3:
+      - Clairvoyance
+      - Clairaudience
+      - Chimerical Force
+      - Command Person
+      - Dismember
+      - Dispel Magic
+      - Earth's Teeth
+      - Enervate
+      - Fireball
+      - Fly
+      - Gaseous Form
+      - Growth
+      - Haste
+      - Hold Person
+      - Infravision
+      - Invisibility 10‘ radius
+      - Lightning Bolt
+      - Nondetection
+      - Protection from Evil, Sustained
+      - Protection from Normal Missiles
+      - Skinchange
+      - Summon Winged Steed
+      - Telepathy
+      - Water Breathing
+    4:
+      - Charm Monster
+      - Command Plant
+      - Confusion
+      - Conjure Ooze
+      - Dimension Door
+      - Fear
+      - Find Treasure
+      - Giant Strength
+      - Growth of Plants
+      - Hallucinatory Terrain
+      - Magic Carpet
+      - Massmorph
+      - Minor Globe of Invulnerability
+      - Polymorph Other
+      - Polymorph Self
+      - Remove Curse
+      - Scry
+      - Spectral Force
+      - Spell Storing
+      - Summon Fantastic Creature
+      - Wall of Fire
+      - Wall of Ice
+      - Wall of Wood
+      - Wizard Eye
+    5:
+      - Animate Dead
+      - Adaptation
+      - Cloudkill
+      - Cone of Cold
+      - Cone of Paralysis
+      - Conjure Elemental
+      - Contact Other Plane
+      - Control Undead
+      - Curse of Swine
+      - Enchanted Container
+      - Feeblemind
+      - Hold Monster
+      - Magic Jar
+      - Mass Infravision
+      - Panic
+      - Passwall
+      - Phantasmal Killer
+      - Protection from Normal Weapons
+      - Scouring Wind
+      - Telekinesis
+      - Teleport
+      - Transform Rock to Mud
+      - Wall of Stone
+      - X-Ray Vision
+    6:
+      - Anti-Magic Shell
+      - Control Plants
+      - Control Weather
+      - Death Spell
+      - Detect Ritual Magic
+      - Disintegrate
+      - Enslave
+      - Flesh to Stone
+      - Geas
+      - Globe of Invulnerability
+      - Invisible Stalker
+      - Lower Water
+      - Move Earth
+      - Oblivion
+      - Permanent Illusion
+      - Programmed Illusion
+      - Projected Image
+      - Reincarnate
+      - Summon Djinni
+      - Torpor
+      - Trollblood
+      - Wall of Corpses
+      - Wall of Force
+      - Wall of Iron
+  bladedancer: &spells_bladedancer
+    1:
+      - Angelic Choir
+      - Cure Light Wounds
+      - Detect Evil
+      - Detect Magic
+      - Faerie Fire
+      - Fellowship
+      - Light
+      - Protection from Evil
+      - Remove Fear
+      - Resist Cold
+    2:
+      - Bless
+      - Charm Animal
+      - Enthrall
+      - Hold Person
+      - Holy Chant
+      - Resist Fire
+      - Shimmer
+      - Speak with Animals
+      - Spiritual Weapon
+      - Swift Sword
+    3:
+      - Continual Light
+      - Cure Disease
+      - Glyph of Warding
+      - Growth of Animals
+      - Invulnerability to Evil
+      - Prayer
+      - Remove Curse
+      - Speak with Dead
+      - Striking
+      - Winged Flight
+    4:
+      - Create Water
+      - Cure Serious Wounds
+      - Dispel Magic
+      - Divination
+      - Neutralize Poison
+      - Protection from Evil, Sustained
+      - Smite Undead
+      - Speak with Plants
+      - Vigor
+      - Tongues
+    5:
+      - Atonement
+      - Commune
+      - Create Food
+      - Dispel Evil
+      - Flame Strike
+      - Insect Plague
+      - Quest
+      - Restore Life and Limb
+      - Sword of Fire
+      - True Seeing
+  cleric: &spells_cleric
+    1:
+      - Command Word
+      - Cure Light Wounds
+      - Detect Evil
+      - Detect Magic
+      - Light
       - Protection from Evil
       - Purify Food and Water
       - Remove Fear
-      - Salving Rest
-      - Sharpness
-      - Spider Climb
-      - Trance
-      - Ventriloquism
+      - Resist Cold
+      - Sanctuary
     2:
-      - Alter Self
+      - Augury
       - Bless
-      - Call of the Wolf Pack
-      - Continual Illumination
+      - Delay Poison
+      - Find Traps
+      - Hold Person
+      - Resist Fire
+      - Righteous Wrath
+      - Silence 15' radius
+      - Speak with Animals
+      - Spiritual Weapon
+    3:
+      - Continual Light
+      - Cure Blindness
+      - Cure Disease
+      - Feign Death
+      - Glyph of Warding
+      - Growth of Animals
+      - Locate Object
+      - Remove Curse
+      - Speak with Dead
+      - Striking
+    4:
+      - Create Water
+      - Cure Serious Wounds
+      - Dispel Magic
+      - Divination
+      - Neutralize Poison
+      - Protection from Evil, Sustained
+      - Smite Undead
+      - Speak with Plants
+      - Sticks to Snakes
+      - Tongues
+    5:
+      - Atonement
+      - Commune
+      - Create Food
+      - Dispel Evil
+      - Flame Strike
+      - Insect Plague
+      - Quest
+      - Restore Life and Limb
+      - Strength of Mind
+      - True Seeing
+  priestess: &spells_priestess
+    1:
+      - First Level Divine Spells
+      - Angelic Choir
+      - Command Word
+      - Cure Light Wounds
+      - Delay Disease
+      - Detect Danger
+      - Detect Evil
+      - Detect Magic
+      - Fellowship
+      - Light
+      - Protection from Evil
+      - Purify Food and Water
+      - Remove Fear
+      - Resist Cold
+      - Sanctuary
+      - Salving Rest
+    2:
+      - Augury
+      - Bless
+      - Charm Animal
       - Cure Moderate Wounds
       - Delay Poison
       - Detect Charm
-      - Detect Invisible
-      - Detect Secret Doors
       - Divine Grace
-      - Eldritch Armor
-      - Find Traps
+      - Enthrall
+      - Hold Person
       - Holy Chant
-      - Knock
-      - Locate Object
-      - Noiselessness
-      - Ogre Power
-      - Resist Acid
-      - Resist Cold
-      - Resist Electricity
       - Resist Fire
-      - Righteous Wrath
+      - Silence 15' radius
+      - Shimmer
+      - Snake Charm
       - Speak with Animals
-      - Swift Sword
-      - Swimming
-      - Warp Wood
-      - Wizard Lock
     3:
-      - Augury
-      - Avian Messenger
-      - Call of the Wild Bear
-      - Clairvoyance
-      - Clairaudience
+      - Continual Light
       - Cure Blindness
       - Cure Disease
       - Cure Major Wounds
       - Detect Curse
-      - Dispel Magic
-      - Eldritch Protection
-      - Eyes of the Eagle
-      - Growth
+      - Feign Death
+      - Glyph of Warding
       - Growth of Animals
-      - Inspire Awe
-      - Invulnerability to Evil
-      - Nondetection
+      - Locate Object
       - Prayer
-      - Protection from Evil (Sustained)
-      - Protection from Normal Missiles
+      - Prot. from Normal Missiles
       - Remove Curse
-      - Shared Dream
-      - Skinchange
-      - Spellward
+      - Speak with Dead
       - Sphere of Visibility
-      - Striking
-      - Water Breathing
-    4:
-      - Call of the Galloping Herd
-      - Cure Serious Wounds
-      - Crafting
-      - Death Ward
-      - Find Treasure
-      - Giant Strength
-      - Growth of Plants
-      - Guise Self
-      - Immunity to Acid
-      - Immunity to Cold
-      - Immunity to Electricity
-      - Immunity to Fire
-      - Infravision
-      - Levitate
-      - Minor Globe of Invulnerability
-      - Neutralize Poison
-      - Safe Travels
-      - Spellward Other
-      - Smite Undead
-      - Speak with Plants
-      - Vigor
       - Water Walking
-    5:
-      - Angelic Aura
-      - Bath of the Goddess
-      - Call of the Great Cats
-      - Call of the Ancient Tusk
-      - Cure Critical Wounds
-      - Delay Death
-      - Locate Haunting
-      - Dispel Evil
+    4:
+      - Control Undead
+      - Create Water
+      - Cure Serious Wounds
+      - Death Ward
+      - Dispel Magic
       - Divination
       - Fate
-      - Guise Other
-      - Haste
-      - Healing Circle
-      - Lay of the Land
-      - Protection from Blast
-      - Protection from Normal Weapons
-      - Spirit Walk
-      - Strength of Mind
-      - Transmute Rock to Mud
-      - True Seeing
-      - Turn to Dust
-      - Winged Flight
-    6:
-      - Anti Magic Shell
+      - Neutralize Poison
+      - Protection from Evil, Sustained
+      - Smite Undead
+      - Speak with Plants
+      - Spirit of Healing
+      - Sticks to Snakes
+      - Tongues
+      - Vigor
+    5:
       - Atonement
-      - Banner of Invincibility
-      - Call of the Giant Eagle
-      - Call of the Leviathan
-      - Greater Clairvoyance
-      - Greater Clairaudience
-      - Detect Ritual Magic
-      - Find Place of Power
-      - Fly
-      - Globe of Invulnerability
-      - Home Ward
-      - Locate Distant Object
-      - Prophetic Dream
-      - Protection from Blast (Sustained)
-      - Projected Image
+      - Commune
+      - Command Person
+      - Cure Critical Wounds
+      - Create Food
+      - Dispel Evil
+      - Fear
+      - Insect Plague
+      - Lower Water
+      - Protection from Normal Weapons
+      - Quest
+      - Restore Life and Limb
+      - Scry
+      - Strength of Mind
+      - True Seeing
+  shaman: &spells_shaman
+    1:
+      - First Level Divine Spells
+      - Command Word
+      - Cure Light Wounds
+      - Faerie Fire
+      - Locate Animal or Plant
+      - Pass Without Trace
+      - Predict Weather
+      - Purify Food and Water
+      - Remove Fear
+      - Resist Cold
+      - Trance
+    2:
+      - Bless
+      - Charm Animal
+      - Delay Poison
+      - Holy Chant
+      - Obscuring Cloud
+      - Produce Fire
+      - Resist Fire
+      - Snake Charm
+      - Speak with Animals
+      - Warp Wood
+    3:
+      - Call Lightning
+      - Cure Blindness
+      - Cure Disease
+      - Detect Curse
+      - Eyes of the Eagle
+      - Growth of Animals
+      - Striking
+      - Water Breathing
+      - Water Walking
+      - Winged Flight
+    4:
+      - Command Animals
+      - Create Water
+      - Cure Serious Wounds
+      - Dispel Magic
+      - Divination
+      - Fate
+      - Neutralize Poison
+      - Skinchange
+      - Sticks to Snakes
+      - Summon Animals
+    5:
+      - Call Dragon
+      - Control Animals
+      - Control Winds
+      - Create Food
+      - Finger of Death
+      - Insect Plague
+      - Quest
       - Reincarnation
-      - Remove Geas
-      - Spellwarded Zone
-      - Stone to Flesh
-      - Transform Self
-      - Trollblood
+      - Sword of Fire
+      - Summon Weather
+  witch: &spells_witch
+    1:
+      - First Level Divine Spells
+      - Cause Fear
+      - Command Word
+      - Cure Light Wounds
+      - Delay Disease
+      - Detect Magic
+      - Faerie Fire
+      - Light
+      - Locate Animal or Plant
+      - Predict Weather
+      - Protection from Evil
+      - Purify Food and Water
+      - Read Languages
+      - Resist Cold
+      - Salving Rest
+      - Trance
+    2:
+      - Augury
+      - Bane
+      - Charm Animal
+      - Chameleon
+      - Choking Grip
+      - Detect Charm
+      - Enthrall
+      - Locate Object
+      - Hold Person
+      - Magic Mouth
+      - Resist Fire
+      - Speak with Animals
+      - Sleep
+      - Ventriloquism
+      - Unseen Servant
+    3:
+      - Alter Self
+      - Cause Disease
+      - Charm Person
+      - Continual Light
+      - Cure Major Wounds
+      - Detect Curse
+      - Detect Invisible
+      - ESP
+      - Growth of Animals
+      - Invisibility
+      - Levitate
+      - Mirror Image
+      - Phantasmal Force
+      - Remove Curse
+      - Speak with Dead
+    4:
+      - Clairaudience
+      - Clairvoyance
+      - Chimerical Force
+      - Dispel Magic
+      - Divination
+      - Fate
+      - Fly
+      - Infravision
+      - Neutralize Poison
+      - Nondetection
+      - Protection from Evil, Sustained
+      - Telepathy
+      - Tongues
+      - Speak with Plants
+      - Water Breathing
+    5:
+      - Charm Monster
+      - Command Person
+      - Commune
+      - Dispel Evil
+      - Fear
+      - Growth of Plants
+      - Magic Carpet
+      - Polymorph Self
+      - Polymorph Other
+      - Quest
+      - Scry
+      - Spectral Force
+      - Strength of Mind
+      - Summon Weather
+      - True Seeing
 equipment:
   ammo:
     &case_with_20_bolts
@@ -1985,8 +2542,18 @@ equipment:
       ac: 2
       weight: 12
       cost: 20
+    - &light_arena_armor
+      name: Light Arena Armor
+      ac: 2
+      weight: 12
+      cost: 40
     - &ring_mail
       name: Ring Mail
+      ac: 3
+      weight: 18
+      cost: 20
+    - &scale_armor
+      name: Scale Armor
       ac: 3
       weight: 18
       cost: 20
@@ -1995,8 +2562,15 @@ equipment:
       ac: 4
       weight: 24
       cost: 40
+    - &heavy_arena_armor
+      name: Heavy Arena Armor
     - &lamellar_armor
-      name: Lamellar Armo
+      name: Lamellar Armor
+      ac: 5
+      weight: 30
+      cost: 50
+    - &banded_plate
+      name: Banded Plate Armor
       ac: 5
       weight: 30
       cost: 50
@@ -2294,6 +2868,515 @@ equipment:
     - &pot_waterbreathing
       name: Potion of Water Breathing
       weight: 1
+    - &pot_oilofbanerune
+      name: Oil of Bane Rune
+      weight: 1
+    - &pot_oilofvitriolicinfusion
+      name: Oil of Vitriolic Infusion
+      weight: 1
+    - &pot_alterself
+      name: Potion of Alter Self
+      weight: 1
+    - &pot_chameleon
+      name: Potion of Chameleon
+      weight: 1
+    - &pot_curelightwounds
+      name: Potion of Cure Light Wounds
+      weight: 1
+    - &pot_curemoderatewounds
+      name: Potion of Cure Moderate Wounds
+      weight: 1
+    - &pot_eldritcharmor
+      name: Potion of Eldritch Armor
+      weight: 1
+    - &pot_jump
+      name: Potion of Jump
+      weight: 1
+    - &pot_ogrepower
+      name: Potion of Ogre Power
+      weight: 1
+    - &pot_resistacid
+      name: Potion of Resist Acid
+      weight: 1
+    - &pot_resistcold
+      name: Potion of Resist Cold
+      weight: 1
+    - &pot_resistelectricity
+      name: Potion of Resist Electricity
+      weight: 1
+    - &pot_resistfire
+      name: Potion of Resist Fire
+      weight: 1
+    - &pot_righteouswrath
+      name: Potion of Righteous Wrath
+      weight: 1
+    - &pot_silentstep
+      name: Potion of Silent Step
+      weight: 1
+    - &pot_speakingwithanimals
+      name: Potion of Speaking with Animals
+      weight: 1
+    - &pot_spiderclimb
+      name: Potion of Spider Climb
+      weight: 1
+    - &pot_swiftsword
+      name: Potion of Swift Sword
+      weight: 1
+    - &pot_swimming
+      name: Potion of Swimming
+      weight: 1
+    - &pot_acidimmunity
+      name: Potion of Acid Immunity
+      weight: 1
+    - &pot_angelicaura
+      name: Potion of Angelic Aura
+      weight: 1
+    - &pot_coldimmunity
+      name: Potion of Cold Immunity
+      weight: 1
+    - &pot_curenblindness
+      name: Potion of Cure Blindness
+      weight: 1
+    - &pot_curecriticalwounds
+      name: Potion of Cure Critical Wounds
+      weight: 1
+    - &pot_curedisease
+      name: Potion of Cure Disease
+      weight: 1
+    - &pot_curemajorwounds
+      name: Potion of Cure Major Wounds
+      weight: 1
+    - &pot_electricalimmunity
+      name: Potion of Electrical Immunity
+      weight: 1
+    - &pot_eyesoftheeagle
+      name: Potion of Eyes of the Eagle
+      weight: 1
+    - &pot_findtreasure
+      name: Potion of Find Treasure
+      weight: 1
+    - &pot_fireimmunity
+      name: Potion of Fire Immunity
+      weight: 1
+    - &pot_greaterclairaudience
+      name: Potion of Greater Clairaudience
+      weight: 1
+    - &pot_greaterclairvoyance
+      name: Potion of Greater Clairvoyance
+      weight: 1
+    - &pot_guiseself
+      name: Potion of Guise Self
+      weight: 1
+    - &pot_infravision
+      name: Potion of Infravision
+      weight: 1
+    - &pot_invulnerabilitytoevil
+      name: Potion of Invulnerability to Evil
+      weight: 1
+    - &pot_necromanticinvulnerability
+      name: Potion of Necromantic Invulnerability
+      weight: 1
+    - &pot_protectionfromnormalmissiles
+      name: Potion of Protection from Normal Missiles
+      weight: 1
+    - &pot_protectionfromnormalweapons
+      name: Potion of Protection from Normal Weapons
+      weight: 1
+    - &pot_skinchange
+      name: Potion of Skinchange
+      weight: 1
+    - &pot_speakwithdead
+      name: Potion of Speak with Dead
+      weight: 1
+    - &pot_speakwithplants
+      name: Potion of Speak with Plants
+      weight: 1
+    - &pot_strengthofmind
+      name: Potion of Strength of Mind
+      weight: 1
+    - &pot_telepathy
+      name: Potion of Telepathy
+      weight: 1
+    - &pot_transformself
+      name: Potion of Transform Self
+      weight: 1
+    - &pot_trollblood
+      name: Potion of Trollblood
+      weight: 1
+    - &pot_trueseeing
+      name: Potion of True Seeing
+      weight: 1
+    - &pot_vigor
+      name: Potion of Vigor
+      weight: 1
+    - &pot_waterwalking
+      name: Potion of Water Walking
+      weight: 1
+    - &pot_wingedflight
+      name: Potion of Winged Flight
+      weight: 1
+  staffs:
+    - &staff_healing
+      name: Staff of Healing
+      weigth: 6
+    - &staff_power
+      name: Staff of Power
+      weigth: 6
+    - &staff_striking
+      name: Staff of Striking
+      weigth: 6
+    - &staff_withering
+      name: Staff of Withering
+      weigth: 6
+    - &staff_wizardry
+      name: Staff of Wizardry
+      weigth: 6
+    - &staff_serpent
+      name: Staff of the Serpent
+      weigth: 6
+    - &staff_cataclysm
+      name: Staff of Cataclysm
+      weigth: 6
+    - &staff_elementalair
+      name: Staff of Elemental Air
+      weigth: 6
+    - &staff_elementalearth
+      name: Staff of Elemental Earth
+      weigth: 6
+    - &staff_elementalfire
+      name: Staff of Elemental Fire
+      weigth: 6
+    - &staff_elementalwater
+      name: Staff of Elemental Water
+      weigth: 6
+  rods:
+    - &rod_cancellation
+      name: Rod of Cancellation
+      weight: 1
+    - &rod_ressurection
+      name: Rod of Resurrection
+      weight: 1
+    - &rod_nightsky
+      name: Rod of the Night Sky
+      weight: 1
+    - &rod_torture
+      name: Rod of Torture
+      weight: 1
+  wands:
+    - &wand_cold
+      name: Wand of Cold
+      weight: 1
+    - &wand_detectingenemies
+      name: Wand of Detecting Enemies
+      weight: 1
+    - &wand_detectingmagic
+      name: Wand of Detecting Magic
+      weight: 1
+    - &wand_detectingmetals
+      name: Wand of Detecting Metals
+      weight: 1
+    - &wand_detectingsecretdoors
+      name: Wand of Detecting Secret Doors
+      weight: 1
+    - &wand_detectingtraps
+      name: Wand of Detecting Traps
+      weight: 1
+    - &wand_devicenegation
+      name: Wand of Device Negation
+      weight: 1
+    - &wand_fear
+      name: Wand of Fear
+      weight: 1
+    - &wand_fireballs
+      name: Wand of Fire Balls
+      weight: 1
+    - &wand_illusion
+      name: Wand of Illusion
+      weight: 1
+    - &wand_lightningbolts
+      name: Wand of Lightning Bolts
+      weight: 1
+    - &wand_magicmissiles
+      name: Wand of Magic Missiles
+      weight: 1
+    - &wand_paralyzation
+      name: Wand of Paralyzation
+      weight: 1
+    - &wand_polymorphing
+      name: Wand of Polymorphing
+      weight: 1
+    - &wand_frost
+      name: Wand of Frost
+      weight: 1
+    - &wand_impetus
+      name: Wand of Impetus
+      weight: 1
+    - &wand_sorcery
+      name: Wand of Sorcery
+      weight: 1
+  rings:
+    - &ring_commandanimal
+      name: Ring of Command Animal
+      weight: 0
+    - &ring_commandhuman
+      name: Ring of Command Human
+      weight: 0
+    - &ring_commandplant
+      name: Ring of Command Plant
+      weight: 0
+    - &ring_delusion
+      name: Ring of Delusion
+      weight: 0
+    - &ring_djinnicalling
+      name: Ring of Djinni Calling
+      weight: 0
+    - &ring_fireresistance
+      name: Ring of Fire Resistance
+      weight: 0
+    - &ring_invisibility
+      name: Ring of Invisibility
+      weight: 0
+    - &ring_protection1
+      name: Ring of Protection +1
+      weight: 0
+      ac: 1
+    - &ring_protection2
+      name: Ring of Protection +2
+      weight: 0
+      ac: 2
+    - &ring_protection3
+      name: Ring of Protection +3
+      weight: 0
+      ac: 3
+    - &ring_regeneration
+      name: Ring of Regeneration
+      weight: 0
+    - &ring_spellstoring
+      name: Ring of Spell Storing
+      weight: 0
+    - &ring_spellturning
+      name: Ring of Spell Turning
+      weight: 0
+    - &ring_telekinesis
+      name: Ring of Telekinesis
+      weight: 0
+    - &ring_waterwalking
+      name: Ring of Water Walking
+      weight: 0
+    - &ring_weakness
+      name: Ring of Weakness
+      weight: 0
+    - &ring_wishes
+      name: Ring of Wishes
+      weight: 0
+    - &ring_xrayvision
+      name: Ring of X-Ray Vision
+      weight: 0
+    - &ring_antimagic
+      name: Ring of Anti-Magic
+      weight: 0
+    - &ring_queensheart
+      name: Ring of the Queen's Heart
+      weight: 0
+    - &ring_sealofchaos
+      name: Seal of Chaos
+      weight: 0
+  misc:
+    - &misc_amuletofnondetection
+      name: Amulet of nondetection
+      weight: 0
+    - &misc_apparatusofthecrab
+      name: Apparatus of the Crab
+      weight: 0
+    - &misc_bagofdevouring
+      name: Bag of Devouring
+      weight: 1
+    - &misc_bagofholding
+      name: Bag of Holding
+      weight: 1
+    - &misc_foldingboat
+      name: Folding Boat
+      weight: 6
+    - &misc_bootsoflevitation
+      name: Boots of Levitation
+      weight: 0
+    - &misc_bootsofspeed
+      name: Boots of Speed
+      weight: 0
+    - &misc_bootsoftravelingandspringing
+      name: Boots of Traveling and Springing
+      weight: 0
+    - &misc_bowlofcommandingwaterelementals
+      name: Bowl of Commanding Water Elementals
+      weight: 1
+    - &misc_bracersofarmor
+      name: Bracers of Armor
+      weight: 1
+    - &misc_brazierofcommandingfireelementals
+      name: Brazier of Commanding Fire Elementals
+      weight: 1
+    - &misc_broochofshielding
+      name: Brooch of Shielding
+      weight: 0
+    - &misc_broomofflying
+      name: Broom of Flying
+      weight: 6
+    - &misc_censerofcontrollingairelementals
+      name: Censer of Controlling Air Elementals
+      weight: 1
+    - &misc_chimeofopening
+      name: Chime of Opening
+      weight: 1
+    - &misc_cloakofprotection
+      name: Cloak of Protection
+      weight: 0
+    - &misc_crystalball
+      name: Crystal Ball
+      weight: 1
+    - &misc_crystalballclairaudience
+      name: Crystal Ball with Clairaudience
+      weight: 1
+    - &misc_crystalballesp
+      name: Crystal Ball with ESP
+      weight: 1
+    - &misc_cubeofforce
+      name: Cube of Force
+      weight: 1
+    - &misc_cubeoffrostresistance
+      name: Cube of Frost Resistance
+      weight: 1
+    - &misc_decanterofendlesswater
+      name: Decanter of Endless Water
+      weight: 1
+    - &misc_displacercloak
+      name: Displacer Cloak
+      weight: 0
+    - &misc_drumsofpanic
+      name: Drums of Panic
+      weight: 1
+    - &misc_dustofappearance
+      name: Dust of Appearance
+      weight: 1
+    - &misc_dustofdisappearance
+      name: Dust of Disappearance
+      weight: 1
+    - &misc_efreetibottle
+      name: Efreeti Bottle
+      weight: 1
+    - &misc_elvencloak
+      name: Elven Cloak
+      weight: 0
+    - &misc_elvenboots
+      name: Elven Boots
+      weight: 0
+    - &misc_eyesofcharming
+      name: Eyes of Charming
+      weight: 1
+    - &misc_eyesoftheeagle
+      name: Eyes of the Eagle
+      weight: 1
+    - &misc_eyesofpetrification
+      name: Eyes of Petrification
+      weight: 1
+    - &misc_flyingcarpet
+      name: Flying Carpet
+      weight: 6
+    - &misc_gauntletsofogrepower
+      name: Gauntlets of Ogre Power
+      weight: 0
+    - &misc_girdleofgiantstrength
+      name: Girdle of Giant Strength
+      weight: 0
+    - &misc_helmofalignmentchaning
+      name: Helm of Alignment Changing
+      weight: 0
+    - &misc_helmofcomprehendinglanguages
+      name: Helm of Comprehending Languages
+      weight: 0
+    - &misc_helmoftelepathy
+      name: Helm of Telepathy
+      weight: 0
+    - &misc_helmofteleportation
+      name: Helm of Teleportation
+      weight: 0
+    - &misc_hornofblasting
+      name: Horn of Blasting
+      weight: 1
+    - &misc_medaillonofesp
+      name: Medaillon of ESP
+      weight: 0
+    - &misc_medaillonofesp90
+      name: Medaillon of ESP (90')
+      weight: 0
+    - &misc_mirroroflifetrapping
+      name: Mirror of Life Trapping
+      weight: 1
+    - &misc_mirrorofopposition
+      name: Mirror of opposition
+      weight: 1
+    - &misc_necklaceofadaption
+      name: Necklace of Adaption
+      weight: 1
+    - &misc_ropeofclimbing
+      name: Rope of Climbing
+      weight: 1
+    - &misc_scarabofprotection
+      name: Scarab of Protection
+      weight: 1
+    - &misc_stoneofcontrollingearthelementals
+      name: Stone of Controlling Earth Elementals
+      weight: 1
+    - &misc_chaliceofblood
+      name: Chalice of Blood
+      weight: 1
+    - &misc_lightchariotofthegods
+      name: Light Chariot of the Gods
+      weight: 0
+    - &misc_mediumchariotofthegods
+      name: Medium Chariot of the Gods
+      weight: 0
+    - &misc_heavychariotofthegods
+      name: Heavy Chariot of the Gods
+      weight: 0
+    - &misc_collarofconversation
+      name: Collar of Conversation
+      weight: 0
+    - &misc_cloakofskinchanging
+      name: Cloak of Skinchanging
+      weight: 0
+    - &misc_deadmanshand
+      name: Dead Mans' Hand
+      weight: 1
+    - &misc_emblemoftheeagles
+      name: Emblem of the Eagles
+      weight: 0
+    - &misc_helmofawe
+      name: Helm of Awe
+      weight: 0
+    - &misc_holytalismanofthewingedsun
+      name: Holy Talisman of the Winged Sun
+      weight: 1
+    - &misc_ironboundbookofcisuthros
+      name: Iron Bound Book of Xisuthros
+      weight: 1
+    - &misc_ironcrownofthesorcererkings
+      name: Iron Crown of the Sorcerer-Kings
+      weight: 0
+    - &misc_bracersoftheimperialwarmistress
+      name: Bracers of the Imperial Warmistress
+      weight: 0
+    - &misc_bootsoftheimperialwarmistress
+      name: Boots of the Imperial Warmistress
+      weight: 0
+    - &misc_panoplyoftheimperialwarmistress
+      name: Panoply of the Imperial Warmistress
+      weight: 0
+    - &misc_corseletoftheimperialwarmistress
+      name: Corselet of the Imperial Warmistress
+      weight: 0
+    - &misc_diademoftheimperialwarmistress
+      name: Diadem of the Imperial Warmistress
+      weight: 0
   tables:
     tiny melee weapons: &table_tiny_melee_weapons
       die: 1d10
@@ -2417,17 +3500,18 @@ saves:
     progression: [1,3,5,7,9,11,13]
 classes:
   &thief thief:
+    name: thief
     experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
     hpafter9: 1
     mv: 120
     cleavesperlevel: 0.5
     maxlevel: 14
     hd: d4
-    minimumrequirements:
+    primerequisites:
       dexterity: 9
     attackprogression: *thief_attack_throw_progression
     savingthrows: *thief_saving_throws
-    profprogression: *thief_proficiency_progression
+    proficiencyprogression: *thief_proficiency_progression
     proficiencylist:
       - *acrobatics
       - *alertness
@@ -2489,13 +3573,14 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &assassin assassin:
+    name: assassin
     experienceforlevel: [0,1700,3400,6800,14000,28000,55000,110000,230000,350000,470000,590000,710000,830000]
     hpafter9: 2
     mv: 120
     cleavesperlevel: 1
     maxlevel: 14
     hd: d6
-    minimumrequirements:
+    primerequisites:
       strength: 9
       dexterity: 9
     attackprogression: *fighter_attack_throw_progression
@@ -2556,13 +3641,14 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &fighter fighter:
+    name: fighter
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
     hpafter9: 2
     mv: 120
     cleavesperlevel: 1
     maxlevel: 14
     hd: d8
-    minimumrequirements:
+    primerequisites:
       strength: 9
     attackprogression: *fighter_attack_throw_progression
     savingthrows: *fighter_saving_throws
@@ -2621,19 +3707,27 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &loremaster loremaster:
+    name: loremaster
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
     hpafter9: 1
     mv: 120
     cleavesperlevel: 0
     maxlevel: 14
     hd: d4
-    minimumrequirements:
+    primerequisites:
       intelligence: 9
       wisdom: 9
     attackprogression: *mage_attack_throw_progression
-    savingthrows: *thief_saving_throws
+    savingthrows: *eldritch_saving_throws
     proficiencyprogression: *thief_proficiency_progression
-    spellprogression: *loremaster_spellprogression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *loremaster_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
     proficiencylist:
       - *alchemy
       - *battle_magic
@@ -2689,19 +3783,27 @@ classes:
         - [*torch, 1d6-3]
         - [*ink, 1]
   &eldritch_rogue eldritch rogue:
+    name: eldritch rogue
     experienceforlevel: [0,1000,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000]
     hpafter9: 1
     mv: 120
     cleavesperlevel: 0
     maxlevel: 14
     hd: d4
-    minimumrequirements:
+    primerequisites:
       wisdom: 9
       intelligence: 9
     attackprogression: *mage_attack_throw_progression
     savingthrows: *thief_saving_throws
     proficiencyprogression: *thief_proficiency_progression
-    spellprogression: *runemaker_spellprogression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *runemaker_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
     proficiencylist:
       - *acrobatics
       - *alchemy
@@ -2761,6 +3863,7 @@ classes:
         - [*ink, 1]
         - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
   &runemaker runemaker:
+    name: runemaker
     experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
     hpafter9: 1
     mv: 120
@@ -2779,13 +3882,20 @@ classes:
           - *surga
     maxlevel: 14
     hd: d6
-    minimumrequirements:
+    primerequisites:
       strength: 9
       wisdom: 9
     attackprogression: *thief_attack_throw_progression
     savingthrows: *eldritch_saving_throws
     proficiencyprogression: *thief_proficiency_progression
-    spellprogression: *runemaker_spellprogression
+    magictypes:
+      - type: eldritch ceremonial
+        name: ceremonial
+        progression: *runemaker_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
     proficiencylist:
       - *armor_training
       - *battle_magic
@@ -2898,9 +4008,10 @@ classes:
             - [*torch, 1d6-3]
             - [*ink, 1d2-1]
   &bard bard:
+    name: bard
     maxlevel: 14
     hd: d6
-    minimumrequirements:
+    primerequisites:
       charisma: 9
     attackprogression: *thief_attack_throw_progression
     savingthrows: *thief_saving_throws
@@ -2966,6 +4077,7 @@ classes:
     mv: 120
     cleavesperlevel: 0.5
   &bladedancer bladedancer:
+    name: bladedancer
     experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
     hpafter9: 1
     mv: 120
@@ -2975,13 +4087,20 @@ classes:
     gender: female
     maxlevel: 14
     hd: d6
-    minimumrequirements:
+    primerequisites:
       dexterity: 9
       wisdom: 9
     attackprogression: *thief_attack_throw_progression
     savingthrows: *eldritch_saving_throws
     proficiencyprogression: *thief_proficiency_progression
-    spellprogression: *runemaker_spellprogression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *runemaker_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
     proficiencylist:
       - *acrobatics
       - *ceremonial_magic
@@ -3036,13 +4155,14 @@ classes:
         - [*torch, 1d6-3]
         - [*ink, 1d2-1]
   &explorer explorer:
+    name: explorer
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
     hpafter9: 2
     mv: 120
     cleavesperlevel: 1
     maxlevel: 14
     hd: d8
-    minimumrequirements:
+    primerequisites:
       strength: 9
       dexterity: 9
     attackprogression: *fighter_attack_throw_progression
@@ -3107,6 +4227,7 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &barbarian barbarian:
+    name: barbarian
     experienceforlevel: [0,2600,5200,10400,20800,41600,85000,170000,290000,410000,530000,650000,770000,890000]
     hpafter9: 2
     mv: 120
@@ -3125,7 +4246,7 @@ classes:
           - *surga
     maxlevel: 14
     hd: d8
-    minimumrequirements:
+    primerequisites:
       strength: 9
       constitution: 9
     attackprogression: *fighter_attack_throw_progression
@@ -3281,13 +4402,14 @@ classes:
             - [*table_light, 1]
             - [*torch, 1d6-3]
   &beastmaster beastmaster:
+    name: beastmaster
     experienceforlevel: [0,2900,5800,11600,23200,46400,95000,190000,310000,430000,550000,670000,790000,910000]
     hpafter9: 2
     mv: 120
     cleavesperlevel: 1
     maxlevel: 14
     hd: d6
-    minimumrequirements:
+    primerequisites:
       strength: 9
       dexterity: 9
       constitution: 9
@@ -3354,6 +4476,7 @@ classes:
         - [*table_sleeping, 1]
         - [*torch, 1d6-2]
   &berserker berserker:
+    name: berserker
     experienceforlevel: [0,2750,5500,11000,22000,44000,90000,180000,300000,420000,540000,660000,780000,900000]
     hpafter9: 2
     mv: 120
@@ -3372,7 +4495,7 @@ classes:
           - *surga
     maxlevel: 14
     hd: d8
-    minimumrequirements:
+    primerequisites:
       strength: 9
       constitution: 9
     attackprogression: *fighter_attack_throw_progression
@@ -3517,18 +4640,102 @@ classes:
             - [*table_light, 1]
             - [*torch, 1d6-3]
   &ecclesiastic ecclesiastic:
+    name: ecclesiastic
     experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
     hpafter9: 1
     mv: 120
     cleavesperlevel: 0
     maxlevel: 14
     hd: d4
-    minimumrequirements:
+    primerequisites:
       wisdom: 9
     attackprogression: *mage_attack_throw_progression
     savingthrows: *thief_saving_throws
     proficiencyprogression: *thief_proficiency_progression
-    spellprogression: *loremaster_spellprogression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *mage_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
+    proficiencylist:
+      - *alchemy
+      - *animal_husbandry
+      - *martial_training
+      - *beast_friendship
+      - *ceremonial_magic
+      - *command
+      - *divine_blessing
+      - *divine_health
+      - *farseeing
+      - *healing
+      - *knowledge
+      - *laying_on_hands
+      - *loremastery
+      - *magical_engineering
+      - *magical_music
+      - *mystic_aura
+      - *naturalism
+      - *performance
+      - *personal_talisman
+      - *prestidigation
+      - *profession
+      - *prophecy
+      - *quiet_magic
+      - *righteous_turning
+      - *second_sight
+      - *sensing_evil
+      - *sensing_power
+      - *unflappable_casting
+    abilityprogression:
+      1:
+        - *theology
+        - Comfort and Console the Wounded
+        - Salving Rest
+        - Rally the Faithful
+        - Turn Nightmare
+    equipment:
+      weapons:
+        - [*table_tiny_melee_weapons, 1]
+        - [*table_mage_weapons, 1]
+      armor: []
+      gear:
+        - [*backpack, 1]
+        - [*ceremonial_codex, 1]
+        - [*traditional_implements, 1]
+        - [*table_healing_herbs, 1d4]
+        - [*table_tools, 2d4]
+        - [*table_sleeping, 1]
+        - [*military_oil, 1d2-1]
+        - [*table_light, 1]
+        - [*torch, 1d6-3]
+        - [*holy_symbol, 1]
+        - [*holy_water, 2d2]
+        - [*ink, 1]
+  &mage mage:
+    name: mage
+    experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0
+    maxlevel: 14
+    hd: d4
+    primerequisites:
+      intelligence: 9
+    attackprogression: *mage_attack_throw_progression
+    savingthrows: *arcane_saving_throws
+    proficiencyprogression: *mage_proficiency_progression
+    magictypes:
+      - type: divine cast
+        name: Divine
+        progression: *runemaker_spellprogression
+        list: *spells_cleric
+      - type: arcane ceremonial
+        name: Arcane
+        progression: *mage_spellprogression
+        list: *spells_arcane
     proficiencylist:
       - *alchemy
       - *animal_husbandry
@@ -3584,6 +4791,7 @@ classes:
         - [*holy_water, 2d2]
         - [*ink, 1]
   &freebooter freebooter:
+    name: freebooter
     experienceforlevel: [0,2150,4300,8600,17200,34400,70000,140000,240000,340000,440000,540000,640000,740000]
     hpafter9: 2
     mv: 120
@@ -3595,7 +4803,7 @@ classes:
       - &way Wayfarer
     maxlevel: 14
     hd: d4
-    minimumrequirements:
+    primerequisites:
       dexterity: 9
       path:
         *exp: {wisdom: 9}
@@ -3707,19 +4915,27 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &occultist occultist:
+    name: occultist
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
     hpafter9: 1
     mv: 120
     cleavesperlevel: 0
     maxlevel: 14
     hd: d4
-    minimumrequirements:
+    primerequisites:
       intelligence: 9
       wisdom: 9
     attackprogression: *mage_attack_throw_progression
     savingthrows: *thief_saving_throws
     proficiencyprogression: *thief_proficiency_progression
-    spellprogression: *loremaster_spellprogression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *loremaster_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
     proficiencylist:
       - *alchemy
       - *battle_magic
@@ -3780,13 +4996,14 @@ classes:
         - [*torch, 1d6-3]
         - [*ink, 1]
   &venturer venturer:
+    name: venturer
     experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
     hpafter9: 2
     mv: 120
     cleavesperlevel: 0.5
     maxlevel: 14
     hd: d4
-    minimumrequirements:
+    primerequisites:
       charisma: 9
     attackprogression: *thief_attack_throw_progression
     savingthrows: *thief_saving_throws
@@ -3854,6 +5071,7 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &warmistress warmistress:
+    name: warmistress
     experienceforlevel: [0,2450,4900,9800,19600,39200,80000,160000,280000,400000,520000,640000,760000,880000]
     hpafter9: 2
     mv: 120
@@ -3862,7 +5080,7 @@ classes:
     gender: female
     maxlevel: 14
     hd: d6
-    minimumrequirements:
+    primerequisites:
       dexterity: 9
       charisma: 9
     attackprogression: *fighter_attack_throw_progression
@@ -3925,6 +5143,7 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &herald herald:
+    name: herald
     experienceforlevel: [0,1850,3700,7400,14800,29600,60000,120000,240000,360000,480000,600000,720000,840000]
     hpafter9: 2
     mv: 120
@@ -3933,7 +5152,7 @@ classes:
     ethnicity:
       - *ilian
     hd: d6
-    minimumrequirements:
+    primerequisites:
       charisma: 9
       strength: 9
     attackprogression: *fighter_attack_throw_progression
@@ -3997,13 +5216,14 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &gladiator gladiator:
+    name: gladiator
     experienceforlevel: [0,1700,3400,6800,14000,28000,55000,110000,230000,350000,470000,590000,710000,830000]
     hpafter9: 2
     mv: 120
     cleavesperlevel: 1
     maxlevel: 14
     hd: d6
-    minimumrequirements:
+    primerequisites:
       strength: 9
     attackprogression: *fighter_attack_throw_progression
     savingthrows: *fighter_saving_throws
@@ -4072,6 +5292,7 @@ classes:
         - [*table_light, 1]
         - [*torch, 1d6-3]
   &shaman shaman:
+    name: shaman
     experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
     hpafter9: 1
     mv: 120
@@ -4082,12 +5303,19 @@ classes:
       - *surga
     maxlevel: 14
     hd: d6
-    minimumrequirements:
+    primerequisites:
       wisdom: 9
     attackprogression: *thief_attack_throw_progression
     savingthrows: *eldritch_saving_throws
     proficiencyprogression: *thief_proficiency_progression
-    spellprogression: *runemaker_spellprogression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *runemaker_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
     proficiencylist:
       - *alchemy
       - *animal_husbandry
@@ -4160,6 +5388,7 @@ classes:
         - [*torch, 1d6-3]
         - [*ink, 1d2-1]
   &witch witch:
+    name: witch
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
     hpafter9: 1
     mv: 120
@@ -4178,13 +5407,20 @@ classes:
           *sargon
     maxlevel: 14
     hd: d4
-    minimumrequirements:
+    primerequisites:
       wisdom: 9
       charisma: 9
     attackprogression: *mage_attack_throw_progression
     savingthrows: *eldritch_saving_throws
     proficiencyprogression: *thief_proficiency_progression
-    spellprogression: *loremaster_spellprogression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *loremaster_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
     proficiencylist:
       - *alchemy
       - *animal_husbandry
@@ -4273,7 +5509,7 @@ desctables:
       5-8: Average
       9-10: Broad
       11-12: Large
-      14: Huge
+      13: Huge
   eye color:
     ilian:
       die: 1d20
@@ -4718,6 +5954,52 @@ desctables:
         3: ['[GENDERPERS] is wearing ', *table_headwear_any]
         4: ['[GENDERPERS] ', *table_adornments_any]
 tables:
+  armortype:
+    die: 1d20
+    res:
+      1-5: *hide_armor
+      6: *light_arena_armor
+      7: *ring_mail
+      8: *scale_armor
+      9-12: *chain_mail
+      13: *heavy_arena_armor
+      14: *banded_plate
+      15: *lamellar_armor
+      16-20: *plate_armor
+  swordtype:
+    die: 1d10
+    res:
+      1-2: *dagger
+      3-5: *short_sword
+      6-8: *sword
+      9-10: *two_handed_sword
+  miscweptype:
+    die: 1d100
+    res:
+      1-2: *arbalest
+      3-9: *battle_axe
+      10-14: *great_axe
+      15-17: *hand_axe
+      18: *bola
+      19-24: *composite_bow
+      25-30: *longbow
+      31-34: *shortbow
+      35: *club
+      36-40: *crossbow
+      41-45: *darts
+      46-50: *flail
+      51-55: *javelin
+      56-60: *lance
+      61-65: *mace
+      66-70: *morning_star
+      71: *net
+      72-76: *pole_arm
+      77: *sap
+      78-82: *sling
+      83-92: *spear
+      93-94: *staff
+      95-99: *war_hammer
+      100: *whip
   classes:
     die: 3d6
     res:
@@ -4783,3 +6065,50 @@ tables:
       die: 1d100
       res:
         1-10: {die: 1d3, res:{1: bone, 2: scrimshaw, 3: beast parts}}
+    common:
+      die: 1d100
+      res:
+        1-5: Armor, Masterwork
+        6-15: Misc. Weapon, Masterwork
+        16-17: Oil of Bane-Rune
+        18-19: Oil of Sharpness
+        20-21: Oil of Slipperiness
+        22: Oil of Vitriolic Infusion
+        23: Potion of Alter Self
+        24-25: Potion of Chameleon
+        26-29: Potion of Cure Light Wounds
+        30-31: Potion of Cure Moderate Wounds
+        32: Potion of Eldritch Armor
+        33: Potion of ESP
+        34-35: Potion of Jump
+        36: Potion of Ogre Power
+        37: Potion of Resist Acid
+        38: Potion of Resist Cold
+        39: Potion of Resist Electricity
+        40: Potion of Resist Fire
+        41: Potion of Righteous Wrath
+        42-43: Potion of Silent Step
+        44: Potion of Speaking with Animals
+        45-46: Potion of Spider Climb
+        47: Potion of Swift Sword
+        48: Potion of Swimming
+        49-52: ["[ROLL]1d2","x ",Rechargable Trinket L1,]
+        53-56: ["[ROLL]1d2","x ",Rechargable Trinket L2,]
+        57-59: ["[ROLL]1d2","x ",Rechargable Trinket L3,]
+        60-61: ["[ROLL]1d2","x ",Rechargable Trinket L4,]
+        62: ["[ROLL]1d2","x ",Rechargable Trinket L5]
+        63: Rechargable Trinket L6
+        64-68: Shield, Masterwork
+        69-83: Scroll (1 level)
+        84-88: Scroll (2 levels)
+        89-98: Sword, Masterwork
+        99-100: [Waybread, "1d2"]
+    uncommon:
+      die: 1d100
+      res:
+        1-5: Armor +1
+        6: Arrow +3, Slaying
+        7: ["[ROLL]2d6","x ", "Arrows +1"]
+
+
+

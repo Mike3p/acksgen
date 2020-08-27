@@ -104,121 +104,6 @@ body {
   font-size: 18px;
 }
 
-/* Button Styling */
-.button {
-  background-color: #fafafa;
-  border: 1px solid black;
-  border-radius: 5px;
-  color: black;
-  padding: 4px 8px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-/* Form Styling*/
-/*dropdown menu*/
-.dropdown {
-  padding: 4px 8px;
-  border: 1px solid black;
-  border-radius: 4px;
-  background-color: #fafafa;
-  width: 100px;
-  margin: 4px 2px;
-}
-
-.dropdownsmall {
-  padding: 4px 8px;
-  border: 1px solid black;
-  border-radius: 4px;
-  background-color: #fafafa;
-  width: 50px;
-  margin: 4px 2px;
-}
-
-.dropdown option{
-  font-family: Calibri;
-  font-size: 14px;
-  color: black;
-}
-
-.textnumber {
-  padding: 4px 8px;
-  border: 1px solid black;
-  border-radius: 4px;
-  background-color: #fafafa;
-  width: 50px;
-  margin: 4px 2px;
-}
-
-/*checkbox sliders*/
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 20px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 15px;
-  width: 15px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(12px);
-  -ms-transform: translateX(12px);
-  transform: translateX(12px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 20px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-
-
 /* Footer */
 .footer {
   padding: 1px;
@@ -249,7 +134,7 @@ input:checked + .slider:before {
 }
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 400px) {
   .navbar a {
     float: none;
     width: 100%;

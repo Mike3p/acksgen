@@ -1,6 +1,6 @@
 import copy
 import argparse
-from ..dice import roll, get_ability_mod
+from Tools.dice import roll, get_ability_mod
 
 
 def create_personality():
