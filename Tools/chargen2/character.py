@@ -514,6 +514,8 @@ class Character:
 
         character = character + "\n<b>Personality:</b> " + self.personality
 
+        character = character + "\n<b>Description:</b> " + self.description
+
         if len(self.features) > 0:
             character = character + "\n<b>Features:</b> " + self.features
 
