@@ -2,6 +2,7 @@ import yaml
 from Tools.dice import roll
 
 
+
 def formatTable(table):
     formattedTable: dict
     formattedTable = {'die': table['die'], 'res': {}}
@@ -20,8 +21,11 @@ def formatTable(table):
 def rollOnTable(table, mod=0, die=None):
     # initialize resultlist
     res = []
+    if isinstance(table, int):
+        return table
+
     if isinstance(table, dict):
-        if ('die' not in table) & ('res' not in table):
+        if ('die' not in table) or ('res' not in table):
             return table
 
     if isinstance(table, str):
@@ -39,6 +43,7 @@ def rollOnTable(table, mod=0, die=None):
     # check if custom die is specified and die roll falls into table range
     dieroll = (roll(die) if die else roll(tab['die']))
     dieroll += mod
+    #print(dieroll)
     if dieroll < min(list(tab['res'].keys())):
         dieroll = min(list(tab['res'].keys()))
     elif dieroll > max(list(tab['res'].keys())):
@@ -52,6 +57,8 @@ def rollOnTable(table, mod=0, die=None):
 def rollOnTable_string(table, mod=0, die=None, ):
     results = rollOnTable(table, mod, die)
     out = ''
+    if not isinstance(results,list):
+        results = [results]
     for r in results:
         if isinstance(r, list):
             for x in r:
@@ -62,3 +69,5 @@ def rollOnTable_string(table, mod=0, die=None, ):
             out = out + str(r)
     # print(out)
     return out
+
+

@@ -3894,7 +3894,7 @@ randomtables:
       5-8: Average
       9-10: Broad
       11-12: Large
-      14: Huge
+      13: Huge
   eye color:
     ilian:
       die: 1d20

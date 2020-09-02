@@ -28,7 +28,7 @@ def generate():
     characterClass = request.form.get('characterClass')
     characterLevel = int(request.form.get('characterLevel'))
     rollForParty = request.form.get('rollForParty')
-    characterNumber = request.form.get('characterNumber')
+    characterNumber = min(int(request.form.get('characterNumber')),200)
     #createExcelSheet = request.form.get('createExcelSheet')
     ethnicity = request.form.get('ethnicity')
 

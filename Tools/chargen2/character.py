@@ -9,7 +9,7 @@ class Character:
 
     # noinspection PyAttributeOutsideInit
     def createFromScratch(self, classdict, generalprofs, styletables, ethnicity, name, cclass, level, alignment, gender,
-                          strength, dexterity, constitution, intelligence, wisdom, charisma, path = None, prob_to_double_dip=20):
+                          strength, dexterity, constitution, intelligence, wisdom, charisma, mag_it, path = None, prob_to_double_dip=20):
 
 
         # load dictionary with all relevant infos
@@ -63,11 +63,13 @@ class Character:
         self.cleavesperlevel = self.classdict['cleavesperlevel']
         self.hpafter9 = self.classdict['hpafter9']
 
-
         # inventory
         self.weapons = {}
         self.armor = {}
         self.gear = {}
+        self.magical_items = {}
+        self.magical_item_rolls = mag_it
+
 
         # progression
         self.experienceforlevel = self.classdict['experienceforlevel']
@@ -93,6 +95,7 @@ class Character:
             self.casterlevel = 0
             self.ceremonythrow = 11
             self.magictypes = self.classdict['magictypes']
+            self.casterfraction = self.classdict.get('casterfraction', 1)
             self.spells = {}
             self.spellprogressions = {}
             for mt in self.magictypes:
@@ -107,23 +110,24 @@ class Character:
 
         #todo not sure if there is a better solution. i need compute statistics in case of changing attributes, levels, proficiencies, etc.
         if self.intelligence >= 13:
-            self.chooseProficiency("general", "random",prob_to_double_dip)
+            self.chooseProficiency("general", "random", prob_to_double_dip)
         if self.intelligence >= 16:
-            self.chooseProficiency("general", "random",prob_to_double_dip)
+            self.chooseProficiency("general", "random", prob_to_double_dip)
         if self.intelligence >= 18:
-            self.chooseProficiency("general", "random",prob_to_double_dip)
+            self.chooseProficiency("general", "random", prob_to_double_dip)
 
         # this is for normalmen
         self.getAbilitiesForCurrentLevel(prob_to_double_dip)
-        self.getEquipment()
+        self.get_equipment()
+        self.get_magical_items(level)
 
-        delattr(self,"classdict")
+        delattr(self, "classdict")
 
         self.computeStatistics()
         self.levelup(level)
 
         # add looks. depends on charisma mod.
-        self.addLooks(styletables)
+        self.add_looks(styletables)
         self.personality = create_personality_string()
 
     def levelup(self, to:int):
@@ -135,7 +139,7 @@ class Character:
 
             # level, exp und base hp muss ich hier tracken weil davon ja alles berechnet wird
             self.level += 1
-            if hasattr(self, "casterlevel"): self.casterlevel+=1
+            if hasattr(self, "casterlevel"): self.casterlevel = math.floor(self.level / self.casterfraction)
             if self.level < 9: self.basehp = self.basehp + roll("1"+self.hdtype)
             else: self.basehp = self.basehp + self.hpafter9
             self.experiencepoints = self.experienceforlevel[self.level-1]
@@ -255,7 +259,7 @@ class Character:
 
                 if "divine" in str.lower(mname):
                     if numberofspellstoget > 1:
-                        self.spells[mname][spelllevel] = c_spell_list[spelllevel]
+                        self.spells[mname][spelllevel] = c_spell_list.get(spelllevel,[])
                 else:
                     for j in range(numberofspellstoget):
 
@@ -270,152 +274,41 @@ class Character:
                         if not spell in self.spells[mname][spelllevel]:
                             self.spells[mname][spelllevel].append(spell)
 
-    # noinspection PyAttributeOutsideInit
-    def computeStatistics(self):
-        #first compute basic modifications by leveling
+    def get_equipment(self):
+        equipment = self.classdict['equipment']
 
-        #ability score modifiers
-        def getabilitymodifier(ability: int):
-            if ability >= 18:
-                return 3
-            elif ability >= 16:
-                return 2
-            elif ability >= 13:
-                return 1
-            elif ability >= 9:
-                return 0
-            elif ability >= 6:
-                return -1
-            elif ability >= 4:
-                return -2
+        def assign_to_character(item: dict):
+            tags = item.get("tags",[])
+
+            if "weapon" in tags:
+                self.weapons[item['name']] = item
+            elif "armor" in tags or "shield" in tags:
+                self.armor[item['name']] = item
             else:
-                return -3
-        self.strmod = getabilitymodifier(self.strength)
-        self.dexmod = getabilitymodifier(self.dexterity)
-        self.conmod = getabilitymodifier(self.constitution)
-        self.intmod = getabilitymodifier(self.intelligence)
-        self.wismod = getabilitymodifier(self.wisdom)
-        self.chamod = getabilitymodifier(self.charisma)
+                self.gear[item['name']] = item
 
-        #AC und HP
-        self.ac = 0 + self.dexmod
-        self.hd = min(self.level,9)
-        self.hp = self.basehp+(self.hd*self.conmod)
+        for entry in equipment:
+            amount = roll(str(entry[1]))
+            for i in range(amount):
+                item = rollOnTable(entry[0])
+                if item:
+                    item.setdefault('amount',0)
+                    item['amount'] +=1
+                    assign_to_character(item)
 
-        #Angriffe und Kampfstats
-        self.meleethrow = 11 - sum(i <= self.level for i in self.attackprogression) - self.strmod
-        self.missilethrow = 11 - sum(i <= self.level for i in self.attackprogression) - self.dexmod
-        self.meleedamage = self.strmod
-        self.missiledamage = self.dexmod
-        self.surprise = 3
-        self.initiative = self.dexmod
-        self.numberofcleaves = math.floor(self.cleavesperlevel * self.level)
-        self.henchmen = 4+self.chamod
-        if hasattr(self,"ceremonythrow"): self.ceremonythrow = 11 - self.casterlevel - self.wismod
+        for entry in self.magical_item_rolls:
+            if entry.get("name") in self.magical_items:
+                self.magical_items[entry.get("name")]["amount"] +=1
+            else:
+                self.magical_items[entry.get("name")] = entry
+                self.magical_items[entry.get("name")]["amount"] = 1
 
-        #calculate encumbrance and movement
-        def getEncumbrance(items: dict):
-            out = 0
-            for i in items:
-                out += items[i]['weight'] * items[i]['amount']
-            return out
-        weight = getEncumbrance(self.weapons) + getEncumbrance(self.armor) + getEncumbrance(self.gear)
-        #encumbrance[0] is the stones, [1] is the #items of the next stone
-        self.encumbrance = (weight//6, weight % 6)
 
-        if self.encumbrance[0] >= 6:
-            self.mv = 90
-        elif self.encumbrance[0] >= 8:
-            self.mv = 60
-        elif self.encumbrance[0] >= 11:
-            self.mv = 30
 
-        #saving throws
-        throwmod = sum(i <= self.level for i in self.savingthrowprogression) - self.wismod
-        self.PP = self.initialsaves[0]-throwmod
-        self.PD = self.initialsaves[1]-throwmod
-        self.BB = self.initialsaves[2]-throwmod
-        self.SW = self.initialsaves[3]-throwmod
-        self.S  = self.initialsaves[4]-throwmod
+    def get_magical_items(self, level: int):
+        pass#common = self.
 
-        #then include gained abilities and so on
-        def processAbilities(powerlist:dict):
-
-            for powername in powerlist.keys():
-                power = powerlist[powername]
-                modifies = power.get('modifies', {})
-                modifiedby = power.get('modifyingabilityscore', {})
-                ranks = power.get('ranks', 1)
-                levelprogression = power.get('levelprogression', [])
-
-                levelofproficiency = sum(i <= self.level for i in levelprogression)
-
-                for statistic in modifies.keys():
-                    if hasattr(self,statistic):
-                        setattr(self,statistic,getattr(self,statistic)+(modifies[statistic]*levelofproficiency))
-                    if statistic in self.abilities.keys():
-                        self.abilities[statistic]['throw'] = self.abilities[statistic]['throw'] + modifies[statistic]*levelofproficiency
-                    if statistic in self.proficiencies.keys():
-                        self.proficiencies[statistic]['throw'] = self.proficiencies[statistic]['throw'] + modifies[statistic]*levelofproficiency
-
-                if power.get('throw', None):
-                    power['throw'] = power['throw'] - levelofproficiency
-                    power['throw'] = power['throw'] - max((ranks*4-4),0)
-                    if power.get('modifiedby', None):
-                        power['throw'] = power['throw'] - getattr(self,power['modifiedby'])
-
-                if power.get('subskills', None):
-                    for subskill in power['subskills'].keys():
-                        power['subskills'][subskill] = power['subskills'][subskill] - max((ranks*4-4),0)
-
-                for statistic in modifiedby:
-                    power['throw'] = power['throw']+getattr(self,statistic) * modifiedby[statistic]
-
-        processAbilities(self.proficiencies)
-        processAbilities(self.abilities)
-
-        #now include the equipment
-        #armor
-
-        #weapons
-
-        #gear
-
-        #todo das hier ganz am ende weil es auf base stats basiert die von abilities und so gemodded werden
-        #masscombat
-        self.leadershipability = self.henchmen
-        self.zoneofcontrol = math.ceil(self.leadershipability / 2)
-        self.strategicability = max(self.intmod, self.wismod) + \
-                                (min(self.intmod, self.wismod) if min(self.intmod, self.wismod) < 0 else 0)
-        self.moralemodifier = self.chamod
-        self.unitmorale = self.chamod
-
-    def __init__(self):
-        pass
-
-    def getEquipment(self):
-        weapons = self.classdict['equipment']['weapons']
-        armor = self.classdict['equipment']['armor']
-        gear = self.classdict['equipment']['gear']
-
-        def fillInventory(source):
-            out = {}
-            for entry in source:
-                amount = roll(str(entry[1]))
-                for i in range(amount):
-                    item = rollOnTable(entry[0])
-                    if item:
-                        item.setdefault('amount',0)
-                        item['amount'] +=1
-                        out[item['name']] = item
-
-            return out
-
-        self.weapons = fillInventory(weapons)
-        self.armor = fillInventory(armor)
-        self.gear = fillInventory(gear)
-
-    def addLooks(self, desctables):
+    def add_looks(self, desctables):
         build = rollOnTable_string(desctables['human build'], self.strmod)
         eyecolor = rollOnTable_string(desctables['eye color'][self.ethnicity]).lower()
         haircolor = rollOnTable_string(desctables['hair color'][self.ethnicity]).lower()
@@ -450,6 +343,199 @@ class Character:
             self.style = str.replace(self.style, '[GENDERPERS]', ('He' if self.gender == 'male' else 'She')).strip()
             self.style = str.replace(self.style, '[GENDERPOSS]', ('His' if self.gender == 'male' else 'Her')).strip()
 
+    # noinspection PyAttributeOutsideInit
+    def computeStatistics(self):
+
+        def process_abilities(powerlist: dict):
+
+            def check_deavtivators(deactivator_list: str):
+                deactivated = False
+                for deactivator in deactivator_list:
+                    attr = deactivator.split(":")[0]
+                    key = deactivator.split(":")[1].split("=")[0]
+                    arg = deactivator.split(":")[1].split("=")[1]
+
+                    for elem in getattr(self, attr):
+                        if (getattr(self, attr)[elem].get(key) == arg) or (arg in getattr(self, attr)[elem].get(key)):
+                            deactivated = True
+                return deactivated
+
+            for powername in powerlist.keys():
+                power = powerlist[powername]
+                deactivators: str = power.get('deactivatedby', None)
+                if deactivators:
+                    if check_deavtivators(deactivators):
+                        continue
+
+                modifies = power.get('modifies', {})
+                modifiedby = power.get('modifyingabilityscore', {})
+                ranks = power.get('ranks', 1)
+                levelprogression = power.get('levelprogression', [])
+
+                levelofproficiency = sum(i <= self.level for i in levelprogression)
+
+                for statistic in modifies.keys():
+                    if hasattr(self, statistic):
+                        setattr(self, statistic, getattr(self, statistic) + (modifies[statistic] * levelofproficiency))
+                    if statistic in self.abilities.keys():
+                        self.abilities[statistic]['throw'] = self.abilities[statistic]['throw'] + modifies[
+                            statistic] * levelofproficiency
+                    if statistic in self.proficiencies.keys():
+                        self.proficiencies[statistic]['throw'] = self.proficiencies[statistic]['throw'] + modifies[
+                            statistic] * levelofproficiency
+
+                if power.get('throw', None):
+                    power['throw'] = power['throw'] - levelofproficiency
+                    power['throw'] = power['throw'] - max((ranks * 4 - 4), 0)
+                    if power.get('modifiedby', None):
+                        power['throw'] = power['throw'] - getattr(self, power['modifiedby'])
+
+                if power.get('subskills', None):
+                    for subskill in power['subskills'].keys():
+                        power['subskills'][subskill] = power['subskills'][subskill] - max((ranks * 4 - 4), 0)
+
+                for statistic in modifiedby:
+                    power['throw'] = power['throw'] + getattr(self, statistic) * modifiedby[statistic]
+
+        def process_equipment(equipmentlist: dict, ablt= []):
+            setstats = {}
+            for ik in equipmentlist:
+                item = equipmentlist[ik]
+                item_name = item.get("name", "unknown item")
+                item_modifies = item.get("modifies", [])
+
+                for statistic in item_modifies:
+                    if not (ablt == [] or statistic in ablt): continue
+                    modval: str = item_modifies[statistic]
+
+                    if isinstance(modval, dict):
+                        minvals = []
+                        if "min" in modval.keys():
+                            for v in modval.get("min",[]):
+                                if isinstance(v,str):
+                                    minvals.append(getattr(self,v,0))
+                                elif isinstance(v,int):
+                                    minvals.append(v)
+                        maxvals = []
+                        if "max" in modval.keys():
+
+                            for v in modval.get("min", []):
+
+                                if isinstance(v, str):
+                                    maxvals.append(getattr(self,v, 0))
+                                elif isinstance(v, int):
+                                    maxvals.append(v)
+
+                        if minvals: modval = "="+str(min(minvals))
+                        if maxvals: modval = "="+str(max(maxvals))
+
+                    if isinstance(modval, str):
+
+                        if modval[0] == "=":
+                            val = int(modval[1:])
+                            if hasattr(self, statistic): setattr(self, statistic, val)
+                            setstats[statistic] = True
+
+                    if not setstats.get(statistic, False):
+                        if hasattr(self, statistic):
+                            setattr(self, statistic, getattr(self, statistic) + modval)
+                        if statistic in self.abilities:
+                            self.abilities[statistic]['throw'] = self.abilities[statistic]['throw'] + modval
+                        if statistic in self.proficiencies:
+                            self.proficiencies[statistic]['throw'] = self.proficiencies[statistic]['throw'] + modval
+
+        def getabilitymodifier(ability: int):
+            if ability >= 18:
+                return 3
+            elif ability >= 16:
+                return 2
+            elif ability >= 13:
+                return 1
+            elif ability >= 9:
+                return 0
+            elif ability >= 6:
+                return -1
+            elif ability >= 4:
+                return -2
+            else:
+                return -3
+
+        self.strmod = getabilitymodifier(self.strength)
+        self.dexmod = getabilitymodifier(self.dexterity)
+        self.conmod = getabilitymodifier(self.constitution)
+        self.intmod = getabilitymodifier(self.intelligence)
+        self.wismod = getabilitymodifier(self.wisdom)
+        self.chamod = getabilitymodifier(self.charisma)
+
+        # equipment
+        process_equipment(self.weapons, ['strmod', 'dexmod', 'conmod', 'intmod', 'wismod', 'chamod'])
+        process_equipment(self.armor, ['strmod', 'dexmod', 'conmod', 'intmod', 'wismod', 'chamod'])
+        process_equipment(self.gear, ['strmod', 'dexmod', 'conmod', 'intmod', 'wismod', 'chamod'])
+
+        #AC und HP
+        self.ac = 0 + self.dexmod
+        self.acm = 0 + self.dexmod
+        self.hd = min(self.level,9)
+        self.hp = self.basehp+(self.hd*self.conmod)
+
+        #Angriffe und Kampfstats
+        self.meleethrow = 11 - sum(i <= self.level for i in self.attackprogression) - self.strmod
+        self.missilethrow = 11 - sum(i <= self.level for i in self.attackprogression) - self.dexmod
+        self.meleedamage = self.strmod
+        self.missiledamage = 0
+        self.surprise = 3
+        self.initiative = self.dexmod
+        self.numberofcleaves = math.floor(self.cleavesperlevel * self.level)
+        self.henchmen = 4+self.chamod
+        if hasattr(self,"ceremonythrow"): self.ceremonythrow = 11 - self.casterlevel - self.wismod
+
+        #calculate encumbrance and movement
+        def getEncumbrance(items: dict):
+            out = 0
+            for i in items:
+                out += items[i]['weight'] * items[i]['amount']
+            return out
+        weight = getEncumbrance(self.weapons) + getEncumbrance(self.armor) + getEncumbrance(self.gear)
+        #encumbrance[0] is the stones, [1] is the #items of the next stone
+        self.encumbrance = (weight//6, weight % 6)
+
+        self.mv = 120
+        if self.encumbrance[0] >= 11:
+            self.mv = 30
+        elif self.encumbrance[0] >= 8:
+            self.mv = 60
+        elif self.encumbrance[0] >= 6:
+            self.mv = 90
+
+        #saving throws
+        throwmod = sum(i <= self.level for i in self.savingthrowprogression) - self.wismod
+        self.PP = self.initialsaves[0]-throwmod
+        self.PD = self.initialsaves[1]-throwmod
+        self.BB = self.initialsaves[2]-throwmod
+        self.SW = self.initialsaves[3]-throwmod
+        self.S  = self.initialsaves[4]-throwmod
+
+        #masscombat
+        self.strategicability = max(self.intmod, self.wismod) + \
+                                (min(self.intmod, self.wismod) if min(self.intmod, self.wismod) < 0 else 0)
+        self.moralemodifier = self.chamod
+        self.unitmorale = self.chamod
+
+        # include gained abilities and so on
+        process_abilities(self.proficiencies)
+        process_abilities(self.abilities)
+
+        # equipment
+        process_equipment(self.weapons)
+        process_equipment(self.armor)
+        process_equipment(self.gear)
+
+        self.leadershipability = self.henchmen
+        self.zoneofcontrol = math.ceil(self.leadershipability / 2)
+
+    def __init__(self):
+        pass
+
     def __repr__(self):
         def formatSpells(magic_type, spells):
             output = ""
@@ -460,10 +546,10 @@ class Character:
                         number_of_casts = str(self.ceremonythrow + ((i-1)*2)) + "+"
                     else:
                         number_of_casts = "x"+str(self.spellprogressions[magic_type]['progression'][self.level][i])
-                    output = output + "<b>L" + str(i)+"</b>" +" ("+number_of_casts +"): <b>[</b>"
+                    output = output + "<b>L" + str(i)+"</b>" +" ("+number_of_casts +"): ["
                     for j in spells[i]:
                         output += j + ", "
-                    output = output[:-2] + "<b>]</b>; "
+                    output = output[:-2] + "]; "
             output = output[:-2]
             return output
 
@@ -481,11 +567,19 @@ class Character:
             output = ""
             for x in skills:
                 rank = (" "+str(skills[x].get('ranks',1)) if skills[x].get('ranks',1) > 1 else '')
-                throw = (" ("+str(x['throw'])+"+"+")" if 'throw' in x else '')
+                throw = (" ("+str(skills[x]['throw'])+"+"+")" if 'throw' in skills[x] else '')
                 output += x + rank + throw + ", "
             output = output[:-2]
             if output == "": output = "None"
             return output
+
+        def formatBonus(bonus: int):
+            if bonus > -1:
+                return "+"+str(bonus)
+            return str(bonus)
+
+        def formatenc(enc):
+            return "("+str(enc[0])+" st. & "+str(enc[1])+" it.)"
 
         character = "<b>{}:</b> {}{} {}: Str: {}, Dex: {}, Con: {}, Int: {}, Wis: {}, Cha: {}; <b>XP:</b> {}\n" \
                     "<b>MV</b> {}, <b>AC</b> {}, <b>HD</b> {}, <b>hp</b> {}, <b>SP</b> {}+, <b>INI</b> {}, " \
@@ -499,10 +593,10 @@ class Character:
 
         character = character.format(
             self.name, str.capitalize(self.cclass), self.pathname, self.level, self.strength, self.dexterity, self.constitution, self.intelligence, self.wisdom, self.charisma, self.experiencepoints,
-            self.mv, self.ac, self.hdtype, self.hp, self.surprise, self.initiative,
+            self.mv, max(self.ac, self.acm), self.hdtype, self.hp, self.surprise, self.initiative,
             self.PP, self.PD, self.BB, self.SW, self.S, self.alignment,
-            self.meleethrow, self.meleedamage, self.missilethrow, self.missiledamage,
-            formatItems(self.weapons), formatItems(self.armor), formatSkills(self.abilities), formatSkills(self.proficiencies), formatItems(self.gear), self.encumbrance)
+            self.meleethrow, formatBonus(self.meleedamage), self.missilethrow, formatBonus(self.missiledamage),
+            formatItems(self.weapons), formatItems(self.armor), formatSkills(self.abilities), formatSkills(self.proficiencies), formatItems(self.gear), formatenc(self.encumbrance))
 
         if hasattr(self,'casterlevel'):
             for mt in self.spells:
@@ -522,6 +616,11 @@ class Character:
         if len(self.style) > 0:
             character = character + "\n<b>Style:</b> " + self.style
 
-        character = character.split("\n")
+        if self.magical_items:
+            character = character + "\n<b>Possible Magical Items:</b> " + formatItems(self.magical_items) + ";"
 
+        character = character.split("\n")
+        #print(self.armor)
+        #print(self.weapons)
+        #print(self.gear)
         return character

@@ -135,16 +135,76 @@ def create_character(sourcedict, level, clazz, ethnicity, gender, name, alignmen
     except:
         raise Exception("This is an invalid class: " + clazz)
 
+    m_items = roll_magical_items(level, sourcedict)
+
     c = Character()
     generalproficiencies = copy.deepcopy(sourcedict['generalproficiencies'])
     c.createFromScratch(classdict, generalproficiencies, sourcedict['desctables'], ethnicity, name, clazz, level,
-                        alignment, gender,
-                        strength, dexterity, constitution, intelligence, wisdom, charisma,
-                        path)
+                        alignment, gender, strength, dexterity, constitution, intelligence, wisdom, charisma, m_items, path)
 
     return c.__repr__()
 
+def parse_magical_table_entry(entry):
+    if isinstance(entry, dict):
+        return parse_magical_item(entry)
+    elif isinstance(entry, str):
+        return parse_magical_item({"item": entry})
+    elif isinstance(entry, list):
+        r = []
+        for e in entry:
+            r.append(parse_magical_table_entry(e))
+        return r
 
+
+def parse_magical_item(object :dict):
+    item = copy.deepcopy(rollOnTable(object.get("item")))
+    if isinstance(item, str):
+        item = {"name": item, "weight": 1}
+    elif not isinstance(item, dict):
+        raise Exception("item has to be str or dict!")
+
+    item['name'] = rollOnTable_string(object.get('prefix','')) + item['name'] + rollOnTable_string(object.get('postfix',''))
+
+    if 'mod' in object:
+        for elem_key in object['mod']:
+            if isinstance(object['mod'][elem_key],dict):
+                for dict_key in object['mod'][elem_key]:
+                    item[elem_key][dict_key] = item.get(dict_key,0) + object['mod'][elem_key][dict_key]
+            elif isinstance(object['mod'][elem_key], int):
+                item[elem_key] = item.get(elem_key,0) + object['mod'][elem_key]
+
+    if 'add' in object:
+        for elem_key in object['add']:
+            item[elem_key] = object['add'][elem_key]
+    return item
+
+
+def roll_magical_items(level, data):
+    common = data['tables']['treasure']['heroic magic']['common']
+    uncommon = data['tables']['treasure']['heroic magic']['uncommon']
+    rare = data['tables']['treasure']['heroic magic']['rare']
+    very_rare = data['tables']['treasure']['heroic magic']['very rare']
+    legendary = data['tables']['treasure']['heroic magic']['legendary']
+    result= []
+
+    def roll_on_mag_table(no_rolls, probability, table):
+        items = []
+        for i in range(no_rolls):
+            if roll("1d100") <= level*probability:
+                table_roll = parse_magical_table_entry(rollOnTable(table))
+                if isinstance(table_roll,list):
+                    items.extend(table_roll)
+                else:
+                    items.append(table_roll)
+        return items
+
+    result.extend(roll_on_mag_table(4, 10 * level, common))
+    result.extend(roll_on_mag_table(3, 10 * level, uncommon))
+    result.extend(roll_on_mag_table(2, 10 * level, rare))
+    result.extend(roll_on_mag_table(1, 5 * level, very_rare))
+    result.extend(roll_on_mag_table(1, 1 * level, legendary))
+
+    return result
 def dump_character(character: Character):
     if not (hasattr(character, 'name')):
         character.name = 'unnamed'
@@ -165,6 +225,11 @@ def load_character(name: str):
         setattr(c, k, x[k])
     return c
 
+stream = open("C:/Users/mhoh1/PycharmProjects/acksgen/newdata.yaml", 'r')
+data = yaml.safe_load(stream)
+table = data['tables']['treasure']['heroic magic']['very rare']
 
-#stream = open("C:/Users/mhoh1/PycharmProjects/acksgen/newdata.yaml", 'r')
-#data = yaml.safe_load(stream)
+#a = []
+#items = roll_magical_items(5,data)
+#for i in items:
+#    print(i['name'])

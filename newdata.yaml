@@ -609,7 +609,7 @@ ethnicity:
 abilities:
   Death Dealing Dance: &death_dealing_dance
     name: Death Dealing Dance
-    levelprogression: [7, 11]
+    levelprogression: [1, 7, 11]
   Fighter Damage Bonus: &fighter_damage_bonus
     name: Fighter Damage Bonus
     modifies:
@@ -685,7 +685,7 @@ abilities:
     name: Graceful Fighting
     modifies:
       ac: 1
-    levelprogression: [7, 13]
+    levelprogression: [1, 7, 13]
   Accuracy Bonus: &accuracy_bonus
     name: Accuracy Bonus
     modifies:
@@ -838,7 +838,7 @@ classproficiencies:
     name: Dungeon Bashing
     type: classprof
     max: 1
-    throw: 18
+    throw: 14
     modifyingabilityscore:
       strmod: -4
   Eavesdropping: &eavesdropping
@@ -995,7 +995,10 @@ classproficiencies:
     name: Swashbuckling
     modifies:
       ac: 1
-    levelprogression: [7,13]
+    levelprogression: [1, 7, 13]
+    deactivatedby:
+      - "armor:tags=medium"
+      - "armor:tags=heavy"
   Trap Finding: &trap_finding
     name: Trap Finding
     type: classprof
@@ -1043,6 +1046,7 @@ generalproficiencies:
     name: Animal Husbandry
     type: genprof
     max: 3
+    throw: 22
     subskills:
       Diagnose: 11
       Wounds: 22
@@ -1082,6 +1086,7 @@ generalproficiencies:
     name: Disguise
     type: genprof
     max: 1
+    throw: 11
   - &endurance
     name: Endurance
     type: genprof
@@ -1103,6 +1108,7 @@ generalproficiencies:
     name: Knowledge
     type: genprof
     max: 4
+    throw: 11
   - &labor
     name: Labor
     type: genprof
@@ -1127,6 +1133,7 @@ generalproficiencies:
   - &mapping
     name: Mapping
     type: genprof
+    throw: 11
     max: 3
   - &military_strategy
     name: Military Strategy
@@ -1408,6 +1415,8 @@ spellprogressions:
       5: 3
       6: 3
   runemaker: &runemaker_spellprogression
+    1:
+      1: 0
     2:
       1: 1
     3:
@@ -2457,6 +2466,7 @@ equipment:
       cost: 100
       weight: 1
     - &pouch Pouch:
+      name: Pouch
       cost: 0.5
       weight: 0
     - &ten_foot_pole
@@ -2534,72 +2544,87 @@ equipment:
   armor:
     - &hide_armor
       name: Hide Armor
-      ac: 1
+      tags: [light, armor]
+      modifies: {ac: 1}
       cost: 10
       weight: 6
     - &leather_armor
       name: Leather Armor
-      ac: 2
+      tags: [light, armor]
+      modifies: {ac: 2}
       weight: 12
       cost: 20
     - &light_arena_armor
       name: Light Arena Armor
-      ac: 2
+      modifies:
+        ac: 2
+      tags: [light, armor]
       weight: 12
       cost: 40
     - &ring_mail
       name: Ring Mail
-      ac: 3
+      modifies: {ac: 3}
+      tags: [medium, armor]
       weight: 18
       cost: 20
     - &scale_armor
       name: Scale Armor
-      ac: 3
+      tags: [medium, armor]
+      modifies: {ac: 3}
       weight: 18
       cost: 20
     - &chain_mail
       name: Chain Mail
-      ac: 4
+      tags: [medium, armor]
+      modifies: {ac: 4}
       weight: 24
       cost: 40
     - &heavy_arena_armor
       name: Heavy Arena Armor
+      tags: [medium, armor]
+      modifies: {ac: 4}
+      weight: 24
+      cost: 80
     - &lamellar_armor
       name: Lamellar Armor
-      ac: 5
+      tags: [heavy, armor]
+      modifies: {ac: 5}
       weight: 30
       cost: 50
     - &banded_plate
       name: Banded Plate Armor
-      ac: 5
+      tags: [heavy, armor]
+      modifies: {ac: 5}
       weight: 30
       cost: 50
     - &plate_armor
       name: Plate Armor
-      ac: 6
+      tags: [heavy, armor]
+      modifies: {ac: 6}
       weight: 36
       cost: 6
     - &shield
       name: Shield
-      ac: 1
+      modifies: {ac: 1}
+      tags: [shield]
       weight: 6
       cost: 10
   weapons:
     - &battle_axe
       name: Battle Axe
-      type: melee
+      tags: [melee, weapon]
       weight: 1
       cost: 7
       damage: 1d6/8
     - &great_axe
       name: Great Axe
-      type: melee
+      tags: [melee, weapon]
       weight: 6
       cost: 10
       damage: 1d10
     - &hand_axe
       name: Hand Axe
-      type: melee
+      tags: [melee, weapon]
       weight: 1
       cost: 4
       damage: 1d6
@@ -2609,7 +2634,7 @@ equipment:
       cost: 50
       damage: 1d10
       ammo: *case_with_20_bolts
-      type: missile
+      tags: [missile, weapon]
       modifies:
         throw: -4
     - &crossbow
@@ -2618,7 +2643,7 @@ equipment:
       cost: 30
       damage: 1d8
       ammo: *case_with_20_bolts
-      type: missile
+      tags: [missile, weapon]
       modifies:
         throw: -2
     - &composite_bow
@@ -2626,55 +2651,55 @@ equipment:
       weight: 6
       cost: 40
       damage: 1d6
-      type: missile
+      tags: [missile, weapon]
       ammo: *quiver_with_20_arrows
     - &longbow
       name: Longbow
       weight: 6
       cost: 7
       damage: 1d6
-      type: missile
+      tags: missile
       ammo: *quiver_with_20_arrows
     - &shortbow
       name: Shortbow
       weight: 6
       cost: 3
       damage: 1d6
-      type: missile
+      tags: [missile, weapon]
       ammo: *quiver_with_20_arrows
     - &club
       name: Club
-      type: melee
+      tags: [melee, weapon]
       weight: 1
       cost: 1
       damage: 1d4
     - &flail
       name: Flail
-      type: melee
+      tags: [melee, weapon]
       weight: 1
       cost: 5
       damage: 1d6/8
     - &mace
       name: Mace
-      type: melee
+      tags: [melee, weapon]
       weight: 1
       cost: 5
       damage: 1d6/8
     - &morning_star
       name: Morning Star
-      type: melee
+      tags: [melee, weapon]
       weight: 6
       cost: 5
       damage: 1d10
     - &war_hammer
       name: War Hammer
-      type: melee
+      tags: [melee, weapon]
       weight: 1
       cost: 5
       damage: 1d6/8
     - &lance
       name: Lance
-      type: melee
+      tags: [melee, weapon]
       weight: 6
       cost: 5
       damage: 1d10
@@ -2683,46 +2708,46 @@ equipment:
       weight: 1
       cost: 1
       damage: 1d6
-      type: missile
+      tags: [missile, weapon]
     - &pole_arm
       name: Pole Arm
-      type: melee
+      tags: [melee, weapon]
       weight: 6
       cost: 7
       damage: 1d10
     - &spear
       name: Spear
-      type: melee
+      tags: [melee, weapon]
       weight: 6
       cost: 3
       damage: 1d6/8
     - &dagger
       name: Dagger
-      type: melee
+      tags: [melee, missile, weapon]
       weight: 1
       cost: 3
       damage: 1d4
     - &silver_dagger
       name: Silver Dagger
-      type: melee
+      tags: [melee, weapon, missile]
       weight: 1
       cost: 30
       damage: 1d4
     - &short_sword
       name: Short Sword
-      type: melee
+      tags: [melee, weapon]
       weight: 1
       cost: 6
       damage: 1d6
     - &sword
       name: Sword
-      type: melee
+      tags: [melee, weapon]
       weight: 1
       cost: 10
       damage: 1d6/8
     - &two_handed_sword
       name: Two Handed Sword
-      type: melee
+      tags: [melee, weapon]
       weight: 6
       cost: 15
       damage: 1d10
@@ -2730,17 +2755,17 @@ equipment:
       name: Bola
       weight: 1
       cost: 5
-      type: missile
+      tags: [missile, weapon]
       damage: 1d2
     - &darts
       name: Darts (5)
       weight: 1
       cost: 2
       damage: 1d4
-      type: missile
+      tags: [missile, weapon]
     - &net
       name: Net
-      type: missile
+      tags: [missile, weapon]
       weight: 1
       cost: 1
       damage: 0
@@ -2749,22 +2774,22 @@ equipment:
       weight: 1
       cost: 2
       damage: 1d4
-      type: missile
+      tags: [missile, weapon]
     - &sap
       name: Sap
-      type: melee
+      tags: [melee, weapon]
       weight: 1
       cost: 1
       damage: 1d4
     - &staff
       name: Staff
-      type: melee
+      tags: [melee, weapon]
       weight: 6
       cost: 1
       damage: 1d4/6
     - &whip
       name: Whip
-      type: melee
+      tags: [melee, weapon]
       weight: 1
       cost: 5
       damage: 1d2
@@ -2925,6 +2950,12 @@ equipment:
     - &pot_swimming
       name: Potion of Swimming
       weight: 1
+    - &pot_oilofstonetoflesh
+      name: Oil of Stone to Flesh
+      weight: 1
+    - &pot_oilofstriking
+      name: Oil of Striking
+      weight: 1
     - &pot_acidimmunity
       name: Potion of Acid Immunity
       weight: 1
@@ -3015,6 +3046,9 @@ equipment:
     - &pot_wingedflight
       name: Potion of Winged Flight
       weight: 1
+    - &pot_waybread
+      name: waybread
+      weight: 1
   staffs:
     - &staff_healing
       name: Staff of Healing
@@ -3049,6 +3083,12 @@ equipment:
     - &staff_elementalwater
       name: Staff of Elemental Water
       weigth: 6
+    - &staff_elementalpower
+      name: Staff of Elemental Power
+      weight: 6
+    - &staff_commanding
+      name: Staff of Commanding
+      weight: 6
   rods:
     - &rod_cancellation
       name: Rod of Cancellation
@@ -3118,69 +3158,79 @@ equipment:
     - &ring_commandanimal
       name: Ring of Command Animal
       weight: 0
+      tags: [ring]
     - &ring_commandhuman
       name: Ring of Command Human
       weight: 0
+      tags: [ring]
     - &ring_commandplant
       name: Ring of Command Plant
       weight: 0
+      tags: [ring]
     - &ring_delusion
       name: Ring of Delusion
       weight: 0
+      tags: [ring]
     - &ring_djinnicalling
       name: Ring of Djinni Calling
       weight: 0
+      tags: [ring]
     - &ring_fireresistance
       name: Ring of Fire Resistance
       weight: 0
+      tags:
     - &ring_invisibility
       name: Ring of Invisibility
       weight: 0
-    - &ring_protection1
-      name: Ring of Protection +1
+      tags: [ring]
+    - &ring_protection
+      name: Ring of Protection
       weight: 0
-      ac: 1
-    - &ring_protection2
-      name: Ring of Protection +2
-      weight: 0
-      ac: 2
-    - &ring_protection3
-      name: Ring of Protection +3
-      weight: 0
-      ac: 3
+      tags: [ring]
     - &ring_regeneration
       name: Ring of Regeneration
       weight: 0
+      tags: [ring]
     - &ring_spellstoring
       name: Ring of Spell Storing
       weight: 0
+      tags: [ring]
     - &ring_spellturning
       name: Ring of Spell Turning
       weight: 0
+      tags: [ring]
     - &ring_telekinesis
       name: Ring of Telekinesis
       weight: 0
+      tags: [ring]
     - &ring_waterwalking
       name: Ring of Water Walking
       weight: 0
+      tags: [ring]
     - &ring_weakness
       name: Ring of Weakness
       weight: 0
+      tags: [ring]
     - &ring_wishes
       name: Ring of Wishes
       weight: 0
+      tags: [ring]
     - &ring_xrayvision
       name: Ring of X-Ray Vision
       weight: 0
+      tags: [ring]
     - &ring_antimagic
       name: Ring of Anti-Magic
       weight: 0
+      tags: [ring]
     - &ring_queensheart
       name: Ring of the Queen's Heart
       weight: 0
+      tags: [ring]
     - &ring_sealofchaos
       name: Seal of Chaos
       weight: 0
+      tags: [ring]
   misc:
     - &misc_amuletofnondetection
       name: Amulet of nondetection
@@ -3200,18 +3250,27 @@ equipment:
     - &misc_bootsoflevitation
       name: Boots of Levitation
       weight: 0
+      tags: [boots]
     - &misc_bootsofspeed
       name: Boots of Speed
       weight: 0
+      tags: [boots]
     - &misc_bootsoftravelingandspringing
       name: Boots of Traveling and Springing
       weight: 0
+      tags: [boots]
     - &misc_bowlofcommandingwaterelementals
       name: Bowl of Commanding Water Elementals
       weight: 1
     - &misc_bracersofarmor
       name: Bracers of Armor
       weight: 1
+      modifies:
+        ac: 1
+        deactivatedby:
+          - "armor:tags=light"
+          - "armor:tags=medium"
+          - "armor:tags=heavy"
     - &misc_brazierofcommandingfireelementals
       name: Brazier of Commanding Fire Elementals
       weight: 1
@@ -3251,6 +3310,7 @@ equipment:
     - &misc_displacercloak
       name: Displacer Cloak
       weight: 0
+      modifies: {ac: 2, acm: 2, BB: 2, PD: 2, PP: 2, SW: 2, S: 2}
     - &misc_drumsofpanic
       name: Drums of Panic
       weight: 1
@@ -3266,9 +3326,11 @@ equipment:
     - &misc_elvencloak
       name: Elven Cloak
       weight: 0
+      tags: [cloak]
     - &misc_elvenboots
       name: Elven Boots
       weight: 0
+      tags: [boots]
     - &misc_eyesofcharming
       name: Eyes of Charming
       weight: 1
@@ -3284,9 +3346,13 @@ equipment:
     - &misc_gauntletsofogrepower
       name: Gauntlets of Ogre Power
       weight: 0
+      modifies:
+        strmod: =3
     - &misc_girdleofgiantstrength
       name: Girdle of Giant Strength
       weight: 0
+      modifies:
+        meleethrow: {min: [3, meleethrow]}
     - &misc_helmofalignmentchaning
       name: Helm of Alignment Changing
       weight: 0
@@ -3356,7 +3422,7 @@ equipment:
     - &misc_holytalismanofthewingedsun
       name: Holy Talisman of the Winged Sun
       weight: 1
-    - &misc_ironboundbookofcisuthros
+    - &misc_ironboundbookofxisuthros
       name: Iron Bound Book of Xisuthros
       weight: 1
     - &misc_ironcrownofthesorcererkings
@@ -3365,9 +3431,18 @@ equipment:
     - &misc_bracersoftheimperialwarmistress
       name: Bracers of the Imperial Warmistress
       weight: 0
+      modifies:
+        ac: 2
+        BB: 2
+        PP: 2
+        PD: 2
+        SW: 2
+        S: 2
     - &misc_bootsoftheimperialwarmistress
       name: Boots of the Imperial Warmistress
       weight: 0
+      modifies:
+        dexmod: =3
     - &misc_panoplyoftheimperialwarmistress
       name: Panoply of the Imperial Warmistress
       weight: 0
@@ -3377,6 +3452,8 @@ equipment:
     - &misc_diademoftheimperialwarmistress
       name: Diadem of the Imperial Warmistress
       weight: 0
+      modifies:
+        chamod: =3
   tables:
     tiny melee weapons: &table_tiny_melee_weapons
       die: 1d10
@@ -3557,21 +3634,18 @@ classes:
       10:
         - *use_magic_scrolls
     equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1]
-        - [*table_tiny_melee_weapons, 1d4-2]
-        - [*table_small_melee_weapons, 1d4-2]
-        - [{die: 1d4, res: {1: *table_bows, 2-3: *table_crossbows, 4: ''}}, 1]
-      armor:
-        - [{die: 1d6, res: {1: '', 2-6: *table_light_armor}}, 1]
-      gear:
-        - [*backpack, 1]
-        - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
-        - [*table_healing_herbs, 1d3-1]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_tiny_melee_weapons, 1d4-2]
+      - [*table_small_melee_weapons, 1d4-2]
+      - [{die: 1d4, res: {1: *table_bows, 2-3: *table_crossbows, 4: ''}}, 1]
+      - [{die: 1d6, res: {1: '', 2-6: *table_light_armor}}, 1]
+      - [*backpack, 1]
+      - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
+      - [*table_healing_herbs, 1d3-1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
   &assassin assassin:
     name: assassin
     experienceforlevel: [0,1700,3400,6800,14000,28000,55000,110000,230000,350000,470000,590000,710000,830000]
@@ -3622,24 +3696,21 @@ classes:
         - *hide_in_shadows
         - *backstab
     equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1d3-1]
-        - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
-        - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
-        - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
-        - [*javelin, 1d4-1]
-        - [*table_special_weapons, 1d10-8]
-      armor:
-        - [*shield, 1d3-2]
-        - [{die: 1d3, res: {1: *table_light_armor, 2: *table_medium_armor, 3: *table_heavy_armor}}, 1]
-      gear:
-        - [*backpack, 1]
-        - [*table_healing_herbs, 1d3-1]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d3-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
+      - [*table_tiny_melee_weapons, 1d3-1]
+      - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+      - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+      - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
+      - [*javelin, 1d4-1]
+      - [*table_special_weapons, 1d10-8]
+      - [*shield, 1d3-2]
+      - [{die: 1d3, res: {1: *table_light_armor, 2: *table_medium_armor, 3: *table_heavy_armor}}, 1]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d3-1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d3-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
   &fighter fighter:
     name: fighter
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
@@ -3688,24 +3759,21 @@ classes:
       5:
         - Battlefield Prowess
     equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1d3-1]
-        - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
-        - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
-        - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
-        - [*javelin, 1d4-1]
-        - [*table_special_weapons, 1d10-8]
-      armor:
-        - [*shield, 1d2-1]
-        - [*table_heavy_armor, 1]
-      gear:
-        - [*backpack, 1]
-        - [*table_healing_herbs, 1d10-8]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d6-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
+      - [*table_tiny_melee_weapons, 1d3-1] #weapons
+      - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+      - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+      - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
+      - [*javelin, 1d4-1]
+      - [*table_special_weapons, 1d10-8]
+      - [*shield, 1d2-1] #armor
+      - [{die: 1d6, res: {1-4: *table_heavy_armor, 5: *table_medium_armor, 6: *table_light_armor}}, 1]
+      - [*backpack, 1] #misc. gear
+      - [*table_healing_herbs, 1d10-8]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d6-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
   &loremaster loremaster:
     name: loremaster
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
@@ -3767,21 +3835,18 @@ classes:
       11:
         - *personal_talisman
     equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1]
-        - [*table_mage_weapons, 1]
-      armor: []
-      gear:
-        - [*backpack, 1]
-        - [*ceremonial_codex, 1]
-        - [*traditional_implements, 1]
-        - [*table_healing_herbs, 1d4-1]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d2-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
-        - [*ink, 1]
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_mage_weapons, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4-1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*ink, 1]
   &eldritch_rogue eldritch rogue:
     name: eldritch rogue
     experienceforlevel: [0,1000,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000]
@@ -3846,22 +3911,19 @@ classes:
         - *loremastery
         - *read_languages
     equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1]
-        - [*table_mage_weapons, 1]
-      armor: []
-      gear:
-        - [*backpack, 1]
-        - [*ceremonial_codex, 1]
-        - [*traditional_implements, 1]
-        - [*table_healing_herbs, 1d4-1]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d2-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
-        - [*ink, 1]
-        - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_mage_weapons, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4-1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*ink, 1]
+      - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
   &runemaker runemaker:
     name: runemaker
     experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
@@ -3954,59 +4016,50 @@ classes:
     equipment:
       path:
         *varn:
-          weapons:
-            - [*dagger, 1d2-1]
-            - [{die: 1d4, res: {1: *battle_axe, 2: *spear, 3: *sword, 4: *war_hammer}}, 1]
-            - [*shortbow, 1d2-1]
-          armor:
-            - [*table_medium_armor, 1]
-          gear:
-            - [*backpack, 1]
-            - [*ceremonial_codex, 1]
-            - [*traditional_implements, 1]
-            - [*table_healing_herbs, 1d4-1]
-            - [*table_tools, 2d4]
-            - [*table_sleeping, 1]
-            - [*military_oil, 1d2-1]
-            - [*table_light, 1]
-            - [*torch, 1d6-3]
-            - [*ink, 1d2-1]
+          - [*dagger, 1d2-1]
+          - [{die: 1d4, res: {1: *battle_axe, 2: *spear, 3: *sword, 4: *war_hammer}}, 1]
+          - [*shortbow, 1d2-1]
+          - [*table_medium_armor, 1]
+          - [*backpack, 1]
+          - [*ceremonial_codex, 1]
+          - [*traditional_implements, 1]
+          - [*table_healing_herbs, 1d4-1]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d2-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
+          - [*ink, 1d2-1]
         *surga:
-          weapons:
-            - [*dagger, 1d2]
-            - [{die: 1d4, res: {1: *hand_axe, 2: *javelin, 3: *lance, 4: *short_sword}}, 1d2-1]
-            - [*composite_bow, 1]
-          armor:
-            - [*table_medium_armor, 1]
-          gear:
-            - [*backpack, 1]
-            - [*ceremonial_codex, 1]
-            - [*traditional_implements, 1]
-            - [*table_healing_herbs, 1d4-1]
-            - [*table_tools, 2d4]
-            - [*table_sleeping, 1]
-            - [*military_oil, 1d2-1]
-            - [*table_light, 1]
-            - [*torch, 1d6-3]
-            - [*ink, 1d2-1]
+          - [*dagger, 1d2]
+          - [{die: 1d4, res: {1: *hand_axe, 2: *javelin, 3: *lance, 4: *short_sword}}, 1d2-1]
+          - [*composite_bow, 1]
+          - [*table_medium_armor, 1]
+          - [*backpack, 1]
+          - [*ceremonial_codex, 1]
+          - [*traditional_implements, 1]
+          - [*table_healing_herbs, 1d4-1]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d2-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
+          - [*ink, 1d2-1]
         *bosk:
-          weapons:
-            - [*dagger, 1d2-1]
-            - [{die: 1d4, res: {1: *battle_axe, 2: *spear, 3: *sword, 4: *hand_axe}}, 1]
-            - [*longbow, 1d2-1]
-          armor:
-            - [*table_medium_armor, 1]
-          gear:
-            - [*backpack, 1]
-            - [*ceremonial_codex, 1]
-            - [*traditional_implements, 1]
-            - [*table_healing_herbs, 1d4-1]
-            - [*table_tools, 2d4]
-            - [*table_sleeping, 1]
-            - [*military_oil, 1d2-1]
-            - [*table_light, 1]
-            - [*torch, 1d6-3]
-            - [*ink, 1d2-1]
+          - [*dagger, 1d2-1]
+          - [{die: 1d4, res: {1: *battle_axe, 2: *spear, 3: *sword, 4: *hand_axe}}, 1]
+          - [*longbow, 1d2-1]
+          - [*table_medium_armor, 1]
+          - [*backpack, 1]
+          - [*ceremonial_codex, 1]
+          - [*traditional_implements, 1]
+          - [*table_healing_herbs, 1d4-1]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d2-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
+          - [*ink, 1d2-1]
   &bard bard:
     name: bard
     maxlevel: 14
@@ -4057,21 +4110,18 @@ classes:
       10:
         - *use_magic_scrolls
     equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1]
-        - [*table_tiny_melee_weapons, 1d4-2]
-        - [*table_small_melee_weapons, 1d4-2]
-        - [{die: 1d4, res: {1: *table_bows, 2-3: *table_crossbows, 4: ''}}, 1]
-      armor:
-        - [{die: 1d6, res: {1: '', 2-6: *table_light_armor}}, 1]
-      gear:
-        - [*backpack, 1]
-        - [{die: 1d10, res: {1-6: *musical_instrument_common, 7-9: *musical_instrument_superior, 10: *musical_instrument_mastercraft}}, 1]
-        - [*table_healing_herbs, 1d10-2]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_tiny_melee_weapons, 1d4-2]
+      - [*table_small_melee_weapons, 1d4-2]
+      - [{die: 1d4, res: {1: *table_bows, 2-3: *table_crossbows, 4: ''}}, 1]
+      - [{die: 1d6, res: {1: '', 2-6: *table_light_armor}}, 1]
+      - [*backpack, 1]
+      - [{die: 1d10, res: {1-6: *musical_instrument_common, 7-9: *musical_instrument_superior, 10: *musical_instrument_mastercraft}}, 1]
+      - [*table_healing_herbs, 1d10-2]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
     experienceforlevel: [0,1400,2800,5600,11200,22400,45000,90000,190000,290000,390000,490000,590000,690000]
     hpafter9: 2
     mv: 120
@@ -4136,24 +4186,21 @@ classes:
       5:
         - Renown
     equipment:
-      weapons:
-        - [*dagger, 1d2-1]
-        - [{die: 1d4, res: {1: *sword, 2: *spear, 3: *battle_axe, 4: *hand_axe}}, 2]
-      armor:
-        - [*table_light_armor, 1]
-      gear:
-        - [*backpack, 1]
-        - [*ceremonial_codex, 1]
-        - [*traditional_implements, 1]
-        - [*table_healing_herbs, 1d4]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d2-1]
-        - [*holy_symbol, 1]
-        - [*holy_water, 1d4-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
-        - [*ink, 1d2-1]
+      - [*dagger, 1d2-1]
+      - [{die: 1d4, res: {1: *sword, 2: *spear, 3: *battle_axe, 4: *hand_axe}}, 2]
+      - [*table_light_armor, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*holy_symbol, 1]
+      - [*holy_water, 1d4-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*ink, 1d2-1]
   &explorer explorer:
     name: explorer
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
@@ -4209,23 +4256,20 @@ classes:
       5:
         - Morale Bonus
     equipment:
-      weapons:
-        - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
-        - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
-        - [{die: 1d4, res: {1-2: *table_bows, 3-5: *table_crossbows, 5: ''}},1]
-        - [*javelin, 1d4]
-        - [*table_special_weapons, 1d4-2]
-      armor:
-        - [*shield, 1d2-1]
-        - [*table_medium_armor, 1]
-      gear:
-        - [*backpack, 1]
-        - [*table_healing_herbs, 1d10-8]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d6-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
+      - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+      - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+      - [{die: 1d4, res: {1-2: *table_bows, 3-5: *table_crossbows, 5: ''}},1]
+      - [*javelin, 1d4]
+      - [*table_special_weapons, 1d4-2]
+      - [*shield, 1d2-1]
+      - [*table_medium_armor, 1]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d10-8]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d6-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
   &barbarian barbarian:
     name: barbarian
     experienceforlevel: [0,2600,5200,10400,20800,41600,85000,170000,290000,410000,530000,650000,770000,890000]
@@ -4313,94 +4357,85 @@ classes:
     equipment:
       path:
         *varn:
-          weapons:
-            - [*dagger, 1d2]
-            - [{die: 1d6, res:{
-                            1: *battle_axe,
-                            2: *club,
-                            3: *hand_axe,
-                            4: *spear,
-                            5: *sword,
-                            6: *war_hammer
-            }}, 1d2]
-            - [{die: 1d6, res: {1-2: *great_axe,
-                                    3-4: *two_handed_sword,
-                                    5-6: ''
-            }}, 1d2]
-            - [{die: 1d6, res: {1-3: *shortbow,
-                                    3-6: ''
-            }}, 1]
-          armor:
-            - [*shield, 1d2-1]
-            - [*table_medium_armor, 1]
-          gear:
-            - [*backpack, 1]
-            - [*table_healing_herbs, 1d10-7]
-            - [*table_tools, 2d4]
-            - [*table_sleeping, 1]
-            - [*military_oil, 1d6-1]
-            - [*table_light, 1]
-            - [*torch, 1d6-3]
+          - [*dagger, 1d2]
+          - [{die: 1d6, res:{
+                          1: *battle_axe,
+                          2: *club,
+                          3: *hand_axe,
+                          4: *spear,
+                          5: *sword,
+                          6: *war_hammer
+          }}, 1d2]
+          - [{die: 1d6, res: {1-2: *great_axe,
+                                  3-4: *two_handed_sword,
+                                  5-6: ''
+          }}, 1d2]
+          - [{die: 1d6, res: {1-3: *shortbow,
+                                  3-6: ''
+          }}, 1]
+          - [*shield, 1d2-1]
+          - [*table_medium_armor, 1]
+          - [*backpack, 1]
+          - [*table_healing_herbs, 1d10-7]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d6-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
         *bosk:
-          weapons:
-            - [*dagger, 1d2]
-            - [{die: 1d6, res: {1: *whip, 2: *net, 3-6: ''}}, 1]
-            - [ {die: 1d6, res: {
-              1: *short_sword,
-              2: *javelin,
-              3: *hand_axe,
-              4: *spear,
-              5: *sword,
-              6: *war_hammer
-            }}, 1d2]
-            - [*javelin, 1d4-1]
-            - [ {die: 1d6, res: {1-3: *two_handed_sword,
-                                     4-6: ''
-            }}, 1]
-            - [{die: 1d6, res: {1-4: *shortbow,
-                                     5-6: ''
-            }}, 1]
-          armor:
-            - [*shield, 1d2-1]
-            - [*table_medium_armor, 1]
-          gear:
-            - [*backpack, 1]
-            - [*table_healing_herbs, 1d10-7]
-            - [*table_tools, 2d4]
-            - [*table_sleeping, 1]
-            - [*military_oil, 1d6-1]
-            - [*table_light, 1]
-            - [*torch, 1d6-3]
+          - [*dagger, 1d2]
+          - [{die: 1d6, res: {1: *whip, 2: *net, 3-6: ''}}, 1]
+          - [ {die: 1d6, res: {
+            1: *short_sword,
+            2: *javelin,
+            3: *hand_axe,
+            4: *spear,
+            5: *sword,
+            6: *war_hammer
+          }}, 1d2]
+          - [*javelin, 1d4-1]
+          - [ {die: 1d6, res: {1-3: *two_handed_sword,
+                                   4-6: ''
+          }}, 1]
+          - [{die: 1d6, res: {1-4: *shortbow,
+                                   5-6: ''
+          }}, 1]
+          - [*shield, 1d2-1]
+          - [*table_medium_armor, 1]
+          - [*backpack, 1]
+          - [*table_healing_herbs, 1d10-7]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d6-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
         *surga:
-          weapons:
-            - [{die: 1d6, res: {1: *whip, 2: *net, 3: *sling, 4-6: ''}}, 1]
-            - [*dagger, 1d2]
-            - [ {die: 1d6, res: {
-              1: *javelin,
-              2: *lance,
-              3: *hand_axe,
-              4: *spear,
-              5: *short_sword,
-              6: *dagger
-            }}, 1d2]
-            - [ {die: 1d5, res: {1: *composite_bow,
-                                     2: *shortbow,
-                                     3: *crossbow,
-                                     4: *arbalest,
-                                     5: *longbow
-            }}, 1]
-            - [*javelin, 1d4]
-          armor:
-            - [*shield, 1d2-1]
-            - [*table_medium_armor, 1]
-          gear:
-            - [*backpack, 1]
-            - [*table_healing_herbs, 1d10-7]
-            - [*table_tools, 2d4]
-            - [*table_sleeping, 1]
-            - [*military_oil, 1d6-1]
-            - [*table_light, 1]
-            - [*torch, 1d6-3]
+          - [{die: 1d6, res: {1: *whip, 2: *net, 3: *sling, 4-6: ''}}, 1]
+          - [*dagger, 1d2]
+          - [ {die: 1d6, res: {
+            1: *javelin,
+            2: *lance,
+            3: *hand_axe,
+            4: *spear,
+            5: *short_sword,
+            6: *dagger
+          }}, 1d2]
+          - [ {die: 1d5, res: {1: *composite_bow,
+                                   2: *shortbow,
+                                   3: *crossbow,
+                                   4: *arbalest,
+                                   5: *longbow
+          }}, 1]
+          - [*javelin, 1d4]
+          - [*shield, 1d2-1]
+          - [*table_medium_armor, 1]
+          - [*backpack, 1]
+          - [*table_healing_herbs, 1d10-7]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d6-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
   &beastmaster beastmaster:
     name: beastmaster
     experienceforlevel: [0,2900,5800,11600,23200,46400,95000,190000,310000,430000,550000,670000,790000,910000]
@@ -4465,16 +4500,13 @@ classes:
       5:
         - Animal Magnetism
     equipment:
-      weapons:
-        - [{die: 1d5, res:{1: *spear, 2: *hand_axe, 3: *dagger, 4: *sling, 5: *staff}}, 1d2+1]
-        - [{die: 1d4, res:{1: *bola, 2: *darts, 3: *net, 4: *sap}}, 1d2]
-      armor: []
-      gear:
-        - [*backpack, 1]
-        - [*table_healing_herbs, 1d6]
-        - [*table_tools, 1d4]
-        - [*table_sleeping, 1]
-        - [*torch, 1d6-2]
+      - [{die: 1d5, res:{1: *spear, 2: *hand_axe, 3: *dagger, 4: *sling, 5: *staff}}, 1d2+1]
+      - [{die: 1d4, res:{1: *bola, 2: *darts, 3: *net, 4: *sap}}, 1d2]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d6]
+      - [*table_tools, 1d4]
+      - [*table_sleeping, 1]
+      - [*torch, 1d6-2]
   &berserker berserker:
     name: berserker
     experienceforlevel: [0,2750,5500,11000,22000,44000,90000,180000,300000,420000,540000,660000,780000,900000]
@@ -4551,94 +4583,85 @@ classes:
     equipment:
       path:
         *varn:
-          weapons:
-            - [*dagger, 1d2]
-            - [{die: 1d6, res: {
-                            1: *battle_axe,
-                            2: *club,
-                            3: *hand_axe,
-                            4: *spear,
-                            5: *sword,
-                            6: *war_hammer
-            }}, 1d2]
-            - [{die: 1d6, res: {1-2: *great_axe,
-                                    3-4: *two_handed_sword,
-                                    5-6: ''
-            }}, 1d2]
-            - [{die: 1d6, res: {1-3: *shortbow,
-                                    3-6: ''
-            }}, 1]
-          armor:
-            - [*shield, 1d2-1]
-            - [*table_light_armor, 1]
-          gear:
-            - [*backpack, 1]
-            - [*table_healing_herbs, 1d10-7]
-            - [*table_tools, 2d4]
-            - [*table_sleeping, 1]
-            - [*military_oil, 1d6-1]
-            - [*table_light, 1]
-            - [*torch, 1d6-3]
+          - [*dagger, 1d2]
+          - [{die: 1d6, res: {
+                          1: *battle_axe,
+                          2: *club,
+                          3: *hand_axe,
+                          4: *spear,
+                          5: *sword,
+                          6: *war_hammer
+          }}, 1d2]
+          - [{die: 1d6, res: {1-2: *great_axe,
+                                  3-4: *two_handed_sword,
+                                  5-6: ''
+          }}, 1d2]
+          - [{die: 1d6, res: {1-3: *shortbow,
+                                  3-6: ''
+          }}, 1]
+          - [*shield, 1d2-1]
+          - [*table_light_armor, 1]
+          - [*backpack, 1]
+          - [*table_healing_herbs, 1d10-7]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d6-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
         *bosk:
-          weapons:
-            - [*dagger, 1d2]
-            - [{die: 1d6, res: {1: *whip, 2: *net, 3-6: ''}}, 1]
-            - [ {die: 1d6, res: {
-              1: *short_sword,
-              2: *javelin,
-              3: *hand_axe,
-              4: *spear,
-              5: *sword,
-              6: *war_hammer
-            }}, 1d2]
-            - [*javelin, 1d4-1]
-            - [ {die: 1d6, res: {1-3: *two_handed_sword,
-                                     4-6: ''
-            }}, 1]
-            - [ {die: 1d6, res: {1-4: *shortbow,
-                                     5-6: ''
-            }}, 1]
-          armor:
-            - [*shield, 1d2-1]
-            - [*table_light_armor, 1]
-          gear:
-            - [*backpack, 1]
-            - [*table_healing_herbs, 1d10-7]
-            - [*table_tools, 2d4]
-            - [*table_sleeping, 1]
-            - [*military_oil, 1d6-1]
-            - [*table_light, 1]
-            - [*torch, 1d6-3]
+          - [*dagger, 1d2]
+          - [{die: 1d6, res: {1: *whip, 2: *net, 3-6: ''}}, 1]
+          - [ {die: 1d6, res: {
+            1: *short_sword,
+            2: *javelin,
+            3: *hand_axe,
+            4: *spear,
+            5: *sword,
+            6: *war_hammer
+          }}, 1d2]
+          - [*javelin, 1d4-1]
+          - [ {die: 1d6, res: {1-3: *two_handed_sword,
+                                   4-6: ''
+          }}, 1]
+          - [ {die: 1d6, res: {1-4: *shortbow,
+                                   5-6: ''
+          }}, 1]
+          - [*shield, 1d2-1]
+          - [*table_light_armor, 1]
+          - [*backpack, 1]
+          - [*table_healing_herbs, 1d10-7]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d6-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
         *surga:
-          weapons:
-            - [{die: 1d6, res: {1: *whip, 2: *net, 3: *sling, 4-6: ''}}, 1]
-            - [*dagger, 1d2]
-            - [ {die: 1d6, res: {
-              1: *javelin,
-              2: *lance,
-              3: *hand_axe,
-              4: *spear,
-              5: *short_sword,
-              6: *dagger
-            }}, 1d2]
-            - [ {die: 1d5, res: {1: *composite_bow,
-                                     2: *shortbow,
-                                     3: *crossbow,
-                                     4: *arbalest,
-                                     5: *longbow
-            }}, 1]
-            - [*javelin, 1d4]
-          armor:
-            - [*shield, 1d2-1]
-            - [*table_light_armor, 1]
-          gear:
-            - [*backpack, 1]
-            - [*table_healing_herbs, 1d10-7]
-            - [*table_tools, 2d4]
-            - [*table_sleeping, 1]
-            - [*military_oil, 1d6-1]
-            - [*table_light, 1]
-            - [*torch, 1d6-3]
+          - [{die: 1d6, res: {1: *whip, 2: *net, 3: *sling, 4-6: ''}}, 1]
+          - [*dagger, 1d2]
+          - [ {die: 1d6, res: {
+            1: *javelin,
+            2: *lance,
+            3: *hand_axe,
+            4: *spear,
+            5: *short_sword,
+            6: *dagger
+          }}, 1d2]
+          - [ {die: 1d5, res: {1: *composite_bow,
+                                   2: *shortbow,
+                                   3: *crossbow,
+                                   4: *arbalest,
+                                   5: *longbow
+          }}, 1]
+          - [*javelin, 1d4]
+          - [*shield, 1d2-1]
+          - [*table_light_armor, 1]
+          - [*backpack, 1]
+          - [*table_healing_herbs, 1d10-7]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d6-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
   &ecclesiastic ecclesiastic:
     name: ecclesiastic
     experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
@@ -4697,23 +4720,20 @@ classes:
         - Rally the Faithful
         - Turn Nightmare
     equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1]
-        - [*table_mage_weapons, 1]
-      armor: []
-      gear:
-        - [*backpack, 1]
-        - [*ceremonial_codex, 1]
-        - [*traditional_implements, 1]
-        - [*table_healing_herbs, 1d4]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d2-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
-        - [*holy_symbol, 1]
-        - [*holy_water, 2d2]
-        - [*ink, 1]
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_mage_weapons, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*holy_symbol, 1]
+      - [*holy_water, 2d2]
+      - [*ink, 1]
   &mage mage:
     name: mage
     experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
@@ -4773,23 +4793,20 @@ classes:
         - Rally the Faithful
         - Turn Nightmare
     equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1]
-        - [*table_mage_weapons, 1]
-      armor: []
-      gear:
-        - [*backpack, 1]
-        - [*ceremonial_codex, 1]
-        - [*traditional_implements, 1]
-        - [*table_healing_herbs, 1d4]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d2-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
-        - [*holy_symbol, 1]
-        - [*holy_water, 2d2]
-        - [*ink, 1]
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_mage_weapons, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*holy_symbol, 1]
+      - [*holy_water, 2d2]
+      - [*ink, 1]
   &freebooter freebooter:
     name: freebooter
     experienceforlevel: [0,2150,4300,8600,17200,34400,70000,140000,240000,340000,440000,540000,640000,740000]
@@ -4897,23 +4914,20 @@ classes:
             - *tracking
             - *backstab
     equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1]
-        - [*table_tiny_melee_weapons, 1d4-2]
-        - [*table_small_melee_weapons, 1]
-        - [*table_medium_melee_weapons, 1d3-2]
-        - [*table_special_weapons, 1d4-3]
-        - [{die: 1d4, res: {1: *shortbow, 2-3: *crossbow, 4: ''}}, 1]
-      armor:
-        - [*table_light_armor, 1]
-      gear:
-        - [*backpack, 1]
-        - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
-        - [*table_healing_herbs, 1d3-1]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_tiny_melee_weapons, 1d4-2]
+      - [*table_small_melee_weapons, 1]
+      - [*table_medium_melee_weapons, 1d3-2]
+      - [*table_special_weapons, 1d4-3]
+      - [{die: 1d4, res: {1: *shortbow, 2-3: *crossbow, 4: ''}}, 1]
+      - [*table_light_armor, 1]
+      - [*backpack, 1]
+      - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
+      - [*table_healing_herbs, 1d3-1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
   &occultist occultist:
     name: occultist
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
@@ -4978,23 +4992,20 @@ classes:
       11:
         - *personal_talisman
     equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1]
-        - [*table_mage_weapons, 1]
-      armor: []
-      gear:
-        - [*backpack, 1]
-        - [*ceremonial_codex, 1]
-        - [*traditional_implements, 1]
-        - [*table_healing_herbs, 1d4-1]
-        - [*black_lotus, 1d3-1]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*holy_water, 1d2-1]
-        - [*military_oil, 1d2-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
-        - [*ink, 1]
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_mage_weapons, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4-1]
+      - [*black_lotus, 1d3-1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*holy_water, 1d2-1]
+      - [*military_oil, 1d2-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*ink, 1]
   &venturer venturer:
     name: venturer
     experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
@@ -5056,20 +5067,17 @@ classes:
       10:
         - *use_magic_scrolls
     equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1d4-2]
-        - [*table_small_melee_weapons, 1d2-1]
-        - [*table_medium_melee_weapons, 1]
-        - [{die: 1d3, res: {1: *table_bows, 2-3: *table_crossbows}}, 1]
-      armor:
-        - [*table_medium_armor, 1]
-      gear:
-        - [*backpack, 1]
-        - [*table_healing_herbs, 1d3-1]
-        - [*table_tools, 3d4]
-        - [*table_sleeping, 1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
+      - [*table_tiny_melee_weapons, 1d4-2]
+      - [*table_small_melee_weapons, 1d2-1]
+      - [*table_medium_melee_weapons, 1]
+      - [{die: 1d3, res: {1: *table_bows, 2-3: *table_crossbows}}, 1]
+      - [*table_medium_armor, 1]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d3-1]
+      - [*table_tools, 3d4]
+      - [*table_sleeping, 1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
   &warmistress warmistress:
     name: warmistress
     experienceforlevel: [0,2450,4900,9800,19600,39200,80000,160000,280000,400000,520000,640000,760000,880000]
@@ -5128,20 +5136,17 @@ classes:
       5:
         - Fiery Spirit
     equipment:
-      weapons:
-        - [{die: 1d10, res:{1: *dagger, 2: *short_sword, 3: *sword, 4: *spear, 5: *whip}}, 1d2+1]
-        - [{die: 1d4, res: {1: *table_bows, 2-3: *table_crossbows, 4: ''}},1]
-        - [*javelin, 1d4-1]
-      armor:
-        - [*table_light_armor, 1]
-      gear:
-        - [*backpack, 1]
-        - [*table_healing_herbs, 1d10-8]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d6-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
+      - [{die: 1d10, res:{1: *dagger, 2: *short_sword, 3: *sword, 4: *spear, 5: *whip}}, 1d2+1]
+      - [{die: 1d4, res: {1: *table_bows, 2-3: *table_crossbows, 4: ''}},1]
+      - [*javelin, 1d4-1]
+      - [*table_light_armor, 1]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d10-8]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d6-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
   &herald herald:
     name: herald
     experienceforlevel: [0,1850,3700,7400,14800,29600,60000,120000,240000,360000,480000,600000,720000,840000]
@@ -5197,24 +5202,21 @@ classes:
       5:
         - Battlefield Prowess
     equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1d3-1]
-        - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
-        - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
-        - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
-        - [*javelin, 1d4-1]
-        - [*table_special_weapons, 1d10-8]
-      armor:
-        - [*shield, 1d2-1]
-        - [*table_heavy_armor, 1]
-      gear:
-        - [*backpack, 1]
-        - [*table_healing_herbs, 1d10-8]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d6-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
+      - [*table_tiny_melee_weapons, 1d3-1]
+      - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+      - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+      - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
+      - [*javelin, 1d4-1]
+      - [*table_special_weapons, 1d10-8]
+      - [*shield, 1d2-1]
+      - [*table_heavy_armor, 1]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d10-8]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d6-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
   &gladiator gladiator:
     name: gladiator
     experienceforlevel: [0,1700,3400,6800,14000,28000,55000,110000,230000,350000,470000,590000,710000,830000]
@@ -5273,24 +5275,21 @@ classes:
       5:
         - Battlefield Prowess
     equipment:
-      weapons:
-        - [*table_tiny_melee_weapons, 1d3-1]
-        - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
-        - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
-        - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
-        - [*javelin, 1d4-1]
-        - [*table_special_weapons, 1d10-8]
-      armor:
-        - [*shield, 1d2-1]
-        - [*table_heavy_armor, 1]
-      gear:
-        - [*backpack, 1]
-        - [*table_healing_herbs, 1d10-8]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d6-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
+      - [*table_tiny_melee_weapons, 1d3-1]
+      - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+      - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+      - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
+      - [*javelin, 1d4-1]
+      - [*table_special_weapons, 1d10-8]
+      - [*shield, 1d2-1]
+      - [*table_heavy_armor, 1]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d10-8]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d6-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
   &shaman shaman:
     name: shaman
     experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
@@ -5368,25 +5367,22 @@ classes:
       7:
         - Spiritwalk
     equipment:
-      weapons:
-        - [*dagger, 1d2-1]
-        - [*staff, 1d2-1]
-        - [{die: 1d5, res: {1: *club, 2: *dagger, 3: *hand_axe, 4: *short_sword, 5: *spear}}, 1]
-      armor:
-        - [*shield, 1d2-1]
-        - [*table_light_armor, 1]
-      gear:
-        - [*backpack, 1]
-        - [*ceremonial_codex, 1]
-        - [*traditional_implements, 1]
-        - [*table_healing_herbs, 1d4+1]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d2-1]
-        - [*holy_water, 1d4-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
-        - [*ink, 1d2-1]
+      - [*dagger, 1d2-1]
+      - [*staff, 1d2-1]
+      - [{die: 1d5, res: {1: *club, 2: *dagger, 3: *hand_axe, 4: *short_sword, 5: *spear}}, 1]
+      - [*shield, 1d2-1]
+      - [*table_light_armor, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4+1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*holy_water, 1d4-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*ink, 1d2-1]
   &witch witch:
     name: witch
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
@@ -5483,23 +5479,20 @@ classes:
           7:
             - Polymorph self
     equipment:
-      weapons:
-        - [*dagger, 1d2-1]
-        - [*staff, 1d2-1]
-        - [{die: 1d5, res: {1: *club, 2: *dagger, 3: *hand_axe, 4: *short_sword, 5: *spear}}, 1]
-      armor: []
-      gear:
-        - [*backpack, 1]
-        - [*ceremonial_codex, 1]
-        - [*traditional_implements, 1]
-        - [*table_healing_herbs, 1d4+1]
-        - [*table_tools, 2d4]
-        - [*table_sleeping, 1]
-        - [*military_oil, 1d2-1]
-        - [*holy_water, 1d4-1]
-        - [*table_light, 1]
-        - [*torch, 1d6-3]
-        - [*ink, 1d2-1]
+      - [*dagger, 1d2-1]
+      - [*staff, 1d2-1]
+      - [{die: 1d5, res: {1: *club, 2: *dagger, 3: *hand_axe, 4: *short_sword, 5: *spear}}, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4+1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*holy_water, 1d4-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*ink, 1d2-1]
 desctables:
   human build:
     die: 2d6
@@ -5954,7 +5947,7 @@ desctables:
         3: ['[GENDERPERS] is wearing ', *table_headwear_any]
         4: ['[GENDERPERS] ', *table_adornments_any]
 tables:
-  armortype:
+  armortype: &armortypetable
     die: 1d20
     res:
       1-5: *hide_armor
@@ -5966,14 +5959,14 @@ tables:
       14: *banded_plate
       15: *lamellar_armor
       16-20: *plate_armor
-  swordtype:
+  swordtype: &swordtypetable
     die: 1d10
     res:
       1-2: *dagger
       3-5: *short_sword
       6-8: *sword
       9-10: *two_handed_sword
-  miscweptype:
+  miscweptype: &miscweptypetable
     die: 1d100
     res:
       1-2: *arbalest
@@ -6065,50 +6058,311 @@ tables:
       die: 1d100
       res:
         1-10: {die: 1d3, res:{1: bone, 2: scrimshaw, 3: beast parts}}
-    common:
-      die: 1d100
-      res:
-        1-5: Armor, Masterwork
-        6-15: Misc. Weapon, Masterwork
-        16-17: Oil of Bane-Rune
-        18-19: Oil of Sharpness
-        20-21: Oil of Slipperiness
-        22: Oil of Vitriolic Infusion
-        23: Potion of Alter Self
-        24-25: Potion of Chameleon
-        26-29: Potion of Cure Light Wounds
-        30-31: Potion of Cure Moderate Wounds
-        32: Potion of Eldritch Armor
-        33: Potion of ESP
-        34-35: Potion of Jump
-        36: Potion of Ogre Power
-        37: Potion of Resist Acid
-        38: Potion of Resist Cold
-        39: Potion of Resist Electricity
-        40: Potion of Resist Fire
-        41: Potion of Righteous Wrath
-        42-43: Potion of Silent Step
-        44: Potion of Speaking with Animals
-        45-46: Potion of Spider Climb
-        47: Potion of Swift Sword
-        48: Potion of Swimming
-        49-52: ["[ROLL]1d2","x ",Rechargable Trinket L1,]
-        53-56: ["[ROLL]1d2","x ",Rechargable Trinket L2,]
-        57-59: ["[ROLL]1d2","x ",Rechargable Trinket L3,]
-        60-61: ["[ROLL]1d2","x ",Rechargable Trinket L4,]
-        62: ["[ROLL]1d2","x ",Rechargable Trinket L5]
-        63: Rechargable Trinket L6
-        64-68: Shield, Masterwork
-        69-83: Scroll (1 level)
-        84-88: Scroll (2 levels)
-        89-98: Sword, Masterwork
-        99-100: [Waybread, "1d2"]
-    uncommon:
-      die: 1d100
-      res:
-        1-5: Armor +1
-        6: Arrow +3, Slaying
-        7: ["[ROLL]2d6","x ", "Arrows +1"]
-
-
-
+    heroic magic:
+      common:
+        die: 1d100
+        res:
+          1-5:  {item: *armortypetable, postfix: " (MW)", mod:{weight: -6}}
+          6-15: {item: *miscweptypetable, postfix: [" (MW) ", {die: 1d6, res: {1-2: +1D, 3-4: +1H, 5-6: "+1"}}]}
+          16-17: {item: *pot_oilofbanerune}
+          18-19: {item: *pot_oilofsharpness}
+          20-21: {item: *pot_oilofslipperiness}
+          22: {item: *pot_oilofvitriolicinfusion}
+          23: {item: *pot_alterself}
+          24-25: {item: *pot_chameleon}
+          26-29: {item: *pot_curelightwounds}
+          30-31: {item: *pot_curemoderatewounds}
+          32: {item: *pot_eldritcharmor}
+          33: {item: *pot_esp}
+          34-35: {item: *pot_jump}
+          36: {item: *pot_ogrepower}
+          37: {item: *pot_resistacid}
+          38: {item: *pot_resistcold}
+          39: {item: *pot_resistelectricity}
+          40: {item: *pot_resistfire}
+          41: {item: *pot_righteouswrath}
+          42-43: {item: *pot_silentstep}
+          44: {item: *pot_speakingwithanimals}
+          45-46: {item: *pot_spiderclimb}
+          47: {item: *pot_swiftsword}
+          48: {item: *pot_swimming}
+          49-52: {item: Rechargable Trinket L1, no: 1d2}
+          57-59: {item: Rechargable Trinket L3, no: 1d2}
+          60-61: {item: Rechargable Trinket L4, no: 1d2}
+          53-56: {item: Rechargable Trinket L2, no: 1d2}
+          62: {item: Rechargable Trinket L5, no: 1d2}
+          63: {item: Rechargable Trinket L6}
+          64-68: {item: *shield, postfix: " (MW)", mod:{weight: -5}}
+          69-83: {item: Scroll (1 level)}
+          84-88: {item: Scroll (2 levels)}
+          89-98: {item: *swordtypetable, postfix: [" (MW) ", {die: 1d6, res: {1-2: +1D, 3-4: +1H, 5-6: +1}}]}
+          99-100: {item: *pot_waybread, no: 1d2}
+      uncommon:
+        die: 1d100
+        res:
+          1-5: {item: *armortypetable, postfix: " +1", mod: {weight: -6, modifies: {ac: 1}}}
+          6: {item: Slaying Arrow +3}
+          7: {item: Arrow +1, no: 2d6}
+          8: {item: Arrow +2, no: 1d6}
+          9: {item: Arrow +3, no: 1d4}
+          10: {item: *misc_bracersofarmor, postfix: " +1", add: {modifies: {acm: 1}}}
+          11: {item: Crossbow Bolt +1, no: 2d6}
+          12: {item: Crossbow Bolt +2, no: 1d6}
+          13: {item: Crossbow Bolt +3, no: 1d4}
+          14-16: {item: *miscweptypetable, postfix: " +1"}
+          17: {item: *pot_oilofstonetoflesh}
+          18: {item: *pot_oilofstriking}
+          19: {item: *pot_acidimmunity}
+          20: {item: *pot_angelicaura}
+          21: {item: *pot_coldimmunity}
+          22: {item: *pot_curenblindness}
+          23: {item: *pot_curecriticalwounds}
+          24: {item: *pot_curedisease}
+          25: {item: *pot_curemajorwounds}
+          26: {item: *pot_diminuition}
+          27: {item: *pot_electricalimmunity}
+          28: {item: *pot_eyesoftheeagle}
+          29: {item: *pot_findtreasure}
+          30: {item: *pot_fireimmunity}
+          31: {item: *pot_flying}
+          32: {item: *pot_gaseousform}
+          33: {item: *pot_giantstrength}
+          34: {item: *pot_greaterclairaudience}
+          35: {item: *pot_greaterclairvoyance}
+          36: {item: *pot_growth}
+          37: {item: *pot_guiseself}
+          38: {item: *pot_infravision}
+          39: {item: *pot_invisibility}
+          40: {item: *pot_invulnerabilitytoevil}
+          41: {item: *pot_levitation}
+          42: {item: *pot_necromanticinvulnerability}
+          43: {item: *pot_poison}
+          44: {item: *pot_protectionfromnormalmissiles}
+          45: {item: *pot_protectionfromnormalweapons}
+          46: {item: *pot_skinchange}
+          47: {item: *pot_speakwithdead}
+          48: {item: *pot_speakwithplants}
+          49: {item: *pot_strengthofmind}
+          50: {item: *pot_telepathy}
+          51: {item: *pot_transformself}
+          52: {item: *pot_trollblood}
+          53: {item: *pot_trueseeing}
+          54: {item: *pot_vigor}
+          55: {item: *pot_waterwalking}
+          56: {item: *pot_waterbreathing}
+          57: {item: *pot_wingedflight}
+          58: {item: Rechargable Trinket L4, no: 3d6}
+          59: {item: Rechargable Trinket L5, no: 2d6}
+          60: {item: Rechargable Trinket L6, no: 2d4}
+          61: {item: *rod_cancellation}
+          62-66: {item: *shield, postfix: " +1", mod: {weight: -5, modifies: {ac: 1}}}
+          67-71: {item: Spell Scroll (3 levels)}
+          72-74: {item: Spell Scroll (4 levels)}
+          75: {item: Spell Scroll (5 levels)}
+          76: {item: Spell Scroll (6 levels)}
+          77: {item: Spell Scroll (7 levels)}
+          78: {item: Spell Scroll (8 levels)}
+          79: {item: Spell Scroll (9 levels)}
+          80: {item: Spell Scroll (10 levels)}
+          81-90: {item: *swordtypetable, postfix: " +1"}
+          91-94: {item: Talisman +1}
+          95-98: {item: Treasure Map to 1d4*1000 gp}
+          99-100: {item: *pot_waybread, no: 2d6}
+      rare: &magic_items_rare
+        die: 1d100
+        res:
+          1: [{item: *armortypetable, postfix: " +1", mod: {weight: -6, modifies: {ac: 1}}}, {item: *shield, postfix: " +1", mod: {weight: -5, modifies: {ac: 1}}}]
+          2-3: {item: *armortypetable, postfix: " +2"}
+          4: [{item: *armortypetable, postfix: " +2", mod: {modifies: {ac: 2}, weight: -12}}, {item: *shield, postfix: " +1", mod: {modifies: {ac: 1}, weight: -6}}]
+          5: [{item: *armortypetable, postfix: " +2", mod: {modifies: {ac: 2}, weight: -12}}, {item: *shield, postfix: " +2", mod: {modifies: {ac: 2}, weight: -12}}]
+          6: [{item: *armortypetable, postfix: " +1", mod: {modifies: {ac: 1}, weight: -6}}, {item: *shield, postfix: " +2", mod: {modifies: {ac: 2}, weight: -12}}]
+          7: {item: *misc_bootsofspeed}
+          8: {item: *misc_bowlofcommandingwaterelementals}
+          9: {item: *misc_bracersofarmor, postfix: " +2", add: {modifies: {acm: 2}}}
+          10: {item: *misc_brazierofcommandingfireelementals}
+          11: {item: *misc_censerofcontrollingairelementals}
+          12: {item: *misc_cloakofprotection}
+          13: {item: *misc_cloakofskinchanging}
+          14: {item: *misc_crystalball}
+          15: {item: *misc_cubeoffrostresistance}
+          16: {item: *misc_elvenboots}
+          17: {item: *misc_elvencloak}
+          18: {item: *misc_eyesofcharming}
+          19: {item: *misc_helmofcomprehendinglanguages}
+          20-21: {item: *miscweptypetable, postfix: " +1, +2"}
+          22-23: {item: *miscweptypetable, postfix: " +1, +3"}
+          24-25: {item: *miscweptypetable, postfix: " +1 (1 Proficiency)"}
+          26-27: {item: *miscweptypetable, postfix: " +2"}
+          28: {item: *miscweptypetable, postfix: " +2, +3"}
+          29: {item: *miscweptypetable, postfix: " +1 (2 Proficiencies)"}
+          30: {item: *ring_djinnicalling}
+          31-34: {item: *ring_protection, add: {modifies: {ac: 1, acm: 1, BB: 1, PD: 1, PP: 1, SW: 1, S: 1}}}
+          35: {item: *misc_ropeofclimbing}
+          36: {item: *misc_scarabofprotection}
+          37: {item: *shield, postfix: " +1 (1 Proficiency)"}
+          38-39: {item: *shield, postfix: " +2"}
+          40: {item: *shield, postfix: " +2 (1 Proficiency)"}
+          41: {item: Spell Scroll (12 levels)}
+          42: {item: Spell Scroll (14 levels)}
+          43: {item: Spell Scroll (16 levels)}
+          44: {item: Spell Scroll (18 levels)}
+          45: {item: Spell Scroll (20 levels)}
+          46: {item: Spell Scroll (22 levels)}
+          47: {item: Spell Scroll (24 levels)}
+          48: {item: Spell Scroll (26 levels)}
+          49: {item: Spell Scroll (28 levels)}
+          50: {item: Spell Scroll (30 levels)}
+          51: {item: Spell Scroll (32 levels)}
+          52: {item: Spell Scroll (34 levels)}
+          53: {item: Spell Scroll (36 levels)}
+          54: {item: Spell Scroll (38 levels)}
+          55: {item: Spell Scroll (40 levels)}
+          56: {item: Spell Scroll (42 levels)}
+          57: {item: *staff_healing}
+          58: {item: *staff_striking}
+          59: {item: *misc_stoneofcontrollingearthelementals}
+          60-61: {item: *swordtypetable, postfix: " +1, +2"}
+          62: {item: *swordtypetable, postfix: " +1, +3"}
+          63: {item: *swordtypetable, postfix: " +1 of light (30')"}
+          64-65: {item: *swordtypetable, postfix: " +1 (1 Proficiency) "}
+          66-67: {item: *swordtypetable, postfix: " +2"}
+          68: {item: *swordtypetable, postfix: " +2, +3"}
+          69: {item: *swordtypetable, postfix: " +2 (1 Proficiency)"}
+          70-72: {item: Talisman +2}
+          73-74: {item: Talisman +3}
+          75: {item: Talisman +4}
+          76: {item: Talisman +5}
+          77: {item: Talisman +6}
+          78-79: {item: Treasure Map to 1 rare, 1 uncommon item}
+          80-82: {item: Treasure Map to 2d10 jewelry, 5d6 gems}
+          83-84: {item: Treasure Map to 1d6 jewelry, 1 rare item}
+          85-86: {item: Treasure Map to 5d6 gems, 1 rare item}
+          87-89: {item: Treasure Map to 5d6*1000 gp, 1 uncommon item}
+          90-92: {item: Treasure Map to 5d6*1000 gp, 5d6 gems}
+          93-95: {item: Treasure Map to 6d6*1000 gp}
+          96-97: {item: *wand_detectingenemies}
+          98-99: {item: *wand_detectingmagic}
+          100: {item: *wand_illusion}
+      very rare:
+        die: 1d100
+        res:
+          1: {item: *misc_amuletofnondetection}
+          2: [{item: *armortypetable, postfix: " +1", mod: {weight: -6, modifies: {ac: 1}}}, {item: *shield, postfix: " +3", mod: {weight: -5, modifies: {ac: 3}}}]
+          3: [{item: *armortypetable, postfix: " +2", mod: {weight: -12, modifies: {ac: 2}}}, {item: *shield, postfix: " +3", mod: {weight: -5, modifies: {ac: 3}}}]
+          4-5: {item: *armortypetable, postfix: " +3", mod: {weight: -18, modifies: {ac: 3}}}
+          6: [{item: *armortypetable, postfix: " +3", mod: {weight: -18, modifies: {ac: 3}}}, {item: *shield, postfix: " +1", mod: {weight: -5, modifies: {ac: 1}}}]
+          7: [{item: *armortypetable, postfix: " +3", mod: {weight: -18, modifies: {ac: 3}}}, {item: *shield, postfix: " +2", mod: {weight: -5, modifies: {ac: 2}}}]
+          8: [{item: *armortypetable, postfix: " +3", mod: {weight: -18, modifies: {ac: 3}}}, {item: *shield, postfix: " +3", mod: {weight: -5, modifies: {ac: 3}}}]
+          9: {item: *misc_bagofholding}
+          10: {item: *misc_foldingboat}
+          11: {item: *misc_bootsoflevitation}
+          12: {item: *misc_bootsoftravelingandspringing}
+          13: {item: *misc_bracersofarmor, postfix: " +3", add: {modifies: {acm: 3}}}
+          14: {item: *misc_bracersofarmor, postfix: " +4", add: {modifies: {acm: 4}}}
+          15: {item: *misc_bracersofarmor, postfix: " +5", add: {modifies: {acm: 5}}}
+          16: {item: *misc_chimeofopening}
+          17: {item: *misc_cloakofprotection, postfix: " +3", add: {modifies: {acm: 3, ac: 3, BB: 3, PD: 3, PP: 3, SW: 3, S: 3}}}
+          18: {item: *misc_collarofconversation}
+          19: {item: *misc_crystalballclairaudience}
+          20: {item: *misc_crystalballesp}
+          21: {item: *misc_cubeofforce}
+          22: {item: *misc_deadmanshand}
+          23: {item: *misc_displacercloak}
+          24: {item: *misc_drumsofpanic}
+          25: {item: *misc_efreetibottle}
+          26: {item: *misc_eyesoftheeagle}
+          27-28: {item: *misc_gauntletsofogrepower}
+          29: {item: *misc_girdleofgiantstrength}
+          30: {item: *misc_helmofawe}
+          31: {item: *misc_helmoftelepathy}
+          32: {item: *misc_hornofblasting}
+          33: {item: *misc_medaillonofesp}
+          34: {item: *misc_medaillonofesp90}
+          35: {item: *misc_mirroroflifetrapping}
+          36-40: {item: *miscweptypetable, postfix: " +3"}
+          41-43: {item: *miscweptypetable, postfix: " +3 (proficiency)"}
+          44-45: {item: *miscweptypetable, postfix: " +3 (2 proficiencies)"}
+          46: {item: *ring_commandanimal}
+          47: {item: *ring_commandhuman}
+          48: {item: *ring_commandplant}
+          49: {item: *ring_fireresistance}
+          50: {item: *ring_invisibility}
+          51: {item: *ring_protection, postfix: " +2", add: {modifies: {ac: 2, acm: 2, BB: 2, PD: 2, PP: 2, SW: 2, S: 2}}}
+          52: {item: *ring_protection, postfix: " +2, 5'", add: {modifies: {ac: 2, acm: 2, BB: 2, PD: 2, PP: 2, SW: 2, S: 2}}}
+          53: {item: *ring_protection, postfix: " +3", add: {modifies: {ac: 3, acm: 3, BB: 3, PD: 3, PP: 3, SW: 3, S: 3}}}
+          54: {item: *ring_protection, postfix: " +3, 5'", add: {modifies: {ac: 3, acm: 3, BB: 3, PD: 3, PP: 3, SW: 3, S: 3}}}
+          55: {item: *ring_regeneration}
+          56: {item: *ring_waterwalking}
+          57: {item: *rod_torture}
+          58-59: {item: *shield, postfix: " +3", mod: {ac: 3, weight: -5}}
+          60: {item: *shield, postfix: " +3 (proficiency)", mod: {modifies: {ac: 3}, weight: -5}}
+          61: {item: *shield, postfix: " +3 (2 proficiencies)", mod: {modifies: {ac: 3}, weight: -5}}
+          62: {item: *staff_commanding}
+          63: {item: *staff_elementalpower}
+          64: {item: *staff_serpent}
+          65: {item: *staff_withering}
+          66-70: {item: *swordtypetable, postfix: " +3"}
+          71-73: {item: *swordtypetable, postfix: " +3 (proficiency)"}
+          74-75: {item: *swordtypetable, postfix: " +3 (2 proficiencies)"}
+          76: {item: Talisman +7}
+          77: {item: Talisman +8}
+          78: {item: Talisman +9}
+          79: {item: Talisman +10}
+          80: {item: Talisman +11}
+          81: {item: Talisman +12}
+          82: {item: Talisman +13}
+          83: {item: Talisman +14}
+          84: {item: Talisman +15}
+          85-87: {item: Treasure Map to 3 rare and 2 common items}
+          88-89: {item: Treasure Map to 3 rare and 1 uncommon items}
+          90-91: {item: Treasure Map to 1 very rare item}
+          92-95: {item: Treasure Map to 5d6x1000gp and 1 rare item}
+          96: {item: *wand_fear}
+          97: {item: *wand_frost}
+          98: {item: *wand_paralyzation}
+          99: {item: *wand_impetus}
+          100: {item: *wand_sorcery}
+      legendary:
+        die: 1d100
+        res:
+          1-2: {item: *misc_apparatusofthecrab}
+          3-4: {item: *plate_armor, postfix: " of the Invincible Conqueror (+3)", mod: {modifies: {ac: 3}, weight: -18}}
+          5-6: {item: *composite_bow, postfix: " of the great Eagles (+3)"}
+          7-8: {item: *composite_bow, postfix: " of the Unconquered Sun (+1, +2, +3)"}
+          9-10: {item: *misc_bracersofarmor, postfix: " +6", add: {modifies: {acm: 6}}}
+          11-12: {item: *misc_bracersofarmor, postfix: " +7", add: {modifies: {acm: 7}}}
+          13-14: {item: *misc_broomofflying}
+          15-16: {item: *misc_chaliceofblood}
+          17-18: {item: *misc_heavychariotofthegods}
+          19-20: {item: *misc_lightchariotofthegods}
+          21-22: {item: *misc_mediumchariotofthegods}
+          23-24: {item: *misc_decanterofendlesswater}
+          25-26: {item: *misc_emblemoftheeagles}
+          27-28: {item: *misc_eyesofpetrification}
+          29-30: {item: *misc_flyingcarpet}
+          31-32: {item: *pole_arm, postfix: " of the Blade-Goddess (+3)"}
+          33-34: {item: *great_axe, postfix: " of the North (+3, +5)"}
+          35-36: {item: *misc_holytalismanofthewingedsun}
+          37-38: {item: *misc_ironcrownofthesorcererkings}
+          39-40: {item: *misc_ironboundbookofxisuthros}
+          41-42: {item: *misc_mirrorofopposition}
+          43-44: {item: *misc_bootsoftheimperialwarmistress}
+          45-46: {item: *misc_bracersoftheimperialwarmistress}
+          47-48: {item: *misc_corseletoftheimperialwarmistress}
+          49-50: {item: *misc_diademoftheimperialwarmistress}
+          51-52: {item: *sword, postfix: " of the Warlord (+3)", prefix: "Red "}
+          53-54: {item: *ring_antimagic}
+          55-56: {item: *ring_queensheart}
+          57-58: {item: *rod_nightsky}
+          59-60: {item: *flail, postfix: ", Scourge of Law (+3)"}
+          61-62: {item: *ring_sealofchaos}
+          63-64: {item: *shield, postfix: " of the Empyrean Heavens (+3)", mod: {modifies: {ac: 3}, weight: -5}}
+          65-66: {item: *spear, prefix: "Shining ", postfix: "(+3, +4, +5)"}
+          67-68: {item: *staff_cataclysm}
+          69-70: {item: *sword, prefix: "Vorpal ", postfix: " (+3)"}
+          71-72: {item: *sword, postfix: " of Kings (+3, +4, +5)"}
+          73-74: {item: *war_hammer, postfix: ", Dwarven Thrower (+2, +3)"}
+          75-83: {item: Treasure map to 1 legendary item}
+          84-88: {item: Treasure map to 1 legendary item, 2d4 regalia, 2d6 brilliants, and 3d6x10000 gp}
+          89-93: {item: Treasure map to 1d6 legendary items, 1d4 regalia, 1d6 brilliants, and 2d4x10000 gp}
+          94-100: {item: Treasure map to 1d3 legendary items}
