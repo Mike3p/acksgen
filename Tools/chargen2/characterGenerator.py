@@ -225,9 +225,9 @@ def load_character(name: str):
         setattr(c, k, x[k])
     return c
 
-stream = open("C:/Users/mhoh1/PycharmProjects/acksgen/newdata.yaml", 'r')
-data = yaml.safe_load(stream)
-table = data['tables']['treasure']['heroic magic']['very rare']
+#stream = open("C:/Users/mhoh1/PycharmProjects/acksgen/newdata.yaml", 'r')
+#data = yaml.safe_load(stream)
+#table = data['tables']['treasure']['heroic magic']['very rare']
 
 #a = []
 #items = roll_magical_items(5,data)
