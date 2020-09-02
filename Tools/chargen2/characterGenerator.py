@@ -97,7 +97,9 @@ def roll_party(number, fluctuate, sourcedict, level, clazz = "random",
         if fluctuate:
             deviation = random.choice(fluctuation)
             level = min(max(1,level+deviation),14)
-        characterlist.append(roll_random_character(sourcedict, level, clazz, ethnicity, gender, name, alignment, path))
+        character = roll_random_character(sourcedict, level, clazz, ethnicity, gender, name, alignment, path)
+        #todo: hotfix weil character manchmal none ist. keine ahnung wieso...
+        if character: characterlist.append(character)
 
     return characterlist
 
