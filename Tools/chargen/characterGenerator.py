@@ -1,5 +1,5 @@
-from Tools.chargen2.character import Character
-from Tools.tablerollerv2 import rollOnTable, rollOnTable_string
+from Tools.chargen.character import Character
+from Tools.tableroller import rollOnTable, rollOnTable_string
 from Tools.dice import roll
 import yaml, random, copy
 
@@ -118,9 +118,15 @@ def roll_random_character(sourcedict, level, clazz = "random", ethnicity = "rand
     if path == "random": cls['path'] = random.choice(classtable.get(cls['class'],{}).get('path', [None]))
     else: cls['path'] = path
     ethtable = sourcedict['ethnicity']
-    if ethnicity not in ethtable: ethnicity = random.choice(list(ethtable.keys()))
+
+    if 'ethnicity' in classtable.get(cls['class'],{}):
+        ethnicity = random.choice(classtable.get(cls['class'],{})['ethnicity'])
+    elif ethnicity not in ethtable: ethnicity = random.choice(list(ethtable.keys()))
+
     if gender not in ['male', 'female']: gender = random.choice(['male', 'female'])
     if name == "random": name = random.choice(ethtable[ethnicity][gender + " names"])
+    if 'surnames' in ethtable[ethnicity]:
+        name = name + " " + random.choice(ethtable[ethnicity]['surnames'])
     if alignment == "random": alignment = random.choice(['C', 'L', 'L', 'N', 'N', 'N'])
 
     return create_character(sourcedict, level, cls['class'], ethnicity, gender, name, alignment,
@@ -227,7 +233,7 @@ def load_character(name: str):
         setattr(c, k, x[k])
     return c
 
-#stream = open("C:/Users/mhoh1/PycharmProjects/acksgen/newdata.yaml", 'r')
+#stream = open("C:/Users/mhoh1/PycharmProjects/acksgen/generator_circle_of_dawn.yaml", 'r')
 #data = yaml.safe_load(stream)
 #table = data['tables']['treasure']['heroic magic']['very rare']
 

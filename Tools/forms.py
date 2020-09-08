@@ -1,6 +1,6 @@
 from wtforms import (Form, SelectField, StringField, validators, IntegerField, SubmitField, BooleanField, TextAreaField, FloatField)
 
-#form to generate classed characters
+# form to generate classed characters
 class CharacterGenerationForm(Form):
     characterClass = SelectField(u'Class')
     characterLevel = SelectField(u'Level', choices=[(0, '0'), (1,'1'), (2,'2'), (3,'3'), (4,'4'), (5,'5'), (6,'6'), (7,'7'),

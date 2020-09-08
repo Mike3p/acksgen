@@ -1,24 +1,28 @@
 import os
 
-from flask import Flask
+from flask import Flask, session
+from flask_session import Session
+from flask_sqlalchemy import *
 from Tools import mainpage
+from Tools.upload import uploadpage
 from Tools.init import initiativepage
-from Tools.chargen2 import chargenpage
+from Tools.chargen import chargenpage
+from Tools.config import Config
 
 
 def create_app(test_config=None):
     # create and configure the app
+
     app = Flask(__name__, instance_relative_config=True)
-    app.config.from_mapping(
-        SECRET_KEY='dev',
-    )
+    app.config.from_object(Config)
+    Session(app)
     
-    if test_config is None:
+    # if test_config is None:
         # load the instance config, if it exists, when not testing
-        app.config.from_pyfile('config.py', silent=True)
-    else:
+        # app.config.from_pyfile('config.py', silent=True)
+    # else:
         # load the test config if passed in
-        app.config.from_mapping(test_config)
+        # app.config.from_mapping(test_config)
 
     # ensure the instance folder exists
     try:
@@ -27,11 +31,11 @@ def create_app(test_config=None):
         pass
       
     #db.init_app(app) wir brauchen erstma keine db denk ich
-    
+
     app.register_blueprint(mainpage.bp)
     app.register_blueprint(chargenpage.bp)
     app.register_blueprint(initiativepage.bp)
-    #app.register_blueprint(blog.bp)
+    app.register_blueprint(uploadpage.bp)
     
     app.add_url_rule('/', endpoint='index')
     

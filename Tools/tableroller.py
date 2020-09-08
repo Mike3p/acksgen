@@ -1,15 +1,7 @@
 import yaml
 from Tools.dice import roll
 
-data = {}
 
-def loadTables(s):
-    global data
-    with open("data.yaml", 'r') as stream:
-        try:
-            data = yaml.safe_load(stream)
-        except yaml.YAMLError as exc:
-            print(exc)
 
 def formatTable(table):
     formattedTable: dict
@@ -18,57 +10,64 @@ def formatTable(table):
     for i in tableResults:
         if "-" in str(i):
             x = i.split("-")
-            dieCodes = list(range(int(x[0]), int(x[1])+1))
+            dieCodes = list(range(int(x[0]), int(x[1]) + 1))
             for j in dieCodes:
                 formattedTable['res'][int(j)] = tableResults[i]
         else:
             formattedTable['res'][int(i)] = tableResults[i]
     return formattedTable
 
-def getTableResultList(table, die = None):
+
+def rollOnTable(table, mod=0, die=None):
+    # initialize resultlist
     res = []
+    if isinstance(table, int):
+        return table
+
+    if isinstance(table, dict):
+        if ('die' not in table) or ('res' not in table):
+            return table
 
     if isinstance(table, str):
         if '[ROLL]' in table:
             table = table.replace('[ROLL]', '')
             return roll(table)
         return table
-    elif isinstance(table, list) :
+    elif isinstance(table, list):
         for t in table:
-            res.append(getTableResultList(t))
+            res.append(rollOnTable(t))
         return res
-    f_table = formatTable(table)
-    resultList = f_table['res']
 
-    keyList = list(resultList.keys())
+    # fill table with "missing keys"
+    tab = formatTable(table)
+    # check if custom die is specified and die roll falls into table range
+    dieroll = (roll(die) if die else roll(tab['die']))
+    dieroll += mod
+    #print(dieroll)
+    if dieroll < min(list(tab['res'].keys())):
+        dieroll = min(list(tab['res'].keys()))
+    elif dieroll > max(list(tab['res'].keys())):
+        dieroll = max(list(tab['res'].keys()))
 
-    if die:
-        dieRoll = roll(die)
-    else:
-        dieRoll = roll(f_table['die'])
-    if dieRoll < min(keyList):
-        dieRoll = min(keyList)
-    if dieRoll > max(keyList):
-        dieRoll = max(keyList)
+    rolledresult = tab['res'][dieroll]
+    # return getTableResultList(rolledresult)
+    return rollOnTable(rolledresult)
 
-    rolledResults = resultList[dieRoll]
-    #return getTableResultList(rolledResults)
-    return getTableResultList(rolledResults)
 
-def getTableResultString(table, die = None):
-    results = getTableResultList(table, die)
+def rollOnTable_string(table, mod=0, die=None, ):
+    results = rollOnTable(table, mod, die)
     out = ''
+    if not isinstance(results,list):
+        results = [results]
     for r in results:
         if isinstance(r, list):
             for x in r:
                 out = out + str(x)
+        elif isinstance(r, dict):
+            out = out + r.get('name', 'unnamed roll object')
         else:
             out = out + str(r)
-    #print(out)
+    # print(out)
     return out
 
 
-#loadTables("./data.yaml")
-#print(data)
-#for i in range(10):
-#    print(getTableResultString(data['randomtables']['treasure']['test'])+"\n")

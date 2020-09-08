@@ -16,5 +16,7 @@ print(cnt/10000)
 
 a = [1,2,3,4]
 b = a[1:]
-
-print(roll("5+3"))
+x = 'a'
+if x:
+    print("dsdsaadsdasdsa")
+print("nope")

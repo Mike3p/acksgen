@@ -3,7 +3,7 @@
 <head>
 <title>The Dungeon Show</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1", charset=""utf-8>
 <link rel="stylesheet" href="{{ url_for('static', filename='basic.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='forms.css') }}">
 </head>
@@ -27,6 +27,7 @@
         <li class='sidebarElem'><h1>ACKSGen</h1></li>
         <li class='sidebarElem'><a href="{{ url_for('chargenpage.page') }}">Character Generator</a></li>
         <li class='sidebarElem'><a href="{{ url_for('initiativepage.page') }}">Initiative Roller</a></li>
+        <li class='sidebarElem'><a href="{{ url_for('uploadpage.page') }}">Generator Upload</a></li>
     </ul>
   </div>
 

@@ -54,4 +54,4 @@ def spellextractor():
             spell = spell.replace(" nec", "")
             o.write("- "+spell+"\n")
 
-spellextractor()
+getProficienciesFromStrings()

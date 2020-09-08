@@ -6,13 +6,12 @@ from Tools.init import initiative
 bp = Blueprint('initiativepage', __name__, url_prefix='/initiative')
 data = {}
 
-
 @bp.route('/', methods=('GET', 'POST'))
 def page():
 
     initiativeTextbox = InitiativeForm()
-    session['initiativeField'] = request.form.get('initiativeInput')
-    initiativeTextbox.initiativeInput.process_data(session['initiativeField'])
+    #session['ini'] = request.form.get('initiativeInput')
+    initiativeTextbox.initiativeInput.process_data(session.get('ini', ""))
 
     return render_template('pages/initiative.html', cfg = initiativeTextbox)
 
@@ -20,7 +19,7 @@ def page():
 @bp.route('/rollinitiative/', methods=('GET', 'POST'))
 def rollInitiative():
 
-    session['initiativeField'] = request.form.get('initiativeInput')
+    session['ini'] = request.form.get('initiativeInput')
 
     textInput = request.form.get('initiativeInput')
     lines = textInput.split("\n")
@@ -38,6 +37,6 @@ def rollInitiative():
     i = initiative.getInitiativeAsString(initiativeValues)
 
     initiativeTextbox = InitiativeForm()
-    initiativeTextbox.initiativeInput.process_data(session['initiativeField'])
+    initiativeTextbox.initiativeInput.process_data(session.get('ini', ""))
 
     return render_template('pages/initiative.html', cfg = initiativeTextbox, initiativeRolls = i)

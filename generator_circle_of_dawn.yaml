@@ -1,0 +1,6409 @@
+ethnicity:
+  &ilian ilian:
+    male names:
+      - Aetius Avilius
+      - Gnaeus Priscilla
+      - Hilaria Calvus
+      - Aemilius Iovianus
+      - Germanus Avilius
+      - Severinus Plinius
+      - Antoninus Luciana
+      - Marcellus Fulvius
+      - Sextus Vitus
+      - Iunius Gordianus
+      - Agrippa Sertorius Caldus
+      - Vopiscus Herminius Quirinalis
+      - Numerius Longinius Trebonius
+      - Caeso Sennius Varus
+      - Amulius Veranius Vulso
+      - Galerius Canius Durus
+      - Decimus Petronius Aurelius
+      - Tertius Didius Verulus
+      - Gallio Caecilius Lucullus
+      - Titus Minicius Eulogius
+      - Quintus Caesius Avienus
+      - Oppius Aburius Stichus
+      - Agrippa Pontidius Celer
+      - Lar Domitius Cyprias
+      - Paullus Volusius Vedrix
+      - Herius Vorenius Tatian
+      - Lucius Suedius Drusillus
+      - Quintis Turullius Florus
+      - Caius Laberius Vulso
+      - Septimus Volumnius Eonus
+      - Thales Demetrius
+      - Hermes Hippolytos
+      - Varinius Hektor
+      - Kreios Timotheos
+      - Alexius Pollux
+      - Neilos Turnus
+      - Iovita Dionysos
+      - Aurelius Antipatros
+      - Seleukos Thracius
+      - Sosigenes Simonides
+      - Cassius Tychon
+      - Jason Nettuno
+      - Kleitos Theodotus
+      - Cassander Anastasios
+      - Iovis Pythagoras
+      - Nikandros Solon
+      - Achaikos Heroides
+      - Alexandros Loukianos
+      - Epiphanios Kreios
+      - Kyriakos Polycarp
+    female names:
+      - Salvia Iuniana
+      - Quinctia Trimalchio
+      - Flavonia Reburra
+      - Laberia Faustiniana
+      - Vibenia Vibennis
+      - Caesetia Leon
+      - Volumnia Lucia
+      - Pompeia Lurio
+      - Volusenna Suilia
+      - Oppia Sosia
+      - Caria Augurna
+      - Tadia Agapta
+      - Baebia Pamphilia
+      - Calvisia Rustica
+      - Dossenia Asprena
+      - Coruncania Decentia
+      - Aedinia Dominica
+      - Clovia Vibullia
+      - Metilia Gracilis
+      - Volusenna Cyprias
+      - Arria Ripana
+      - Menenia Marullina
+      - Equitia Lucia
+      - Victricia Synnoda
+      - Caeparia Grylla
+      - Pescennia Vocula
+      - Calavia Optata
+      - Palpellia Caranta
+      - Carvilia Agelasta
+      - Tremellia Litumaris
+      - Maxima Ligeia
+      - Eurydike Europe
+      - Augusta Herais
+      - Gratiana Flavia
+      - Hortensia Halcyone
+      - Hadriana Thisbe
+      - Europa Iris
+      - Nausikaa Terpsichore
+      - Aoide Enyo
+      - Medusa Hippolyte
+      - Lysistrate Korë
+      - Dione Augusta
+      - Caesonia Pherenike
+      - Melissa Eugeneia
+      - Elpis Iulia
+      - Lysistrate Korë
+      - Dione Augusta
+      - Caesonia Pherenike
+      - Melissa Eugeneia
+      - Elpis Iulia
+  &varn varn:
+    male names:
+      - Fridmund Svalfisson
+      - Tryggvi Aslaksson
+      - Balli Borstigsson
+      - Gauk Gunnbjornsson
+      - Skuld Borstigsson
+      - Thorberg Ludinsson
+      - Alvi Kjotvisson
+      - Steinthor Aeiriksson
+      - Brusi Arnkelsson
+      - Heriolf Torstensson
+      - Svartgeirr Hildiglumsson
+      - Ali Kollskeggsson
+      - Halfdan Thjodoftsson
+      - Isulf Thormothrsson
+      - Tore Raudebjornsson
+      - Nafni Hrollaugsson
+      - Sveinbjorn Isisson
+      - Kollsvein Arnlaugsson
+      - Snaeeol Alisson
+      - Sighadd Bjor sson
+      - Thorkell Svensson
+      - Svart Bodalfsson
+      - Grith Arnvidsson
+      - Sigurd Skapsson
+      - Sæbbi Ulfketilsson
+      - Vestar Skeggsson
+      - Agmundr Valbrandsson
+      - Bretakollr Thrainsson
+      - Gaetir Sigeheahsson
+      - Grani Illugisson
+    female names:
+      - Fridgerd Herjolfdottir
+      - Hungerd Thorbrandottir
+      - Audhild Svipdaydottir
+      - Yngvild Autidottir
+      - Hallgerd Hrosskeldottir
+      - Ragna Ingidottir
+      - Signy Makdottir
+      - Guony Brunidottir
+      - Nidbiorg Gunnidottir
+      - Bolla Styrbiorndottir
+      - Bera Skardottir
+      - Arngunn Grimardottir
+      - Skuld Leiknirdottir
+      - Gudny Broddidottir
+      - Guony Mannidottir
+      - Gudfinna Gunnulfdottir
+      - Helga Gamaldottir
+      - Drifa Sigeferthdottir
+      - Torhild Koldottir
+      - Bergthora Anundottir
+      - Asa Ysoppadottir
+      - Thorhild Biorn dottir
+      - Ragnhild Sokkolfdottir
+      - Herbjorg Rognvaldottir
+      - Una Gunnaldottir
+      - Asfrid Hragnelfdottir
+      - Thorvor Yngvardottir
+      - Geirny Kætilmundottir
+      - Asdis Liutdottir
+      - Halldora Wengodottir
+  &bosk bosk:
+    male names:
+      - Donnotaurus
+      - Megaravico
+      - Doninas
+      - Divicatus
+      - Broccus
+      - Vlatucnos
+      - Aventinus
+      - Vendagni
+      - Carigo
+      - Remico
+      - Bussumarus
+      - Ercaviccas
+      - Regenos
+      - Iliatus
+      - Cariaus
+      - Viriatis
+      - Samis
+      - Mertoualus
+      - Contoutos
+      - Cottalus
+      - Carathounus
+      - Nisigni
+      - Congonetiacus
+      - Alpus
+      - Andosion
+      - Atecurus
+      - Licnos
+      - Borvonicus
+      - Taurio
+      - Metilius
+    female names:
+      - Comatia
+      - Andeca
+      - Vena
+      - Larma
+      - Suadugena
+      - Maticia
+      - Arrotala
+      - Dumnana
+      - Carantiana
+      - Nammota
+      - Segolia
+      - Vindama
+      - Cattuviqqa
+      - Sueta
+      - Matugenia
+      - Cincissa
+      - Martidia
+      - Sumenu
+      - Atebodua
+      - Valicinia
+      - Segolia
+      - Vindama
+      - Cattuviqqa
+      - Sueta
+      - Matugenia
+      - Cincissa
+      - Martidia
+      - Sumenu
+      - Atebodua
+      - Valicinia
+  &surga surga:
+    male names:
+      - Togh
+      - Kinggiyadai Bukha
+      - Khabul
+      - Narin Kegen
+      - Tutei
+      - Jamugha
+      - Boshigt
+      - Sartak
+      - Jirghadai
+      - Yesunge
+      - Jirghogadai
+      - Khabul
+      - Khurchakhus
+      - Erke Khara
+      - Tugtemur
+      - Shilugei
+      - Bora
+      - Chiledu
+      - Nekunaisi
+      - Enx
+      - Esugen
+      - Abaka
+      - Aguchu
+      - Tsolmon
+      - Adya
+      - Siban
+      - Uighurtai
+      - Khal
+      - Khada
+      - Bujir
+    female names:
+      - Sorghaghtani Beki
+      - Maral
+      - Khenbish
+      - Sarantuya
+      - Gerelma
+      - Cirina
+      - Khulan
+      - Sechen
+      - Oghul
+      - Narengawa
+      - Hongorzul
+      - Oghul
+      - Sokhatai
+      - Chotan
+      - Seruuntungalag
+      - Sarantsatsr
+      - Nergüi
+      - Sokhatai
+      - Barghujin
+      - Hujaghur
+      - Etugen Eke
+      - Borte
+      - Tegusken
+      - Bayarma
+      - Odtsetseg
+      - Maa
+      - Yesuntei
+      - Terbish
+      - Alan
+      - Jiguur
+  &opelean opelean:
+    male names:
+      - Muthanna el-Mohammad
+      - Kabeer al-Pashia
+      - Maisoon el-Khalid
+      - Muslih el-Halaby
+      - Hanlala el-Dar
+      - Aaish el-Habeeb
+      - Shukri el-Khalil
+      - Alawi el-Salim
+      - Zaahid al-Sinai
+      - Imaad el-Greiss
+      - Taaj el-Rahim
+      - Naseem al-Siddiqi
+      - Faisal el-Shakoor
+      - Shameem el-Farhat
+      - Abdul Hai el-Madani
+      - Ghaalib al-Kamal
+      - Fawzi al-Shaer
+      - Faarooq al-Saleem
+      - Maajid el-Javed
+      - Qutb el-Guler
+      - Abdul Ghafoor al-Ishak
+      - Abdul Khaliq el-Yamin
+      - Hakam el-Afzal
+      - Zameel al-Mussa
+      - Maisoon el-Bagheri
+      - Shihaab al-Hallal
+      - Uthmaa N al-Soltani
+      - Muhaajir al-Mohamed
+      - Mastoor el-Saad
+      - Abdul Baari el-Popal
+    female names:
+      - Mushtaaqa el-Sulaiman
+      - Hikma al-Yousef
+      - Raabia el-Sultan
+      - Himma al-Mowad
+      - Mujaahida el-Safi
+      - Suhaad el-Malek
+      - Zubaida al-Kazemi
+      - Afraah el-Samaan
+      - Tawfeeqa el-Dawood
+      - Shajee'a al-Assaf
+      - Waheeda el-Mattar
+      - Misbaah al-Rehmann
+      - Jameela el-Farah
+      - Ameena el-Islam
+      - Laila al-Abid
+      - Najwa al-Hashem
+      - Aatika el-Ghani
+      - Zahraaa el-Qadir
+      - Nameera el-Faraj
+      - Farha el-Tabet
+      - Zahra al-Mohammad
+      - Maleeha al-Ebrahimi
+      - Azeema el-Abbas
+      - Mumina al-Abdallah
+      - Shamaail al-Amir
+      - Shaqeeqa el-Sylla
+      - Sanad al-Ebrahim
+      - Rafeeda el-Moussa
+      - Shafaaa el-Hashem
+      - Sabriyya el-Moustafa
+  &heron heron:
+    male names:
+      - Uab-tot
+      - Sahura
+      - Haka
+      - Sephoris
+      - Naouscheri
+      - Fai-nofre-bai
+      - Ankhu
+      - Tati-nas-ka-nofre
+      - Har-em-hue-f
+      - Hor-hiun-amif
+      - Ounephes
+      - Setnau-chaem-uset
+      - Nexeu
+      - Nai-f-aa-rut
+      - Ammenepthes
+      - Ankhfkhons
+      - Nascht-mes
+      - Atekhramun
+      - Fai-hon
+      - Nekht-khem
+      - Pet-har-pe-khrot
+      - Men-na
+      - Oba
+      - Ra-men-tau-neb
+      - Nefer-rempe
+      - Sefkh
+      - Nahi
+      - Hakizimana
+      - Bau
+      - Auu
+    female names:
+      - Auset
+      - Hathor-sakmet
+      - Cleopatra
+      - Ankhesenamen
+      - Ouei
+      - Tairin
+      - Shen-pe-uts-neter
+      - Astaretenheb
+      - Hapi-u
+      - Amentakehal
+      - Nes-maut
+      - Taspu
+      - Seteta
+      - Khet-ankh
+      - Meret-pa
+      - Tabia
+      - Mut-snat-em
+      - Urbi
+      - Bataanta
+      - Sitiribeu
+      - Pthah-mei-t
+      - Sekhmakh
+      - Sitiribeu
+      - Masika
+      - Ankhatefs
+      - Nubukha
+      - Pelkha
+      - Heqet
+      - Shen-pe-uts-neter
+      - Shani
+  &langun langun:
+    male names:
+      - Naruse Mochimune
+      - Shigenoi Tokikore
+      - Tokudaiji Mochitsune
+      - Sanjou Naritame
+      - Saionji Takaaki
+      - Kawabe Tanekata
+      - Higashisanjou Katsuhiko
+      - Hara Ujisue
+      - Ito Tsuneatsu
+      - Saigou Yasuyuki
+      - Akiyama Hisamasa
+      - Gosanke Sukemori
+      - Yamagata Nakakuni
+      - Ichijo Shigetomo
+      - Matsura Arichika
+      - Hirohashi Kiyotsune
+      - Aoyama Sukemoro
+      - Ito Kunitame
+      - Shimokoube Sukeshige
+      - Sakai Katamichi
+      - Takeda Hiramori
+      - Ishino Kazuie
+      - Tokudaiji Tsunenari
+      - Hirata Katsumoro
+      - Gou Naotada
+      - Matsushita Atsunobu
+      - Shouni Yorimitsu
+      - Kawahire Terusane
+      - Tozawa Tomohiko
+      - Wada Motomori
+    female names:
+      - Itagaki Sho
+      - Nishitouin Niku
+      - Yamana Hinshi
+      - Ogura Fusako
+      - Makino Senuyo
+      - Yamane Tanme
+      - Gou Komako
+      - Wada Gen
+      - Gosankyo Neko
+      - Ryuuzouji Ume
+      - Mogami Tsumami
+      - Sakai Sago
+      - Hijikata Torashi
+      - Seikanji Yoso
+      - Nakatomi Moku
+      - Iwasaki Ina
+      - Otagi Suono
+      - Ujie Yen
+      - Fukushima Uma
+      - Tanegashima Ichi
+      - Mibu Utashi
+      - Kanou Kuma
+      - Higashisanjou Nagu
+      - Hirohashi Tsumano
+      - Ishii Mimi
+      - Aso Suki
+      - Mouri Kogo
+      - Kusunoki Satsu
+      - Umewaka Ginko
+      - Toudou Shimano
+  &acheron acheron:
+    male names:
+      - Geralt
+      - Notker
+      - Sieger
+      - Adolf
+      - Kuno
+      - Wilhard
+      - Volkbert
+      - Eike
+      - Till
+      - Alberich
+      - Wilhard
+      - Conrad
+      - Kunibald
+      - Hasso
+      - Helmer
+      - Filibert
+      - Till
+      - Deion
+      - Waltram
+      - Gebhard
+      - Adelhard
+      - Gangolf
+      - Eckbert
+      - Gotthard
+      - Leopold
+      - Wigbert
+      - Alram
+      - Gotthard
+      - Adelgis
+      - Ottokar
+    female names:
+      - Sieglinde
+      - Gunthilde
+      - Edeltraud
+      - Thusnelda
+      - Rotraud
+      - Berthild
+      - Adelinde
+      - Wanda
+      - Waltraud
+      - Ludwina
+      - Rochelle
+      - Rolanda
+      - Elma
+      - Sieglinde
+      - Sigune
+      - Reinhild
+      - Gerharde
+      - Sunnhild
+      - Elma
+      - Gerlinde
+      - Livina
+      - Roswitha
+      - Aubrey
+      - Kaja
+      - Saskia
+      - Irmhild
+      - Gerhild
+      - Alwine
+      - Adolfa
+      - Rolanda
+  &sargon sargon:
+    male names:
+      - Ripaa
+      - Dii'duuresu
+      - Deemethresu
+      - Kiipluuu'
+      - Deemeethresu
+      - Utuaa
+      - Dee'qiteesu
+      - Shamash-Nasir
+      - Sargon
+      - Nidintulugal
+      - Dipatusu
+      - Deemeethresu
+      - Deemethresi
+      - Anti'iikusu
+      - Nigsummulugal
+      - Ataneedusu
+      - Enshunu
+      - Mannuiqapu
+      - Manishtusu
+      - Shar-Kali-Sharri
+      - Demeetheresu
+      - Niiqarquusu
+      - Baassiia
+      - Nutesh
+      - Zuuthusu
+      - Kurigalzu
+      - Naram-Sin
+      - Numunia
+      - Deemuukratee
+      - Kadashman-Enlil
+    female names:
+      - Ettu
+      - Kullaa
+      - Mushezibitu
+      - Ku-Baba
+      - Enheduana
+      - Belessunu
+      - Anagalmeshshu
+      - Alittum
+      - Banunu
+      - Gemegishkirihallat
+      - Munawwirtum
+      - Mushezibitu
+      - Gemeti
+      - Belessunu
+      - Adeeshuduggaat
+      - Ia
+      - Tabni-Ishtar
+      - Yadidatum
+      - Kullaa
+      - Ku-Aya
+      - Mushezibti
+      - Iltani
+      - Nidintu
+      - Beletsunu
+      - Gemeti
+      - Erishti-Aya
+      - Banunu
+      - Ku-Baba
+      - Enheduana
+      - Gemekaa
+abilities:
+  Death Dealing Dance: &death_dealing_dance
+    name: Death Dealing Dance
+    levelprogression: [1, 7, 11]
+  Fighter Damage Bonus: &fighter_damage_bonus
+    name: Fighter Damage Bonus
+    modifies:
+      meleedamage: 1
+      missiledamage: 1
+    levelprogression: [1, 3, 6, 9, 12]
+  Fighter Melee Damage Bonus: &fighter_melee_damage_bonus
+    name: Fighter Melee Damage Bonus
+    modifies:
+      meleedamage: 1
+    progression: [1,3, 6, 9, 12]
+  Fighter Missile Damage Bonus: &fighter_missile_damage_bonus
+    name: Fighter Missile Damage Bonus
+    modifies:
+      missiledamage: 1
+    levelprogression: [1, 3, 6, 9, 12]
+  Backstab: &backstab
+    name: Backstab
+    levelprogression: [1, 5, 9, 13]
+  Move Silently: &move_silently
+    name: Move Silently
+    throw: 17
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,3,4,5,6,7,7,8,8,9,9,10,10,11,11,13]
+  Open Locks: &open_locks
+    name: Open Locks
+    throw: 18
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,3,4,5,6,6,7,7,8,8,9,9,10,10,11,12,13]
+  Find Traps: &find_traps
+    name: Find Traps
+    throw: 18
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,3,4,5,6,7,8,8,9,9,10,10,11,11,12,14]
+  Remove Traps: &remove_traps
+    name: Remove Traps
+    throw: 18
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,3,4,5,6,7,8,8,9,9,10,10,11,11,12,14]
+  Pick Pockets: &pick_pockets
+    name: Pick Pockets
+    throw: 17
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,3,4,5,6,7,7,8,8,9,9,10,10,11,11,12,12,12,13,13,14,14]
+  Climb Walls: &climb_walls
+    name: Climb Walls
+    throw: 6
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,4,7,11,13]
+  Hide in Shadows: &hide_in_shadows
+    name: Hide in Shadows
+    throw: 19
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,3,4,5,6,7,7,8,8,9,9,10,10,11,11,12,13,14]
+  Hear Noise: &hear_noise
+    name: Hear Noise
+    throw: 14
+    levelprogression: [2,3,4,5,6,7,8,9,10,11,12,13,14]
+  Read Languages: &read_languages
+    name: Read Languages
+    throw: 5
+  Use Magic Scrolls: &use_magic_scrolls
+    name: Use Magic Scrolls
+    throw: 3
+  Graceful Fighting: &graceful_fighting
+    name: Graceful Fighting
+    modifies:
+      ac: 1
+    levelprogression: [1, 7, 13]
+  Accuracy Bonus: &accuracy_bonus
+    name: Accuracy Bonus
+    modifies:
+      missileattack: -1
+  Animal Reflexes: &animal_reflexes
+    name: Animal Reflexes
+    modifies:
+      ini: 1
+      sp: -1
+  Kin Slaying: &kin_slaying
+    name: Kin Slaying
+  Greater Berserkergang: &greater_berserkergang
+    name: Greater Berserkergang
+    max: 10
+classproficiencies:
+  #proficiency attributes:
+  #type, name, max, throw, levelprogression, mofifies, class, subskills
+  Acrobatics: &acrobatics
+    type: classprof
+    name: Acrobatics
+    max: 1
+    throw: 19
+    levelprogression: [2,3,4,5,6,7,8,9,10,11,12,13,14]
+  Alertness: &alertness
+    name: Alertness
+    max: 1
+    type: classprof
+    modifies:
+      surprise: -1
+      Hear Noise: -4
+      Eavesdropping: -4
+  Ambushing: &ambushing
+    name: Ambushing
+    type: classprof
+    max: 1
+  Arcane Dabbling: &arcane_dabbling
+    name: Arcane Dabbling
+    type: classprof
+    max: 1
+    throw: 18
+    levelprogression: [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8]
+  Armor Training: &armor_training
+    name: Armor Training
+    type: classprof
+    max: 3
+  Battle Magic: &battle_magic
+    name: Battle Magic
+    type: classprof
+    max: 1
+  Beast Friendship: &beast_friendship
+    name: Beast Friendship
+    type: classprof
+    max: 1
+  Berserkergang: &berserkergang
+    name: Berserkergang
+    type: classprof
+    max: 1
+  Black Lore: &black_lore
+    name: Black Lore
+    type: classprof
+    max: 1
+  Blind Fighting: &blind_fighting
+    name: Blind Fighting
+    type: classprof
+    max: 1
+  Bribery: &bribery
+    name: Bribery
+    type: classprof
+    max: 1
+  Bright Lore: &bright_lore
+    name: Bright Lore
+    type: classprof
+    max: 1
+  Cat Burglary: &cat_burglary
+    name: Cat Burglary
+    type: classprof
+    max: 1
+    throw: 6
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,4,7,11,13]
+  Ceremonial Magic: &ceremonial_magic
+    name: Ceremonial Magic
+    type: classprof
+    max: 3
+  Climbing: &climbing
+    name: Climbing
+    type: classprof
+    max: 1
+    throw: 6
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,4,7,11,13]
+  Combat Reflexes: &combat_reflexes
+    name: Combat Reflexes
+    type: classprof
+    max: 1
+  Combat Trickery (Disarm): &combat_trickery_disarm
+    name: Combat Trickery (Disarm)
+    type: classprof
+    max: 1
+  Combat Trickery (Force Back): &combat_trickery_force_back
+    name: Combat Trickery (Force Back)
+    type: classprof
+    max: 1
+  Combat Trickery (Incapacitate): &combat_trickery_incapacitate
+    name: Combat Trickery (Incapacitate)
+    type: classprof
+    max: 1
+  Combat Trickery (Knock Down): &combat_trickery_knock_down
+    name: Combat Trickery (Knock Down)
+    type: classprof
+    max: 1
+  Combat Trickery (Overrun): &combat_trickery_overrun
+    name: Combat Trickery (Overrun)
+    type: classprof
+    max: 1
+  Combat Trickery (Sunder): &combat_trickery_sunder
+    name: Combat Trickery (Sunder)
+    type: classprof
+    max: 1
+  Combat Trickery (Wrestle): &combat_trickery_wrestle
+    name: Combat Trickery (Wrestle)
+    type: classprof
+    max: 1
+  Command: &command
+    name: Command
+    type: classprof
+    max: 1
+  Contemplation: &contemplation
+    name: Contemplation
+    type: classprof
+    max: 1
+  Contortionism: &contortionism
+    name: Contortionism
+    type: classprof
+    max: 1
+    throw: 18
+    modifyingabilityscore:
+      dexmod: -1
+  Divine Blessing: &divine_blessing
+    name: Divine Blessing
+    type: classprof
+    max: 1
+  Divine Health: &divine_health
+    name: Divine Health
+    type: classprof
+    max: 1
+  Dungeon Bashing: &dungeon_bashing
+    name: Dungeon Bashing
+    type: classprof
+    max: 1
+    throw: 14
+    modifyingabilityscore:
+      strmod: -4
+  Eavesdropping: &eavesdropping
+    name: Eavesdropping
+    type: classprof
+    max: 1
+    throw: 14
+    levelprogression: [2,3,4,5,6,7,8,9,10,11,12,13,14]
+  Elementalism: &elementalism
+    name: Elementalism
+    type: classprof
+    max: 1
+  Exhalted Bloodline: &exhalted_bloodline
+    name: Exhalted Bloodline
+    type: classprof
+    max: 1
+  Familiar: &familiar
+    name: Familiar
+    type: classprof
+    max: 1
+  Farseeing: &farseeing
+    name: Farseeing
+    type: classprof
+    max: 1
+  Fighting Style (Pole Weapon): &fighting_style
+    name: Fighting Style
+    type: classprof
+    max: 1
+  Beastman Slaying: &beastman_slaying
+    name: Beastman Slaying
+    type: classprof
+    max: 1
+  Illusion Resistance: &illusion_resistance
+    name: Illusion Resistance
+    type: classprof
+    max: 1
+    #todo land surv hat noch subskill +4 av. det in dung.
+  Land Surveying: &land_surveying
+    name: Land Surveying
+    type: classprof
+    max: 1
+    throw: 11
+  Laying on Hands: &laying_on_hands
+    name: Laying on Hands
+    type: classprof
+    max: 1
+  Lockpicking: &lockpicking
+    name: Lockpicking
+    type: classprof
+    max: 1
+    modifies:
+      Open Locks: -2
+  Loremastery: &loremastery
+    name: Loremastery
+    type: classprof
+    max: 1
+    throw: 18
+    levelprogression: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+  Magical Engineering: &magical_engineering
+    name: Magical Engineering
+    type: classprof
+    max: 3
+    throw: 11
+  Magical Music: &magical_music
+    name: Magical Music
+    type: classprof
+    max: 1
+  Martial Training: &martial_training
+    name: Martial Training
+    type: classprof
+    max: 1
+  Mastery of Charms and Illusions: &mastery_of_charms_and_illusions
+    name: Mastery of Charms and Illusions
+    type: classprof
+    max: 1
+  Mountaineering: &mountaineering
+    name: Mountaineering
+    type: classprof
+    max: 1
+    throw: 6
+    modifyingabilityscore:
+      dexmod: -1
+    levelprogression: [2,4,7,11,13]
+  Mystic Aura: &mystic_aura
+    name: Mystic Aura
+    type: classprof
+    max: 1
+  Passing Without Trace: &passing_without_trace
+    name: Passing Without Trace
+    type: classprof
+    max: 1
+  Personal Talisman: &personal_talisman
+    name: Personal Talisman
+    type: classprof
+    max: 1
+  Precise Shooting: &precise_shooting
+    name: Precise Shooting
+    type: classprof
+    max: 2
+  Prestidigation: &prestidigation
+    name: Prestidigation
+    type: classprof
+    max: 1
+  Prophecy: &prophecy
+    name: Prophecy
+    type: classprof
+    max: 1
+  Quiet Magic: &quiet_magic
+    name: Quiet Magic
+    type: classprof
+    max: 1
+  Righteous Turning: &righteous_turning
+    name: Righteous Turning
+    type: classprof
+    max: 1
+  Running: &running
+    name: Running
+    type: classprof
+    max: 1
+  Second Sight: &second_sight
+    name: Second Sight
+    type: classprof
+    max: 1
+  Sensing Evil: &sensing_evil
+    name: Sensing Evil
+    type: classprof
+    max: 1
+  Sensing Power: &sensing_power
+    name: Sensing Power
+    type: classprof
+    max: 1
+  Skirmishing: &skirmishing
+    name: Skirmishing
+    type: classprof
+    max: 1
+  Skulking: &skulking
+    name: Skulking
+    type: classprof
+    max: 1
+    modifies:
+      Move Silently: -2
+      Hide in Shadows: -2
+  Sniping: &sniping
+    name: Sniping
+    type: classprof
+    max: 1
+  Soothsaying: &soothsaying
+    name: Soothsaying
+    type: classprof
+    max: 1
+  Swashbuckling: &swashbuckling
+    max: 1
+    type: classprof
+    name: Swashbuckling
+    modifies:
+      ac: 1
+    levelprogression: [1, 7, 13]
+    deactivatedby:
+      - "armor:tags=medium"
+      - "armor:tags=heavy"
+  Trap Finding: &trap_finding
+    name: Trap Finding
+    type: classprof
+    max: 1
+    modifies:
+      Find Traps: -2
+      Remove Traps: -2
+  Transmogrification: &transmogrification
+    name: Transmogrification
+    type: classprof
+    max: 1
+  Unflappable Casting: &unflappable_casting
+    name: Unflappable Casting
+    type: classprof
+    max: 1
+  Wakefulness: &wakefulness
+    name: Wakefulness
+    type: classprof
+    max: 1
+  Weapon Finesse: &weapon_finesse
+    name: Weapon Finesse
+    type: classprof
+    max: 1
+  Weapon Focus: &weapon_focus
+    name: Weapon Focus
+    type: classprof
+    max: 1
+generalproficiencies:
+  - &alchemy
+    name: Alchemy
+    type: genprof
+    throw: 11
+    max: 3
+  - &healing  
+    name: Healing
+    type: genprof
+    max: 3
+    throw: 22
+    subskills:
+      Diagnose: 11
+      Wounds: 22
+      Poison: 22
+      Disease: 22
+  - &animal_husbandry
+    name: Animal Husbandry
+    type: genprof
+    max: 3
+    throw: 22
+    subskills:
+      Diagnose: 11
+      Wounds: 22
+      Poison: 22
+      Disease: 22
+  - &animal_training
+    name: Animal Training
+    type: genprof
+    max: 4
+  - &art
+    name: Art
+    type: genprof
+    max: 4
+  - &bargaining
+    name: Bargaining
+    type: genprof
+    max: 3
+  - &caving
+    name: Caving
+    type: genprof
+    max: 3
+    throw: 11
+  - &collegiate_wizardry
+    name: Collegiate Wizardry
+    type: genprof
+    max: 3
+    throw: 11
+  - &craft
+    name: Craft
+    type: genprof
+    max: 4
+  - &diplomacy
+    name: Diplomacy
+    type: genprof
+    max: 3
+  - &disguise
+    name: Disguise
+    type: genprof
+    max: 1
+    throw: 11
+  - &endurance
+    name: Endurance
+    type: genprof
+    max: 1
+  - &engineering
+    name: Engineering
+    type: genprof
+    max: 3
+    throw: 11
+  - &gambling
+    name: Gambling
+    type: genprof
+    max: 3
+  - &intimidation
+    name: Intimidation
+    type: genprof
+    max: 1
+  - &knowledge
+    name: Knowledge
+    type: genprof
+    max: 4
+    throw: 11
+  - &labor
+    name: Labor
+    type: genprof
+    max: 1
+    throw: 11
+  - &language
+    name: Language
+    type: genprof
+    max: 3
+  - &leadership
+    name: Leadership
+    type: genprof
+    max: 1
+  - &lip_reading
+    name: Lip Reading
+    type: genprof
+    max: 1
+  - &manual_of_arms
+    name: Manual of Arms
+    type: genprof
+    max: 3
+  - &mapping
+    name: Mapping
+    type: genprof
+    throw: 11
+    max: 3
+  - &military_strategy
+    name: Military Strategy
+    type: genprof
+    max: 3
+    throw: 11
+  - &mimicry
+    name: Mimicry
+    type: genprof
+    max: 3
+    throw: 11
+  - &naturalism
+    name: Naturalism
+    type: genprof
+    max: 3
+    throw: 11
+  - &navigation
+    name: Navigation
+    type: genprof
+    max: 1
+  - &performance
+    name: Performance
+    type: genprof
+    max: 4
+  - &profession
+    name: Profession
+    type: genprof
+    max: 4
+  - &riding
+    name: Riding
+    type: genprof
+    max: 3
+  - &seafaring
+    name: Seafaring
+    type: genprof
+    max: 3
+  - &seduction
+    name: Seduction
+    type: genprof
+    max: 1
+  - &siege_engineering
+    name: Siege Engineering
+    type: genprof
+    max: 2
+  - &survival
+    name: Survival
+    type: genprof
+    max: 1
+  - &theology
+    name: Theology
+    type: genprof
+    max: 3
+    throw: 11
+  - &tracking
+    name: Tracking
+    type: genprof
+    max: 3
+    throw: 11
+  - &trapping
+    name: Trapping
+    type: genprof
+    max: 3
+    throw: 11
+attackprogressions:
+  fighter: &fighter_attack_throw_progression [1,2,4,5,7,8,10,11,13,14]
+  thief: &thief_attack_throw_progression [1,3,5,7,9,11,13]
+  mage: &mage_attack_throw_progression [1,4,7,10,13]
+proficiencyprogression:
+  fighter: &fighter_proficiency_progression [1, 3, 6, 9, 12]
+  thief: &thief_proficiency_progression [1, 4, 8, 12]
+  mage: &mage_proficiency_progression [1, 6, 12]
+  general: &general_proficiency_progression [1, 1, 5, 9, 13]
+spellprogressions:
+  mage: &mage_spellprogression
+    1:
+      1: 1
+    2:
+      1: 2
+    3:
+      1: 2
+      2: 1
+    4:
+      1: 2
+      2: 2
+    5:
+      1: 2
+      2: 2
+      3: 1
+    6:
+      1: 2
+      2: 2
+      3: 2
+    7:
+      1: 3
+      2: 2
+      3: 2
+      4: 1
+    8:
+      1: 3
+      2: 3
+      3: 2
+      4: 2
+    9:
+      1: 3
+      2: 3
+      3: 3
+      4: 2
+      5: 1
+    10:
+      1: 3
+      2: 3
+      3: 3
+      4: 3
+      5: 2
+    11:
+      1: 4
+      2: 3
+      3: 3
+      4: 3
+      5: 2
+      6: 1
+    12:
+      1: 4
+      2: 4
+      3: 3
+      4: 3
+      5: 3
+      6: 2
+    13:
+      1: 4
+      2: 4
+      3: 4
+      4: 3
+      5: 3
+      6: 2
+    14:
+      1: 4
+      2: 4
+      3: 4
+      4: 4
+      5: 3
+      6: 3
+  loremaster: &loremaster_spellprogression
+    1:
+      1: 2
+    2:
+      1: 3
+    3:
+      1: 3
+      2: 1
+    4:
+      1: 3
+      2: 2
+    5:
+      1: 3
+      2: 2
+      3: 1
+    6:
+      1: 3
+      2: 3
+      3: 2
+    7:
+      1: 4
+      2: 3
+      3: 2
+      4: 1
+    8:
+      1: 4
+      2: 3
+      3: 3
+      4: 2
+    9:
+      1: 4
+      2: 4
+      3: 3
+      4: 2
+      5: 1
+    10:
+      1: 4
+      2: 4
+      3: 3
+      4: 3
+      5: 2
+    11:
+      1: 5
+      2: 4
+      3: 4
+      4: 3
+      5: 2
+      6: 1
+    12:
+      1: 5
+      2: 4
+      3: 4
+      4: 3
+      5: 3
+      6: 2
+    13:
+      1: 5
+      2: 5
+      3: 4
+      4: 4
+      5: 3
+      6: 2
+    14:
+      1: 6
+      2: 5
+      3: 4
+      4: 4
+      5: 3
+      6: 3
+  ecclesiastic: &ecclesiastic_spellprogression
+    1:
+      1: 1
+    2:
+      1: 2
+    3:
+      1: 2
+      2: 1
+    4:
+      1: 2
+      2: 2
+    5:
+      1: 2
+      2: 2
+      3: 1
+    6:
+      1: 2
+      2: 2
+      3: 2
+    7:
+      1: 3
+      2: 2
+      3: 2
+      4: 1
+    8:
+      1: 3
+      2: 3
+      3: 2
+      4: 2
+    9:
+      1: 3
+      2: 3
+      3: 3
+      4: 2
+      5: 1
+    10:
+      1: 3
+      2: 3
+      3: 3
+      4: 3
+      5: 2
+    11:
+      1: 4
+      2: 3
+      3: 3
+      4: 3
+      5: 2
+      6: 1
+    12:
+      1: 4
+      2: 4
+      3: 3
+      4: 3
+      5: 3
+      6: 2
+    13:
+      1: 4
+      2: 4
+      3: 4
+      4: 4
+      5: 3
+      6: 3
+    14:
+      1: 6
+      2: 5
+      3: 4
+      4: 4
+      5: 3
+      6: 3
+  runemaker: &runemaker_spellprogression
+    1:
+      1: 0
+    2:
+      1: 1
+    3:
+      1: 2
+    4:
+      1: 2
+      2: 1
+    5:
+      1: 2
+      2: 2
+    6:
+      1: 2
+      2: 2
+      3: 1
+    7:
+      1: 2
+      2: 2
+      3: 2
+    8:
+      1: 3
+      2: 2
+      3: 2
+      4: 1
+    9:
+      1: 3
+      2: 2
+      3: 2
+      4: 1
+      5: 1
+    10:
+      1: 3
+      2: 3
+      3: 2
+      4: 2
+      5: 1
+    11:
+      1: 3
+      2: 3
+      3: 3
+      4: 2
+      5: 2
+      6: 1
+    12:
+      1: 4
+      2: 4
+      3: 3
+      4: 3
+      5: 2
+      6: 1
+    13:
+      1: 4
+      2: 4
+      3: 3
+      4: 3
+      5: 3
+      6: 2
+    14:
+      1: 4
+      2: 4
+      3: 4
+      4: 3
+      5: 3
+      6: 2
+spelllists:
+  black: &spells_black
+    1:
+      - Charm Person (b)
+      - Cause Fear (b)
+      - Cause Light Wounds (b)
+      - Choking Grip (b)
+      - Conjure Cacodemon Spawn (b)
+      - Destroy Dead (b)
+      - Frighten Beasts (b)
+      - Incite Madness (b)
+      - Infuriate Person (b)
+      - Protection from Good (b)
+      - Putrefy Food & Water (b)
+      - Slicing Blow (b)
+      - Summon Manes (b)
+      - Tenebrosity (b)
+      - Unliving Puppet (b)
+    2:
+      - Bane (b)
+      - Blindness (b)
+      - Bloody Flux (b)
+      - Cause Moderate Wounds (b)
+      - Conjure Imp (b)
+      - Continual Tenebrosity (b)
+      - Dark Whisper (b)
+      - Deafness (b)
+      - Deathless Minion (b)
+      - Drain Life (b)
+      - Gentle Repose (b)
+      - Infuriate Beast (b)
+      - Necromantic Potence (b)
+      - Summon Insect Swarm (b)
+      - Undetectable Charm (b)
+    3:
+      - Bestow Curse (b)
+      - Cause Disease (b)
+      - Cause Major Wounds (b)
+      - Command Person (b)
+      - Conjure Hellion (b)
+      - Dismember (b)
+      - Enervate (b)
+      - Invulnerability to Good (b)
+      - Infuriate Crowd (b)
+      - Inspire Horror (b)
+      - Sorcerous Bolt (b)
+      - Speak with Dead (b)
+      - Strengthen the Unliving (b)
+      - Summon Ooze (b)
+      - Undetectable Curse (b)
+    4:
+      - Animate Dead (b)
+      - Charm Monster (b)
+      - Control Undead (b)
+      - Cause Serious Wounds (b)
+      - Conjure Dybbuk (b)
+      - Drain Life II (b)
+      - Fear (b)
+      - Flesh to Ashes (b)
+      - Endless Slumber (b)
+      - Iron Maiden (b)
+      - Poison (b)
+      - Protection from Good (Sustained) (b)
+      - Shrieking Skull (b)
+      - Summon Shadows (b)
+      - Wizard Eye (b)
+    5:
+      - Cause Critical Wounds (b)
+      - Circle of Agony (b)
+      - Conjure Elemental (b)
+      - Contact Other Sphere (b)
+      - Curse of Swine (b)
+      - Feeblemind (b)
+      - Fillet and Serve (b)
+      - Flay the Slain (b)
+      - Inflict Lycanthropy (b)
+      - Magic Jar (b)
+      - Panic (b)
+      - Phantasmal Killer (b)
+      - Sorcerous Blast (b)
+      - Summon Hell Hounds (b)
+      - Weakness of Mind (b)
+    6:
+      - Body Swap (b)
+      - Conjure Genie (b)
+      - Conjure Fiend (b)
+      - Corrupting Dream (b)
+      - Death Spell (b)
+      - Disintegrate (b)
+      - Drain Life III (b)
+      - Enslave (b)
+      - Geas (b)
+      - Necromantic Invulnerability (b)
+      - Reflesh of the Bones (b)
+      - Restore Semblance of Life (b)
+      - Soul Eating (b)
+      - Summon Invisible Stalker (b)
+      - Torpor (b)
+  grey: &spells_grey
+    1:
+      - Auditory Illusion (g)
+      - Blinding Flash (g)
+      - Command Word (g)
+      - Display of Power (g)
+      - Ensorcellement (g)
+      - Faerie Fire (g)
+      - Hypnotism (g)
+      - Ice Floe (g)
+      - Kindle Flame (g)
+      - Shatter Blade (g)
+      - Sling Stone (g)
+      - Slipperiness (g)
+      - Slumber (g)
+      - Thunderclap (g)
+      - Weave Smoke (g)
+      - Unseen Servant (g)
+    2:
+      - Burning Sparks (g)
+      - Charm Animal (g)
+      - Circling Winds (g)
+      - Earth's Excrescence (g)
+      - Enthrall (g)
+      - ESP (g)
+      - Hold Person (g)
+      - Mirror Image (g)
+      - Illusory Interior (g)
+      - Phantasmal Force (g)
+      - Shrouding Fog (g)
+      - Ring of Fire (g)
+      - Snake Charm (g)
+      - Vitriolic Infusion (g)
+      - Voice of Persuation (g)
+      - Wave of Earth (g)
+    3:
+      - Battering Ram (g)
+      - Brazen Bull (g)
+      - Call Lightning (g)
+      - Command Animals (g)
+      - Chimerical Force (g)
+      - Earth's Maw (g)
+      - Fangs of the Earth (g)
+      - Gaseous Form (g)
+      - Glitterdust (g)
+      - Glyph of Warding (g)
+      - Hypnotic Pattern (g)
+      - Noxious Cloud (g)
+      - Paralyze (g)
+      - Rain of Vitriol (g)
+      - Slag Armor (g)
+      - Telepathy (g)
+    4:
+      - Command Plant (g)
+      - Control Animals (g)
+      - Gusting Gale (g)
+      - Hallucinatory Terrain (g)
+      - Hold Monster (g)
+      - Inaudibility (g)
+      - Invisibility (g)
+      - Massmorph (g)
+      - Scry (g)
+      - Spectral Force (g)
+      - Sticks to Snakes (g)
+      - Uncanny Gyration (g)
+      - Voice of Command (g)
+      - Weave Fire (g)
+      - Weave Wood (g)
+      - Weave Water (g)
+    5:
+      - Blood Boil (g)
+      - Control Winds (g)
+      - Cone of Frost (g)
+      - Cone of Paralysis (g)
+      - Force of Impetus (g)
+      - Forest Enchantment (g)
+      - Forgetfulness (g)
+      - Ice Sheet (g)
+      - Mirage (g)
+      - Pillar of Fire (g)
+      - Phoenix Aura (g)
+      - Scouring Zephyr (g)
+      - Spectral Legion (g)
+      - Summon Weather (g)
+      - Tremor (g)
+      - Weave Stone (g)
+    6:
+      - Arrows of the Sun (g)
+      - Capsizing Wave (g)
+      - Control Plangs (g)
+      - Control Weather (g)
+      - Cloud of Poison (g)
+      - Ice Storm (g)
+      - Inferno (g)
+      - Lower Water (g)
+      - Move Earth (g)
+      - Permanent Illusion (g)
+      - Programmed Illusion (g)
+      - Starfall (g)
+      - Sunder Structure (g)
+      - Thunderbolt (g)
+      - Transform Other (g)
+      - Weave Metal (g)
+  white: &spells_white
+    1:
+      - Angelic Choir (w)
+      - Bane-rune (w)
+      - Call of the Wolf (w)
+      - Chameleon (w)
+      - Counterspell (w)
+      - Cure Light Wounds (w)
+      - Delay Disease (w)
+      - Detect Evil (w)
+      - Detect Magic (w)
+      - Detect Poison (w)
+      - Hold Portal (w)
+      - Illumination (w)
+      - Locate Animal or Plant (w)
+      - Jump (w)
+      - Magic Mouth (w)
+      - Magic Rope (w)
+      - Pass Without Trace (w)
+      - Predict Weather (w)
+      - Protection from Evil (w)
+      - Purify Food and Water (w)
+      - Remove Fear (w)
+      - Salving Rest (w)
+      - Sharpness (w)
+      - Spider Climb (w)
+      - Trance (w)
+      - Ventriloquism (w)
+    2:
+      - Alter Self (w)
+      - Bless (w)
+      - Call of the Wolf Pack (w)
+      - Continual Illumination (w)
+      - Cure Moderate Wounds (w)
+      - Delay Poison (w)
+      - Detect Charm (w)
+      - Detect Invisible (w)
+      - Detect Secret Doors (w)
+      - Divine Grace (w)
+      - Eldritch Armor (w)
+      - Find Traps (w)
+      - Holy Chant (w)
+      - Knock (w)
+      - Locate Object (w)
+      - Noiselessness (w)
+      - Ogre Power (w)
+      - Resist Acid (w)
+      - Resist Cold (w)
+      - Resist Electricity (w)
+      - Resist Fire (w)
+      - Righteous Wrath (w)
+      - Speak with Animals (w)
+      - Swift Sword (w)
+      - Swimming (w)
+      - Warp Wood (w)
+      - Wizard Lock (w)
+    3:
+      - Augury (w)
+      - Avian Messenger (w)
+      - Call of the Wild Bear (w)
+      - Clairvoyance (w)
+      - Clairaudience (w)
+      - Cure Blindness (w)
+      - Cure Disease (w)
+      - Cure Major Wounds (w)
+      - Detect Curse (w)
+      - Dispel Magic (w)
+      - Eldritch Protection (w)
+      - Eyes of the Eagle (w)
+      - Growth (w)
+      - Growth of Animals (w)
+      - Inspire Awe (w)
+      - Invulnerability to Evil (w)
+      - Nondetection (w)
+      - Prayer (w)
+      - Protection from Evil (Sustained) (w)
+      - Protection from Normal Missiles (w)
+      - Remove Curse (w)
+      - Shared Dream (w)
+      - Skinchange (w)
+      - Spellward (w)
+      - Sphere of Visibility (w)
+      - Striking (w)
+      - Water Breathing (w)
+    4:
+      - Call of the Galloping Herd (w)
+      - Cure Serious Wounds (w)
+      - Crafting (w)
+      - Death Ward (w)
+      - Find Treasure (w)
+      - Giant Strength (w)
+      - Growth of Plants (w)
+      - Guise Self (w)
+      - Immunity to Acid (w)
+      - Immunity to Cold (w)
+      - Immunity to Electricity (w)
+      - Immunity to Fire (w)
+      - Infravision (w)
+      - Levitate (w)
+      - Minor Globe of Invulnerability (w)
+      - Neutralize Poison (w)
+      - Safe Travels (w)
+      - Spellward Other (w)
+      - Smite Undead (w)
+      - Speak with Plants (w)
+      - Vigor (w)
+      - Water Walking (w)
+    5:
+      - Angelic Aura (w)
+      - Bath of the Goddess (w)
+      - Call of the Great Cats (w)
+      - Call of the Ancient Tusk (w)
+      - Cure Critical Wounds (w)
+      - Delay Death (w)
+      - Locate Haunting (w)
+      - Dispel Evil (w)
+      - Divination (w)
+      - Fate (w)
+      - Guise Other (w)
+      - Haste (w)
+      - Healing Circle (w)
+      - Lay of the Land (w)
+      - Protection from Blast (w)
+      - Protection from Normal Weapons (w)
+      - Spirit Walk (w)
+      - Strength of Mind (w)
+      - Transmute Rock to Mud (w)
+      - True Seeing (w)
+      - Turn to Dust (w)
+      - Winged Flight (w)
+    6:
+      - Anti Magic Shell (w)
+      - Atonement (w)
+      - Banner of Invincibility (w)
+      - Call of the Giant Eagle (w)
+      - Call of the Leviathan (w)
+      - Greater Clairvoyance (w)
+      - Greater Clairaudience (w)
+      - Detect Ritual Magic (w)
+      - Find Place of Power (w)
+      - Fly (w)
+      - Globe of Invulnerability (w)
+      - Home Ward (w)
+      - Locate Distant Object (w)
+      - Prophetic Dream (w)
+      - Protection from Blast (Sustained) (w)
+      - Projected Image (w)
+      - Reincarnation (w)
+      - Remove Geas (w)
+      - Spellwarded Zone (w)
+      - Stone to Flesh (w)
+      - Transform Self (w)
+      - Trollblood (w)
+  arcane: &spells_arcane
+    1:
+      - Burning Hands
+      - Charm Person
+      - Chameleon
+      - Choking Grip
+      - Detect Magic
+      - Floating Disc
+      - Hold Portal
+      - Jump
+      - Light
+      - Magic Missile
+      - Magic Mouth
+      - Magic Rope
+      - Protection from Evil
+      - Read Languages
+      - Sharpness
+      - Shield
+      - Silent Step
+      - Sleep
+      - Slipperiness
+      - Spider Climb
+      - Summon Berserkers
+      - Unseen Servant
+      - Ventriloquism
+      - Wall of Smoke
+    2:
+      - Alter Self
+      - Continual Light
+      - Deathless Minion
+      - Detect Evil
+      - Detect Invisible
+      - Detect Secret Doors
+      - ESP
+      - Glitterdust
+      - Gust of Wind
+      - Hypnotic Pattern
+      - Inaudibility
+      - Invisibility
+      - Knock
+      - Levitate
+      - Locate Object
+      - Mirror Image
+      - Necromantic Potence
+      - Ogre Power
+      - Phantasmal Force
+      - Stinking Cloud
+      - Summon Hero
+      - Uncanny Gyration
+      - Web
+      - Wizard Lock
+    3:
+      - Clairvoyance
+      - Clairaudience
+      - Chimerical Force
+      - Command Person
+      - Dismember
+      - Dispel Magic
+      - Earth's Teeth
+      - Enervate
+      - Fireball
+      - Fly
+      - Gaseous Form
+      - Growth
+      - Haste
+      - Hold Person
+      - Infravision
+      - Invisibility 10‘ radius
+      - Lightning Bolt
+      - Nondetection
+      - Protection from Evil, Sustained
+      - Protection from Normal Missiles
+      - Skinchange
+      - Summon Winged Steed
+      - Telepathy
+      - Water Breathing
+    4:
+      - Charm Monster
+      - Command Plant
+      - Confusion
+      - Conjure Ooze
+      - Dimension Door
+      - Fear
+      - Find Treasure
+      - Giant Strength
+      - Growth of Plants
+      - Hallucinatory Terrain
+      - Magic Carpet
+      - Massmorph
+      - Minor Globe of Invulnerability
+      - Polymorph Other
+      - Polymorph Self
+      - Remove Curse
+      - Scry
+      - Spectral Force
+      - Spell Storing
+      - Summon Fantastic Creature
+      - Wall of Fire
+      - Wall of Ice
+      - Wall of Wood
+      - Wizard Eye
+    5:
+      - Animate Dead
+      - Adaptation
+      - Cloudkill
+      - Cone of Cold
+      - Cone of Paralysis
+      - Conjure Elemental
+      - Contact Other Plane
+      - Control Undead
+      - Curse of Swine
+      - Enchanted Container
+      - Feeblemind
+      - Hold Monster
+      - Magic Jar
+      - Mass Infravision
+      - Panic
+      - Passwall
+      - Phantasmal Killer
+      - Protection from Normal Weapons
+      - Scouring Wind
+      - Telekinesis
+      - Teleport
+      - Transform Rock to Mud
+      - Wall of Stone
+      - X-Ray Vision
+    6:
+      - Anti-Magic Shell
+      - Control Plants
+      - Control Weather
+      - Death Spell
+      - Detect Ritual Magic
+      - Disintegrate
+      - Enslave
+      - Flesh to Stone
+      - Geas
+      - Globe of Invulnerability
+      - Invisible Stalker
+      - Lower Water
+      - Move Earth
+      - Oblivion
+      - Permanent Illusion
+      - Programmed Illusion
+      - Projected Image
+      - Reincarnate
+      - Summon Djinni
+      - Torpor
+      - Trollblood
+      - Wall of Corpses
+      - Wall of Force
+      - Wall of Iron
+  bladedancer: &spells_bladedancer
+    1:
+      - Angelic Choir
+      - Cure Light Wounds
+      - Detect Evil
+      - Detect Magic
+      - Faerie Fire
+      - Fellowship
+      - Light
+      - Protection from Evil
+      - Remove Fear
+      - Resist Cold
+    2:
+      - Bless
+      - Charm Animal
+      - Enthrall
+      - Hold Person
+      - Holy Chant
+      - Resist Fire
+      - Shimmer
+      - Speak with Animals
+      - Spiritual Weapon
+      - Swift Sword
+    3:
+      - Continual Light
+      - Cure Disease
+      - Glyph of Warding
+      - Growth of Animals
+      - Invulnerability to Evil
+      - Prayer
+      - Remove Curse
+      - Speak with Dead
+      - Striking
+      - Winged Flight
+    4:
+      - Create Water
+      - Cure Serious Wounds
+      - Dispel Magic
+      - Divination
+      - Neutralize Poison
+      - Protection from Evil, Sustained
+      - Smite Undead
+      - Speak with Plants
+      - Vigor
+      - Tongues
+    5:
+      - Atonement
+      - Commune
+      - Create Food
+      - Dispel Evil
+      - Flame Strike
+      - Insect Plague
+      - Quest
+      - Restore Life and Limb
+      - Sword of Fire
+      - True Seeing
+  cleric: &spells_cleric
+    1:
+      - Command Word
+      - Cure Light Wounds
+      - Detect Evil
+      - Detect Magic
+      - Light
+      - Protection from Evil
+      - Purify Food and Water
+      - Remove Fear
+      - Resist Cold
+      - Sanctuary
+    2:
+      - Augury
+      - Bless
+      - Delay Poison
+      - Find Traps
+      - Hold Person
+      - Resist Fire
+      - Righteous Wrath
+      - Silence 15' radius
+      - Speak with Animals
+      - Spiritual Weapon
+    3:
+      - Continual Light
+      - Cure Blindness
+      - Cure Disease
+      - Feign Death
+      - Glyph of Warding
+      - Growth of Animals
+      - Locate Object
+      - Remove Curse
+      - Speak with Dead
+      - Striking
+    4:
+      - Create Water
+      - Cure Serious Wounds
+      - Dispel Magic
+      - Divination
+      - Neutralize Poison
+      - Protection from Evil, Sustained
+      - Smite Undead
+      - Speak with Plants
+      - Sticks to Snakes
+      - Tongues
+    5:
+      - Atonement
+      - Commune
+      - Create Food
+      - Dispel Evil
+      - Flame Strike
+      - Insect Plague
+      - Quest
+      - Restore Life and Limb
+      - Strength of Mind
+      - True Seeing
+  priestess: &spells_priestess
+    1:
+      - First Level Divine Spells
+      - Angelic Choir
+      - Command Word
+      - Cure Light Wounds
+      - Delay Disease
+      - Detect Danger
+      - Detect Evil
+      - Detect Magic
+      - Fellowship
+      - Light
+      - Protection from Evil
+      - Purify Food and Water
+      - Remove Fear
+      - Resist Cold
+      - Sanctuary
+      - Salving Rest
+    2:
+      - Augury
+      - Bless
+      - Charm Animal
+      - Cure Moderate Wounds
+      - Delay Poison
+      - Detect Charm
+      - Divine Grace
+      - Enthrall
+      - Hold Person
+      - Holy Chant
+      - Resist Fire
+      - Silence 15' radius
+      - Shimmer
+      - Snake Charm
+      - Speak with Animals
+    3:
+      - Continual Light
+      - Cure Blindness
+      - Cure Disease
+      - Cure Major Wounds
+      - Detect Curse
+      - Feign Death
+      - Glyph of Warding
+      - Growth of Animals
+      - Locate Object
+      - Prayer
+      - Prot. from Normal Missiles
+      - Remove Curse
+      - Speak with Dead
+      - Sphere of Visibility
+      - Water Walking
+    4:
+      - Control Undead
+      - Create Water
+      - Cure Serious Wounds
+      - Death Ward
+      - Dispel Magic
+      - Divination
+      - Fate
+      - Neutralize Poison
+      - Protection from Evil, Sustained
+      - Smite Undead
+      - Speak with Plants
+      - Spirit of Healing
+      - Sticks to Snakes
+      - Tongues
+      - Vigor
+    5:
+      - Atonement
+      - Commune
+      - Command Person
+      - Cure Critical Wounds
+      - Create Food
+      - Dispel Evil
+      - Fear
+      - Insect Plague
+      - Lower Water
+      - Protection from Normal Weapons
+      - Quest
+      - Restore Life and Limb
+      - Scry
+      - Strength of Mind
+      - True Seeing
+  shaman: &spells_shaman
+    1:
+      - First Level Divine Spells
+      - Command Word
+      - Cure Light Wounds
+      - Faerie Fire
+      - Locate Animal or Plant
+      - Pass Without Trace
+      - Predict Weather
+      - Purify Food and Water
+      - Remove Fear
+      - Resist Cold
+      - Trance
+    2:
+      - Bless
+      - Charm Animal
+      - Delay Poison
+      - Holy Chant
+      - Obscuring Cloud
+      - Produce Fire
+      - Resist Fire
+      - Snake Charm
+      - Speak with Animals
+      - Warp Wood
+    3:
+      - Call Lightning
+      - Cure Blindness
+      - Cure Disease
+      - Detect Curse
+      - Eyes of the Eagle
+      - Growth of Animals
+      - Striking
+      - Water Breathing
+      - Water Walking
+      - Winged Flight
+    4:
+      - Command Animals
+      - Create Water
+      - Cure Serious Wounds
+      - Dispel Magic
+      - Divination
+      - Fate
+      - Neutralize Poison
+      - Skinchange
+      - Sticks to Snakes
+      - Summon Animals
+    5:
+      - Call Dragon
+      - Control Animals
+      - Control Winds
+      - Create Food
+      - Finger of Death
+      - Insect Plague
+      - Quest
+      - Reincarnation
+      - Sword of Fire
+      - Summon Weather
+  witch: &spells_witch
+    1:
+      - First Level Divine Spells
+      - Cause Fear
+      - Command Word
+      - Cure Light Wounds
+      - Delay Disease
+      - Detect Magic
+      - Faerie Fire
+      - Light
+      - Locate Animal or Plant
+      - Predict Weather
+      - Protection from Evil
+      - Purify Food and Water
+      - Read Languages
+      - Resist Cold
+      - Salving Rest
+      - Trance
+    2:
+      - Augury
+      - Bane
+      - Charm Animal
+      - Chameleon
+      - Choking Grip
+      - Detect Charm
+      - Enthrall
+      - Locate Object
+      - Hold Person
+      - Magic Mouth
+      - Resist Fire
+      - Speak with Animals
+      - Sleep
+      - Ventriloquism
+      - Unseen Servant
+    3:
+      - Alter Self
+      - Cause Disease
+      - Charm Person
+      - Continual Light
+      - Cure Major Wounds
+      - Detect Curse
+      - Detect Invisible
+      - ESP
+      - Growth of Animals
+      - Invisibility
+      - Levitate
+      - Mirror Image
+      - Phantasmal Force
+      - Remove Curse
+      - Speak with Dead
+    4:
+      - Clairaudience
+      - Clairvoyance
+      - Chimerical Force
+      - Dispel Magic
+      - Divination
+      - Fate
+      - Fly
+      - Infravision
+      - Neutralize Poison
+      - Nondetection
+      - Protection from Evil, Sustained
+      - Telepathy
+      - Tongues
+      - Speak with Plants
+      - Water Breathing
+    5:
+      - Charm Monster
+      - Command Person
+      - Commune
+      - Dispel Evil
+      - Fear
+      - Growth of Plants
+      - Magic Carpet
+      - Polymorph Self
+      - Polymorph Other
+      - Quest
+      - Scry
+      - Spectral Force
+      - Strength of Mind
+      - Summon Weather
+      - True Seeing
+equipment:
+  ammo:
+    &case_with_20_bolts
+    - name: Case (20 Bolts)
+      weight: 1
+      cost: 2
+    - &quiver_with_20_arrows
+      name: Quiver (20 Arrows)
+      weight: 1
+      cost: 1
+    - &silver_tipped_arrow
+      name: Silver Tipped Arrow
+      weight: 0
+      cost: 5
+    - &30_bullets
+      name: Bullets (30)
+      weight: 1
+      cost: 0.1
+  adventuring equipment:
+    - &aloe
+      name: Aloe
+      weight: 1
+      cost: 10
+    - &bitterwood
+      name: Bitterwood
+      weight: 1
+      cost: 10
+    - &black_lotus
+      name: Black Lotus
+      weight: 1
+      cost: 200
+    - &blessed_thistle
+      name: Blessed Thistle
+      weight: 1
+      cost: 10
+    - &horsetail
+      name: Horsetail
+      weight: 1
+      cost: 15
+    - &lungwort
+      name: Lungwort
+      weight: 1
+      cost: 5
+    - &willow_bark
+      name: Willowbark
+      weight: 1
+      cost: 5
+    - &backpack
+      name: Backpack
+      cost: 2
+      weight: 0
+    - &barrel
+      name: Barrel
+      cost: 0.3
+      weight: 60
+    - &belladonna
+      name: Belladonna
+      cost: 10
+      weight: 1
+    - &blanket
+      name: Blanket
+      cost: 2
+      weight: 1
+    - &birthwort
+      name: Birthwort
+      cost: 10
+      weight: 1
+    - &candle
+      name: Candle
+      cost: 0.6
+      weight: 1
+    - &chest
+      name: Chest
+      cost: 22
+      weight: 18
+    - &comfrey
+      name: Comfrey
+      cost: 10
+      weight: 1
+    - &crowbar
+      name: Crowbar
+      cost: 1
+      weight: 1
+    - &common_oil
+      name: Common Oil
+      cost: 0.3
+      weight: 1
+    - &military_oil
+      name: Military Oil
+      cost: 2
+      weight: 1
+    - &garlic
+      name: Garlic
+      cost: 5
+      weight: 1
+    - &goldenrod
+      name: Goldenrod
+      cost: 10
+      weight: 1
+    - &grappling_hook
+      name: Grappling Hook
+      cost: 25
+      weight: 1
+    - &hammer
+      name: Hammer (small)
+      cost: 2
+      weight: 1
+    - &holy_symbol
+      name: Holy Symbol
+      cost: 25
+      weight: 1
+    - &holy_water
+      name: Holy Water
+      cost: 20
+      weight: 1
+    - &ink
+      name: Ink
+      cost: 8
+      weight: 1
+    - &iron_spikes
+      name: Iron Spikes (12)
+      cost: 1
+      weight: 1
+    - &lantern
+      name: Lantern
+      cost: 10
+      weight: 1
+    - &lock
+      name: Lock
+      cost: 20
+      weight: 1
+    - &mirror
+      name: Mirror
+      cost: 5
+      weight: 1
+    - &musical_instrument_common
+      name: Musical Instrument (common)
+      cost: 25
+      weight: 1
+    - &musical_instrument_superior
+      name: Musical Instrument (superior)
+      cost: 50
+      weight: 1
+    - &musical_instrument_mastercraft
+      name: Musical Instrument (mastercrafted)
+      cost: 100
+      weight: 1
+    - &pouch Pouch:
+      name: Pouch
+      cost: 0.5
+      weight: 0
+    - &ten_foot_pole
+      name: Ten Foot Pole
+      cost: 0.1
+      weight: 6
+    - &one_week_rations_iron
+      name: One Week Rations (iron)
+      cost: 3.5
+      weight: 6
+    - &one_week_rations_standard
+      name: One Week Rations (standard)
+      cost: 1
+      weight: 6
+    - &rope
+      name: Rope
+      cost: 1
+      weight: 1
+    - &sack_small
+      name: Sack (small)
+      cost: 0.3
+      weight: 1
+    - &sack_large
+      name: Sack (large)
+      cost: 0.8
+      weight: 1
+    - &spell_book
+      name: Spell Book
+      cost: 20
+      weight: 1
+    - &ceremonial_codex
+      name: Ceremonial Codex
+      cost: 20
+      weight: 1
+    - &traditional_implements
+      name: Traditional Implements
+      cost: 20
+      weight: 6
+    - &stakes_and_mallet
+      name: Stakes (4) and Mallet
+      cost: 3
+      weight: 1
+    - &tent
+      name: Tent
+      cost: 20
+      weight: 6
+    - &thieves_tools
+      name: Thieves' Tools
+      cost: 25
+      weight: 1
+    - &good_thieves_tools
+      name: Good Thieves' Tools
+      cost: 200
+      weight: 1
+    - &tinder_box
+      name: Tinder Box
+      cost: 0.8
+      weight: 1
+    - &torch
+      name: Torch
+      cost: 0.1
+      weight: 1
+    - &waterskin
+      name: Waterskin
+      cost: 0.6
+      weight: 1
+    - &wolfsbane
+      name: Wolfsbane
+      cost: 10
+      weight: 1
+    - &woundwart
+      name: Woundwart
+      cost: 10
+      weight: 1
+  armor:
+    - &hide_armor
+      name: Hide Armor
+      tags: [light, armor]
+      modifies: {ac: 1}
+      cost: 10
+      weight: 6
+    - &leather_armor
+      name: Leather Armor
+      tags: [light, armor]
+      modifies: {ac: 2}
+      weight: 12
+      cost: 20
+    - &light_arena_armor
+      name: Light Arena Armor
+      modifies:
+        ac: 2
+      tags: [light, armor]
+      weight: 12
+      cost: 40
+    - &ring_mail
+      name: Ring Mail
+      modifies: {ac: 3}
+      tags: [medium, armor]
+      weight: 18
+      cost: 20
+    - &scale_armor
+      name: Scale Armor
+      tags: [medium, armor]
+      modifies: {ac: 3}
+      weight: 18
+      cost: 20
+    - &chain_mail
+      name: Chain Mail
+      tags: [medium, armor]
+      modifies: {ac: 4}
+      weight: 24
+      cost: 40
+    - &heavy_arena_armor
+      name: Heavy Arena Armor
+      tags: [medium, armor]
+      modifies: {ac: 4}
+      weight: 24
+      cost: 80
+    - &lamellar_armor
+      name: Lamellar Armor
+      tags: [heavy, armor]
+      modifies: {ac: 5}
+      weight: 30
+      cost: 50
+    - &banded_plate
+      name: Banded Plate Armor
+      tags: [heavy, armor]
+      modifies: {ac: 5}
+      weight: 30
+      cost: 50
+    - &plate_armor
+      name: Plate Armor
+      tags: [heavy, armor]
+      modifies: {ac: 6}
+      weight: 36
+      cost: 6
+    - &shield
+      name: Shield
+      modifies: {ac: 1}
+      tags: [shield]
+      weight: 6
+      cost: 10
+  weapons:
+    - &battle_axe
+      name: Battle Axe
+      tags: [melee, weapon]
+      weight: 1
+      cost: 7
+      damage: 1d6/8
+    - &great_axe
+      name: Great Axe
+      tags: [melee, weapon]
+      weight: 6
+      cost: 10
+      damage: 1d10
+    - &hand_axe
+      name: Hand Axe
+      tags: [melee, weapon]
+      weight: 1
+      cost: 4
+      damage: 1d6
+    - &arbalest
+      name: Arabalest
+      weight: 6
+      cost: 50
+      damage: 1d10
+      ammo: *case_with_20_bolts
+      tags: [missile, weapon]
+      modifies:
+        throw: -4
+    - &crossbow
+      name: Crossbow
+      weight: 6
+      cost: 30
+      damage: 1d8
+      ammo: *case_with_20_bolts
+      tags: [missile, weapon]
+      modifies:
+        throw: -2
+    - &composite_bow
+      name: Composite Bow
+      weight: 6
+      cost: 40
+      damage: 1d6
+      tags: [missile, weapon]
+      ammo: *quiver_with_20_arrows
+    - &longbow
+      name: Longbow
+      weight: 6
+      cost: 7
+      damage: 1d6
+      tags: missile
+      ammo: *quiver_with_20_arrows
+    - &shortbow
+      name: Shortbow
+      weight: 6
+      cost: 3
+      damage: 1d6
+      tags: [missile, weapon]
+      ammo: *quiver_with_20_arrows
+    - &club
+      name: Club
+      tags: [melee, weapon]
+      weight: 1
+      cost: 1
+      damage: 1d4
+    - &flail
+      name: Flail
+      tags: [melee, weapon]
+      weight: 1
+      cost: 5
+      damage: 1d6/8
+    - &mace
+      name: Mace
+      tags: [melee, weapon]
+      weight: 1
+      cost: 5
+      damage: 1d6/8
+    - &morning_star
+      name: Morning Star
+      tags: [melee, weapon]
+      weight: 6
+      cost: 5
+      damage: 1d10
+    - &war_hammer
+      name: War Hammer
+      tags: [melee, weapon]
+      weight: 1
+      cost: 5
+      damage: 1d6/8
+    - &lance
+      name: Lance
+      tags: [melee, weapon]
+      weight: 6
+      cost: 5
+      damage: 1d10
+    - &javelin
+      name: Javelin
+      weight: 1
+      cost: 1
+      damage: 1d6
+      tags: [missile, weapon]
+    - &pole_arm
+      name: Pole Arm
+      tags: [melee, weapon]
+      weight: 6
+      cost: 7
+      damage: 1d10
+    - &spear
+      name: Spear
+      tags: [melee, weapon]
+      weight: 6
+      cost: 3
+      damage: 1d6/8
+    - &dagger
+      name: Dagger
+      tags: [melee, missile, weapon]
+      weight: 1
+      cost: 3
+      damage: 1d4
+    - &silver_dagger
+      name: Silver Dagger
+      tags: [melee, weapon, missile]
+      weight: 1
+      cost: 30
+      damage: 1d4
+    - &short_sword
+      name: Short Sword
+      tags: [melee, weapon]
+      weight: 1
+      cost: 6
+      damage: 1d6
+    - &sword
+      name: Sword
+      tags: [melee, weapon]
+      weight: 1
+      cost: 10
+      damage: 1d6/8
+    - &two_handed_sword
+      name: Two Handed Sword
+      tags: [melee, weapon]
+      weight: 6
+      cost: 15
+      damage: 1d10
+    - &bola
+      name: Bola
+      weight: 1
+      cost: 5
+      tags: [missile, weapon]
+      damage: 1d2
+    - &darts
+      name: Darts (5)
+      weight: 1
+      cost: 2
+      damage: 1d4
+      tags: [missile, weapon]
+    - &net
+      name: Net
+      tags: [missile, weapon]
+      weight: 1
+      cost: 1
+      damage: 0
+    - &sling
+      name: Sling
+      weight: 1
+      cost: 2
+      damage: 1d4
+      tags: [missile, weapon]
+    - &sap
+      name: Sap
+      tags: [melee, weapon]
+      weight: 1
+      cost: 1
+      damage: 1d4
+    - &staff
+      name: Staff
+      tags: [melee, weapon]
+      weight: 6
+      cost: 1
+      damage: 1d4/6
+    - &whip
+      name: Whip
+      tags: [melee, weapon]
+      weight: 1
+      cost: 5
+      damage: 1d2
+  potions:
+    - &pot_animalcontrol
+      name: Potion of Animal Control
+      weight: 1
+    - &pot_clairaudience
+      name: Potion of Clairaudience
+      weight: 1
+    - &pot_climbing
+      name: Potion of Climbing
+      weight: 1
+    - &pot_delusion
+      name: Potion of Delusion
+      weight: 1
+    - &pot_diminuition
+      name: Potion of Diminuition
+      weight: 1
+    - &pot_dragoncontrol
+      name: Potion of Dragon Control
+      weight: 1
+    - &pot_esp
+      name: Potion of ESP
+      weight: 1
+    - &pot_extrahealing
+      name: Potion of Extra Healing
+      weight: 1
+    - &pot_fireresistance
+      name: Potion of Fire Resistance
+      weight: 1
+    - &pot_flying
+      name: Potion of Flying
+      weight: 1
+    - &pot_gaseousform
+      name: Potion of Gaseous Form
+      weight: 1
+    - &pot_giantcontrol
+      name: Potion of Giant Control
+      weight: 1
+    - &pot_giantstrength
+      name: Potion of Giant Strength
+      weight: 1
+    - &pot_growth
+      name: Potion of Growth
+      weight: 1
+    - &pot_healing
+      name: Potion of Healing
+      weight: 1
+    - &pot_heroism
+      name: Potion of Heroism
+      weight: 1
+    - &pot_humancontrol
+      name: Potion of Human Control
+      weight: 1
+    - &pot_invisibility
+      name: Potion of Invisibility
+      weight: 1
+    - &pot_invulnerability
+      name: Potion of Invulnerability
+      weight: 1
+    - &pot_levitation
+      name: Potion of Levitation
+      weight: 1
+    - &pot_longlivety
+      name: Potion of Longlivety
+      weight: 1
+    - &pot_oilofsharpness
+      name: Oil of Sharpness
+      weight: 1
+    - &pot_oilofslipperiness
+      name: Oil of Slipperiness
+      weight: 1
+    - &pot_philteroflove
+      name: Philter of Love
+      weight: 1
+    - &pot_plantcontrol
+      name: Potion of Plant Control
+      weight: 1
+    - &pot_poison
+      name: Potion of Poison
+      weight: 1
+    - &pot_polymorph
+      name: Potion of Polymorph
+      weight: 1
+    - &pot_speed
+      name: Potion of Speed
+      weight: 1
+    - &pot_superheroism
+      name: Potion of Super-Heroism
+      weight: 1
+    - &pot_sweetwater
+      name: Potion of Sweet Water
+      weight: 1
+    - &pot_treasurefinding
+      name: Potion of Treasure Finding
+      weight: 1
+    - &pot_undeadcontrol
+      name: Potion of Undead Control
+      weight: 1
+    - &pot_waterbreathing
+      name: Potion of Water Breathing
+      weight: 1
+    - &pot_oilofbanerune
+      name: Oil of Bane Rune
+      weight: 1
+    - &pot_oilofvitriolicinfusion
+      name: Oil of Vitriolic Infusion
+      weight: 1
+    - &pot_alterself
+      name: Potion of Alter Self
+      weight: 1
+    - &pot_chameleon
+      name: Potion of Chameleon
+      weight: 1
+    - &pot_curelightwounds
+      name: Potion of Cure Light Wounds
+      weight: 1
+    - &pot_curemoderatewounds
+      name: Potion of Cure Moderate Wounds
+      weight: 1
+    - &pot_eldritcharmor
+      name: Potion of Eldritch Armor
+      weight: 1
+    - &pot_jump
+      name: Potion of Jump
+      weight: 1
+    - &pot_ogrepower
+      name: Potion of Ogre Power
+      weight: 1
+    - &pot_resistacid
+      name: Potion of Resist Acid
+      weight: 1
+    - &pot_resistcold
+      name: Potion of Resist Cold
+      weight: 1
+    - &pot_resistelectricity
+      name: Potion of Resist Electricity
+      weight: 1
+    - &pot_resistfire
+      name: Potion of Resist Fire
+      weight: 1
+    - &pot_righteouswrath
+      name: Potion of Righteous Wrath
+      weight: 1
+    - &pot_silentstep
+      name: Potion of Silent Step
+      weight: 1
+    - &pot_speakingwithanimals
+      name: Potion of Speaking with Animals
+      weight: 1
+    - &pot_spiderclimb
+      name: Potion of Spider Climb
+      weight: 1
+    - &pot_swiftsword
+      name: Potion of Swift Sword
+      weight: 1
+    - &pot_swimming
+      name: Potion of Swimming
+      weight: 1
+    - &pot_oilofstonetoflesh
+      name: Oil of Stone to Flesh
+      weight: 1
+    - &pot_oilofstriking
+      name: Oil of Striking
+      weight: 1
+    - &pot_acidimmunity
+      name: Potion of Acid Immunity
+      weight: 1
+    - &pot_angelicaura
+      name: Potion of Angelic Aura
+      weight: 1
+    - &pot_coldimmunity
+      name: Potion of Cold Immunity
+      weight: 1
+    - &pot_curenblindness
+      name: Potion of Cure Blindness
+      weight: 1
+    - &pot_curecriticalwounds
+      name: Potion of Cure Critical Wounds
+      weight: 1
+    - &pot_curedisease
+      name: Potion of Cure Disease
+      weight: 1
+    - &pot_curemajorwounds
+      name: Potion of Cure Major Wounds
+      weight: 1
+    - &pot_electricalimmunity
+      name: Potion of Electrical Immunity
+      weight: 1
+    - &pot_eyesoftheeagle
+      name: Potion of Eyes of the Eagle
+      weight: 1
+    - &pot_findtreasure
+      name: Potion of Find Treasure
+      weight: 1
+    - &pot_fireimmunity
+      name: Potion of Fire Immunity
+      weight: 1
+    - &pot_greaterclairaudience
+      name: Potion of Greater Clairaudience
+      weight: 1
+    - &pot_greaterclairvoyance
+      name: Potion of Greater Clairvoyance
+      weight: 1
+    - &pot_guiseself
+      name: Potion of Guise Self
+      weight: 1
+    - &pot_infravision
+      name: Potion of Infravision
+      weight: 1
+    - &pot_invulnerabilitytoevil
+      name: Potion of Invulnerability to Evil
+      weight: 1
+    - &pot_necromanticinvulnerability
+      name: Potion of Necromantic Invulnerability
+      weight: 1
+    - &pot_protectionfromnormalmissiles
+      name: Potion of Protection from Normal Missiles
+      weight: 1
+    - &pot_protectionfromnormalweapons
+      name: Potion of Protection from Normal Weapons
+      weight: 1
+    - &pot_skinchange
+      name: Potion of Skinchange
+      weight: 1
+    - &pot_speakwithdead
+      name: Potion of Speak with Dead
+      weight: 1
+    - &pot_speakwithplants
+      name: Potion of Speak with Plants
+      weight: 1
+    - &pot_strengthofmind
+      name: Potion of Strength of Mind
+      weight: 1
+    - &pot_telepathy
+      name: Potion of Telepathy
+      weight: 1
+    - &pot_transformself
+      name: Potion of Transform Self
+      weight: 1
+    - &pot_trollblood
+      name: Potion of Trollblood
+      weight: 1
+    - &pot_trueseeing
+      name: Potion of True Seeing
+      weight: 1
+    - &pot_vigor
+      name: Potion of Vigor
+      weight: 1
+    - &pot_waterwalking
+      name: Potion of Water Walking
+      weight: 1
+    - &pot_wingedflight
+      name: Potion of Winged Flight
+      weight: 1
+    - &pot_waybread
+      name: waybread
+      weight: 1
+  staffs:
+    - &staff_healing
+      name: Staff of Healing
+      weigth: 6
+      tags: [staff]
+    - &staff_power
+      name: Staff of Power
+      weigth: 6
+      tags: [staff]
+    - &staff_striking
+      name: Staff of Striking
+      weigth: 6
+      tags: [staff]
+    - &staff_withering
+      name: Staff of Withering
+      weigth: 6
+      tags: [staff]
+    - &staff_wizardry
+      name: Staff of Wizardry
+      weigth: 6
+      tags: [staff]
+    - &staff_serpent
+      name: Staff of the Serpent
+      weigth: 6
+      tags: [staff]
+    - &staff_cataclysm
+      name: Staff of Cataclysm
+      weigth: 6
+      tags: [staff]
+    - &staff_elementalair
+      name: Staff of Elemental Air
+      weigth: 6
+      tags: [staff]
+    - &staff_elementalearth
+      name: Staff of Elemental Earth
+      weigth:
+      tags: [staff]
+    - &staff_elementalfire
+      name: Staff of Elemental Fire
+      weigth: 6
+      tags: [staff]
+    - &staff_elementalwater
+      name: Staff of Elemental Water
+      weigth: 6
+      tags: [staff]
+    - &staff_elementalpower
+      name: Staff of Elemental Power
+      weight: 6
+      tags: [staff]
+    - &staff_commanding
+      name: Staff of Commanding
+      weight: 6
+      tags: [staff]
+  rods:
+    - &rod_cancellation
+      name: Rod of Cancellation
+      weight: 1
+      tags: [rod]
+    - &rod_ressurection
+      name: Rod of Resurrection
+      weight: 1
+      tags: [rod]
+    - &rod_nightsky
+      name: Rod of the Night Sky
+      weight: 1
+      tags: [rod]
+    - &rod_torture
+      name: Rod of Torture
+      weight: 1
+      tags: [rod]
+  wands:
+    - &wand_cold
+      name: Wand of Cold
+      weight: 1
+      tags: [wand]
+    - &wand_detectingenemies
+      name: Wand of Detecting Enemies
+      weight: 1
+      tags: [wand]
+    - &wand_detectingmagic
+      name: Wand of Detecting Magic
+      weight: 1
+      tags: [wand]
+    - &wand_detectingmetals
+      name: Wand of Detecting Metals
+      weight: 1
+      tags: [wand]
+    - &wand_detectingsecretdoors
+      name: Wand of Detecting Secret Doors
+      weight: 1
+      tags: [wand]
+    - &wand_detectingtraps
+      name: Wand of Detecting Traps
+      weight: 1
+      tags: [wand]
+    - &wand_devicenegation
+      name: Wand of Device Negation
+      weight: 1
+      tags: [wand]
+    - &wand_fear
+      name: Wand of Fear
+      weight: 1
+      tags: [wand]
+    - &wand_fireballs
+      name: Wand of Fire Balls
+      weight: 1
+      tags: [wand]
+    - &wand_illusion
+      name: Wand of Illusion
+      weight: 1
+      tags: [wand]
+    - &wand_lightningbolts
+      name: Wand of Lightning Bolts
+      weight: 1
+      tags: [wand]
+    - &wand_magicmissiles
+      name: Wand of Magic Missiles
+      weight: 1
+      tags: [wand]
+    - &wand_paralyzation
+      name: Wand of Paralyzation
+      weight: 1
+      tags: [wand]
+    - &wand_polymorphing
+      name: Wand of Polymorphing
+      weight: 1
+      tags: [wand]
+    - &wand_frost
+      name: Wand of Frost
+      weight: 1
+      tags: [wand]
+    - &wand_impetus
+      name: Wand of Impetus
+      weight: 1
+      tags: [wand]
+    - &wand_sorcery
+      name: Wand of Sorcery
+      weight: 1
+      tags: [wand]
+  rings:
+    - &ring_commandanimal
+      name: Ring of Command Animal
+      weight: 0
+      tags: [ring]
+    - &ring_commandhuman
+      name: Ring of Command Human
+      weight: 0
+      tags: [ring]
+    - &ring_commandplant
+      name: Ring of Command Plant
+      weight: 0
+      tags: [ring]
+    - &ring_delusion
+      name: Ring of Delusion
+      weight: 0
+      tags: [ring]
+    - &ring_djinnicalling
+      name: Ring of Djinni Calling
+      weight: 0
+      tags: [ring]
+    - &ring_fireresistance
+      name: Ring of Fire Resistance
+      weight: 0
+      tags:
+    - &ring_invisibility
+      name: Ring of Invisibility
+      weight: 0
+      tags: [ring]
+    - &ring_protection
+      name: Ring of Protection
+      weight: 0
+      tags: [ring]
+    - &ring_regeneration
+      name: Ring of Regeneration
+      weight: 0
+      tags: [ring]
+    - &ring_spellstoring
+      name: Ring of Spell Storing
+      weight: 0
+      tags: [ring]
+    - &ring_spellturning
+      name: Ring of Spell Turning
+      weight: 0
+      tags: [ring]
+    - &ring_telekinesis
+      name: Ring of Telekinesis
+      weight: 0
+      tags: [ring]
+    - &ring_waterwalking
+      name: Ring of Water Walking
+      weight: 0
+      tags: [ring]
+    - &ring_weakness
+      name: Ring of Weakness
+      weight: 0
+      tags: [ring]
+    - &ring_wishes
+      name: Ring of Wishes
+      weight: 0
+      tags: [ring]
+    - &ring_xrayvision
+      name: Ring of X-Ray Vision
+      weight: 0
+      tags: [ring]
+    - &ring_antimagic
+      name: Ring of Anti-Magic
+      weight: 0
+      tags: [ring]
+    - &ring_queensheart
+      name: Ring of the Queen's Heart
+      weight: 0
+      tags: [ring]
+    - &ring_sealofchaos
+      name: Seal of Chaos
+      weight: 0
+      tags: [ring]
+  misc:
+    - &misc_amuletofnondetection
+      name: Amulet of nondetection
+      weight: 0
+    - &misc_apparatusofthecrab
+      name: Apparatus of the Crab
+      weight: 0
+    - &misc_bagofdevouring
+      name: Bag of Devouring
+      weight: 1
+    - &misc_bagofholding
+      name: Bag of Holding
+      weight: 1
+    - &misc_foldingboat
+      name: Folding Boat
+      weight: 6
+    - &misc_bootsoflevitation
+      name: Boots of Levitation
+      weight: 0
+      tags: [boots]
+    - &misc_bootsofspeed
+      name: Boots of Speed
+      weight: 0
+      tags: [boots]
+    - &misc_bootsoftravelingandspringing
+      name: Boots of Traveling and Springing
+      weight: 0
+      tags: [boots]
+    - &misc_bowlofcommandingwaterelementals
+      name: Bowl of Commanding Water Elementals
+      weight: 1
+    - &misc_bracersofarmor
+      name: Bracers of Armor
+      weight: 1
+      modifies:
+        ac: 1
+        deactivatedby:
+          - "armor:tags=light"
+          - "armor:tags=medium"
+          - "armor:tags=heavy"
+    - &misc_brazierofcommandingfireelementals
+      name: Brazier of Commanding Fire Elementals
+      weight: 1
+    - &misc_broochofshielding
+      name: Brooch of Shielding
+      weight: 0
+    - &misc_broomofflying
+      name: Broom of Flying
+      weight: 6
+    - &misc_censerofcontrollingairelementals
+      name: Censer of Controlling Air Elementals
+      weight: 1
+    - &misc_chimeofopening
+      name: Chime of Opening
+      weight: 1
+    - &misc_cloakofprotection
+      name: Cloak of Protection
+      weight: 0
+    - &misc_crystalball
+      name: Crystal Ball
+      weight: 1
+    - &misc_crystalballclairaudience
+      name: Crystal Ball with Clairaudience
+      weight: 1
+    - &misc_crystalballesp
+      name: Crystal Ball with ESP
+      weight: 1
+    - &misc_cubeofforce
+      name: Cube of Force
+      weight: 1
+    - &misc_cubeoffrostresistance
+      name: Cube of Frost Resistance
+      weight: 1
+    - &misc_decanterofendlesswater
+      name: Decanter of Endless Water
+      weight: 1
+    - &misc_displacercloak
+      name: Displacer Cloak
+      weight: 0
+      modifies: {ac: 2, acm: 2, BB: 2, PD: 2, PP: 2, SW: 2, S: 2}
+    - &misc_drumsofpanic
+      name: Drums of Panic
+      weight: 1
+    - &misc_dustofappearance
+      name: Dust of Appearance
+      weight: 1
+    - &misc_dustofdisappearance
+      name: Dust of Disappearance
+      weight: 1
+    - &misc_efreetibottle
+      name: Efreeti Bottle
+      weight: 1
+    - &misc_elvencloak
+      name: Elven Cloak
+      weight: 0
+      tags: [cloak]
+    - &misc_elvenboots
+      name: Elven Boots
+      weight: 0
+      tags: [boots]
+    - &misc_eyesofcharming
+      name: Eyes of Charming
+      weight: 1
+    - &misc_eyesoftheeagle
+      name: Eyes of the Eagle
+      weight: 1
+    - &misc_eyesofpetrification
+      name: Eyes of Petrification
+      weight: 1
+    - &misc_flyingcarpet
+      name: Flying Carpet
+      weight: 6
+    - &misc_gauntletsofogrepower
+      name: Gauntlets of Ogre Power
+      weight: 0
+      modifies:
+        strmod: =3
+    - &misc_girdleofgiantstrength
+      name: Girdle of Giant Strength
+      weight: 0
+      modifies:
+        meleethrow: {min: [3, meleethrow]}
+    - &misc_helmofalignmentchaning
+      name: Helm of Alignment Changing
+      weight: 0
+    - &misc_helmofcomprehendinglanguages
+      name: Helm of Comprehending Languages
+      weight: 0
+    - &misc_helmoftelepathy
+      name: Helm of Telepathy
+      weight: 0
+    - &misc_helmofteleportation
+      name: Helm of Teleportation
+      weight: 0
+    - &misc_hornofblasting
+      name: Horn of Blasting
+      weight: 1
+    - &misc_medaillonofesp
+      name: Medaillon of ESP
+      weight: 0
+    - &misc_medaillonofesp90
+      name: Medaillon of ESP (90')
+      weight: 0
+    - &misc_mirroroflifetrapping
+      name: Mirror of Life Trapping
+      weight: 1
+    - &misc_mirrorofopposition
+      name: Mirror of opposition
+      weight: 1
+    - &misc_necklaceofadaption
+      name: Necklace of Adaption
+      weight: 1
+    - &misc_ropeofclimbing
+      name: Rope of Climbing
+      weight: 1
+    - &misc_scarabofprotection
+      name: Scarab of Protection
+      weight: 1
+    - &misc_stoneofcontrollingearthelementals
+      name: Stone of Controlling Earth Elementals
+      weight: 1
+    - &misc_chaliceofblood
+      name: Chalice of Blood
+      weight: 1
+    - &misc_lightchariotofthegods
+      name: Light Chariot of the Gods
+      weight: 0
+    - &misc_mediumchariotofthegods
+      name: Medium Chariot of the Gods
+      weight: 0
+    - &misc_heavychariotofthegods
+      name: Heavy Chariot of the Gods
+      weight: 0
+    - &misc_collarofconversation
+      name: Collar of Conversation
+      weight: 0
+    - &misc_cloakofskinchanging
+      name: Cloak of Skinchanging
+      weight: 0
+    - &misc_deadmanshand
+      name: Dead Mans' Hand
+      weight: 1
+    - &misc_emblemoftheeagles
+      name: Emblem of the Eagles
+      weight: 0
+    - &misc_helmofawe
+      name: Helm of Awe
+      weight: 0
+    - &misc_holytalismanofthewingedsun
+      name: Holy Talisman of the Winged Sun
+      weight: 1
+    - &misc_ironboundbookofxisuthros
+      name: Iron Bound Book of Xisuthros
+      weight: 1
+    - &misc_ironcrownofthesorcererkings
+      name: Iron Crown of the Sorcerer-Kings
+      weight: 0
+    - &misc_bracersoftheimperialwarmistress
+      name: Bracers of the Imperial Warmistress
+      weight: 0
+      modifies:
+        ac: 2
+        BB: 2
+        PP: 2
+        PD: 2
+        SW: 2
+        S: 2
+    - &misc_bootsoftheimperialwarmistress
+      name: Boots of the Imperial Warmistress
+      weight: 0
+      modifies:
+        dexmod: =3
+    - &misc_panoplyoftheimperialwarmistress
+      name: Panoply of the Imperial Warmistress
+      weight: 0
+    - &misc_corseletoftheimperialwarmistress
+      name: Corselet of the Imperial Warmistress
+      weight: 0
+    - &misc_diademoftheimperialwarmistress
+      name: Diadem of the Imperial Warmistress
+      weight: 0
+      modifies:
+        chamod: =3
+  tables:
+    tiny melee weapons: &table_tiny_melee_weapons
+      die: 1d10
+      res:
+        1-8: *dagger
+        9: *silver_dagger
+        10: *club
+    small melee weapons: &table_small_melee_weapons
+      die: 1d2
+      res:
+        1: *hand_axe
+        2: *short_sword
+    medium melee weapons: &table_medium_melee_weapons
+      die: 1d6
+      res:
+        1: *battle_axe
+        2: *flail
+        3: *mace
+        4: *war_hammer
+        5: *spear
+        6: *sword
+    large melee weapons: &table_large_melee_weapons
+      die: 1d3
+      res:
+        1: *two_handed_sword
+        2: *pole_arm
+        3: *great_axe
+    crossbows: &table_crossbows
+      die: 1d2
+      res:
+        1: *crossbow
+        2: *arbalest
+    bows: &table_bows
+      die: 1d3
+      res:
+        1: *shortbow
+        2: *longbow
+        3: *composite_bow
+    special weapons: &table_special_weapons
+      die: 1d6
+      res:
+        1: *bola
+        2: *net
+        3: *sap
+        4: *whip
+    full caster weapons: &table_mage_weapons
+      die: 1d6
+      res:
+        1: *dagger
+        2: *crossbow
+        3: *staff
+        4: *sap
+        5: *darts
+        6: *arbalest
+    heavy armor: &table_heavy_armor
+      die: 1d6
+      res:
+        1-2: *chain_mail
+        3-5: *lamellar_armor
+        6: *plate_armor
+    medium armor: &table_medium_armor
+      die: 1d6
+      res:
+        1-2: *leather_armor
+        3-6: *chain_mail
+    light armor: &table_light_armor
+      die: 1d6
+      res:
+        1-2: *hide_armor
+        3-6: *leather_armor
+    healing herbs: &table_healing_herbs
+      die: 1d12
+      res:
+        1: *belladonna
+        2: *birthwort
+        3-5: *comfrey
+        6-7: *woundwart
+        8-9: *horsetail
+        10-11: *bitterwood
+        12: *aloe
+    tools: &table_tools
+      die: 1d11
+      res:
+        1: *crowbar
+        2: *rope
+        3: *mirror
+        4: *ten_foot_pole
+        5: *grappling_hook
+        6: *iron_spikes
+        7: *common_oil
+        8: *sack_large
+        9: *sack_small
+        10: *tinder_box
+        11: *hammer
+    sleeping: &table_sleeping
+      die: 1d6
+      res:
+        1-5: *blanket
+        6: *tent
+    light: &table_light
+      die: 1d6
+      res:
+        1-3: *torch
+        4-6: *lantern
+saves:
+#order: pp, pd, bb, sw, ma
+  fighter: &fighter_saving_throws
+    initial: [16, 15, 17, 17, 18]
+    progression: [1,2,4,5,7,8,10,11,13,14]
+  thief: &thief_saving_throws
+    initial: [14, 14, 17, 15, 16]
+    progression: [1,3,5,7,9,11,13]
+  divine: &divine_saving_throws
+    initial: [14, 11, 17, 14, 16]
+    progression: [1,3,5,7,9,11,13]
+  arcane: &arcane_saving_throws
+    initial: [14, 14, 16, 12, 13]
+    progression: [1,4,7,10,13]
+  eldritch: &eldritch_saving_throws
+    initial: [14, 11, 17, 14, 16]
+    progression: [1,3,5,7,9,11,13]
+classes:
+  &thief thief:
+    name: thief
+    experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0.5
+    maxlevel: 14
+    hd: d4
+    primerequisites:
+      dexterity: 9
+    attackprogression: *thief_attack_throw_progression
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    proficiencylist:
+      - *acrobatics
+      - *alertness
+      - *arcane_dabbling
+      - *blind_fighting
+      - *bribery
+      - *cat_burglary
+      - *combat_reflexes
+      - *contortionism
+      - *diplomacy
+      - *fighting_style
+      - *gambling
+      - *intimidation
+      - *lip_reading
+      - *lockpicking
+      - *mapping
+      - *precise_shooting
+      - *riding
+      - *running
+      - *seafaring
+      - *skirmishing
+      - *skulking
+      - *sniping
+      - *swashbuckling
+      - *trap_finding
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_disarm
+      - *combat_trickery_incapacitate
+    abilityprogression:
+      1:
+        - *open_locks
+        - *find_traps
+        - *remove_traps
+        - *pick_pockets
+        - *move_silently
+        - *climb_walls
+        - *hide_in_shadows
+        - *hear_noise
+        - *backstab
+      4:
+        - *read_languages
+      10:
+        - *use_magic_scrolls
+    equipment:
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_tiny_melee_weapons, 1d4-2]
+      - [*table_small_melee_weapons, 1d4-2]
+      - [{die: 1d4, res: {1: *table_bows, 2-3: *table_crossbows, 4: ''}}, 1]
+      - [{die: 1d6, res: {1: '', 2-6: *table_light_armor}}, 1]
+      - [*backpack, 1]
+      - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
+      - [*table_healing_herbs, 1d3-1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+  &assassin assassin:
+    name: assassin
+    experienceforlevel: [0,1700,3400,6800,14000,28000,55000,110000,230000,350000,470000,590000,710000,830000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
+    maxlevel: 14
+    hd: d6
+    primerequisites:
+      strength: 9
+      dexterity: 9
+    attackprogression: *fighter_attack_throw_progression
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
+      - *acrobatics
+      - *alchemy
+      - *alertness
+      - *arcane_dabbling
+      - *blind_fighting
+      - *bribery
+      - *cat_burglary
+      - *climbing
+      - *combat_reflexes
+      - *contortionism
+      - *disguise
+      - *eavesdropping
+      - *fighting_style
+      - *gambling
+      - *intimidation
+      - *mimicry
+      - *precise_shooting
+      - *running
+      - *seduction
+      - *skirmishing
+      - *skulking
+      - *sniping
+      - *swashbuckling
+      - *trap_finding
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_disarm
+      - *combat_trickery_incapacitate
+    abilityprogression:
+      1:
+        - *fighter_damage_bonus
+        - *move_silently
+        - *hide_in_shadows
+        - *backstab
+    equipment:
+      - [*table_tiny_melee_weapons, 1d3-1]
+      - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+      - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+      - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
+      - [*javelin, 1d4-1]
+      - [*table_special_weapons, 1d10-8]
+      - [*shield, 1d3-2]
+      - [{die: 1d3, res: {1: *table_light_armor, 2: *table_medium_armor, 3: *table_heavy_armor}}, 1]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d3-1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d3-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+  &fighter fighter:
+    name: fighter
+    experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
+    maxlevel: 14
+    hd: d8
+    primerequisites:
+      strength: 9
+    attackprogression: *fighter_attack_throw_progression
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
+      - *acrobatics
+      - *alertness
+      - *berserkergang
+      - *blind_fighting
+      - *combat_reflexes
+      - *command
+      - *dungeon_bashing
+      - *endurance
+      - *fighting_style
+      - *gambling
+      - *intimidation
+      - *leadership
+      - *manual_of_arms
+      - *military_strategy
+      - *precise_shooting
+      - *riding
+      - *running
+      - *siege_engineering
+      - *skirmishing
+      - *survival
+      - *swashbuckling
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_disarm
+      - *combat_trickery_force_back
+      - *combat_trickery_knock_down
+      - *combat_trickery_overrun
+      - *combat_trickery_sunder
+    abilityprogression:
+      1:
+        - *fighter_damage_bonus
+      5:
+        - Battlefield Prowess
+    equipment:
+      - [*table_tiny_melee_weapons, 1d3-1] #weapons
+      - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+      - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+      - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
+      - [*javelin, 1d4-1]
+      - [*table_special_weapons, 1d10-8]
+      - [*shield, 1d2-1] #armor
+      - [{die: 1d6, res: {1-4: *table_heavy_armor, 5: *table_medium_armor, 6: *table_light_armor}}, 1]
+      - [*backpack, 1] #misc. gear
+      - [*table_healing_herbs, 1d10-8]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d6-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+  &loremaster loremaster:
+    name: loremaster
+    experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0
+    maxlevel: 14
+    hd: d4
+    primerequisites:
+      intelligence: 9
+      wisdom: 9
+    attackprogression: *mage_attack_throw_progression
+    savingthrows: *eldritch_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *loremaster_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
+    proficiencylist:
+      - *alchemy
+      - *battle_magic
+      - *beast_friendship
+      - *black_lore
+      - *bright_lore
+      - *ceremonial_magic
+      - *collegiate_wizardry
+      - *contemplation
+      - *craft
+      - *diplomacy
+      - *elementalism
+      - *exhalted_bloodline
+      - *engineering
+      - *familiar
+      - *farseeing
+      - *healing
+      - *knowledge
+      - *magical_engineering
+      - *mystic_aura
+      - *naturalism
+      - *personal_talisman
+      - *prestidigation
+      - *prophecy
+      - *second_sight
+      - *sensing_power
+      - *transmogrification
+      - *soothsaying
+      - *unflappable_casting
+    abilityprogression:
+      1:
+        - *loremastery
+        - *personal_talisman
+        - *read_languages
+      3:
+        - *personal_talisman
+      11:
+        - *personal_talisman
+    equipment:
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_mage_weapons, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4-1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*ink, 1]
+  &eldritch_rogue eldritch rogue:
+    name: eldritch rogue
+    experienceforlevel: [0,1000,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0
+    maxlevel: 14
+    hd: d4
+    primerequisites:
+      wisdom: 9
+      intelligence: 9
+    attackprogression: *mage_attack_throw_progression
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *runemaker_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
+    proficiencylist:
+      - *acrobatics
+      - *alchemy
+      - *battle_magic
+      - *beast_friendship
+      - *black_lore
+      - *bright_lore
+      - *climbing
+      - *contemplation
+      - *craft
+      - *contortionism
+      - *collegiate_wizardry
+      - *eavesdropping
+      - *elementalism
+      - *familiar
+      - *knowledge
+      - *language
+      - *lip_reading
+      - *lockpicking
+      - *magical_engineering
+      - *mastery_of_charms_and_illusions
+      - *mystic_aura
+      - *personal_talisman
+      - *quiet_magic
+      - *sensing_power
+      - *skirmishing
+      - *skulking
+      - *trap_finding
+      - *second_sight
+    abilityprogression:
+      1:
+        - *open_locks
+        - *find_traps
+        - *remove_traps
+        - *pick_pockets
+        - *move_silently
+        - *climb_walls
+        - *hide_in_shadows
+        - *hear_noise
+        - *loremastery
+        - *read_languages
+    equipment:
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_mage_weapons, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4-1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*ink, 1]
+      - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
+  &runemaker runemaker:
+    name: runemaker
+    experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0.5
+    path:
+      - *varn
+      - *bosk
+      - *surga
+    ethnicity:
+      path:
+        *varn:
+          - *varn
+        *bosk:
+          - *bosk
+        *surga:
+          - *surga
+    maxlevel: 14
+    hd: d6
+    primerequisites:
+      strength: 9
+      wisdom: 9
+    attackprogression: *thief_attack_throw_progression
+    savingthrows: *eldritch_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    magictypes:
+      - type: eldritch ceremonial
+        name: ceremonial
+        progression: *runemaker_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
+    proficiencylist:
+      - *armor_training
+      - *battle_magic
+      - *beast_friendship
+      - *ceremonial_magic
+      - *combat_reflexes
+      - *command
+      - *craft
+      - *divine_blessing
+      - *divine_health
+      - *endurance
+      - *farseeing
+      - *fighting_style
+      - *healing
+      - *laying_on_hands
+      - *martial_training
+      - *personal_talisman
+      - *prestidigation
+      - *prophecy
+      - *running
+      - *second_sight
+      - *skirmishing
+      - *swashbuckling
+      - *theology
+      - *unflappable_casting
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_disarm
+      - *combat_trickery_knock_down
+    abilityprogression:
+      path:
+        *varn:
+          1:
+            - Cast Runes
+            - {choice: [*climbing, [*seafaring, *seafaring]], number: 1}
+          3:
+            - Curse
+          5:
+            - Renown
+        *surga:
+          1:
+            - Cast Runes
+            - {choice: [*precise_shooting, [*riding, *animal_training]], number: 1}
+          3:
+            - Curse
+          5:
+            - Renown
+        *bosk:
+          1:
+            - Cast Runes
+            - {choice: [[*survival, *navigation], [*trapping, *survival]], number: 1}
+          3:
+            - Curse
+          5:
+            - Renown
+    equipment:
+      path:
+        *varn:
+          - [*dagger, 1d2-1]
+          - [{die: 1d4, res: {1: *battle_axe, 2: *spear, 3: *sword, 4: *war_hammer}}, 1]
+          - [*shortbow, 1d2-1]
+          - [*table_medium_armor, 1]
+          - [*backpack, 1]
+          - [*ceremonial_codex, 1]
+          - [*traditional_implements, 1]
+          - [*table_healing_herbs, 1d4-1]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d2-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
+          - [*ink, 1d2-1]
+        *surga:
+          - [*dagger, 1d2]
+          - [{die: 1d4, res: {1: *hand_axe, 2: *javelin, 3: *lance, 4: *short_sword}}, 1d2-1]
+          - [*composite_bow, 1]
+          - [*table_medium_armor, 1]
+          - [*backpack, 1]
+          - [*ceremonial_codex, 1]
+          - [*traditional_implements, 1]
+          - [*table_healing_herbs, 1d4-1]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d2-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
+          - [*ink, 1d2-1]
+        *bosk:
+          - [*dagger, 1d2-1]
+          - [{die: 1d4, res: {1: *battle_axe, 2: *spear, 3: *sword, 4: *hand_axe}}, 1]
+          - [*longbow, 1d2-1]
+          - [*table_medium_armor, 1]
+          - [*backpack, 1]
+          - [*ceremonial_codex, 1]
+          - [*traditional_implements, 1]
+          - [*table_healing_herbs, 1d4-1]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d2-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
+          - [*ink, 1d2-1]
+  &bard bard:
+    name: bard
+    maxlevel: 14
+    hd: d6
+    primerequisites:
+      charisma: 9
+    attackprogression: *thief_attack_throw_progression
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    proficiencylist:
+      - *acrobatics
+      - *art
+      - *bargaining
+      - *beast_friendship
+      - *command
+      - *diplomacy
+      - *eavesdropping
+      - *exhalted_bloodline
+      - *fighting_style
+      - *healing
+      - *knowledge
+      - *language
+      - *leadership
+      - *lip_reading
+      - *magical_engineering
+      - *magical_music
+      - *mimicry
+      - *mystic_aura
+      - *performance
+      - *precise_shooting
+      - *prestidigation
+      - *running
+      - *seduction
+      - *skirmishing
+      - *swashbuckling
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_disarm
+    abilityprogression:
+      1:
+        - Inspire Courage
+        - *loremastery
+        - *arcane_dabbling
+      4:
+        - *read_languages
+      5:
+        - Chronicles of Battle
+      10:
+        - *use_magic_scrolls
+    equipment:
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_tiny_melee_weapons, 1d4-2]
+      - [*table_small_melee_weapons, 1d4-2]
+      - [{die: 1d4, res: {1: *table_bows, 2-3: *table_crossbows, 4: ''}}, 1]
+      - [{die: 1d6, res: {1: '', 2-6: *table_light_armor}}, 1]
+      - [*backpack, 1]
+      - [{die: 1d10, res: {1-6: *musical_instrument_common, 7-9: *musical_instrument_superior, 10: *musical_instrument_mastercraft}}, 1]
+      - [*table_healing_herbs, 1d10-2]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+    experienceforlevel: [0,1400,2800,5600,11200,22400,45000,90000,190000,290000,390000,490000,590000,690000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 0.5
+  &bladedancer bladedancer:
+    name: bladedancer
+    experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0.5
+    ethnicity:
+      - *ilian
+    gender: female
+    maxlevel: 14
+    hd: d6
+    primerequisites:
+      dexterity: 9
+      wisdom: 9
+    attackprogression: *thief_attack_throw_progression
+    savingthrows: *eldritch_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *runemaker_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
+    proficiencylist:
+      - *acrobatics
+      - *ceremonial_magic
+      - *battle_magic
+      - *beast_friendship
+      - *combat_reflexes
+      - *contemplation
+      - *diplomacy
+      - *divine_blessing
+      - *divine_health
+      - *fighting_style
+      - *laying_on_hands
+      - *magical_music
+      - *martial_training
+      - *performance
+      - *prestidigation
+      - *prophecy
+      - *quiet_magic
+      - *righteous_turning
+      - *running
+      - *seduction
+      - *skirmishing
+      - *swashbuckling
+      - *theology
+      - *unflappable_casting
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_knock_down
+    abilityprogression:
+      1:
+        - *graceful_fighting
+        - {choice: [Alluring Beauty, Charismatic Ferocity, Classical Weapons Training, *personal_talisman, Study of War, Weapon Finesse], number: 2}
+      5:
+        - Renown
+    equipment:
+      - [*dagger, 1d2-1]
+      - [{die: 1d4, res: {1: *sword, 2: *spear, 3: *battle_axe, 4: *hand_axe}}, 2]
+      - [*table_light_armor, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*holy_symbol, 1]
+      - [*holy_water, 1d4-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*ink, 1d2-1]
+  &explorer explorer:
+    name: explorer
+    experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
+    maxlevel: 14
+    hd: d8
+    primerequisites:
+      strength: 9
+      dexterity: 9
+    attackprogression: *fighter_attack_throw_progression
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
+      - *alertness
+      - *ambushing
+      - *beast_friendship
+      - *blind_fighting
+      - *climbing
+      - *combat_reflexes
+      - *eavesdropping
+      - *endurance
+      - *fighting_style
+      - *land_surveying
+      - *mapping
+      - *mountaineering
+      - *naturalism
+      - *navigation
+      - *passing_without_trace
+      - *precise_shooting
+      - *riding
+      - *running
+      - *seafaring
+      - *skirmishing
+      - *sniping
+      - *survival
+      - *swashbuckling
+      - *trapping
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_disarm
+      - *combat_trickery_knock_down
+    abilityprogression:
+      1:
+        - *fighter_damage_bonus
+        - *accuracy_bonus
+        - *animal_reflexes
+        - Difficult to Spot (3+ or 14+)
+        - Avoid Getting Lost (+4)
+        - Improved Evasion
+        - Evade Wilderness Encounter (+5)
+      5:
+        - Morale Bonus
+    equipment:
+      - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+      - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+      - [{die: 1d4, res: {1-2: *table_bows, 3-5: *table_crossbows, 5: ''}},1]
+      - [*javelin, 1d4]
+      - [*table_special_weapons, 1d4-2]
+      - [*shield, 1d2-1]
+      - [*table_medium_armor, 1]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d10-8]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d6-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+  &barbarian barbarian:
+    name: barbarian
+    experienceforlevel: [0,2600,5200,10400,20800,41600,85000,170000,290000,410000,530000,650000,770000,890000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
+    path:
+      - *varn
+      - *bosk
+      - *surga
+    ethnicity:
+      path:
+        *varn:
+          - *varn
+        *bosk:
+          - *bosk
+        *surga:
+          - *surga
+    maxlevel: 14
+    hd: d8
+    primerequisites:
+      strength: 9
+      constitution: 9
+    attackprogression: *fighter_attack_throw_progression
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
+      - *alertness
+      - *ambushing
+      - *armor_training
+      - *beast_friendship
+      - *berserkergang
+      - *blind_fighting
+      - *climbing
+      - *combat_reflexes
+      - *command
+      - *endurance
+      - *fighting_style
+      - *martial_training
+      - *mountaineering
+      - *passing_without_trace
+      - *precise_shooting
+      - *riding
+      - *running
+      - *seafaring
+      - *skirmishing
+      - *sniping
+      - *survival
+      - *swashbuckling
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_force_back
+      - *combat_trickery_knock_down
+      - *combat_trickery_overrun
+      - *combat_trickery_wrestle
+    abilityprogression:
+      path:
+        *varn:
+          1:
+            - *fighter_damage_bonus
+            - *animal_reflexes
+            - Naturally Stealthy
+            - Savage Resilience
+            - {choice:[[*seafaring, *seafaring], *climbing], number: 1}
+          5:
+            - Animal Magnetism
+        *surga:
+          1:
+            - *fighter_damage_bonus
+            - *animal_reflexes
+            - Naturally Stealthy
+            - Savage Resilience
+            - {choice:[[*riding, *animal_training], *precise_shooting], number: 1}
+          5:
+            - Animal Magnetism
+        *bosk:
+          1:
+            - *fighter_damage_bonus
+            - *animal_reflexes
+            - Naturally Stealthy
+            - Savage Resilience
+            - {choice: [[*survival, *navigation], [*trapping, *survival]], number: 1}
+          5:
+            - Animal Magnetism
+    equipment:
+      path:
+        *varn:
+          - [*dagger, 1d2]
+          - [{die: 1d6, res:{
+                          1: *battle_axe,
+                          2: *club,
+                          3: *hand_axe,
+                          4: *spear,
+                          5: *sword,
+                          6: *war_hammer
+          }}, 1d2]
+          - [{die: 1d6, res: {1-2: *great_axe,
+                                  3-4: *two_handed_sword,
+                                  5-6: ''
+          }}, 1d2]
+          - [{die: 1d6, res: {1-3: *shortbow,
+                                  3-6: ''
+          }}, 1]
+          - [*shield, 1d2-1]
+          - [*table_medium_armor, 1]
+          - [*backpack, 1]
+          - [*table_healing_herbs, 1d10-7]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d6-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
+        *bosk:
+          - [*dagger, 1d2]
+          - [{die: 1d6, res: {1: *whip, 2: *net, 3-6: ''}}, 1]
+          - [ {die: 1d6, res: {
+            1: *short_sword,
+            2: *javelin,
+            3: *hand_axe,
+            4: *spear,
+            5: *sword,
+            6: *war_hammer
+          }}, 1d2]
+          - [*javelin, 1d4-1]
+          - [ {die: 1d6, res: {1-3: *two_handed_sword,
+                                   4-6: ''
+          }}, 1]
+          - [{die: 1d6, res: {1-4: *shortbow,
+                                   5-6: ''
+          }}, 1]
+          - [*shield, 1d2-1]
+          - [*table_medium_armor, 1]
+          - [*backpack, 1]
+          - [*table_healing_herbs, 1d10-7]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d6-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
+        *surga:
+          - [{die: 1d6, res: {1: *whip, 2: *net, 3: *sling, 4-6: ''}}, 1]
+          - [*dagger, 1d2]
+          - [ {die: 1d6, res: {
+            1: *javelin,
+            2: *lance,
+            3: *hand_axe,
+            4: *spear,
+            5: *short_sword,
+            6: *dagger
+          }}, 1d2]
+          - [ {die: 1d5, res: {1: *composite_bow,
+                                   2: *shortbow,
+                                   3: *crossbow,
+                                   4: *arbalest,
+                                   5: *longbow
+          }}, 1]
+          - [*javelin, 1d4]
+          - [*shield, 1d2-1]
+          - [*table_medium_armor, 1]
+          - [*backpack, 1]
+          - [*table_healing_herbs, 1d10-7]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d6-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
+  &beastmaster beastmaster:
+    name: beastmaster
+    experienceforlevel: [0,2900,5800,11600,23200,46400,95000,190000,310000,430000,550000,670000,790000,910000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
+    maxlevel: 14
+    hd: d6
+    primerequisites:
+      strength: 9
+      dexterity: 9
+      constitution: 9
+      charisma: 9
+    attackprogression: *fighter_attack_throw_progression
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
+      - *alertness
+      - *animal_husbandry
+      - *animal_training
+      - *berserkergang
+      - *blind_fighting
+      - *dungeon_bashing
+      - *endurance
+      - *fighting_style
+      - *land_surveying
+      - *mountaineering
+      - *naturalism
+      - *navigation
+      - *passing_without_trace
+      - *precise_shooting
+      - *riding
+      - *running
+      - *skirmishing
+      - *sniping
+      - *survival
+      - *swashbuckling
+      - *trapping
+      - *combat_trickery_wrestle
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_disarm
+      - *combat_trickery_incapacitate
+      - *combat_trickery_knock_down
+      - *combat_trickery_overrun
+    abilityprogression:
+      1:
+        - *fighter_damage_bonus
+        - *backstab
+        - *animal_reflexes
+        - *hear_noise
+        - Savage Resilience
+        - *climb_walls
+        - *acrobatics
+        - Naturally Stealthy
+        - Difficult to Spot (3+ or 14+)
+        - Avoid getting Lost (+4)
+        - *beast_friendship
+        - Bestial Cry
+        - Evade Wilderness Encounter (+5)
+        - Discomfited by Civilization
+      5:
+        - Animal Magnetism
+    equipment:
+      - [{die: 1d5, res:{1: *spear, 2: *hand_axe, 3: *dagger, 4: *sling, 5: *staff}}, 1d2+1]
+      - [{die: 1d4, res:{1: *bola, 2: *darts, 3: *net, 4: *sap}}, 1d2]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d6]
+      - [*table_tools, 1d4]
+      - [*table_sleeping, 1]
+      - [*torch, 1d6-2]
+  &berserker berserker:
+    name: berserker
+    experienceforlevel: [0,2750,5500,11000,22000,44000,90000,180000,300000,420000,540000,660000,780000,900000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
+    path:
+      - *varn
+      - *bosk
+      - *surga
+    ethnicity:
+      path:
+        *varn:
+          - *varn
+        *bosk:
+          - *bosk
+        *surga:
+          - *surga
+    maxlevel: 14
+    hd: d8
+    primerequisites:
+      strength: 9
+      constitution: 9
+    attackprogression: *fighter_attack_throw_progression
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
+      - *alertness
+      - *ambushing
+      - *beast_friendship
+      - *greater_berserkergang
+      - *blind_fighting
+      - *climbing
+      - *combat_reflexes
+      - *command
+      - *divine_blessing
+      - *divine_health
+      - *endurance
+      - *fighting_style
+      - *mountaineering
+      - *passing_without_trace
+      - *precise_shooting
+      - *riding
+      - *running
+      - *seafaring
+      - *skirmishing
+      - *sniping
+      - *survival
+      - *swashbuckling
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_force_back
+      - *combat_trickery_knock_down
+      - *combat_trickery_overrun
+      - *combat_trickery_wrestle
+    abilityprogression:
+      1:
+        - *fighter_damage_bonus
+        - *animal_reflexes
+        - Savage Resilience
+        - *greater_berserkergang
+        - {choice: [[Totem Animal (Bear), *greater_berserkergang],
+                    [Totem Animal (Boar), *kin_slaying],
+                    [Totem Animal (Bull), *dungeon_bashing],
+                    [Totem Animal (Eagle), *command],
+                    [Totem Animal (Hyena), *weapon_focus],
+                    [Totem Animal (Lion), *beast_friendship],
+                    [Totem Animal (Panther), *weapon_finesse],
+                    [Totem Animal (Tiger), *ambushing],
+                    [Totem Animal (Wolf), *running]], number: 1}
+      5:
+        - Animal Magnetism
+        - Shape Change
+    equipment:
+      path:
+        *varn:
+          - [*dagger, 1d2]
+          - [{die: 1d6, res: {
+                          1: *battle_axe,
+                          2: *club,
+                          3: *hand_axe,
+                          4: *spear,
+                          5: *sword,
+                          6: *war_hammer
+          }}, 1d2]
+          - [{die: 1d6, res: {1-2: *great_axe,
+                                  3-4: *two_handed_sword,
+                                  5-6: ''
+          }}, 1d2]
+          - [{die: 1d6, res: {1-3: *shortbow,
+                                  3-6: ''
+          }}, 1]
+          - [*shield, 1d2-1]
+          - [*table_light_armor, 1]
+          - [*backpack, 1]
+          - [*table_healing_herbs, 1d10-7]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d6-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
+        *bosk:
+          - [*dagger, 1d2]
+          - [{die: 1d6, res: {1: *whip, 2: *net, 3-6: ''}}, 1]
+          - [ {die: 1d6, res: {
+            1: *short_sword,
+            2: *javelin,
+            3: *hand_axe,
+            4: *spear,
+            5: *sword,
+            6: *war_hammer
+          }}, 1d2]
+          - [*javelin, 1d4-1]
+          - [ {die: 1d6, res: {1-3: *two_handed_sword,
+                                   4-6: ''
+          }}, 1]
+          - [ {die: 1d6, res: {1-4: *shortbow,
+                                   5-6: ''
+          }}, 1]
+          - [*shield, 1d2-1]
+          - [*table_light_armor, 1]
+          - [*backpack, 1]
+          - [*table_healing_herbs, 1d10-7]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d6-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
+        *surga:
+          - [{die: 1d6, res: {1: *whip, 2: *net, 3: *sling, 4-6: ''}}, 1]
+          - [*dagger, 1d2]
+          - [ {die: 1d6, res: {
+            1: *javelin,
+            2: *lance,
+            3: *hand_axe,
+            4: *spear,
+            5: *short_sword,
+            6: *dagger
+          }}, 1d2]
+          - [ {die: 1d5, res: {1: *composite_bow,
+                                   2: *shortbow,
+                                   3: *crossbow,
+                                   4: *arbalest,
+                                   5: *longbow
+          }}, 1]
+          - [*javelin, 1d4]
+          - [*shield, 1d2-1]
+          - [*table_light_armor, 1]
+          - [*backpack, 1]
+          - [*table_healing_herbs, 1d10-7]
+          - [*table_tools, 2d4]
+          - [*table_sleeping, 1]
+          - [*military_oil, 1d6-1]
+          - [*table_light, 1]
+          - [*torch, 1d6-3]
+  &ecclesiastic ecclesiastic:
+    name: ecclesiastic
+    experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0
+    maxlevel: 14
+    hd: d4
+    primerequisites:
+      wisdom: 9
+    attackprogression: *mage_attack_throw_progression
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *mage_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
+    proficiencylist:
+      - *alchemy
+      - *animal_husbandry
+      - *martial_training
+      - *beast_friendship
+      - *ceremonial_magic
+      - *command
+      - *divine_blessing
+      - *divine_health
+      - *farseeing
+      - *healing
+      - *knowledge
+      - *laying_on_hands
+      - *loremastery
+      - *magical_engineering
+      - *magical_music
+      - *mystic_aura
+      - *naturalism
+      - *performance
+      - *personal_talisman
+      - *prestidigation
+      - *profession
+      - *prophecy
+      - *quiet_magic
+      - *righteous_turning
+      - *second_sight
+      - *sensing_evil
+      - *sensing_power
+      - *unflappable_casting
+    abilityprogression:
+      1:
+        - *theology
+        - Comfort and Console the Wounded
+        - Salving Rest
+        - Rally the Faithful
+        - Turn Nightmare
+    equipment:
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_mage_weapons, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*holy_symbol, 1]
+      - [*holy_water, 2d2]
+      - [*ink, 1]
+  &mage mage:
+    name: mage
+    experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0
+    maxlevel: 14
+    hd: d4
+    primerequisites:
+      intelligence: 9
+    attackprogression: *mage_attack_throw_progression
+    savingthrows: *arcane_saving_throws
+    proficiencyprogression: *mage_proficiency_progression
+    magictypes:
+      - type: divine cast
+        name: Divine
+        progression: *runemaker_spellprogression
+        list: *spells_cleric
+      - type: arcane ceremonial
+        name: Arcane
+        progression: *mage_spellprogression
+        list: *spells_arcane
+    proficiencylist:
+      - *alchemy
+      - *animal_husbandry
+      - *martial_training
+      - *beast_friendship
+      - *ceremonial_magic
+      - *command
+      - *divine_blessing
+      - *divine_health
+      - *farseeing
+      - *healing
+      - *knowledge
+      - *laying_on_hands
+      - *loremastery
+      - *magical_engineering
+      - *magical_music
+      - *mystic_aura
+      - *naturalism
+      - *performance
+      - *personal_talisman
+      - *prestidigation
+      - *profession
+      - *prophecy
+      - *quiet_magic
+      - *righteous_turning
+      - *second_sight
+      - *sensing_evil
+      - *sensing_power
+      - *unflappable_casting
+    abilityprogression:
+      1:
+        - *theology
+        - Comfort and Console the Wounded
+        - Salving Rest
+        - Rally the Faithful
+        - Turn Nightmare
+    equipment:
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_mage_weapons, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*holy_symbol, 1]
+      - [*holy_water, 2d2]
+      - [*ink, 1]
+  &freebooter freebooter:
+    name: freebooter
+    experienceforlevel: [0,2150,4300,8600,17200,34400,70000,140000,240000,340000,440000,540000,640000,740000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 0.5
+    path:
+      - &exp Expeditionary
+      - &ruf Ruffian
+      - &sco Scoundrel
+      - &way Wayfarer
+    maxlevel: 14
+    hd: d4
+    primerequisites:
+      dexterity: 9
+      path:
+        *exp: {wisdom: 9}
+        *ruf: {strength: 9}
+        *sco: {charisma: 9}
+        *way: {constitution: 9}
+    attackprogression: *fighter_attack_throw_progression
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    proficiencylist:
+      - *acrobatics
+      - *alertness
+      - *arcane_dabbling
+      - *blind_fighting
+      - *bribery
+      - *cat_burglary
+      - *ceremonial_magic
+      - *combat_reflexes
+      - *contortionism
+      - *fighting_style
+      - *lip_reading
+      - *lockpicking
+      - *loremastery
+      - *magical_music
+      - *martial_training
+      - *mountaineering
+      - *passing_without_trace
+      - *precise_shooting
+      - *running
+      - *skirmishing
+      - *skulking
+      - *sniping
+      - *swashbuckling
+      - *trap_finding
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_disarm
+      - *combat_trickery_incapacitate
+    abilityprogression:
+      path:
+        *exp:
+          1:
+            - {choice: [*fighter_melee_damage_bonus, *fighter_missile_damage_bonus], number: 1}
+            - *find_traps
+            - *remove_traps
+            - *open_locks
+            - *move_silently
+            - *alertness
+            - *climbing
+            - *dungeon_bashing
+            - *mapping
+            - *trap_finding
+            - *backstab
+        *ruf:
+          1:
+            - *fighter_melee_damage_bonus
+            - *hide_in_shadows
+            - *move_silently
+            - *open_locks
+            - *pick_pockets
+            - *dungeon_bashing
+            - *fighting_style
+            - *intimidation
+            - *skulking
+            - *swashbuckling
+            - *backstab
+        *sco:
+          1:
+            - {choice: [*fighter_melee_damage_bonus, *fighter_missile_damage_bonus], number: 1}
+            - *hide_in_shadows
+            - *move_silently
+            - *open_locks
+            - *pick_pockets
+            - *cat_burglary
+            - *climbing
+            - *disguise
+            - *eavesdropping
+            - *lip_reading
+            - *backstab
+        *way:
+          1:
+            - *fighter_missile_damage_bonus
+            - *climb_walls
+            - *hear_noise
+            - *hide_in_shadows
+            - *move_silently
+            - *land_surveying
+            - *running
+            - *sniping
+            - *skirmishing
+            - *tracking
+            - *backstab
+    equipment:
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_tiny_melee_weapons, 1d4-2]
+      - [*table_small_melee_weapons, 1]
+      - [*table_medium_melee_weapons, 1d3-2]
+      - [*table_special_weapons, 1d4-3]
+      - [{die: 1d4, res: {1: *shortbow, 2-3: *crossbow, 4: ''}}, 1]
+      - [*table_light_armor, 1]
+      - [*backpack, 1]
+      - [{die: 1d6, res: {1-5: *thieves_tools, 6: *good_thieves_tools}}, 1]
+      - [*table_healing_herbs, 1d3-1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+  &occultist occultist:
+    name: occultist
+    experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0
+    maxlevel: 14
+    hd: d4
+    primerequisites:
+      intelligence: 9
+      wisdom: 9
+    attackprogression: *mage_attack_throw_progression
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *loremaster_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
+    proficiencylist:
+      - *alchemy
+      - *battle_magic
+      - *ceremonial_magic
+      - *collegiate_wizardry
+      - *contemplation
+      - *craft
+      - *elementalism
+      - *exhalted_bloodline
+      - *engineering
+      - *familiar
+      - *farseeing
+      - *healing
+      - *knowledge
+      - *language
+      - *loremastery
+      - *magical_engineering
+      - *mastery_of_charms_and_illusions
+      - *mystic_aura
+      - *naturalism
+      - *personal_talisman
+      - *prestidigation
+      - *prophecy
+      - *second_sight
+      - *sensing_evil
+      - *sensing_power
+      - *transmogrification
+      - *soothsaying
+      - *unflappable_casting
+    abilityprogression:
+      1:
+        - Secret of the Dark Arts
+        - *personal_talisman
+      3:
+        - *personal_talisman
+      5:
+        - Contact Dark Powers
+      9:
+        - Summon Infernal Creature
+      11:
+        - *personal_talisman
+    equipment:
+      - [*table_tiny_melee_weapons, 1]
+      - [*table_mage_weapons, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4-1]
+      - [*black_lotus, 1d3-1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*holy_water, 1d2-1]
+      - [*military_oil, 1d2-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*ink, 1]
+  &venturer venturer:
+    name: venturer
+    experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 0.5
+    maxlevel: 14
+    hd: d4
+    primerequisites:
+      charisma: 9
+    attackprogression: *thief_attack_throw_progression
+    savingthrows: *thief_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    proficiencylist:
+      - *alertness
+      - *ambushing
+      - *arcane_dabbling
+      - *bargaining
+      - *climbing
+      - *combat_reflexes
+      - *command
+      - *gambling
+      - *intimidation
+      - *language
+      - *leadership
+      - *lip_reading
+      - *magical_engineering
+      - *mapping
+      - *mountaineering
+      - *navigation
+      - *passing_without_trace
+      - *precise_shooting
+      - *profession
+      - *riding
+      - *running
+      - *seafaring
+      - *fighting_style
+      - *skirmishing
+      - *swashbuckling
+      - *weapon_finesse
+      - *combat_trickery_disarm
+      - *combat_trickery_incapacitate
+    abilityprogression:
+      1:
+        - Mercantile Network
+        - Expert Bargainer
+        - *hear_noise
+        - *language
+        - *language
+        - *language
+        - *language
+        - *read_languages
+        - {choice: [*riding, *seafaring], number: 1}
+        - Avoid Getting Lost (+4)
+        - *diplomacy
+        - *bribery
+      4:
+        - *read_languages
+      10:
+        - *use_magic_scrolls
+    equipment:
+      - [*table_tiny_melee_weapons, 1d4-2]
+      - [*table_small_melee_weapons, 1d2-1]
+      - [*table_medium_melee_weapons, 1]
+      - [{die: 1d3, res: {1: *table_bows, 2-3: *table_crossbows}}, 1]
+      - [*table_medium_armor, 1]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d3-1]
+      - [*table_tools, 3d4]
+      - [*table_sleeping, 1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+  &warmistress warmistress:
+    name: warmistress
+    experienceforlevel: [0,2450,4900,9800,19600,39200,80000,160000,280000,400000,520000,640000,760000,880000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
+    ethnicity: [*surga, *bosk, *varn, *acheron, *heron, *ilian, *langun, *opelean, *sargon]
+    gender: female
+    maxlevel: 14
+    hd: d6
+    primerequisites:
+      dexterity: 9
+      charisma: 9
+    attackprogression: *fighter_attack_throw_progression
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
+      - *acrobatics
+      - *alertness
+      - *armor_training
+      - *beast_friendship
+      - *berserkergang
+      - *blind_fighting
+      - *combat_reflexes
+      - *command
+      - *diplomacy
+      - *divine_blessing
+      - *divine_health
+      - *fighting_style
+      - *leadership
+      - *martial_training
+      - *military_strategy
+      - *mystic_aura
+      - *performance
+      - *precise_shooting
+      - *riding
+      - *running
+      - *seduction
+      - *seafaring
+      - *skirmishing
+      - *swashbuckling
+      - *weapon_focus
+      - *combat_trickery_disarm
+      - *combat_trickery_knock_down
+      - *combat_trickery_overrun
+    abilityprogression:
+      1:
+        - *fighter_damage_bonus
+        - Charismatic Ferocity
+        - *weapon_finesse
+        - *graceful_fighting
+        - Alluring Beauty
+        - Provoke The Passions
+      3:
+        - *death_dealing_dance
+      5:
+        - Fiery Spirit
+    equipment:
+      - [{die: 1d10, res:{1: *dagger, 2: *short_sword, 3: *sword, 4: *spear, 5: *whip}}, 1d2+1]
+      - [{die: 1d4, res: {1: *table_bows, 2-3: *table_crossbows, 4: ''}},1]
+      - [*javelin, 1d4-1]
+      - [*table_light_armor, 1]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d10-8]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d6-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+  &herald herald:
+    name: herald
+    experienceforlevel: [0,1850,3700,7400,14800,29600,60000,120000,240000,360000,480000,600000,720000,840000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
+    maxlevel: 14
+    ethnicity:
+      - *ilian
+    hd: d6
+    primerequisites:
+      charisma: 9
+      strength: 9
+    attackprogression: *fighter_attack_throw_progression
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
+      - *acrobatics
+      - *alertness
+      - *berserkergang
+      - *blind_fighting
+      - *combat_reflexes
+      - *command
+      - *dungeon_bashing
+      - *endurance
+      - *fighting_style
+      - *gambling
+      - *intimidation
+      - *leadership
+      - *manual_of_arms
+      - *military_strategy
+      - *precise_shooting
+      - *riding
+      - *running
+      - *siege_engineering
+      - *skirmishing
+      - *survival
+      - *swashbuckling
+      - *weapon_finesse
+      - *weapon_focus
+      - *combat_trickery_disarm
+      - *combat_trickery_force_back
+      - *combat_trickery_knock_down
+      - *combat_trickery_overrun
+      - *combat_trickery_sunder
+    abilityprogression:
+      1:
+        - *fighter_damage_bonus
+        - Inspire Courage
+        - Rally to the Righteous Cause
+        - *diplomacy
+        - {choice: [*bribery, *intimidation], number: 1}
+      5:
+        - Battlefield Prowess
+    equipment:
+      - [*table_tiny_melee_weapons, 1d3-1]
+      - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+      - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+      - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
+      - [*javelin, 1d4-1]
+      - [*table_special_weapons, 1d10-8]
+      - [*shield, 1d2-1]
+      - [*table_heavy_armor, 1]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d10-8]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d6-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+  &gladiator gladiator:
+    name: gladiator
+    experienceforlevel: [0,1700,3400,6800,14000,28000,55000,110000,230000,350000,470000,590000,710000,830000]
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 1
+    maxlevel: 14
+    hd: d6
+    primerequisites:
+      strength: 9
+    attackprogression: *fighter_attack_throw_progression
+    savingthrows: *fighter_saving_throws
+    proficiencyprogression: *fighter_proficiency_progression
+    proficiencylist:
+      - *acrobatics
+      - *alertness
+      - *berserkergang
+      - *blind_fighting
+      - *combat_reflexes
+      - *riding
+      - *running
+      - *skirmishing
+      - *swashbuckling
+      - *weapon_focus
+      - *combat_trickery_disarm
+      - *combat_trickery_force_back
+      - *combat_trickery_knock_down
+      - *combat_trickery_overrun
+      - *combat_trickery_sunder
+      - *combat_trickery_incapacitate
+      - *combat_trickery_wrestle
+      - *command
+      - *dungeon_bashing
+      - *endurance
+      - *fighting_style
+      - *gambling
+      - *intimidation
+      - *leadership
+      - *manual_of_arms
+      - *military_strategy
+      - *precise_shooting
+      - *performance
+    abilityprogression:
+      1:
+        - *fighter_damage_bonus
+        - {choice: [*combat_trickery_wrestle,
+                    *combat_trickery_disarm,
+                    *combat_trickery_force_back,
+                    *combat_trickery_incapacitate,
+                    *combat_trickery_knock_down,
+                    *combat_trickery_overrun,
+                    *combat_trickery_sunder,
+                    *combat_reflexes,
+                    *weapon_focus,
+                    *fighting_style], number: 3}
+      5:
+        - Battlefield Prowess
+    equipment:
+      - [*table_tiny_melee_weapons, 1d3-1]
+      - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
+      - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
+      - [{die: 1d4, res: {1: *table_bows, 2: *table_crossbows, 3-4: ''}},1]
+      - [*javelin, 1d4-1]
+      - [*table_special_weapons, 1d10-8]
+      - [*shield, 1d2-1]
+      - [*table_heavy_armor, 1]
+      - [*backpack, 1]
+      - [*table_healing_herbs, 1d10-8]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d6-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+  &shaman shaman:
+    name: shaman
+    experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0.5
+    ethnicity:
+      - *bosk
+      - *varn
+      - *surga
+    maxlevel: 14
+    hd: d6
+    primerequisites:
+      wisdom: 9
+    attackprogression: *thief_attack_throw_progression
+    savingthrows: *eldritch_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *runemaker_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
+    proficiencylist:
+      - *alchemy
+      - *animal_husbandry
+      - *martial_training
+      - *arcane_dabbling
+      - *beast_friendship
+      - *contemplation
+      - *diplomacy
+      - *divine_blessing
+      - *divine_health
+      - *healing
+      - *second_sight
+      - *knowledge
+      - *laying_on_hands
+      - *loremastery
+      - *magical_engineering
+      - *magical_music
+      - *mystic_aura
+      - *naturalism
+      - *performance
+      - *prestidigation
+      - *profession
+      - *prophecy
+      - *quiet_magic
+      - *righteous_turning
+      - *sensing_evil
+      - *sensing_power
+      - *theology
+      - *unflappable_casting
+    abilityprogression:
+      1:
+        - *personal_talisman
+        - Commune with Ancestral Spirits
+        - {choice: [[Totem Animal (Bear), *berserkergang],
+                    [Totem Animal (Crow), *divine_blessing],
+                    [Totem Animal (Dog), *alertness],
+                    [Totem Animal (Eagle), *command],
+                    [Totem Animal (Horse), *running],
+                    [Totem Animal (Lion), *divine_health],
+                    [Totem Animal (Monkey), *prestidigation],
+                    [Totem Animal (Rat), *quiet_magic],
+                    [Totem Animal (Owl), *sensing_power],
+                    [Totem Animal (Python), *laying_on_hands],
+                    [Totem Animal (Cobra), *combat_reflexes],
+                    [Totem Animal (Wolf), *ambushing]], number: 1}
+      3:
+        - *prophecy
+      5:
+        - Shapechange
+      7:
+        - Spiritwalk
+    equipment:
+      - [*dagger, 1d2-1]
+      - [*staff, 1d2-1]
+      - [{die: 1d5, res: {1: *club, 2: *dagger, 3: *hand_axe, 4: *short_sword, 5: *spear}}, 1]
+      - [*shield, 1d2-1]
+      - [*table_light_armor, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4+1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*holy_water, 1d4-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*ink, 1d2-1]
+  &witch witch:
+    name: witch
+    experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
+    hpafter9: 1
+    mv: 120
+    cleavesperlevel: 0
+    path:
+      - &antiq Antiquarian
+      - &chtho Chthonic
+      - &sylv Sylvan
+    ethnicity:
+      path:
+        *antiq:
+          [*ilian, *varn, *opelean]
+        *sylv:
+          [*bosk, *langun, *surga, *heron]
+        *chtho:
+          *sargon
+    maxlevel: 14
+    hd: d4
+    primerequisites:
+      wisdom: 9
+      charisma: 9
+    attackprogression: *mage_attack_throw_progression
+    savingthrows: *eldritch_saving_throws
+    proficiencyprogression: *thief_proficiency_progression
+    magictypes:
+      - type: eldritch ceremonial
+        name: Ceremonial
+        progression: *loremaster_spellprogression
+        list:
+          L: {die: 1d20, res:{1-12: *spells_white, 13-19: *spells_grey, 20: *spells_black}}
+          C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
+          N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
+    proficiencylist:
+      - *alchemy
+      - *animal_husbandry
+      - *martial_training
+      - *arcane_dabbling
+      - *beast_friendship
+      - *contemplation
+      - *diplomacy
+      - *divine_blessing
+      - *divine_health
+      - *healing
+      - *second_sight
+      - *knowledge
+      - *laying_on_hands
+      - *loremastery
+      - *magical_engineering
+      - *magical_music
+      - *mystic_aura
+      - *naturalism
+      - *performance
+      - *prestidigation
+      - *profession
+      - *prophecy
+      - *quiet_magic
+      - *righteous_turning
+      - *sensing_evil
+      - *sensing_power
+      - *theology
+      - *unflappable_casting
+    abilityprogression:
+      path:
+        *antiq:
+          1:
+            - *personal_talisman
+            - *healing
+          3:
+            - Cure Moderate Wounds by Touch
+          5:
+            - *alchemy
+          7:
+            - Neutralize Poison by Touch
+        *chtho:
+          1:
+            - *personal_talisman
+            - *seduction
+          3:
+            - *black_lore
+          5:
+            - *mystic_aura
+          7:
+            - Charm Person
+        *sylv:
+          1:
+            - *personal_talisman
+            - *beast_friendship
+          3:
+            - Alter Shape
+          5:
+            - *passing_without_trace
+          7:
+            - Polymorph self
+    equipment:
+      - [*dagger, 1d2-1]
+      - [*staff, 1d2-1]
+      - [{die: 1d5, res: {1: *club, 2: *dagger, 3: *hand_axe, 4: *short_sword, 5: *spear}}, 1]
+      - [*backpack, 1]
+      - [*ceremonial_codex, 1]
+      - [*traditional_implements, 1]
+      - [*table_healing_herbs, 1d4+1]
+      - [*table_tools, 2d4]
+      - [*table_sleeping, 1]
+      - [*military_oil, 1d2-1]
+      - [*holy_water, 1d4-1]
+      - [*table_light, 1]
+      - [*torch, 1d6-3]
+      - [*ink, 1d2-1]
+desctables:
+  human build:
+    die: 2d6
+    res:
+      1: Small
+      2-4: Slim
+      5-8: Average
+      9-10: Broad
+      11-12: Large
+      13: Huge
+  eye color:
+    ilian:
+      die: 1d20
+      res:
+        1-3: Blue-Gray, Medium
+        4-6: Brown, Dark
+        7-9: Brown, Medium
+        10-11: Brown, Light
+        12-13: Gray, Dark
+        14-15: Gray, Medium
+        16-17: Gray-Brown, Dark
+        18-20: Gray-Brown, Medium
+    acheron:
+      die: 1d20
+      res:
+        1: Blue, Medium
+        2-4: Blue, Light
+        5: Blue-Gray, Medium
+        6-7: Blue-Gray, Light
+        8-9: Brown, Light
+        10: Green, Medium
+        11-13: Green, Light
+        14: Green-Gray, Medium
+        15-16: Green-Gray, Light
+        17: Hazel, Medium
+        18-20: Hazel, Light
+    langun:
+      die: 1d20
+      res:
+        1-10: Black
+        11-20: Brown, Dark
+    opelean:
+      die: 1d20
+      res:
+        1-4: Brown, Dark
+        5-8: Brown, Medium
+        9-12: Brown, Light
+        13-16: Hazel, Dark
+        17-20: Hazel, Medium
+    varn:
+      die: 1d20
+      res:
+        1-2: Blue, Medium
+        3-5: Blue, Light
+        6-7: Blue-Gray, Medium
+        8-9: Blue-Gray, Light
+        10-11: Blue-Green, Medium
+        12-13: Blue-Green, Light
+        14: Gray, Medium
+        15: Gray, Light
+        16: Gray, Very Light
+        17: Green, Medium
+        18-19: Green, Light
+        20: Violet, Light
+    bosk:
+      die: 1d20
+      res:
+        1-4: Brown, Dark
+        5-8: Brown, Medium
+        9-10: Brown, Light
+        11-12: Green, Dark
+        13-14: Green, Medium
+        15-17: Hazel, Dark
+        18-20: Hazel, Medium
+    surga:
+      die: 1d20
+      res:
+        1-9: Black
+        10: Blue, Light
+        11-13: Brown, Dark
+        14-16: Brown, Medium
+        17-19: Brown, Light
+        20: Gray, Medium
+    heron:
+      die: 1d20
+      res:
+        1-5: Black
+        6-10: Brown, Dark
+        11-15: Brown, Medium
+        16-20: Brown, Light
+    sargon:
+      die: 1d20
+      res:
+        1-3: Amber, Dark
+        4-6: Amber, Medium
+        7-10: Brown, Dark
+        11-13: Gray-Brown, Dark
+        14-16: Gray-Brown, Medium
+        17-18: Green-Brown, Dark
+        19-20: Green-Brown, Medium
+  hair color:
+    ilian:
+      die: 1d20
+      res:
+        1-5: Black
+        6-10: Brown, Ash
+        11-15: Brown, Dark
+        16-20: Blonde, Dark
+    acheron:
+      die: 1d20
+      res:
+        1-2: Auburn, Dark
+        3-5: Auburn, Medium
+        6-8: Blonde, Golden
+        9-11: Blonde, Strawberry
+        12-14: Brown, Golden
+        15-16: Brown, Rufous
+        17-18: Red, Dark
+        19-20: Red, Medium
+    langun:
+      die: 1d20
+      res:
+        1-20: black
+    opelean:
+      die: 1d20
+      res:
+        1-9: Black
+        10: Brown, Ash
+        11-19: Brown, Dark
+        20: Blonde, Dark
+    varn:
+      die: 1d20
+      res:
+        1-5: Blonde, Dark
+        6-10: Blonde, Golden
+        11-12: Blonde, Platinum
+        13-16: Brown, Golden
+        17-20: Brown, Rufous
+    bosk:
+      die: 1d20
+      res:
+        1-5: Auburn, Dark
+        6-10: Auburn, Medium
+        11-15: Brown, Rufous
+        16-20: Brown-Black
+    surga:
+      die: 1d20
+      res:
+        1-8: Black
+        9-12: Blue-Black
+        13-20: Brown, Dark
+    heron:
+      die: 1d20
+      res:
+        1-10: Black
+        11-20: Brown, Dark
+    sargon:
+      die: 1d20
+      res:
+        1-20: black
+  hair texture:
+    ilian:
+      die: 1d20
+      res:
+        1-5: Curly
+        6-12: Straight
+        13-20: Wavy
+    acheron:
+      die: 1d20
+      res:
+        1-5: Curly
+        6-12: Straight
+        13-20: Wavy
+    langun:
+      die: 1d20
+      res:
+        1-20: Straight
+    opelean:
+      die: 1d20
+      res:
+        1-10: Curly
+        11-20: Wavy
+    varn:
+      die: 1d20
+      res:
+        1-16: Straight
+        17-20: Wavy
+    bosk:
+      die: 1d20
+      res:
+        1-10: Straight
+        11-20: Wavy
+    surga:
+      die: 1d20
+      res:
+        1-20: Straight
+    heron:
+      die: 1d20
+      res:
+        1-10: Tightly Curled/Kinky
+        11-20: Wavy
+    sargon:
+      die: 1d20
+      res:
+        1-5: Curly
+        6-12: Straight
+        13-20: Wavy
+  features:
+    negative:
+      die: 1d100
+      res:
+        1-2: Build - Obese
+        3-4: Build - Hunchback
+        5-6: Build - Skeletal
+        7-8: Ears - Crumpled
+        9-10: Ears - Huge
+        11-12: Ears - Missing
+        13-14: Ears - Torn
+        15-16: Eyes - Bulging
+        17-18: Eyes - Cross-Eyed
+        19-20: Eyes - One Eye (Mass Scar Tissue)
+        21-22: Eyes - One Eye (Stitched Up)
+        23-24: Eyes - Wall-Eyed
+        25-26: Eyes - Wandering Eyes
+        27-28: Hands - Misshapen
+        29-30: Hands - Missing Many Fingers
+        31-32: Face - Badly Burned
+        33-34: Face - Chinless
+        35-36: Face - Disfiguring Facial Scar
+        37-38: Face - Patchy Facial Hair
+        39-40: Face - Wispy Facial Hair
+        41-42: Hair - Dirty/Greasy
+        43-44: Hair - Lank and Thin
+        45-46: Hair - Lice-Ridden
+        47-48: Hair - Tangled/Knotted
+        49-50: Legs - Club Foot
+        51-52: Legs - Misshapen
+        53-54: Mouth - Constantly Drooling
+        55-56: Mouth - Discolored Teeth
+        57-58: Mouth - Filed Teeth
+        59-60: Mouth - Frog-Like
+        61-62: Mouth - Huge Overbite
+        63-64: Mouth - Huge Underbite
+        65-66: Mouth - Large Buck Teeth
+        67-68: Mouth - Large Snaggletooth
+        69-70: Mouth - Missing Many Teeth
+        71-72: Mouth - Toothless
+        73-74: Nose - Encrusted
+        75-76: Nose - Huge
+        77-78: Nose - Smashed
+        79-80: Nose - Missing
+        81-82: Nose - Warty
+        83-84: Skin - Covered in Boils
+        85-86: Skin - Covered in Scarification
+        87-88: Skin - Covered in Crude Tattoos
+        89-90: Skin - Heavily Scarred
+        91-92: Skin - Filthy
+        93-94: Skin - Peeling
+        95-96: Skin - Scabrous
+        97-98: Skin - Pock Marked
+        99-100: Skin - Warty
+    average:
+      die: 1d100
+      res:
+        1-2: Build - Barrel-Chested
+        3-4: Build - Chubby
+        5-6: Build - Skinny
+        7-8: Build - Stocky
+        9-10: Build - Tiny
+        11-12: Ears - Large
+        13-14: Ears - Small
+        15-16: Eyes - Different Colors
+        17-18: Eyes - Large
+        19-20: Eyes - Narrow
+        21-22: Eyes - One Eye (Eye Patch)
+        23-24: Eyes - Unusual Color
+        25-26: Face - Heavy Frown/Laugh Lines
+        27-28: Face - Obvious Birthmark
+        29-30: Face - Obvious Mole
+        31-32: Face - Piercing
+        33-34: Face - Tattooed
+        35-36: Hair - Mallen Streak
+        37-38: Hair - Prematurely Graying
+        39-40: Hair - Receding/Thin
+        41-42: Hands - Callused
+        43-44: Hands - Long Nails
+        45-46: Hands - Missing Finger
+        47-48: Hands - Missing Hand (Capped)
+        49-50: Hands - Missing Hand (Carved Prosthetic)
+        51-52: Hands - Missing Hand (Hook)
+        53-54: Hands - Tattooed Knuckles, e.g. Hold/Fast, Love/Hate
+        55-56: Legs - Peg Leg
+        57-58: Legs - Skinny
+        59-60: Legs - Short
+        61-62: Mouth - Deviated Septum
+        63-64: Mouth - Diastema
+        65-66: Mouth - Lip Piercing
+        67-68: Mouth - Missing Tooth
+        69-70: Mouth - Replacement Tooth, e.g. Bone, Metal, Stone, Wood
+        71-72: Mouth - Thin Lips
+        73-74: Nose - Aquiline
+        75-76: Nose - Broken
+        77-78: Nose - Large
+        79-80: Nose - Pierced
+        81-82: Nose - Small
+        83-84: Nose - Upturned
+        85-86: Skin - Deeply Tanned
+        87-88: Skin - Freckled
+        89-90: Skin - Hirsute
+        91-92: Skin - Minor Scars
+        93-94: Skin - Ruddy
+        95-96: Skin - Tattooed
+        97-98: Skin - Unusually Pale
+        99-100: Skin - Weather-Beaten
+    positive:
+      die: 1d100
+      res:
+        1-3: Build - Athletic
+        4-6: Build - Broad-Chested/Bosomy
+        7-9: Build - Good Posture
+        10-12: Build - Slim
+        13-15: Build - Well-Proportioned
+        16-18: Eyes - Clear
+        19-21: Eyes - Commanding Gaze
+        22-24: Eyes - Mesmerizing Gaze
+        25-27: Eyes - Piercing Gaze
+        28-30: Eyes - Striking Color
+        31-33: Hands - Graceful
+        34-36: Hands - Strong
+        37-39: Face - Beauty Spot
+        40-42: Face - Dashing Facial Scar
+        43-45: Face - Distinguished Features
+        46-48: Face - Chiseled/Fine Features
+        49-51: Face - Heroic/Graceful Jawline
+        52-54: Face - Honest
+        55-57: Face - Striking/Beautifying Tattoo
+        58-60: Face - Youthful Countenance
+        61-63: Hair - Glossy
+        64-66: Hair - Lustrous
+        67-69: Hair - Luxurious/Silken
+        70-72: Legs - Long
+        73-75: Legs - Muscular/Well-Toned
+        76-78: Legs - Slim
+        79-81: Mouth - Charming/Winning Smile
+        82-84: Mouth - Dazzling Smile
+        85-87: Mouth - Full/Sensuous Lips
+        88-90: Mouth - Perfect Teeth
+        91-93: Skin - Flawless
+        94-96: Skin - Glossy
+        97-100: Skin - Healthy Complexion
+  styles:
+    gear chaotic: &table_gear_chaotic
+      die: 1d8
+      res:
+        1: ['adorned with ', {die: 1d3, res:{1: 'bones', 2: 'teeth', 3: 'fingers'}}]
+        2: {die: 1d2, res: {1: bent, 2: slightly twieted}}
+        3: blood stained
+        4: dented
+        5: fire-blackened
+        6: {die: 1d3, res: {1: damaged, 2: nicked, 3: marked with kill notches}}
+        7: {die: 1d3, res: {1: rusted, 2: pitted, 3: tarnished}}
+        8: {die: 1d3, res: {1: scratched, 2: damaged, 3: crudely designed}}
+    gear any: &table_gear_any
+      die: 1d10
+      res:
+        1-2: ['adorned with ', {die: 1d3, res:{1: 'beads', 2: 'fabric strips', 3: 'feathers'}}]
+        3-4: Dented
+        5-6: Etched
+        7-8: {die: 1d3, res: {1: damaged, 2: nicked, 3: marked with kill notches}}
+        9-10: well-maintained
+    gear lawful: &table_gear_lawful
+      die: 1d4
+      res:
+        1: ['adorned with ', {die: 1d3, res:{1: 'pennants', 2: 'ribbons', 3: 'colorful feathers'}}]
+        2: {die: 1d2, res: {1: etched, 2: enameled}}
+        3: highly polished
+        4: well-maintained
+    clothing chaotic: &table_clothing_chaotic
+      die: 1d6
+      res:
+        1: ['body is ',{die: 1d2, res: {1: naked, 2: half-naked}}]
+        2: ['clothing has ', {die: 1d2, res: {1: clashing colors, 2: sickly colors}}]
+        3: clothing is falling apart
+        4: ['clothing is ', {die: 1d2, res: {1: blood stained, 2: encrusted}}]
+        5: ['clothing is ', {die: 1d2, res: {1: badly made, 2: ill-fitting}}]
+        6: clothing is oddly chosen
+    clothing any: &table_clothing_any
+      die: 1d4
+      res:
+        1: ['clothing is adorned with ', {die: 1d3, res:{1: 'beadwork', 2: 'decorative stitching', 3: 'tassels'}}]
+        2: clothing is brightly colored
+        3: ['clothing is ', {die: 1d2, res:{1: slightly too small, 2: slightly too big}}]
+        4: ['clothing is stained with ', {die: 1d3, res:{1: alchemical discolorations, 2: dust, 3: earth}}]
+    clothing lawful: &table_clothing_lawful
+      die: 1d10
+      res:
+        1-2: ['clothing is adorned with ', {die: 1d2, res:{1: 'fine embroidery', 2: 'silver stitching'}}]
+        3-4: clothing has bright, attractive colors
+        5-6: ['clothing ', {die: 1d3, res:{1: is made from fine fabrics, 2: is fur-lined, 3: is silk lined}}]
+        7-8: clothing is perfectly fitted
+        9-10: clothing is well-maintained
+    headwear any: &table_headwear_any
+      die: 1d12
+      res:
+        1: a bandana
+        2: ['a circlet made of ', {die: 1d5, res: {1: bone, 2: brass, 3: iron, 4: pewter, 5: vines}}]
+        3: a coif
+        4: a fabric Cap
+        5: a fur Cap
+        6: a headband
+        7: a hood
+        8: [{die: 1d6, res:{1: an animalistic, 2: a caricatured, 3: a domino, 4: a featureless, 5: a monstrous, 6: a ritualistic}},' mask']
+        9: a pointy Hat
+        10: [{die: 1d5, res:{1: a clothen, 2: a silken, 3: a silver, 4: a golden, 5: an iron}},' skullcap']
+        11: a veil
+        12: a wide-brimmed hat
+    adornments chaotic: &table_adornments_chaotic
+      die: 1d4
+      res:
+        1-2: ['has belt hangings made from ', {die: 1d3, res:{1: dead animals, 2: hands, 3: heads}}]
+        3-4: ['wears a grotesque necklace ', {die: 1d4, res:{1: made of ears, 2: made of fingers, 3: made of teeth, 4: with an unholy symbol}}]
+    adornments any: &table_adornments_any
+      die: 1d8
+      res:
+        1: ['wears ', {die: 1d2, res: {1: armbands, 2: bracers}}, ' made from ', {die: 1d5, res:{1: bone, 2: fabric, 3: leather, 4: metal, 5: wood}}]
+        2: ['wears a ', {die: 1d4, res: {1: braided, 2: broad, 3: ornamental, 4: studded}},' belt']
+        3: ['has ',{die: 1d2, res:{1: animal tails, 2: pouches}},' hanging from the belt']
+        4: ['wears bracelets made of ', {die: 1d5, res:{1: bone, 2: fabric, 3: leather, 4: metal, 5: wood}}]
+        5: has a folding Fan
+        6: ['wears a necklace ', {die: 1d3, res:{1: made from beads, 2: made from claws and fangs, 3: with a locket, 4: with a holy symbol}}]
+        7: wears a sash
+        8: has a smoking pipe
+    belongings any: &table_belongings_any
+      die: 1d4
+      res:
+        1: ['[GENDERPOSS] gear is ', *table_gear_any]
+        2: ['[GENDERPOSS] ', *table_clothing_any]
+        3: ['[GENDERPERS] is wearing ', *table_headwear_any]
+        4: ['[GENDERPERS] ', *table_adornments_any]
+    belongings chaotic: &table_belongings_chaotic
+      die: 1d4
+      res:
+        1: ['[GENDERPOSS] gear is ', *table_gear_chaotic]
+        2: ['[GENDERPOSS] ', *table_clothing_chaotic]
+        3: ['[GENDERPERS] is wearing ', *table_headwear_any]
+        4: ['[GENDERPERS] ', *table_adornments_chaotic]
+    belongings lawful: &table_belongings_lawful
+      die: 1d4
+      res:
+        1: ['[GENDERPOSS] gear is ', *table_gear_lawful]
+        2: ['[GENDERPOSS] ', *table_clothing_lawful]
+        3: ['[GENDERPERS] is wearing ', *table_headwear_any]
+        4: ['[GENDERPERS] ', *table_adornments_any]
+tables:
+  small_wep_profs:
+    die: 1d4
+    res:
+      1: *acrobatics
+      2: *cat_burglary
+      3: *combat_reflexes
+      4: *combat_trickery_disarm
+  armortype: &armortypetable
+    die: 1d20
+    res:
+      1-5: *hide_armor
+      6: *light_arena_armor
+      7: *ring_mail
+      8: *scale_armor
+      9-12: *chain_mail
+      13: *heavy_arena_armor
+      14: *banded_plate
+      15: *lamellar_armor
+      16-20: *plate_armor
+  swordtype: &swordtypetable
+    die: 1d10
+    res:
+      1-2: *dagger
+      3-5: *short_sword
+      6-8: *sword
+      9-10: *two_handed_sword
+  miscweptype: &miscweptypetable
+    die: 1d100
+    res:
+      1-2: *arbalest
+      3-9: *battle_axe
+      10-14: *great_axe
+      15-17: *hand_axe
+      18: *bola
+      19-24: *composite_bow
+      25-30: *longbow
+      31-34: *shortbow
+      35: *club
+      36-40: *crossbow
+      41-45: *darts
+      46-50: *flail
+      51-55: *javelin
+      56-60: *lance
+      61-65: *mace
+      66-70: *morning_star
+      71: *net
+      72-76: *pole_arm
+      77: *sap
+      78-82: *sling
+      83-92: *spear
+      93-94: *staff
+      95-99: *war_hammer
+      100: *whip
+  classes:
+    die: 3d6
+    res:
+      3-4: *eldritch_rogue
+      5:
+        die: 1d20
+        res:
+          1-15: *runemaker
+          16-20: *shaman
+      6:
+        die: 1d20
+        res:
+          1-19: *explorer
+          20: *beastmaster
+      7: *bladedancer
+      8: *ecclesiastic
+      9-11:
+        die: 1d20
+        res:
+          1-15: *fighter
+          16-17: *barbarian
+          18: *berserker
+          19-20: *herald
+      12:
+        die: 1d20
+        res:
+          1-15: *thief
+          16-20: *freebooter
+      13:
+        die: 1d20
+        res:
+          1-15: *loremaster
+          16-18: *witch
+          19-20: *occultist
+      14:
+        die: 1d20
+        res:
+          1-15: *assassin
+          16-20: *gladiator
+      15: *bard
+      16: *venturer
+      17-18: *warmistress
+  treasure:
+    gems:
+      die: 1d100
+      res:
+        1–10:  [{die: 1d5, res:{1: Azurite, 2: hematite, 3: malachite, 4: obsidian, 5: quartz}}, " (10gp)"]
+        11–25: [{die: 1d6, res:{1: Agate, 2: lapis lazuli, 3: tiger eye, 4: turquoise}}, " (25gp)"]
+        26–40: [{die: 1d6, res:{1: Bloodstone,2: crystal,3: citrine,4: jasper,5: moonstone,6: onyx}}," (50gp)"]
+        41–55: 75 Carnelian, chalcedony, sardonyx, zircon
+        56–70: 100 Amber, amethyst, coral, jade, jet, tourmaline
+        71–80: 250 Garnet, pearl, spinel
+        81–90: 500 Aquamarine, alexandrite, topaz
+        91–95: 750 Opal, star ruby, star sapphire, sunset amethyst, imperial topaz
+        96–00: 1,000 Black sapphire, diamond, emerald, jacinth, ruby
+        101–110: 1,500 Amber with preserved extinct creatures, whorled nephrite jade
+        111–125: 2,000 Black pearl, baroque pearl, crystal geode
+        126–145: 4,000 Facet cut imperial topaz, flawless diamond
+        146–165: 6,000 Facet cut star sapphire or star ruby
+        166–175: 8,000 Flawless facet cut diamond, emerald, jacinth or ruby
+        176–180: 10,000 Flawless facet cut black sapphire or blue diamond
+    jewelery:
+      die: 1d100
+      res:
+        1-10: {die: 1d3, res:{1: bone, 2: scrimshaw, 3: beast parts}}
+    heroic magic:
+      common:
+        die: 1d100
+        res:
+          1-5:  {item: *armortypetable, postfix: " (MW)", mod:{weight: -6}}
+          6-15: {item: *miscweptypetable, postfix: [" (MW) ", {die: 1d6, res: {1-2: +1D, 3-4: +1H, 5-6: "+1"}}]}
+          16-17: {item: *pot_oilofbanerune}
+          18-19: {item: *pot_oilofsharpness}
+          20-21: {item: *pot_oilofslipperiness}
+          22: {item: *pot_oilofvitriolicinfusion}
+          23: {item: *pot_alterself}
+          24-25: {item: *pot_chameleon}
+          26-29: {item: *pot_curelightwounds}
+          30-31: {item: *pot_curemoderatewounds}
+          32: {item: *pot_eldritcharmor}
+          33: {item: *pot_esp}
+          34-35: {item: *pot_jump}
+          36: {item: *pot_ogrepower}
+          37: {item: *pot_resistacid}
+          38: {item: *pot_resistcold}
+          39: {item: *pot_resistelectricity}
+          40: {item: *pot_resistfire}
+          41: {item: *pot_righteouswrath}
+          42-43: {item: *pot_silentstep}
+          44: {item: *pot_speakingwithanimals}
+          45-46: {item: *pot_spiderclimb}
+          47: {item: *pot_swiftsword}
+          48: {item: *pot_swimming}
+          49-52: {item: Rechargable Trinket L1, add: {tags: ["trinket"]}, no: 1d2}
+          57-59: {item: Rechargable Trinket L3, add: {tags: ["trinket"]}, no: 1d2}
+          60-61: {item: Rechargable Trinket L4, add: {tags: ["trinket"]}, no: 1d2}
+          53-56: {item: Rechargable Trinket L2, add: {tags: ["trinket"]}, no: 1d2}
+          62: {item: Rechargable Trinket L5, add: {tags: ["trinket"]}, no: 1d2}
+          63: {item: Rechargable Trinket L6, add: {tags: ["trinket"]}}
+          64-68: {item: *shield, postfix: " (MW)", mod:{weight: -5}}
+          69-83: {item: Scroll (1 level), add: {tags: ["scroll"]}}
+          84-88: {item: Scroll (2 levels), add: {tags: ["scroll"]}}
+          89-98: {item: *swordtypetable, postfix: [" (MW) ", {die: 1d6, res: {1-2: +1D, 3-4: +1H, 5-6: +1}}]}
+          99-100: {item: *pot_waybread, no: 1d2}
+      uncommon:
+        die: 1d100
+        res:
+          1-5: {item: *armortypetable, postfix: " +1", mod: {weight: -6, modifies: {ac: 1}}}
+          6: {item: Slaying Arrow +3, add: {tags: ["weapon"]}}
+          7: {item: Arrow +1, no: 2d6, add: {tags: ["weapon"]}}
+          8: {item: Arrow +2, no: 1d6, add: {tags: ["weapon"]}}
+          9: {item: Arrow +3, no: 1d4, add: {tags: ["weapon"]}}
+          10: {item: *misc_bracersofarmor, postfix: " +1", add: {modifies: {acm: 1}}}
+          11: {item: Crossbow Bolt +1, no: 2d6, add: {tags: ["weapon"]}}
+          12: {item: Crossbow Bolt +2, no: 1d6, add: {tags: ["weapon"]}}
+          13: {item: Crossbow Bolt +3, no: 1d4, add: {tags: ["weapon"]}}
+          14-16: {item: *miscweptypetable, postfix: " +1"}
+          17: {item: *pot_oilofstonetoflesh}
+          18: {item: *pot_oilofstriking}
+          19: {item: *pot_acidimmunity}
+          20: {item: *pot_angelicaura}
+          21: {item: *pot_coldimmunity}
+          22: {item: *pot_curenblindness}
+          23: {item: *pot_curecriticalwounds}
+          24: {item: *pot_curedisease}
+          25: {item: *pot_curemajorwounds}
+          26: {item: *pot_diminuition}
+          27: {item: *pot_electricalimmunity}
+          28: {item: *pot_eyesoftheeagle}
+          29: {item: *pot_findtreasure}
+          30: {item: *pot_fireimmunity}
+          31: {item: *pot_flying}
+          32: {item: *pot_gaseousform}
+          33: {item: *pot_giantstrength}
+          34: {item: *pot_greaterclairaudience}
+          35: {item: *pot_greaterclairvoyance}
+          36: {item: *pot_growth}
+          37: {item: *pot_guiseself}
+          38: {item: *pot_infravision}
+          39: {item: *pot_invisibility}
+          40: {item: *pot_invulnerabilitytoevil}
+          41: {item: *pot_levitation}
+          42: {item: *pot_necromanticinvulnerability}
+          43: {item: *pot_poison}
+          44: {item: *pot_protectionfromnormalmissiles}
+          45: {item: *pot_protectionfromnormalweapons}
+          46: {item: *pot_skinchange}
+          47: {item: *pot_speakwithdead}
+          48: {item: *pot_speakwithplants}
+          49: {item: *pot_strengthofmind}
+          50: {item: *pot_telepathy}
+          51: {item: *pot_transformself}
+          52: {item: *pot_trollblood}
+          53: {item: *pot_trueseeing}
+          54: {item: *pot_vigor}
+          55: {item: *pot_waterwalking}
+          56: {item: *pot_waterbreathing}
+          57: {item: *pot_wingedflight}
+          58: {item: Rechargable Trinket L4, no: 3d6, add: {tags: ["trinket"]}}
+          59: {item: Rechargable Trinket L5, no: 2d6, add: {tags: ["trinket"]}}
+          60: {item: Rechargable Trinket L6, no: 2d4, add: {tags: ["trinket"]}}
+          61: {item: *rod_cancellation}
+          62-66: {item: *shield, postfix: " +1", mod: {weight: -5, modifies: {ac: 1}}}
+          67-71: {item: Spell Scroll (3 levels), add: {tags: ["scroll"]}}
+          72-74: {item: Spell Scroll (4 levels), add: {tags: ["scroll"]}}
+          75: {item: Spell Scroll (5 levels), add: {tags: ["scroll"]}}
+          76: {item: Spell Scroll (6 levels), add: {tags: ["scroll"]}}
+          77: {item: Spell Scroll (7 levels), add: {tags: ["scroll"]}}
+          78: {item: Spell Scroll (8 levels), add: {tags: ["scroll"]}}
+          79: {item: Spell Scroll (9 levels), add: {tags: ["scroll"]}}
+          80: {item: Spell Scroll (10 levels), add: {tags: ["scroll"]}}
+          81-90: {item: *swordtypetable, postfix: " +1"}
+          91-94: {item: Talisman +1, add: {tags: ["talisman"]}}
+          95-98: {item: Treasure Map to 1d4*1000 gp}
+          99-100: {item: *pot_waybread, no: 2d6}
+      rare: &magic_items_rare
+        die: 1d100
+        res:
+          1: [{item: *armortypetable, postfix: " +1", mod: {weight: -6, modifies: {ac: 1}}}, {item: *shield, postfix: " +1", mod: {weight: -5, modifies: {ac: 1}}}]
+          2-3: {item: *armortypetable, postfix: " +2"}
+          4: [{item: *armortypetable, postfix: " +2", mod: {modifies: {ac: 2}, weight: -12}}, {item: *shield, postfix: " +1", mod: {modifies: {ac: 1}, weight: -6}}]
+          5: [{item: *armortypetable, postfix: " +2", mod: {modifies: {ac: 2}, weight: -12}}, {item: *shield, postfix: " +2", mod: {modifies: {ac: 2}, weight: -12}}]
+          6: [{item: *armortypetable, postfix: " +1", mod: {modifies: {ac: 1}, weight: -6}}, {item: *shield, postfix: " +2", mod: {modifies: {ac: 2}, weight: -12}}]
+          7: {item: *misc_bootsofspeed}
+          8: {item: *misc_bowlofcommandingwaterelementals}
+          9: {item: *misc_bracersofarmor, postfix: " +2", add: {modifies: {acm: 2}}}
+          10: {item: *misc_brazierofcommandingfireelementals}
+          11: {item: *misc_censerofcontrollingairelementals}
+          12: {item: *misc_cloakofprotection}
+          13: {item: *misc_cloakofskinchanging}
+          14: {item: *misc_crystalball}
+          15: {item: *misc_cubeoffrostresistance}
+          16: {item: *misc_elvenboots}
+          17: {item: *misc_elvencloak}
+          18: {item: *misc_eyesofcharming}
+          19: {item: *misc_helmofcomprehendinglanguages}
+          20-21: {item: *miscweptypetable, postfix: " +1, +2"}
+          22-23: {item: *miscweptypetable, postfix: " +1, +3"}
+          24-25: {item: *miscweptypetable, postfix: " +1 (1 Proficiency)"}
+          26-27: {item: *miscweptypetable, postfix: " +2"}
+          28: {item: *miscweptypetable, postfix: " +2, +3"}
+          29: {item: *miscweptypetable, postfix: " +1 (2 Proficiencies)"}
+          30: {item: *ring_djinnicalling}
+          31-34: {item: *ring_protection, add: {modifies: {ac: 1, acm: 1, BB: 1, PD: 1, PP: 1, SW: 1, S: 1}}}
+          35: {item: *misc_ropeofclimbing}
+          36: {item: *misc_scarabofprotection}
+          37: {item: *shield, postfix: " +1 (1 Proficiency)"}
+          38-39: {item: *shield, postfix: " +2"}
+          40: {item: *shield, postfix: " +2 (1 Proficiency)"}
+          41: {item: Spell Scroll (12 levels), add: {tags: ["scroll"]}}
+          42: {item: Spell Scroll (14 levels), add: {tags: ["scroll"]}}
+          43: {item: Spell Scroll (16 levels), add: {tags: ["scroll"]}}
+          44: {item: Spell Scroll (18 levels), add: {tags: ["scroll"]}}
+          45: {item: Spell Scroll (20 levels), add: {tags: ["scroll"]}}
+          46: {item: Spell Scroll (22 levels), add: {tags: ["scroll"]}}
+          47: {item: Spell Scroll (24 levels), add: {tags: ["scroll"]}}
+          48: {item: Spell Scroll (26 levels), add: {tags: ["scroll"]}}
+          49: {item: Spell Scroll (28 levels), add: {tags: ["scroll"]}}
+          50: {item: Spell Scroll (30 levels), add: {tags: ["scroll"]}}
+          51: {item: Spell Scroll (32 levels), add: {tags: ["scroll"]}}
+          52: {item: Spell Scroll (34 levels), add: {tags: ["scroll"]}}
+          53: {item: Spell Scroll (36 levels), add: {tags: ["scroll"]}}
+          54: {item: Spell Scroll (38 levels), add: {tags: ["scroll"]}}
+          55: {item: Spell Scroll (40 levels), add: {tags: ["scroll"]}}
+          56: {item: Spell Scroll (42 levels), add: {tags: ["scroll"]}}
+          57: {item: *staff_healing}
+          58: {item: *staff_striking}
+          59: {item: *misc_stoneofcontrollingearthelementals}
+          60-61: {item: *swordtypetable, postfix: " +1, +2"}
+          62: {item: *swordtypetable, postfix: " +1, +3"}
+          63: {item: *swordtypetable, postfix: " +1 of light (30')"}
+          64-65: {item: *swordtypetable, postfix: " +1 (1 Proficiency) "}
+          66-67: {item: *swordtypetable, postfix: " +2"}
+          68: {item: *swordtypetable, postfix: " +2, +3"}
+          69: {item: *swordtypetable, postfix: " +2 (1 Proficiency)"}
+          70-72: {item: Talisman +2, add: {tags: ["talisman"]}}
+          73-74: {item: Talisman +3, add: {tags: ["talisman"]}}
+          75: {item: Talisman +4, add: {tags: ["talisman"]}}
+          76: {item: Talisman +5, add: {tags: ["talisman"]}}
+          77: {item: Talisman +6, add: {tags: ["talisman"]}}
+          78-79: {item: Treasure Map to 1 rare, 1 uncommon item}
+          80-82: {item: Treasure Map to 2d10 jewelry and 5d6 gems}
+          83-84: {item: Treasure Map to 1d6 jewelry and 1 rare item}
+          85-86: {item: Treasure Map to 5d6 gems and 1 rare item}
+          87-89: {item: Treasure Map to 5d6*1000 gp and 1 uncommon item}
+          90-92: {item: Treasure Map to 5d6*1000 gp and 5d6 gems}
+          93-95: {item: Treasure Map to 6d6*1000 gp}
+          96-97: {item: *wand_detectingenemies}
+          98-99: {item: *wand_detectingmagic}
+          100: {item: *wand_illusion}
+      very rare:
+        die: 1d100
+        res:
+          1: {item: *misc_amuletofnondetection}
+          2: [{item: *armortypetable, postfix: " +1", mod: {weight: -6, modifies: {ac: 1}}}, {item: *shield, postfix: " +3", mod: {weight: -5, modifies: {ac: 3}}}]
+          3: [{item: *armortypetable, postfix: " +2", mod: {weight: -12, modifies: {ac: 2}}}, {item: *shield, postfix: " +3", mod: {weight: -5, modifies: {ac: 3}}}]
+          4-5: {item: *armortypetable, postfix: " +3", mod: {weight: -18, modifies: {ac: 3}}}
+          6: [{item: *armortypetable, postfix: " +3", mod: {weight: -18, modifies: {ac: 3}}}, {item: *shield, postfix: " +1", mod: {weight: -5, modifies: {ac: 1}}}]
+          7: [{item: *armortypetable, postfix: " +3", mod: {weight: -18, modifies: {ac: 3}}}, {item: *shield, postfix: " +2", mod: {weight: -5, modifies: {ac: 2}}}]
+          8: [{item: *armortypetable, postfix: " +3", mod: {weight: -18, modifies: {ac: 3}}}, {item: *shield, postfix: " +3", mod: {weight: -5, modifies: {ac: 3}}}]
+          9: {item: *misc_bagofholding}
+          10: {item: *misc_foldingboat}
+          11: {item: *misc_bootsoflevitation}
+          12: {item: *misc_bootsoftravelingandspringing}
+          13: {item: *misc_bracersofarmor, postfix: " +3", add: {modifies: {acm: 3}}}
+          14: {item: *misc_bracersofarmor, postfix: " +4", add: {modifies: {acm: 4}}}
+          15: {item: *misc_bracersofarmor, postfix: " +5", add: {modifies: {acm: 5}}}
+          16: {item: *misc_chimeofopening}
+          17: {item: *misc_cloakofprotection, postfix: " +3", add: {modifies: {acm: 3, ac: 3, BB: 3, PD: 3, PP: 3, SW: 3, S: 3}}}
+          18: {item: *misc_collarofconversation}
+          19: {item: *misc_crystalballclairaudience}
+          20: {item: *misc_crystalballesp}
+          21: {item: *misc_cubeofforce}
+          22: {item: *misc_deadmanshand}
+          23: {item: *misc_displacercloak}
+          24: {item: *misc_drumsofpanic}
+          25: {item: *misc_efreetibottle}
+          26: {item: *misc_eyesoftheeagle}
+          27-28: {item: *misc_gauntletsofogrepower}
+          29: {item: *misc_girdleofgiantstrength}
+          30: {item: *misc_helmofawe}
+          31: {item: *misc_helmoftelepathy}
+          32: {item: *misc_hornofblasting}
+          33: {item: *misc_medaillonofesp}
+          34: {item: *misc_medaillonofesp90}
+          35: {item: *misc_mirroroflifetrapping}
+          36-40: {item: *miscweptypetable, postfix: " +3"}
+          41-43: {item: *miscweptypetable, postfix: " +3 (proficiency)"}
+          44-45: {item: *miscweptypetable, postfix: " +3 (2 proficiencies)"}
+          46: {item: *ring_commandanimal}
+          47: {item: *ring_commandhuman}
+          48: {item: *ring_commandplant}
+          49: {item: *ring_fireresistance}
+          50: {item: *ring_invisibility}
+          51: {item: *ring_protection, postfix: " +2", add: {modifies: {ac: 2, acm: 2, BB: 2, PD: 2, PP: 2, SW: 2, S: 2}}}
+          52: {item: *ring_protection, postfix: " +2, 5'", add: {modifies: {ac: 2, acm: 2, BB: 2, PD: 2, PP: 2, SW: 2, S: 2}}}
+          53: {item: *ring_protection, postfix: " +3", add: {modifies: {ac: 3, acm: 3, BB: 3, PD: 3, PP: 3, SW: 3, S: 3}}}
+          54: {item: *ring_protection, postfix: " +3, 5'", add: {modifies: {ac: 3, acm: 3, BB: 3, PD: 3, PP: 3, SW: 3, S: 3}}}
+          55: {item: *ring_regeneration}
+          56: {item: *ring_waterwalking}
+          57: {item: *rod_torture}
+          58-59: {item: *shield, postfix: " +3", mod: {ac: 3, weight: -5}}
+          60: {item: *shield, postfix: " +3 (proficiency)", mod: {modifies: {ac: 3}, weight: -5}}
+          61: {item: *shield, postfix: " +3 (2 proficiencies)", mod: {modifies: {ac: 3}, weight: -5}}
+          62: {item: *staff_commanding}
+          63: {item: *staff_elementalpower}
+          64: {item: *staff_serpent}
+          65: {item: *staff_withering}
+          66-70: {item: *swordtypetable, postfix: " +3"}
+          71-73: {item: *swordtypetable, postfix: " +3 (proficiency)"}
+          74-75: {item: *swordtypetable, postfix: " +3 (2 proficiencies)"}
+          76: {item: Talisman +7, add: {tags: ["talisman"]}}
+          77: {item: Talisman +8, add: {tags: ["talisman"]}}
+          78: {item: Talisman +9, add: {tags: ["talisman"]}}
+          79: {item: Talisman +10, add: {tags: ["talisman"]}}
+          80: {item: Talisman +11, add: {tags: ["talisman"]}}
+          81: {item: Talisman +12, add: {tags: ["talisman"]}}
+          82: {item: Talisman +13, add: {tags: ["talisman"]}}
+          83: {item: Talisman +14, add: {tags: ["talisman"]}}
+          84: {item: Talisman +15, add: {tags: ["talisman"]}}
+          85-87: {item: Treasure Map to 3 rare and 2 common items}
+          88-89: {item: Treasure Map to 3 rare and 1 uncommon items}
+          90-91: {item: Treasure Map to 1 very rare item}
+          92-95: {item: Treasure Map to 5d6x1000gp and 1 rare item}
+          96: {item: *wand_fear}
+          97: {item: *wand_frost}
+          98: {item: *wand_paralyzation}
+          99: {item: *wand_impetus}
+          100: {item: *wand_sorcery}
+      legendary:
+        die: 1d100
+        res:
+          1-2: {item: *misc_apparatusofthecrab}
+          3-4: {item: *plate_armor, postfix: " of the Invincible Conqueror (+3)", mod: {modifies: {ac: 3}, weight: -18}}
+          5-6: {item: *composite_bow, postfix: " of the great Eagles (+3)"}
+          7-8: {item: *composite_bow, postfix: " of the Unconquered Sun (+1, +2, +3)"}
+          9-10: {item: *misc_bracersofarmor, postfix: " +6", add: {modifies: {acm: 6}}}
+          11-12: {item: *misc_bracersofarmor, postfix: " +7", add: {modifies: {acm: 7}}}
+          13-14: {item: *misc_broomofflying}
+          15-16: {item: *misc_chaliceofblood}
+          17-18: {item: *misc_heavychariotofthegods}
+          19-20: {item: *misc_lightchariotofthegods}
+          21-22: {item: *misc_mediumchariotofthegods}
+          23-24: {item: *misc_decanterofendlesswater}
+          25-26: {item: *misc_emblemoftheeagles}
+          27-28: {item: *misc_eyesofpetrification}
+          29-30: {item: *misc_flyingcarpet}
+          31-32: {item: *pole_arm, postfix: " of the Blade-Goddess (+3)"}
+          33-34: {item: *great_axe, postfix: " of the North (+3, +5)"}
+          35-36: {item: *misc_holytalismanofthewingedsun}
+          37-38: {item: *misc_ironcrownofthesorcererkings}
+          39-40: {item: *misc_ironboundbookofxisuthros}
+          41-42: {item: *misc_mirrorofopposition}
+          43-44: {item: *misc_bootsoftheimperialwarmistress}
+          45-46: {item: *misc_bracersoftheimperialwarmistress}
+          47-48: {item: *misc_corseletoftheimperialwarmistress}
+          49-50: {item: *misc_diademoftheimperialwarmistress}
+          51-52: {item: *sword, postfix: " of the Warlord (+3)", prefix: "Red "}
+          53-54: {item: *ring_antimagic}
+          55-56: {item: *ring_queensheart}
+          57-58: {item: *rod_nightsky}
+          59-60: {item: *flail, postfix: ", Scourge of Law (+3)"}
+          61-62: {item: *ring_sealofchaos}
+          63-64: {item: *shield, postfix: " of the Empyrean Heavens (+3)", mod: {modifies: {ac: 3}, weight: -5}}
+          65-66: {item: *spear, prefix: "Shining ", postfix: "(+3, +4, +5)"}
+          67-68: {item: *staff_cataclysm}
+          69-70: {item: *sword, prefix: "Vorpal ", postfix: " (+3)"}
+          71-72: {item: *sword, postfix: " of Kings (+3, +4, +5)"}
+          73-74: {item: *war_hammer, postfix: ", Dwarven Thrower (+2, +3)"}
+          75-83: {item: Treasure map to 1 legendary item}
+          84-88: {item: "Treasure map to 1 legendary item, 2d4 regalia, 2d6 brilliants, and 3d6x10000 gp"}
+          89-93: {item: "Treasure map to 1d6 legendary items, 1d4 regalia, 1d6 brilliants, and 2d4x10000 gp"}
+          94-100: {item: Treasure map to 1d3 legendary items}
