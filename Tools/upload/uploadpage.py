@@ -2,7 +2,7 @@ from flask import (Blueprint, render_template, request, session)
 from flask import current_app as app
 from flask_session import Session
 from flask import Flask, flash, request, redirect, url_for
-from pyaml import yaml
+import yaml
 from werkzeug.utils import secure_filename
 
 bp = Blueprint('uploadpage', __name__, url_prefix='/upload')
