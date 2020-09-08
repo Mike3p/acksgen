@@ -2,7 +2,6 @@ import os
 
 from flask import Flask, session
 from flask_session import Session
-from flask_sqlalchemy import *
 from Tools import mainpage
 from Tools.upload import uploadpage
 from Tools.init import initiativepage
