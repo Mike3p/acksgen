@@ -2984,7 +2984,7 @@ classes:
     hd: d8
     primerequisites:
       strength: 9
-    minimumrequirements:
+    minrequisites:
       constitution: 9
     attackprogression: *fighter_attack_throw_progression
     savingthrows: *dwarven_vaultguard_saving_throws
@@ -3318,7 +3318,7 @@ classes:
     hd: d6
     primerequisites:
       wisdom: 9
-    minimumrequirements:
+    minrequisites:
       constitution: 9
     attackprogression: *thief_attack_throw_progression
     savingthrows: *divine_saving_throws
