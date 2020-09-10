@@ -249,7 +249,7 @@ class Character:
                 c_spell_list = magictype['list']
 
                 if "divine" in str.lower(mname):
-                    if numberofspellstoget > 1:
+                    if numberofspellstoget > 0:
                         self.spells[mname][spelllevel].extend(c_spell_list.get(spelllevel,[]))
                         if spelllevel in c_spell_list:
                             c_spell_list.pop(spelllevel)
