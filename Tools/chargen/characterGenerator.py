@@ -271,7 +271,7 @@ def load_character(name: str):
         setattr(c, k, x[k])
     return c
 
-stream = open("C:/Users/mhoh1/PycharmProjects/acksgen/generator_circle_of_dawn.yaml", 'r')
-data = yaml.safe_load(stream)
+#stream = open("C:/Users/mhoh1/PycharmProjects/acksgen/generator_circle_of_dawn.yaml", 'r')
+#data = yaml.safe_load(stream)
 
 #roll_party(10000,True,data,14)
