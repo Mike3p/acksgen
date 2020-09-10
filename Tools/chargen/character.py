@@ -204,7 +204,7 @@ class Character:
                 if profs_char_can_double_dip:
                     choice = random.randrange(len(profs_char_can_double_dip))
                     prof_to_double_dip = profs_char_can_double_dip[choice]
-                    #print("character has double dipped " + prof_to_double_dip['name'])
+                    print("character has double dipped " + prof_to_double_dip['name'])
                     self.giveProficiencyToCharacter(prof_to_double_dip)
                     return
 
