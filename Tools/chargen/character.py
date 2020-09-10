@@ -97,11 +97,11 @@ class Character:
 
         #todo not sure if there is a better solution. i need compute statistics in case of changing attributes, levels, proficiencies, etc.
         if self.intelligence >= 13:
-            self.chooseProficiency("general", "random", prob_to_double_dip)
+            self.chooseProficiency("genprof", "random", prob_to_double_dip)
         if self.intelligence >= 16:
-            self.chooseProficiency("general", "random", prob_to_double_dip)
+            self.chooseProficiency("genprof", "random", prob_to_double_dip)
         if self.intelligence >= 18:
-            self.chooseProficiency("general", "random", prob_to_double_dip)
+            self.chooseProficiency("genprof", "random", prob_to_double_dip)
 
         # this is for normalmen
         self.getAbilitiesForCurrentLevel(prob_to_double_dip)
@@ -165,11 +165,11 @@ class Character:
 
         numberofgeneralprofs = sum(i == lvl for i in self.genprofprogression)
         for i in range(numberofgeneralprofs):
-            self.chooseProficiency("general", "random", prob_to_double_dip)
+            self.chooseProficiency("genprof", "random", prob_to_double_dip)
 
         numberofclassprofs = sum(i == lvl for i in self.classprofprogression)
         for i in range(numberofclassprofs):
-            self.chooseProficiency("class", "random", prob_to_double_dip)
+            self.chooseProficiency("classprof", "random", prob_to_double_dip)
 
     def addAbility(self, entry):
         if isinstance(entry, str):
@@ -182,9 +182,9 @@ class Character:
             self.abilities[entry['name']] = entry
 
     def chooseProficiency(self, type:str, proficiencyToChoose, prob_intent_doubledip = 0):
-        if type == "class":
+        if type == "classprof":
             chosenfrom: list = self.classproficiencylist
-        elif type == "general":
+        elif type == "genprof":
             chosenfrom: list = self.generalproficiencylist
         else:
             raise Exception("type must be general or class")
@@ -199,7 +199,9 @@ class Character:
             if roll("1d100") <= prob_intent_doubledip:
                 profs_char_can_double_dip = []
                 for key in self.proficiencies:
-                    if self.proficiencies[key]['ranks'] < self.proficiencies[key]['max']:
+
+                    if (self.proficiencies[key]['ranks'] < self.proficiencies[key]['max']) & \
+                            (self.proficiencies[key]['type'] == type):
                         profs_char_can_double_dip.append(self.proficiencies[key])
                 if profs_char_can_double_dip:
                     choice = random.randrange(len(profs_char_can_double_dip))
@@ -560,7 +562,7 @@ class Character:
             output = ""
             for x in skills:
                 rank = (" "+str(skills[x].get('ranks',1)) if skills[x].get('ranks',1) > 1 else '')
-                throw = (" ("+str(skills[x]['throw'])+"+"+")" if 'throw' in skills[x] else '')
+                throw = (" ("+str(skills[x]['throw'])+"+"+")" if ('throw' in skills[x]) & (skills[x].get('throw',21)<21) else '')
                 output += x + rank + throw + ", "
             output = output[:-2]
             if output == "": output = "None"
