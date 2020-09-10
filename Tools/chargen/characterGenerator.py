@@ -69,7 +69,8 @@ def choose_random_class_weighted(classdict, abilities: dict):
         if ('path' in clscop) and not (clscop.get('path', [])):
             continue
 
-        for ablt in clazz.get('primerequisites'):
+        #print(clazz)
+        for ablt in clazz.get('primerequisites', []):
             for i in range(getabilitymodifier(abilities.get(ablt, 0)) * 2):
                 poss_cls_choice.append(clscop)
 
@@ -80,7 +81,8 @@ def choose_random_class_weighted(classdict, abilities: dict):
 
         poss_cls_choice.append(clscop)
     if not poss_cls_choice:
-        return None
+        choose_random_class_weighted(classdict, roll_random_stats())
+        return
 
     choice_class = random.choice(poss_cls_choice)
     choice_path = random.choice(choice_class.get("path", [None]))
@@ -88,69 +90,103 @@ def choose_random_class_weighted(classdict, abilities: dict):
 
     return choice_class
 
-def roll_party(number, fluctuate, sourcedict, level, clazz = "random",
-               ethnicity = "random", gender = "random", name = "random", alignment = "random", path = "random"):
+
+def roll_party(number, fluctuate, sourcedict, level, clazz = None,
+               ethnicity = None, gender = None, name = None, alignment = None, path = None):
     characterlist = []
     fluctuation = [-2,-1,0,1,2]
     for i in range(number):
         deviation = 0
+        adj_level = level
         if fluctuate:
             deviation = random.choice(fluctuation)
-            level = min(max(1,level+deviation),14)
-        character = roll_random_character(sourcedict, level, clazz, ethnicity, gender, name, alignment, path)
+            adj_level = min(max(1,level+deviation),14)
+        character = roll_character(sourcedict, adj_level, clazz, ethnicity, gender, name, alignment, path)
         #todo: hotfix weil character manchmal none ist. keine ahnung wieso...
         if character: characterlist.append(character)
 
     return characterlist
 
 
-def roll_random_character(sourcedict, level, clazz = "random", ethnicity = "random", gender = "random", name = "random", alignment = "random", path = "random"):
-    scores = roll_random_stats()
-    classtable = sourcedict['classes']
-    cls = {}
-    if clazz == "random": cls = choose_random_class_weighted(classtable,scores)
-    else: cls['class'] = clazz
+def roll_character(sourcedict, level, clazz = None, ethnicity = None, gender = None, name = None, alignment = None, path = None, scores = None):
+    def apply_path(class_dict: dict, path):
+        if path:
+            if not(path in class_dict.get('path', '')):
+                raise Exception("this class does not have the path " + str(path))
+            del class_dict['path']
+            for k in class_dict:
+                if isinstance(class_dict[k],dict):
+                    if 'path' in class_dict[k]:
+                        chosenpath = class_dict[k]['path'][path]
+                        class_dict[k] = chosenpath
+        elif not(path):
+            if 'path' in class_dict:
+                raise Exception('this class has to choose a path')
+        return class_dict
 
-    if not cls:
-        roll_random_character(sourcedict, level, clazz, ethnicity, gender, name, alignment, path)
+    if not scores: scores = roll_random_stats()
+    # preprocessing and selection of class & path
+    dict_of_classes = sourcedict['classes']
+
+    # klasse wählen. wenn die klasse nicht im dict existiert ist es eine zufällige
+    if clazz not in dict_of_classes:
+        cls = choose_random_class_weighted(dict_of_classes,scores)
+        while cls == None:
+            cls = choose_random_class_weighted(dict_of_classes,roll_random_stats())
+        clazz = cls.get('class')
+        path = cls.get('path', None)
+
+    class_dict = copy.deepcopy(dict_of_classes[clazz])
+
+    # pfad wählen oder falsch gesetzten pfad ignorieren
+    if path:
+        # wenn pfad gesetzt, überprüfe ob das überhaupt gültig ist. wenn nein path = None
+        path = (path if path in class_dict.get('path', []) else None)
+    else:
+        # wenn kein pfad gesetzt, überprüfe ob klasse einen path haben muss. wenn ja nimm zufälligen
+        path = random.choice(dict_of_classes.get(clazz,{}).get('path', [None]))
+
+    if not clazz:
+        roll_character(sourcedict, level, clazz, ethnicity, gender, name, alignment, path)
         return
 
-    if path == "random": cls['path'] = random.choice(classtable.get(cls['class'],{}).get('path', [None]))
-    else: cls['path'] = path
-    ethtable = sourcedict['ethnicity']
+    # wenn pfad gewählt: class dict so modifizieren, dass alle path branches rausgeworfen werden
+    path_name = ''
+    if path:
+        class_dict = apply_path(class_dict, path)
+        path_name = " (" + str.capitalize(path) + ")"
 
-    if 'ethnicity' in classtable.get(cls['class'],{}):
-        ethnicity = random.choice(classtable.get(cls['class'],{})['ethnicity'])
-    elif ethnicity not in ethtable: ethnicity = random.choice(list(ethtable.keys()))
+    # ethnicity wählen. wenn spezifiziert gucken ob valide, wenn nicht zufällige wählen.
+    ethnicity_dict = sourcedict['ethnicity']
+    if 'ethnicity' in class_dict:
+        ethnicity = (ethnicity if ethnicity in class_dict.get('ethnicity', []) else random.choice(
+                class_dict.get('ethnicity', list(ethnicity_dict.keys()))))
+    if ethnicity not in ethnicity_dict:
+        ethnicity = random.choice(list(ethnicity_dict.keys()))
 
+    if 'gender' in class_dict: gender = class_dict.get('gender')
     if gender not in ['male', 'female']: gender = random.choice(['male', 'female'])
-    if name == "random": name = random.choice(ethtable[ethnicity][gender + " names"])
-    if 'surnames' in ethtable[ethnicity]:
-        name = name + " " + random.choice(ethtable[ethnicity]['surnames'])
-    if alignment == "random": alignment = random.choice(['C', 'L', 'L', 'N', 'N', 'N'])
 
-    return create_character(sourcedict, level, cls['class'], ethnicity, gender, name, alignment,
-                            scores['strength'], scores['dexterity'], scores['constitution'],
-                            scores['intelligence'], scores['wisdom'], scores['charisma'], cls.get('path'))
+    #print(clazz)
+    #print(ethnicity)
+    if not name:
+        name = random.choice(ethnicity_dict[ethnicity][gender + " names"])
+        if 'surnames' in ethnicity_dict[ethnicity]:
+            name = name + " " + random.choice(ethnicity_dict[ethnicity]['surnames'])
 
-
-def create_character(sourcedict, level, clazz, ethnicity, gender, name, alignment,
-                     strength, dexterity, constitution, intelligence, wisdom, charisma, path=None):
-    # print(sourcedict)
-    try:
-        classdict = copy.deepcopy(sourcedict['classes'][clazz])
-
-    except:
-        raise Exception("This is an invalid class: " + clazz)
+    if not alignment: alignment = random.choice(['C', 'L', 'L', 'N', 'N', 'N'])
 
     m_items = roll_magical_items(level, sourcedict)
+    gen_prof_prog = sourcedict['proficiencyprogression']['general']
+
 
     c = Character()
     generalproficiencies = copy.deepcopy(sourcedict['generalproficiencies'])
-    c.createFromScratch(classdict, generalproficiencies, sourcedict['desctables'], ethnicity, name, clazz, level,
-                        alignment, gender, strength, dexterity, constitution, intelligence, wisdom, charisma, m_items, path)
+    c.createFromScratch(class_dict, generalproficiencies, gen_prof_prog, sourcedict['desctables'], ethnicity, name, clazz, level,
+                        alignment, gender, scores, m_items, path_name)
 
     return c.__repr__()
+
 
 def parse_magical_table_entry(entry):
     if isinstance(entry, dict):
@@ -213,6 +249,8 @@ def roll_magical_items(level, data):
     result.extend(roll_on_mag_table(1, 1 * level, legendary))
 
     return result
+
+
 def dump_character(character: Character):
     if not (hasattr(character, 'name')):
         character.name = 'unnamed'
@@ -233,11 +271,7 @@ def load_character(name: str):
         setattr(c, k, x[k])
     return c
 
-#stream = open("C:/Users/mhoh1/PycharmProjects/acksgen/generator_circle_of_dawn.yaml", 'r')
-#data = yaml.safe_load(stream)
-#table = data['tables']['treasure']['heroic magic']['very rare']
+stream = open("C:/Users/mhoh1/PycharmProjects/acksgen/generator_circle_of_dawn.yaml", 'r')
+data = yaml.safe_load(stream)
 
-#a = []
-#items = roll_magical_items(5,data)
-#for i in items:
-#    print(i['name'])
+#roll_party(10000,True,data,14)

@@ -8,36 +8,22 @@ from Tools.chargen.personalityGenerator import create_personality_string
 class Character:
 
     # noinspection PyAttributeOutsideInit
-    def createFromScratch(self, classdict, generalprofs, styletables, ethnicity, name, cclass, level, alignment, gender,
-                          strength, dexterity, constitution, intelligence, wisdom, charisma, mag_it, path = None, prob_to_double_dip=20):
+    def createFromScratch(self, classdict, generalprofs, gen_prof_prog, styletables, ethnicity, name, cclass, level, alignment, gender,
+                          scores, mag_it, path = '', prob_to_double_dip=20):
 
 
         # load dictionary with all relevant infos
         self.classdict: dict = classdict
         # ability scores
-        self.strength = strength
-        self.dexterity = dexterity
-        self.constitution = constitution
-        self.intelligence = intelligence
-        self.wisdom = wisdom
-        self.charisma = charisma
+        self.strength = scores.get('strength',10)
+        self.dexterity = scores.get('dexterity',10)
+        self.constitution = scores.get('constitution',10)
+        self.intelligence = scores.get('intelligence',10)
+        self.wisdom = scores.get('wisdom',10)
+        self.charisma = scores.get('charisma',10)
 
-        # process class dict and apply paths
-        self.pathname = ''
-        if path:
-            self.pathname = " ("+str.capitalize(path)+")"
-            if not(path in classdict.get('path', '')):
-                raise Exception("this class does not have the path " + str(path))
-            del self.classdict['path']
-            for k in self.classdict:
-                if isinstance(self.classdict[k],dict):
-                    if 'path' in self.classdict[k]:
-                        chosenpath = classdict[k]['path'][path]
-                        classdict[k] = chosenpath
-        #print(cclass + " " + self.pathname)
-        if not(path):
-            if 'path' in self.classdict:
-                raise Exception('this class has to choose a path')
+        # for class name
+        self.pathname = path
 
         # base attributes
         self.ethnicity = ethnicity
@@ -49,6 +35,7 @@ class Character:
         self.maxlevel = self.classdict['maxlevel']
         self.hdtype = self.classdict['hd']
         self.mv = self.classdict['mv']
+        self.mod_mv = self.mv
         self.basehp = 0
         self.alignment = alignment
 
@@ -70,7 +57,6 @@ class Character:
         self.magical_items = {}
         self.magical_item_rolls = mag_it
 
-
         # progression
         self.experienceforlevel = self.classdict['experienceforlevel']
         self.classproficiencylist = self.classdict['proficiencylist']
@@ -78,7 +64,7 @@ class Character:
         self.attackprogression = self.classdict['attackprogression']
         self.savingthrowprogression = self.classdict['savingthrows']['progression']
         self.initialsaves = self.classdict['savingthrows']['initial']
-        self.genprofprogression = [0, 0, 5, 9, 13]
+        self.genprofprogression = gen_prof_prog
         self.classprofprogression = self.classdict['proficiencyprogression']
         self.primerequisites = self.classdict.get('primerequisites', [])
         self.minrequisites = self.classdict.get('minrequisites',[])
@@ -89,7 +75,6 @@ class Character:
                 while getattr(self, a) < r[a]:
                     setattr(self, a, roll("3d6"))
 
-
         # spellcasting
         if 'magictypes' in self.classdict:
             self.casterlevel = 0
@@ -97,10 +82,12 @@ class Character:
             self.magictypes = self.classdict['magictypes']
             self.casterfraction = self.classdict.get('casterfraction', 1)
             self.spells = {}
+            for magictype in self.magictypes:
+                mname = magictype['name']
+                self.spells[mname] = {1: [], 2: [], 3: [], 4: [], 5: [], 6: []}
             self.spellprogressions = {}
             for mt in self.magictypes:
-                self.spellprogressions[mt['name']] = {"progression": mt['progression'], "type": mt['type']}
-
+                self.spellprogressions[mt['name']] = {"progression": mt['progression'], "mode": mt['mode']}
 
         # descriptive
         self.description = ''
@@ -134,7 +121,7 @@ class Character:
 
         for i in range(to):
             if self.level >= self.maxlevel:
-                print("maxlevel reached")
+                #print("maxlevel reached")
                 return
 
             # level, exp und base hp muss ich hier tracken weil davon ja alles berechnet wird
@@ -145,7 +132,7 @@ class Character:
             self.experiencepoints = self.experienceforlevel[self.level-1]
 
             # außerdem muss ich hier die abilities und so zuteilen.
-            self.getAbilitiesForCurrentLevel()
+            self.getAbilitiesForCurrentLevel(20)
 
             # und zauber nicht vergessen
             self.getSpellsForCurrentLevel()
@@ -189,6 +176,8 @@ class Character:
             self.abilities[entry] = {"name": entry}
         elif (entry.get('type', '') == 'genprof') or (entry.get('type', '') == 'classprof'):
             self.giveProficiencyToCharacter(entry)
+        elif ('spell' in entry):
+            self.spells[entry['type']][entry['level']].append(entry['spell'])
         else:
             self.abilities[entry['name']] = entry
 
@@ -251,15 +240,17 @@ class Character:
         for magictype in self.magictypes:
             spellsperlevel = magictype['progression'].get(self.casterlevel,{1: 0})
             mname = magictype['name']
-            self.spells[mname] = {1: [], 2: [], 3: [], 4: [], 5: [], 6: []}
+            #self.spells[mname] = {1: [], 2: [], 3: [], 4: [], 5: [], 6: []}
             for spelllevel in spellsperlevel.keys():
                 #rechnet aus wieviele zauber man noch zu bekommen hat
-                numberofspellstoget = spellsperlevel[spelllevel]+max(self.intmod,0) - (len(self.spells.get(spelllevel, [])))
+                numberofspellstoget = spellsperlevel[spelllevel]+max(self.intmod,0) - (len(self.spells.get(mname, {}).get(spelllevel, [])))
                 c_spell_list = magictype['list']
 
                 if "divine" in str.lower(mname):
                     if numberofspellstoget > 1:
-                        self.spells[mname][spelllevel] = c_spell_list.get(spelllevel,[])
+                        self.spells[mname][spelllevel].extend(c_spell_list.get(spelllevel,[]))
+                        if spelllevel in c_spell_list:
+                            c_spell_list.pop(spelllevel)
                 else:
                     for j in range(numberofspellstoget):
 
@@ -304,16 +295,18 @@ class Character:
                 self.magical_items[entry.get("name")]["amount"] = 1
 
     def add_looks(self, desctables):
-        build = rollOnTable_string(desctables.get('human build',''), self.strmod)
+        build = rollOnTable_string(desctables.get('build',{}).get(self.ethnicity,''), self.strmod).lower()
+        skincolor = rollOnTable_string(desctables.get('skin color',{}).get(self.ethnicity,'')).lower()
         eyecolor = rollOnTable_string(desctables.get('eye color',{}).get(self.ethnicity,'')).lower()
         haircolor = rollOnTable_string(desctables.get('hair color',{}).get(self.ethnicity,'')).lower()
         hairtype = rollOnTable_string(desctables.get('hair texture',{}).get(self.ethnicity,'')).lower()
 
-        if not(build + eyecolor + haircolor + hairtype):
+        if not(build + eyecolor + haircolor + hairtype+ skincolor):
             pass
         else:
-            self.description = build + " " + self.gender + " " + self.ethnicity + " with " + eyecolor + " eyes and " + \
-                haircolor + " hair of " + hairtype + " texture."
+            self.description = build + " " + self.gender + " " + str.capitalize(self.ethnicity) + " of " + skincolor + \
+                               " complexion with " + eyecolor + " eyes and " + \
+                               haircolor + " hair of " + hairtype + " texture."
 
 
         chm = self.chamod
@@ -477,8 +470,8 @@ class Character:
         self.hp = self.basehp+(self.hd*self.conmod)
 
         #Angriffe und Kampfstats
-        self.meleethrow = 11 - sum(i <= self.level for i in self.attackprogression) - self.strmod
-        self.missilethrow = 11 - sum(i <= self.level for i in self.attackprogression) - self.dexmod
+        self.meleethrow = 10 - sum(i <= self.level for i in self.attackprogression) - self.strmod
+        self.missilethrow = 10 - sum(i <= self.level for i in self.attackprogression) - self.dexmod
         self.meleedamage = self.strmod
         self.missiledamage = 0
         self.surprise = 3
@@ -497,13 +490,15 @@ class Character:
         # encumbrance[0] is the stones, [1] is the #items of the next stone
         self.encumbrance = (weight//6, weight % 6)
 
-        self.mv = 120
+        movement = 120
         if self.encumbrance[0] >= 11:
-            self.mv = 30
+            movement = 30
         elif self.encumbrance[0] >= 8:
-            self.mv = 60
+            movement = 60
         elif self.encumbrance[0] >= 6:
-            self.mv = 90
+            movement = 90
+
+        self.mod_mv = min(movement, self.mv)
 
         #saving throws
         throwmod = sum(i <= self.level for i in self.savingthrowprogression) - self.wismod
@@ -540,7 +535,7 @@ class Character:
             for i in spells:
                 if spells[i]:
                     number_of_casts = ''
-                    if "ceremonial" in str.lower(self.spellprogressions[magic_type]['type']):
+                    if "ceremonial" in str.lower(self.spellprogressions[magic_type]['mode']):
                         number_of_casts = str(self.ceremonythrow + ((i-1)*2)) + "+"
                     else:
                         number_of_casts = "x"+str(self.spellprogressions[magic_type]['progression'][self.level][i])
@@ -591,7 +586,7 @@ class Character:
 
         character = character.format(
             self.name, str.capitalize(self.cclass), self.pathname, self.level, self.strength, self.dexterity, self.constitution, self.intelligence, self.wisdom, self.charisma, self.experiencepoints,
-            self.mv, max(self.ac, self.acm), self.hdtype, self.hp, self.surprise, self.initiative,
+            self.mod_mv, max(self.ac, self.acm), self.hdtype, self.hp, self.surprise, self.initiative,
             self.PP, self.PD, self.BB, self.SW, self.S, self.alignment,
             self.meleethrow, formatBonus(self.meleedamage), self.missilethrow, formatBonus(self.missiledamage),
             formatItems(self.weapons), formatItems(self.armor), formatSkills(self.abilities), formatSkills(self.proficiencies), formatItems(self.gear), formatenc(self.encumbrance))
@@ -606,7 +601,7 @@ class Character:
 
         character = character + "\n<b>Personality:</b> " + self.personality
         if self.description:
-            character = character + "\n<b>Description:</b> " + self.description
+            character = character + "\n<b>Description:</b> " + str.capitalize(self.description)
 
         if len(self.features) > 0:
             character = character + "\n<b>Features:</b> " + self.features

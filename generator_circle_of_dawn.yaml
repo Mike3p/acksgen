@@ -689,7 +689,7 @@ abilities:
   Accuracy Bonus: &accuracy_bonus
     name: Accuracy Bonus
     modifies:
-      missileattack: -1
+      missilethrow: -1
   Animal Reflexes: &animal_reflexes
     name: Animal Reflexes
     modifies:
@@ -938,7 +938,7 @@ classproficiencies:
     name: Precise Shooting
     type: classprof
     max: 2
-  Prestidigation: &prestidigation
+  Prestidigation: &prestidigitation
     name: Prestidigation
     type: classprof
     max: 1
@@ -1198,9 +1198,9 @@ generalproficiencies:
     max: 3
     throw: 11
 attackprogressions:
-  fighter: &fighter_attack_throw_progression [1,2,4,5,7,8,10,11,13,14]
-  thief: &thief_attack_throw_progression [1,3,5,7,9,11,13]
-  mage: &mage_attack_throw_progression [1,4,7,10,13]
+  fighter: &fighter_attack_throw_progression [2,4,5,7,8,10,11,13,14]
+  thief: &thief_attack_throw_progression [3,5,7,9,11,13]
+  mage: &mage_attack_throw_progression [4,7,10,13]
 proficiencyprogression:
   fighter: &fighter_proficiency_progression [1, 3, 6, 9, 12]
   thief: &thief_proficiency_progression [1, 4, 8, 12]
@@ -3823,7 +3823,7 @@ classes:
     savingthrows: *eldritch_saving_throws
     proficiencyprogression: *thief_proficiency_progression
     magictypes:
-      - type: eldritch ceremonial
+      - mode: eldritch ceremonial
         name: Ceremonial
         progression: *loremaster_spellprogression
         list:
@@ -3852,7 +3852,7 @@ classes:
       - *mystic_aura
       - *naturalism
       - *personal_talisman
-      - *prestidigation
+      - *prestidigitation
       - *prophecy
       - *second_sight
       - *sensing_power
@@ -3896,7 +3896,7 @@ classes:
     savingthrows: *thief_saving_throws
     proficiencyprogression: *thief_proficiency_progression
     magictypes:
-      - type: eldritch ceremonial
+      - mode: eldritch ceremonial
         name: Ceremonial
         progression: *runemaker_spellprogression
         list:
@@ -3985,7 +3985,7 @@ classes:
     savingthrows: *eldritch_saving_throws
     proficiencyprogression: *thief_proficiency_progression
     magictypes:
-      - type: eldritch ceremonial
+      - mode: eldritch ceremonial
         name: ceremonial
         progression: *runemaker_spellprogression
         list:
@@ -4009,7 +4009,7 @@ classes:
       - *laying_on_hands
       - *martial_training
       - *personal_talisman
-      - *prestidigation
+      - *prestidigitation
       - *prophecy
       - *running
       - *second_sight
@@ -4124,7 +4124,7 @@ classes:
       - *mystic_aura
       - *performance
       - *precise_shooting
-      - *prestidigation
+      - *prestidigitation
       - *running
       - *seduction
       - *skirmishing
@@ -4178,7 +4178,7 @@ classes:
     savingthrows: *eldritch_saving_throws
     proficiencyprogression: *thief_proficiency_progression
     magictypes:
-      - type: eldritch ceremonial
+      - mode: eldritch ceremonial
         name: Ceremonial
         progression: *runemaker_spellprogression
         list:
@@ -4200,7 +4200,7 @@ classes:
       - *magical_music
       - *martial_training
       - *performance
-      - *prestidigation
+      - *prestidigitation
       - *prophecy
       - *quiet_magic
       - *righteous_turning
@@ -4242,7 +4242,7 @@ classes:
     mv: 120
     cleavesperlevel: 1
     maxlevel: 14
-    hd: d8
+    hd: d6
     primerequisites:
       strength: 9
       dexterity: 9
@@ -4292,7 +4292,7 @@ classes:
     equipment:
       - [{die: 1d10, res:{1-3: *table_small_melee_weapons, 4-9: *table_medium_melee_weapons, 10: ''}}, 1d2]
       - [{die: 1d6, res: {1-2: *table_large_melee_weapons, 3-6: ''}}, 1]
-      - [{die: 1d4, res: {1-2: *table_bows, 3-5: *table_crossbows, 5: ''}},1]
+      - [{die: 1d10, res: {1-6: *table_bows, 7-9: *table_crossbows, 10: ''}},1]
       - [*javelin, 1d4]
       - [*table_special_weapons, 1d4-2]
       - [*shield, 1d2-1]
@@ -4710,7 +4710,7 @@ classes:
     savingthrows: *thief_saving_throws
     proficiencyprogression: *thief_proficiency_progression
     magictypes:
-      - type: eldritch ceremonial
+      - mode: eldritch ceremonial
         name: Ceremonial
         progression: *mage_spellprogression
         list:
@@ -4737,7 +4737,7 @@ classes:
       - *naturalism
       - *performance
       - *personal_talisman
-      - *prestidigation
+      - *prestidigitation
       - *profession
       - *prophecy
       - *quiet_magic
@@ -4782,11 +4782,11 @@ classes:
     savingthrows: *arcane_saving_throws
     proficiencyprogression: *mage_proficiency_progression
     magictypes:
-      - type: divine cast
+      - mode: divine cast
         name: Divine
         progression: *runemaker_spellprogression
         list: *spells_cleric
-      - type: arcane ceremonial
+      - mode: arcane ceremonial
         name: Arcane
         progression: *mage_spellprogression
         list: *spells_arcane
@@ -4810,7 +4810,7 @@ classes:
       - *naturalism
       - *performance
       - *personal_talisman
-      - *prestidigation
+      - *prestidigitation
       - *profession
       - *prophecy
       - *quiet_magic
@@ -4977,7 +4977,7 @@ classes:
     savingthrows: *thief_saving_throws
     proficiencyprogression: *thief_proficiency_progression
     magictypes:
-      - type: eldritch ceremonial
+      - mode: eldritch ceremonial
         name: Ceremonial
         progression: *loremaster_spellprogression
         list:
@@ -5005,7 +5005,7 @@ classes:
       - *mystic_aura
       - *naturalism
       - *personal_talisman
-      - *prestidigation
+      - *prestidigitation
       - *prophecy
       - *second_sight
       - *sensing_evil
@@ -5342,7 +5342,7 @@ classes:
     savingthrows: *eldritch_saving_throws
     proficiencyprogression: *thief_proficiency_progression
     magictypes:
-      - type: eldritch ceremonial
+      - mode: eldritch ceremonial
         name: Ceremonial
         progression: *runemaker_spellprogression
         list:
@@ -5350,34 +5350,34 @@ classes:
           C: {die: 1d20, res:{1-10: *spells_black, 11-15: *spells_grey, 16-20: *spells_white}}
           N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
     proficiencylist:
-      - *alchemy
       - *animal_husbandry
-      - *martial_training
-      - *arcane_dabbling
+      - *animal_training
+      - *alchemy
+      - *battle_magic
       - *beast_friendship
-      - *contemplation
+      - *berserkergang
+      - *command
       - *diplomacy
       - *divine_blessing
       - *divine_health
+      - *elementalism
+      - *fighting_style
       - *healing
-      - *second_sight
-      - *knowledge
       - *laying_on_hands
+      - *leadership
       - *loremastery
       - *magical_engineering
       - *magical_music
-      - *mystic_aura
       - *naturalism
-      - *performance
-      - *prestidigation
-      - *profession
-      - *prophecy
+      - *passing_without_trace
+      - *prestidigitation
       - *quiet_magic
-      - *righteous_turning
       - *sensing_evil
       - *sensing_power
       - *theology
+      - *tracking
       - *unflappable_casting
+      - *weapon_focus
     abilityprogression:
       1:
         - *personal_talisman
@@ -5388,7 +5388,7 @@ classes:
                     [Totem Animal (Eagle), *command],
                     [Totem Animal (Horse), *running],
                     [Totem Animal (Lion), *divine_health],
-                    [Totem Animal (Monkey), *prestidigation],
+                    [Totem Animal (Monkey), *prestidigitation],
                     [Totem Animal (Rat), *quiet_magic],
                     [Totem Animal (Owl), *sensing_power],
                     [Totem Animal (Python), *laying_on_hands],
@@ -5418,7 +5418,7 @@ classes:
       - [*torch, 1d6-3]
       - [*ink, 1d2-1]
   &witch witch:
-    name: witch
+    name: profs
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
     hpafter9: 1
     mv: 120
@@ -5444,7 +5444,7 @@ classes:
     savingthrows: *eldritch_saving_throws
     proficiencyprogression: *thief_proficiency_progression
     magictypes:
-      - type: eldritch ceremonial
+      - mode: eldritch ceremonial
         name: Ceremonial
         progression: *loremaster_spellprogression
         list:
@@ -5453,32 +5453,32 @@ classes:
           N: {die: 1d20, res:{1-9: *spells_grey, 10-18: *spells_white, 19-20: *spells_black}}
     proficiencylist:
       - *alchemy
-      - *animal_husbandry
-      - *martial_training
+      - *bright_lore
       - *arcane_dabbling
       - *beast_friendship
+      - *black_lore
       - *contemplation
-      - *diplomacy
+      - *craft
       - *divine_blessing
       - *divine_health
+      - *elementalism
+      - *exhalted_bloodline
+      - *familiar
       - *healing
-      - *second_sight
-      - *knowledge
+      - *illusion_resistance
       - *laying_on_hands
       - *loremastery
       - *magical_engineering
       - *magical_music
       - *mystic_aura
       - *naturalism
-      - *performance
-      - *prestidigation
-      - *profession
+      - *prestidigitation
       - *prophecy
       - *quiet_magic
-      - *righteous_turning
-      - *sensing_evil
+      - *seduction
       - *sensing_power
       - *theology
+      - *transmogrification
       - *unflappable_casting
     abilityprogression:
       path:
@@ -5528,15 +5528,24 @@ classes:
       - [*torch, 1d6-3]
       - [*ink, 1d2-1]
 desctables:
-  human build:
-    die: 2d6
-    res:
-      1: Small
-      2-4: Slim
-      5-8: Average
-      9-10: Broad
-      11-12: Large
-      13: Huge
+  build:
+    *ilian: &humanbuild
+      die: 2d6
+      res:
+        1: Small
+        2-4: Slim
+        5-8: Average
+        9-10: Broad
+        11-12: Large
+        13: Huge
+    *varn: *humanbuild
+    *bosk: *humanbuild
+    *surga: *humanbuild
+    *opelean: *humanbuild
+    *heron: *humanbuild
+    *langun: *humanbuild
+    *acheron: *humanbuild
+    *sargon: *humanbuild
   eye color:
     ilian:
       die: 1d20
@@ -5687,6 +5696,58 @@ desctables:
       die: 1d20
       res:
         1-20: black
+  skin color:
+    *bosk:
+      die: "1d20"
+      res:
+        1-10: Brown, Light
+        11-20: Olive, Light
+    *langun:
+      die: "1d20"
+      res:
+        1-10: Yellow, Medium
+        11-20: Yellow, Light
+    *acheron:
+      die: "1d20"
+      res:
+        1-20: Pale
+    *heron:
+      die: "1d20"
+      res:
+        1-6: Brown, Dark
+        7-13: Brown, Medium
+        14-20: Olive, Dark
+    *opelean:
+      die: "1d20"
+      res:
+        1-10: Brown, Dark
+        11-20: Brown, Medium
+    *varn:
+      die: "1d20"
+      res:
+        1-6: Pale, Very Light
+        7-8: Pale, Light
+        9-14: Pale, Freckled
+        15-20: Pale
+    *ilian:
+      die: "1d20"
+      res:
+        1-5: Ocher, Dark
+        6-10: Ocher, Medium
+        11-15: Olive, Dark
+        16-20: Olive, Reddish
+    *surga:
+      die: "1d20"
+      res:
+        1-6: Ocher, Dark
+        7-13: Ocher, Medium
+        14-20: Ocher, Light
+    *sargon:
+      die: "1d20"
+      res:
+        1-6: Copper
+        7-13: Olive, Sienna
+        14-20: Reddish Brown
   hair texture:
     ilian:
       die: 1d20

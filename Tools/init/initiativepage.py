@@ -9,9 +9,12 @@ data = {}
 @bp.route('/', methods=('GET', 'POST'))
 def page():
 
+
     initiativeTextbox = InitiativeForm()
+    if 'ini' in session:
+        initiativeTextbox.initiativeInput.process_data(session.get('ini', ""))
     #session['ini'] = request.form.get('initiativeInput')
-    initiativeTextbox.initiativeInput.process_data(session.get('ini', ""))
+    #initiativeTextbox.initiativeInput.process_data(session.get('ini', ""))
 
     return render_template('pages/initiative.html', cfg = initiativeTextbox)
 

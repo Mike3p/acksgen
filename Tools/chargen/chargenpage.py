@@ -13,9 +13,10 @@ def page():
     loadData()
 
     charGenForm = CharacterGenerationForm()
-    charGenForm.ethnicity.choices = [('random','random')]
+    charGenForm.ethnicity.choices = [(None,'random')]
     charGenForm.ethnicity.choices.extend([(x, x) for x in list(session['gen_dict']['ethnicity'].keys())])
-    charGenForm.characterClass.choices = [(x, x) for x in session['choices']]
+    charGenForm.characterClass.choices = [(None, 'random')]
+    charGenForm.characterClass.choices.extend([(x, x) for x in session['choices']])
     return render_template('pages/chargen.html', cfg=charGenForm)
 
 
@@ -23,11 +24,17 @@ def page():
 def generate():
     loadData()
     characterClass = request.form.get('characterClass')
-    characterLevel = int(request.form.get('characterLevel'))
-    rollForParty = request.form.get('rollForParty')
-    characterNumber = min(int(request.form.get('characterNumber')),1000)
-    #createExcelSheet = request.form.get('createExcelSheet')
-    ethnicity = request.form.get('ethnicity')
+    try:
+        characterLevel = int(request.form.get('characterLevel'))
+        rollForParty = request.form.get('rollForParty')
+        characterNumber = min(int(request.form.get('characterNumber')), 100000)
+        ethnicity = request.form.get('ethnicity')
+    except:
+        characterLevel = 1
+        rollForParty = False
+        characterNumber = 1
+        ethnicity = "random"
+
 
     generateParty = False
     if rollForParty:
@@ -37,9 +44,10 @@ def generate():
                                                ethnicity)
 
     charGenForm = CharacterGenerationForm()
-    charGenForm.ethnicity.choices = [('random', 'random')]
+    charGenForm.ethnicity.choices = [(None, 'random')]
     charGenForm.ethnicity.choices.extend([(x, x) for x in list(session['gen_dict']['ethnicity'].keys())])
-    charGenForm.characterClass.choices = [(x, x) for x in session['choices']]
+    charGenForm.characterClass.choices = [(None, 'random')]
+    charGenForm.characterClass.choices.extend([(x, x) for x in session['choices']])
 
     #todo das is bisschen unhübsch. könnte man evtl mal auftrennen in ethnicities und namen und dann richtig machen
     charGenForm.ethnicity.process_data(ethnicity)
@@ -64,5 +72,5 @@ def loadData():
                 print(exc)
 
     character_list = sorted(list(session['gen_dict']['classes'].keys()))
-    character_list.append('random')
+    #character_list.append('random')
     session['choices'] = character_list

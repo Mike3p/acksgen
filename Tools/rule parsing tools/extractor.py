@@ -54,4 +54,16 @@ def spellextractor():
             spell = spell.replace(" nec", "")
             o.write("- "+spell+"\n")
 
+def tableformatter():
+    f = open("./tables", "r")
+    o = open("table_output.txt", "w+")
+    lines = f.readlines()
+    for line in lines:
+        if line.startswith("*"):
+            line = line.replace("\n",":\n")
+            formatted_line = line + "  die: \"1d20\"\n  res:\n"
+        else:
+            formatted_line = "    " + line.replace(" ", ": ",1)
+        o.write(formatted_line)
+
 getProficienciesFromStrings()

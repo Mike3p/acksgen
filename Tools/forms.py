@@ -3,7 +3,7 @@ from wtforms import (Form, SelectField, StringField, validators, IntegerField, S
 # form to generate classed characters
 class CharacterGenerationForm(Form):
     characterClass = SelectField(u'Class')
-    characterLevel = SelectField(u'Level', choices=[(0, '0'), (1,'1'), (2,'2'), (3,'3'), (4,'4'), (5,'5'), (6,'6'), (7,'7'),
+    characterLevel = SelectField(u'Level', choices=[(1,'1'), (2,'2'), (3,'3'), (4,'4'), (5,'5'), (6,'6'), (7,'7'),
         (8,'8'), (9,'9'), (10,'10'), (11,'11'), (12,'12'), (13,'13'), (14,'14'), ])
     characterNumber = IntegerField(u'Number', default = 1)
     submit = SubmitField(u'Generate')
@@ -14,7 +14,7 @@ class CharacterGenerationForm(Form):
 
 
 class InitiativeForm(Form):
-    initiativeInput = TextAreaField(u'Initiative')
+    initiativeInput = TextAreaField(u'Initiative', default="combatant 1: ini bonus 1\ncombatant 2: ini bonus 2\n...")
 
 class DomainForm(Form):
     strongholdValue = IntegerField(u'Number', default = 1)
