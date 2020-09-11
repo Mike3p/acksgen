@@ -127,7 +127,7 @@ class Character:
             # level, exp und base hp muss ich hier tracken weil davon ja alles berechnet wird
             self.level += 1
             if hasattr(self, "casterlevel"): self.casterlevel = math.floor(self.level / self.casterfraction)
-            if self.level < 9: self.basehp = self.basehp + roll("1"+self.hdtype)
+            if self.level < 9: self.basehp = self.basehp + max(1,roll("1"+self.hdtype)+self.conmod)
             else: self.basehp = self.basehp + self.hpafter9
             self.experiencepoints = self.experienceforlevel[self.level-1]
 
@@ -140,7 +140,7 @@ class Character:
         # nach dem leveln berechnen wir die abilities!
         self.compute_statistics()
 
-    def getAbilitiesForCurrentLevel(self, prob_to_double_dip = 25):
+    def getAbilitiesForCurrentLevel(self, prob_to_double_dip = 20):
         lvl = self.level
         for entry in self.abilityprogression.get(lvl,{}):
             def chooseRandomAbility(abilitydict: dict):
@@ -469,7 +469,8 @@ class Character:
         self.ac = 0 + self.dexmod
         self.acm = 0 + self.dexmod
         self.hd = min(self.level,9)
-        self.hp = self.basehp+(self.hd*self.conmod)
+        #todo: this should add con mod per level on recompute to account for changing ability mods.
+        self.hp = self.basehp
 
         #Angriffe und Kampfstats
         self.meleethrow = 10 - sum(i <= self.level for i in self.attackprogression) - self.strmod
