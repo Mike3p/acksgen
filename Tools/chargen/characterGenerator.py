@@ -44,7 +44,8 @@ def choose_random_class_weighted(classdict, abilities: dict):
         clazz = classdict[clskey]
         for ablt in abilities:
             if (clazz.get('primerequisites', {}).get(ablt, 1) > abilities[ablt]) or \
-                    (clazz.get('minrequisites', {}).get(ablt, 1) > abilities[ablt]):
+                    (clazz.get('minrequisites', {}).get(ablt, 1) > abilities[ablt]) or \
+                    (clazz.get('exclude_from_random') == True):
                 cls_valid = False
 
         if not cls_valid:
@@ -176,7 +177,9 @@ def roll_character(sourcedict, level, clazz = None, ethnicity = None, gender = N
 
     if not alignment: alignment = random.choice(['C', 'L', 'L', 'N', 'N', 'N'])
 
-    m_items = roll_magical_items(level, sourcedict)
+    m_items = []
+    if not class_dict['maxlevel'] < 1:
+        m_items = roll_magical_items(level, sourcedict)
     gen_prof_prog = sourcedict['proficiencyprogression']['general']
 
 

@@ -97,11 +97,11 @@ class Character:
 
         #todo not sure if there is a better solution. i need compute statistics in case of changing attributes, levels, proficiencies, etc.
         if self.intelligence >= 13:
-            self.chooseProficiency("genprof", "random", prob_to_double_dip)
+            self.chooseProficiency(self.generalproficiencylist, "random", prob_to_double_dip)
         if self.intelligence >= 16:
-            self.chooseProficiency("genprof", "random", prob_to_double_dip)
+            self.chooseProficiency(self.generalproficiencylist, "random", prob_to_double_dip)
         if self.intelligence >= 18:
-            self.chooseProficiency("genprof", "random", prob_to_double_dip)
+            self.chooseProficiency(self.generalproficiencylist, "random", prob_to_double_dip)
 
         # this is for normalmen
         self.getAbilitiesForCurrentLevel(prob_to_double_dip)
@@ -111,17 +111,18 @@ class Character:
         delattr(self, "classdict")
 
         self.compute_statistics()
-        self.levelup(level)
+        self.levelup(level, prob_to_double_dip)
 
         # add looks. depends on charisma mod.
         self.add_looks(styletables)
         self.personality = create_personality_string()
 
-    def levelup(self, to:int):
+    def levelup(self, to:int, prob_to_double_dip):
 
         for i in range(to):
             if self.level >= self.maxlevel:
-                #print("maxlevel reached")
+                if self.maxlevel == 0: self.basehp = self.basehp + max(1,roll("1"+self.hdtype)+self.conmod)
+                self.compute_statistics()
                 return
 
             # level, exp und base hp muss ich hier tracken weil davon ja alles berechnet wird
@@ -132,7 +133,7 @@ class Character:
             self.experiencepoints = self.experienceforlevel[self.level-1]
 
             # außerdem muss ich hier die abilities und so zuteilen.
-            self.getAbilitiesForCurrentLevel(20)
+            self.getAbilitiesForCurrentLevel(prob_to_double_dip)
 
             # und zauber nicht vergessen
             self.getSpellsForCurrentLevel()
@@ -165,11 +166,11 @@ class Character:
 
         numberofgeneralprofs = sum(i == lvl for i in self.genprofprogression)
         for i in range(numberofgeneralprofs):
-            self.chooseProficiency("genprof", "random", prob_to_double_dip)
+            self.chooseProficiency(self.generalproficiencylist, "random", prob_to_double_dip)
 
         numberofclassprofs = sum(i == lvl for i in self.classprofprogression)
         for i in range(numberofclassprofs):
-            self.chooseProficiency("classprof", "random", prob_to_double_dip)
+            self.chooseProficiency(self.classproficiencylist, "random", prob_to_double_dip)
 
     def addAbility(self, entry):
         if isinstance(entry, str):
@@ -181,27 +182,30 @@ class Character:
         else:
             self.abilities[entry['name']] = entry
 
-    def chooseProficiency(self, type:str, proficiencyToChoose, prob_intent_doubledip = 0):
-        if type == "classprof":
-            chosenfrom: list = self.classproficiencylist
-        elif type == "genprof":
-            chosenfrom: list = self.generalproficiencylist
-        else:
-            raise Exception("type must be general or class")
+    def chooseProficiency(self, chosenfrom, prof_to_choose, prob_intent_doubledip = 0):
+        # if type == "classprof":
+        #     chosenfrom: list = self.classproficiencylist
+        # elif type == "genprof":
+        #     chosenfrom: list = self.generalproficiencylist
+        # else:
+        #     raise Exception("type must be general or class")
 
-        if not (chosenfrom):
-            raise Exception("character has no choices left?")
+        # if not (chosenfrom):
+        #     raise Exception("character has no choices left?")
 
         proficiency:dict = {}
-        if proficiencyToChoose == "random":
+        if prof_to_choose == "random":
             choice = random.randrange(len(chosenfrom))
 
             if roll("1d100") <= prob_intent_doubledip:
                 profs_char_can_double_dip = []
                 for key in self.proficiencies:
+                    prof_in_correct_list = False
+                    for item in chosenfrom:
+                        if item['name'] == self.proficiencies[key]['name']:
+                            prof_in_correct_list = True
 
-                    if (self.proficiencies[key]['ranks'] < self.proficiencies[key]['max']) & \
-                            (self.proficiencies[key]['type'] == type):
+                    if (self.proficiencies[key]['ranks'] < self.proficiencies[key]['max']) & prof_in_correct_list:
                         profs_char_can_double_dip.append(self.proficiencies[key])
                 if profs_char_can_double_dip:
                     choice = random.randrange(len(profs_char_can_double_dip))
@@ -214,11 +218,11 @@ class Character:
 
         else:
             for p in chosenfrom:
-                if p['name'] == proficiencyToChoose:
+                if p['name'] == prof_to_choose:
                     proficiency = p
 
         if not proficiency:
-            raise Exception("a proficiency of this name does not exist in the specified list: "+proficiencyToChoose)
+            raise Exception("a proficiency of this name does not exist in the specified list: " + prof_to_choose)
 
         #print("character has chosen proficiency: " + proficiency['name'])
         self.giveProficiencyToCharacter(proficiency)
@@ -473,8 +477,8 @@ class Character:
         self.hp = self.basehp
 
         #Angriffe und Kampfstats
-        self.meleethrow = 10 - sum(i <= self.level for i in self.attackprogression) - self.strmod
-        self.missilethrow = 10 - sum(i <= self.level for i in self.attackprogression) - self.dexmod
+        self.meleethrow = 11 - sum(i <= self.level for i in self.attackprogression) - self.strmod
+        self.missilethrow = 11 - sum(i <= self.level for i in self.attackprogression) - self.dexmod
         self.meleedamage = self.strmod
         self.missiledamage = 0
         self.surprise = 3
