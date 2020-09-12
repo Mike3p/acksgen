@@ -3242,7 +3242,7 @@ classes:
       - [ *table_light, 1d4-3 ]
       - [ *torch, 1d4-2 ]
   &thief thief:
-    name: thief
+    name: Thief
     experienceforlevel: [0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000]
     ethnicity: *eth_human
     hpafter9: 1
@@ -3313,7 +3313,7 @@ classes:
       - [*table_light, 1]
       - [*torch, 1d6-3]
   &cleric cleric:
-    name: cleric
+    name: Cleric
     ethnicity: *eth_human
     experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
     hpafter9: 1
@@ -3379,7 +3379,7 @@ classes:
       - [*torch, 1d6-3]
       - [*ink, 1d2-1]
   &assassin assassin:
-    name: assassin
+    name: Assassin
     ethnicity: *eth_human
     experienceforlevel: [0,1700,3400,6800,14000,28000,55000,110000,230000,350000,470000,590000,710000,830000]
     hpafter9: 2
@@ -3445,7 +3445,7 @@ classes:
       - [*table_light, 1]
       - [*torch, 1d6-3]
   &fighter fighter:
-    name: fighter
+    name: Fighter
     ethnicity: *eth_human
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
     hpafter9: 2
@@ -3574,7 +3574,7 @@ classes:
       - [*table_light, 1]
       - [*torch, 1d6-3]
   &bard bard:
-    name: bard
+    name: Bard
     ethnicity: *eth_human
     maxlevel: 14
     hd: d6
@@ -3641,7 +3641,7 @@ classes:
     mv: 120
     cleavesperlevel: 0.5
   &bladedancer bladedancer:
-    name: bladedancer
+    name: Bladedancer
     ethnicity: *eth_human
     experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
     hpafter9: 1
@@ -3709,7 +3709,7 @@ classes:
       - [*torch, 1d6-3]
       - [*ink, 1d2-1]
   &explorer explorer:
-    name: explorer
+    name: Explorer
     ethnicity: *eth_human
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,250000,370000,490000,610000,730000,850000]
     hpafter9: 2
@@ -3779,7 +3779,7 @@ classes:
       - [*table_light, 1]
       - [*torch, 1d6-3]
   &mage mage:
-    name: mage
+    name: Mage
     ethnicity: *eth_human
     experienceforlevel: [0,2500,5000,10000,20000,40000,80000,160000,310000,460000,610000,760000,910000,1060000]
     hpafter9: 1
@@ -4074,7 +4074,7 @@ classes:
       - [ *table_light, 1 ]
       - [ *torch, 1d6-3 ]
   &antipaladin anti paladin:
-    name: anti paladin
+    name: Anti Paladin
     ethnicity: *eth_human
     experienceforlevel: [0,1850,3700,7400,14800,29600,60000,120000,240000,360000,480000,600000,720000,840000]
     hpafter9: 2
@@ -4139,7 +4139,7 @@ classes:
       - [*table_light, 1]
       - [*torch, 1d6-3]
   &barbarian barbarian:
-    name: barbarian
+    name: Barbarian
     experienceforlevel: [0,2600,5200,10400,20800,41600,85000,170000,290000,410000,530000,650000,770000,890000]
     hpafter9: 2
     mv: 120
@@ -4290,7 +4290,7 @@ classes:
           - [*table_light, 1]
           - [*torch, 1d6-3]
   &dwarven_delver dwarven delver:
-    name: Delver
+    name: Dwarven Delver
     experienceforlevel: [0,2000,4000,8000,16000,32000,65000,130000,260000,390000,520000]
     ethnicity: *eth_dwarven
     hpafter9: 3
@@ -4359,8 +4359,8 @@ classes:
       - [*military_oil, 1d6-1]
       - [*table_light, 1]
       - [*torch, 1d6-3]
-  &dwarven_fury dwarven Fury:
-    name: dwarven fury
+  &dwarven_fury dwarven fury:
+    name: Dwarven Fury
     ethnicity: *eth_dwarven
     experienceforlevel: [0,3100,6200,12400,24800,49600,100000,200000,330000,460000,590000,720000,850000]
     hpafter9: 3
@@ -5016,7 +5016,7 @@ classes:
       - [*torch, 1d6-3]
       - [*ink, 1d2-1]
   &shaman shaman:
-    name: shaman
+    name: Shaman
     experienceforlevel: [0,1500,3000,6000,12000,24000,50000,100000,200000,300000,400000,500000,600000,700000]
     ethnicity: *eth_human
     hpafter9: 1
@@ -5232,7 +5232,7 @@ classes:
       - [*torch, 1d6-3]
       - [*ink, 1d2-1]
   &thrassian_gladiator thrassian gladiator:
-    name: Thrassian gladiator
+    name: Thrassian Gladiator
     ethnicity:
       - *thrassian
     experienceforlevel: [0,3000,6000,12000,24000,48000,100000,200000,400000,800000,1600000]
@@ -5309,7 +5309,7 @@ classes:
       - [*table_light, 1]
       - [*torch, 1d6-3]
   &venturer venturer:
-    name: venturer
+    name: Venturer
     ethnicity: *eth_human
     experienceforlevel: [ 0,1250,2500,5000,10000,20000,40000,80000,180000,280000,280000,380000,480000,580000,680000 ]
     hpafter9: 2

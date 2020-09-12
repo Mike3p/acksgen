@@ -27,7 +27,7 @@ def generate():
     try:
         characterLevel = int(request.form.get('characterLevel'))
         rollForParty = request.form.get('rollForParty')
-        characterNumber = min(int(request.form.get('characterNumber')), 100000)
+        characterNumber = min(int(request.form.get('characterNumber')), 50)
         ethnicity = request.form.get('ethnicity')
     except:
         characterLevel = 1

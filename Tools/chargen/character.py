@@ -30,6 +30,7 @@ class Character:
         self.name = name
         self.gender = gender
         self.cclass = cclass
+        self.class_name = classdict.get('name', self.cclass)
         self.experiencepoints = 0
         self.level = 0
         self.maxlevel = self.classdict['maxlevel']
@@ -592,7 +593,7 @@ class Character:
                     "<b>Equipment:</b> {}. {};"
 
         character = character.format(
-            self.name, str.capitalize(self.cclass), self.pathname, self.level, self.strength, self.dexterity, self.constitution, self.intelligence, self.wisdom, self.charisma, self.experiencepoints,
+            self.name, self.class_name, self.pathname, self.level, self.strength, self.dexterity, self.constitution, self.intelligence, self.wisdom, self.charisma, self.experiencepoints,
             self.mod_mv, max(self.ac, self.acm), self.hdtype, self.hp, self.surprise, self.initiative,
             self.PP, self.PD, self.BB, self.SW, self.S, self.alignment,
             self.meleethrow, formatBonus(self.meleedamage), self.missilethrow, formatBonus(self.missiledamage),
