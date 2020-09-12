@@ -109,8 +109,10 @@ class Character:
         #self.get_magical_items(level)
 
         delattr(self, "classdict")
-
         self.compute_statistics()
+        if self.maxlevel == 0:
+            self.basehp = self.basehp + max(1, roll("1" + self.hdtype) + self.conmod)
+            self.hp = self.basehp
         self.levelup(level, prob_to_double_dip)
 
         # add looks. depends on charisma mod.
@@ -121,8 +123,6 @@ class Character:
 
         for i in range(to):
             if self.level >= self.maxlevel:
-                if self.maxlevel == 0: self.basehp = self.basehp + max(1,roll("1"+self.hdtype)+self.conmod)
-                self.compute_statistics()
                 return
 
             # level, exp und base hp muss ich hier tracken weil davon ja alles berechnet wird
