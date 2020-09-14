@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Custom Generator Upload</h1>
+    <h2 class = "pageheading">Custom Generator Upload</h2>
     <h2 style="color:red">WARNING: EXPERIMENTAL FEATURE. USE AT OWN RISK. WILL PROBABLY CRASH.</h2>
     <form method="POST" action="{{ url_for('uploadpage.upload_file')}}" enctype="multipart/form-data">
       <p><input class="button" type="file" name="file", accept=".yaml"></p>

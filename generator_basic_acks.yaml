@@ -656,6 +656,8 @@ classproficiencies:
     name: Combat Reflexes
     type: classprof
     max: 1
+    modifies:
+      initiative: 1
   Combat Trickery (Disarm): &combat_trickery_disarm
     name: Combat Trickery (Disarm)
     type: classprof

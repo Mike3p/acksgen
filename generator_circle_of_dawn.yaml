@@ -693,8 +693,8 @@ abilities:
   Animal Reflexes: &animal_reflexes
     name: Animal Reflexes
     modifies:
-      ini: 1
-      sp: -1
+      initiative: 1
+      surprise: -1
   Kin Slaying: &kin_slaying
     name: Kin Slaying
   Greater Berserkergang: &greater_berserkergang
@@ -783,6 +783,8 @@ classproficiencies:
     name: Combat Reflexes
     type: classprof
     max: 1
+    modifies:
+      initiative: 1
   Combat Trickery (Disarm): &combat_trickery_disarm
     name: Combat Trickery (Disarm)
     type: classprof
