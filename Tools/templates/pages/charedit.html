@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Character Editor</h1>
+    <form method="POST" action="{{ url_for('character_editor_page.upload_character')}}" enctype="multipart/form-data">
+      <p><input class="button" type="file" name="file", accept=".yaml"></p>
+        <p><input class="button" type="submit" value="Upload"></p>
+    </form>
+    <form method="POST" action="{{ url_for('character_editor_page.download_character')}}" enctype="multipart/form-data">
+      <input class="button" type="submit" value="Download">
+    </form>
+    <form method="POST" action="{{ url_for('character_editor_page.levelup_character')}}">
+      <p><input class="button" type="submit" value="Level Up Character"></p>
+    </form>
+    <div class="character">
+{% if char %}
+		<p>
+			{% for line in char %}
+			{{line | safe}} <br>
+			{% endfor %}
+            <br>
+		</p>
+{% endif %}
+</div>
+{% endblock %}

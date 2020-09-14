@@ -3,7 +3,7 @@ import re,os
 
 
 def getProficienciesFromStrings():
-    for k in os.listdir("./proflists"):
+    for k in os.listdir("proflists"):
         f = open("./proflists/"+k, "r")
         o = open("./"+k+'_output.txt', "w+")
         text = f.read()
@@ -29,7 +29,7 @@ def getProficienciesFromStrings():
 
 
 def spellextractor():
-    for k in os.listdir("./splists"):
+    for k in os.listdir("splists"):
         f = open("./splists/"+k, "r")
         o = open("./"+k+'_output.txt', "w+")
         lines = f.readlines()
@@ -55,7 +55,7 @@ def spellextractor():
             o.write("- "+spell+"\n")
 
 def tableformatter():
-    f = open("./tables", "r")
+    f = open("tables", "r")
     o = open("table_output.txt", "w+")
     lines = f.readlines()
     for line in lines:

@@ -1,7 +1,7 @@
 import yaml
-from flask import (Blueprint, render_template, request, session)
+from flask import (Blueprint, render_template, request, session, Response, url_for)
 from Tools.forms import CharacterGenerationForm
-from Tools.chargen import characterGenerator
+from Tools.chargen.characterGenerator import (roll_party, get_yaml_of_character)
 from pathlib import Path
 
 bp = Blueprint('chargenpage', __name__, url_prefix='/chargen')
@@ -18,6 +18,22 @@ def page():
     charGenForm.characterClass.choices = [(None, 'random')]
     charGenForm.characterClass.choices.extend([(x, x) for x in session['choices']])
     return render_template('pages/chargen.html', cfg=charGenForm)
+
+
+@bp.route('/download/<character_id>')
+def download_character(character_id = 0):
+    try:
+        char_object = session.get('character_objects')[int(character_id)]
+        result = get_yaml_of_character(char_object)
+        return Response(result,
+                        mimetype='file/yaml',
+                        headers={'Content-Disposition': 'attachment; filename='+str(char_object.name)+".yaml"})
+    except:
+        #raise Exception("invalid character id")
+        return """
+    <h1 style='color: red;'>No such character ID!</h1>
+    """
+
 
 
 @bp.route('/generate', methods=('GET', 'POST'))
@@ -40,8 +56,22 @@ def generate():
     if rollForParty:
         generateParty = True
 
-    characters = characterGenerator.roll_party(int(characterNumber), generateParty, session['gen_dict'], characterLevel, characterClass,
-                                               ethnicity)
+    characters = roll_party(int(characterNumber), generateParty, session['gen_dict'],
+                                               characterLevel, characterClass, ethnicity)
+    out_strings = []
+    out_characters =[]
+    i = 0
+    for c in characters:
+        out = c.__repr__()
+        out.append("<a href=\""+url_for('chargenpage.download_character',character_id = i) \
+        + "\">export character</a>")
+        #c.name = "<a href=\""+url_for('chargenpage.download_character',character_id = i) \
+        #+ "\">"+c.name+"</a>"
+        out_strings.append(out)
+        out_characters.append(c)
+        i+=1
+    session['character_objects'] = out_characters
+
 
     charGenForm = CharacterGenerationForm()
     charGenForm.ethnicity.choices = [(None, 'random')]
@@ -57,7 +87,8 @@ def generate():
     charGenForm.rollForParty.process_data(rollForParty)
     #charGenForm.createExcelSheet.process_data(createExcelSheet)
 
-    return render_template('pages/chargen.html', char=characters, cfg=charGenForm)
+    return render_template('pages/chargen.html', char=out_strings, cfg=charGenForm)
+    #return jsonify({'chars': out_strings, 'chars_yaml': out_characters})
 
 def loadData():
     if 'gen_dict' not in session:

@@ -497,7 +497,7 @@ abilities:
   Climb Walls: &climb_walls
     name: Climb Walls
     throw: 6
-    modifyingabilityscore:
+    hmodifyingabilityscore:
       dexmod: -1
     levelprogression: [2,4,7,11,13]
   Hide in Shadows: &hide_in_shadows

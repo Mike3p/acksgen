@@ -104,6 +104,10 @@ body {
   font-size: 18px;
 }
 
+.pageheading{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 /* Footer */
 .footer {
   padding: 1px;

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+    <h2 class = "pageheading">Character Generator</h2>
 <form action="{{ url_for('chargenpage.generate')}}" method="POST">
     <b class="bigtext">Class:</b>
     {{ cfg.characterClass(class_="dropdown") }}

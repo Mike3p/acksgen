@@ -122,7 +122,7 @@ class Character:
 
     def levelup(self, to:int, prob_to_double_dip):
 
-        for i in range(to):
+        for i in range(self.level,to):
             if self.level >= self.maxlevel:
                 return
 
@@ -364,7 +364,8 @@ class Character:
                 if deactivators:
                     if check_deavtivators(deactivators):
                         continue
-
+                if power.get('throw'):
+                    power['mod_throw'] = power['throw']
                 modifies = power.get('modifies', {})
                 modifiedby = power.get('modifyingabilityscore', {})
                 ranks = power.get('ranks', 1)
@@ -376,24 +377,24 @@ class Character:
                     if hasattr(self, statistic):
                         setattr(self, statistic, getattr(self, statistic) + (modifies[statistic] * levelofproficiency))
                     if statistic in self.abilities.keys():
-                        self.abilities[statistic]['throw'] = self.abilities[statistic]['throw'] + modifies[
+                        self.abilities[statistic]['mod_throw'] = self.abilities[statistic]['mod_throw'] + modifies[
                             statistic] * levelofproficiency
                     if statistic in self.proficiencies.keys():
-                        self.proficiencies[statistic]['throw'] = self.proficiencies[statistic]['throw'] + modifies[
+                        self.proficiencies[statistic]['mod_throw'] = self.proficiencies[statistic]['mod_throw'] + modifies[
                             statistic] * levelofproficiency
 
                 if power.get('throw', None):
-                    power['throw'] = power['throw'] - levelofproficiency
-                    power['throw'] = power['throw'] - max((ranks * 4 - 4), 0)
+                    power['mod_throw'] = power['mod_throw'] - levelofproficiency
+                    power['mod_throw'] = power['mod_throw'] - max((ranks * 4 - 4), 0)
                     if power.get('modifiedby', None):
-                        power['throw'] = power['throw'] - getattr(self, power['modifiedby'])
+                        power['mod_throw'] = power['mod_throw'] - getattr(self, power['modifiedby'])
 
-                if power.get('subskills', None):
-                    for subskill in power['subskills'].keys():
-                        power['subskills'][subskill] = power['subskills'][subskill] - max((ranks * 4 - 4), 0)
+                # if power.get('subskills', None):
+                #     for subskill in power['subskills'].keys():
+                #         power['subskills'][subskill] = power['subskills'][subskill] - max((ranks * 4 - 4), 0)
 
                 for statistic in modifiedby:
-                    power['throw'] = power['throw'] + getattr(self, statistic) * modifiedby[statistic]
+                    power['mod_throw'] = power['mod_throw'] + getattr(self, statistic) * modifiedby[statistic]
 
         def process_equipment(equipmentlist: dict, ablt= []):
             setstats = {}
@@ -438,9 +439,9 @@ class Character:
                         if hasattr(self, statistic):
                             setattr(self, statistic, getattr(self, statistic) + modval)
                         if statistic in self.abilities:
-                            self.abilities[statistic]['throw'] = self.abilities[statistic]['throw'] + modval
+                            self.abilities[statistic]['mod_throw'] = self.abilities[statistic]['mod_throw'] + modval
                         if statistic in self.proficiencies:
-                            self.proficiencies[statistic]['throw'] = self.proficiencies[statistic]['throw'] + modval
+                            self.proficiencies[statistic]['mod_throw'] = self.proficiencies[statistic]['mod_throw'] + modval
 
         def getabilitymodifier(ability: int):
             if ability >= 18:
@@ -568,7 +569,7 @@ class Character:
             output = ""
             for x in skills:
                 rank = (" "+str(skills[x].get('ranks',1)) if skills[x].get('ranks',1) > 1 else '')
-                throw = (" ("+str(skills[x]['throw'])+"+"+")" if ('throw' in skills[x]) & (skills[x].get('throw',21)<21) else '')
+                throw = (" ("+str(skills[x]['mod_throw'])+"+"+")" if ('mod_throw' in skills[x]) & (skills[x].get('mod_throw',21)<21) else '')
                 output += x + rank + throw + ", "
             output = output[:-2]
             if output == "": output = "None"
@@ -581,6 +582,7 @@ class Character:
 
         def formatenc(enc):
             return "("+str(enc[0])+" st. & "+str(enc[1])+" it.)"
+
 
         character = "<b>{}:</b> {}{} {}: Str: {}, Dex: {}, Con: {}, Int: {}, Wis: {}, Cha: {}; <b>XP:</b> {}\n" \
                     "<b>MV</b> {}, <b>AC</b> {}, <b>HD</b> {}, <b>hp</b> {}, <b>SP</b> {}+, <b>INI</b> {}, " \

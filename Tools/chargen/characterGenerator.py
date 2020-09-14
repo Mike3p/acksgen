@@ -1,6 +1,7 @@
 from Tools.chargen.character import Character
 from Tools.tableroller import rollOnTable, rollOnTable_string
 from Tools.dice import roll
+from flask import jsonify
 import yaml, random, copy
 
 
@@ -188,7 +189,7 @@ def roll_character(sourcedict, level, clazz = None, ethnicity = None, gender = N
     c.createFromScratch(class_dict, generalproficiencies, gen_prof_prog, sourcedict['desctables'], ethnicity, name, clazz, level,
                         alignment, gender, scores, m_items, path_name)
 
-    return c.__repr__()
+    return c
 
 
 def parse_magical_table_entry(entry):
@@ -254,24 +255,26 @@ def roll_magical_items(level, data):
     return result
 
 
+def get_yaml_of_character(character: Character):
+    if not (hasattr(character, 'name')):
+        character.name = 'unnamed'
+
+    return yaml.safe_dump(character.__dict__, default_flow_style=False)
+
 def dump_character(character: Character):
     if not (hasattr(character, 'name')):
         character.name = 'unnamed'
 
     f = open(character.name + ".yaml", "w")
-    f.write(yaml.safe_dump(character.__dict__, default_flow_style=False))
+    f.write(get_yaml_of_character(character))
     f.close()
 
 
-def load_character(name: str):
-    x = {}
-    try:
-        x = yaml.safe_load(open(name + ".yaml", "r"))
-    except:
-        raise Exception("This character does not exist")
+def load_character(character: dict):
+
     c = Character()
-    for k in x.keys():
-        setattr(c, k, x[k])
+    for k in character:
+        setattr(c, k, character[k])
     return c
 
 #stream = open("C:/Users/mhoh1/PycharmProjects/acksgen/generator_circle_of_dawn.yaml", 'r')

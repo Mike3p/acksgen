@@ -6,6 +6,7 @@ from Tools import mainpage
 from Tools.upload import uploadpage
 from Tools.init import initiativepage
 from Tools.chargen import chargenpage
+from Tools.charedit import character_editor_page
 from Tools.config import Config
 
 
@@ -35,6 +36,7 @@ def create_app(test_config=None):
     app.register_blueprint(chargenpage.bp)
     app.register_blueprint(initiativepage.bp)
     app.register_blueprint(uploadpage.bp)
+    app.register_blueprint(character_editor_page.bp)
     
     app.add_url_rule('/', endpoint='index')
     
