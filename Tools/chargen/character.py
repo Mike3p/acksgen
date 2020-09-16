@@ -375,7 +375,7 @@ class Character:
 
                 for statistic in modifies.keys():
                     if hasattr(self, statistic):
-                        setattr(self, statistic, getattr(self, statistic) + (modifies[statistic] * levelofproficiency))
+                        setattr(self, statistic, getattr(self, statistic) + (modifies[statistic] * max(1,levelofproficiency)))
                     if statistic in self.abilities.keys():
                         self.abilities[statistic]['mod_throw'] = self.abilities[statistic]['mod_throw'] + modifies[
                             statistic] * levelofproficiency

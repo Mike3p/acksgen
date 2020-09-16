@@ -1,0 +1,139 @@
+&dwarven_earthforger dwarven earthforger:
+    name: Dwarven Earthforger
+    experienceforlevel: [ 0,2600,5200,10400,20800,42600,85000,170000,350000,530000 ]
+    ethnicity: *eth_dwarven
+    path:
+      - &sig_mntn Sigil of the Mountain's Bone
+      - &sig_etfo Sigil of the Eternal Forge
+      - &sig_makfi Sigil of the Maker's Fire
+    hpafter9: 2
+    mv: 120
+    cleavesperlevel: 0
+    maxlevel: 10
+    hd: d6
+    primerequisites:
+      wisdom: 9
+      intelligence: 9
+    minrequisites:
+      constitution: 13
+    attackprogression: *mage_attack_throw_progression
+    savingthrows:
+      initial: [9,8,11,10,11]
+      progression: [3,5,7,9]
+    proficiencyprogression: *thief_proficiency_progression
+    magictypes:
+      path:
+        *sig_mntn:
+          - mode: ceremonial
+            name: Gnostic
+            progression: *dwarven_earthforger_spellprogression
+            list: {1: [Invocation of the Mountain's Bones],2: [Improved Invocation],3: [Improved Invocation],4: [Improved Invocation],5: [Improved Invocation],6: [Improved Invocation]}
+        *sig_etfo:
+          - mode: ceremonial
+            name: Gnostic
+            progression: *dwarven_earthforger_spellprogression
+            list: { 1: [Invocation of the Eternal Forge],2: [Improved Invocation],3: [Improved Invocation],4: [Improved Invocation],5: [Improved Invocation],6: [Improved Invocation] }
+        *sig_makfi:
+          - mode: ceremonial
+            name: Gnostic
+            progression: *dwarven_earthforger_spellprogression
+            list: { 1: [Invocation of the Maker's Fire ],2: [Improved Invocation],3: [Improved Invocation],4: [Improved Invocation],5: [Improved Invocation],6: [Improved Invocation] }
+    proficiencylist:
+      - *alchemy
+      - *alertness
+      - *armor_training
+      - *art
+      - *battle_magic
+      - *bright_lore
+      - *collegiate_wizardry
+      - *craft
+      - *contemplation
+      - *diplomacy
+      - *divine_health
+      - *dwarven_brewing
+      - *elementalism
+      - *endurance
+      - *engineering
+      - *goblin_slaying
+      - *healing
+      - *knowledge
+      - *land_surveying
+      - *loremastery
+      - *magical_engineering
+      - *martial_training
+      - *mystic_aura
+      - *naturalism
+      - *performance
+      - *personal_talisman
+      - *quiet_magic
+      - *second_sight
+      - *sensing_power
+      - *siege_engineering
+      - *unflappable_casting
+      - *vermin_slaying
+    abilityprogression:
+      path:
+        *sig_mntn:
+          1:
+            - *climb_walls
+            - *art
+            - *art
+            - *knowledge
+            - {name: Attention to Detail, modifies: {ceremonythrow: -3}}
+            - Improved Detection (14+)
+            - Sensitivity to Rock and Stone
+          5:
+            - { choice: [ { spell: Invocation of the Eternal Forge, level: 1, type: Gnostic },
+                          { spell: Invocation of the Maker's Fire, level: 1, type: Gnostic }, 4 Spell Effects ], number: 1 }
+          3:
+            - {name: Bashing Weak Points, modifies: {Dungeon Bashing: -4}}
+            - {name: Improved Invocations, levelprogression: [3,5,7,9]}
+          7:
+            - Infravision(30')
+        *sig_etfo:
+          1:
+            - Hand and Style
+            - *art
+            - *art
+            - *knowledge
+            - {name: Attention to Detail, modifies: {ceremonythrow: -3}}
+            - Improved Detection (14+)
+            - Sensitivity to Rock and Stone
+          3:
+            - Defensive Training
+            - {name: Improved Invocations, levelprogression: [3,5,7,9]}
+          5:
+            - { choice: [ { spell: Invocation of the Maker's Fire, level: 1, type: Gnostic },
+                            { spell: Invocation of the Mountain's Bones, level: 1, type: Gnostic }, 4 Spell Effects ], number: 1 }
+          7:
+            - Perfect Fit (+1 ini with selfmade equip)
+        *sig_makfi:
+          1:
+            - Personal Talisman
+            - *art
+            - *art
+            - *knowledge
+            - {name: Attention to Detail, modifies: {ceremonythrow: -3}}
+            - Improved Detection (14+)
+            - Sensitivity to Rock and Stone
+          3:
+            - *battle_magic
+            - {name: Improved Invocations, levelprogression: [3,5,7,9]}
+          5:
+            - {choice: [{spell: Invocation of the Eternal Forge, level: 1, type: Gnostic},
+                        {spell: Invocation of the Mountain's Bones, level: 1, type: Gnostic}, 4 Spell Effects], number: 1}
+          7:
+            - *unflappable_casting
+    equipment:
+      - [ { die: 1d5, res: { 1: *staff, 2: *dagger, 3: *club, 4: *sling, 5: '' } }, 1d2 ]
+      - [ *table_light_armor, 1 ]
+      - [ *backpack, 1 ]
+      - [ *holy_symbol, 1 ]
+      - [ *table_healing_herbs, 1d4 ]
+      - [ *table_tools, 2d6 ]
+      - [ *table_sleeping, 1 ]
+      - [ *military_oil, 1d2-1 ]
+      - [ *holy_water, 1d4-1 ]
+      - [ *table_light, 1 ]
+      - [ *torch, 1d6-3 ]
+      - [ *ink, 1d2-1 ]
