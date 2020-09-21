@@ -5977,7 +5977,7 @@ desctables:
     *thrassian:
       die: 1d20
       res:
-        1-20: no
+        1-20: 'no'
     *gnome:
       die: 1d20
       res:
