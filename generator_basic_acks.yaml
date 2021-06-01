@@ -3172,7 +3172,7 @@ equipment:
         2: *longbow
         3: *composite_bow
     special weapons: &table_special_weapons
-      die: 1d6
+      die: 1d4
       res:
         1: *bola
         2: *net

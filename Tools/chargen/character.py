@@ -374,13 +374,14 @@ class Character:
                 levelofproficiency = sum(i <= self.level for i in levelprogression)
 
                 for statistic in modifies.keys():
+
                     if hasattr(self, statistic):
                         setattr(self, statistic, getattr(self, statistic) + (modifies[statistic] * max(1,levelofproficiency)))
                     if statistic in self.abilities.keys():
-                        self.abilities[statistic]['mod_throw'] = self.abilities[statistic]['mod_throw'] + modifies[
+                        self.abilities[statistic]['mod_throw'] = self.abilities[statistic]['throw'] + modifies[
                             statistic] * levelofproficiency
                     if statistic in self.proficiencies.keys():
-                        self.proficiencies[statistic]['mod_throw'] = self.proficiencies[statistic]['mod_throw'] + modifies[
+                        self.proficiencies[statistic]['mod_throw'] = self.proficiencies[statistic]['throw'] + modifies[
                             statistic] * levelofproficiency
 
                 if power.get('throw', None):
@@ -510,7 +511,7 @@ class Character:
         self.mod_mv = min(movement, self.mv)
 
         #saving throws
-        throwmod = sum(i <= self.level for i in self.savingthrowprogression) - self.wismod
+        throwmod = sum(i <= self.level for i in self.savingthrowprogression) + self.wismod
         self.PP = self.initialsaves[0]-throwmod
         self.PD = self.initialsaves[1]-throwmod
         self.BB = self.initialsaves[2]-throwmod
