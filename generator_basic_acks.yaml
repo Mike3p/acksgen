@@ -4641,7 +4641,7 @@ classes:
       - [ *military_oil, 1d3-1 ]
       - [ *table_light, 1 ]
       - [ *torch, 1d6-3 ]
-  &elven_enchanter elven_enchanter:
+  &elven_enchanter elven enchanter:
     name: Elven Enchanter
     ethnicity: *eth_elven
     experienceforlevel: [0,2700,5400,10800,21600,43200,85000,170000,370000,570000,770000,970000]
