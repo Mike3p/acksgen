@@ -65,14 +65,15 @@ body {
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
 .side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 10px;
-  border-style: solid;
-  border-width: 0px 1px 0px 0px;
-  flex-direction: column;
-  justify-content: space-between
+    -ms-flex: 30%; /* IE10 */
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 
