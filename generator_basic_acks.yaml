@@ -374,7 +374,7 @@ ethnicity:
       - Pruni
       - Fayphina
       - Shaegwen
-  &dwarf_meniri Dwarf (Meniri): &dwarf_meniri_names
+  &dwarf_meniri dwarf (Meniri): &dwarf_meniri_names
     male names:
       - Arsic
       - Bombor
@@ -408,7 +408,7 @@ ethnicity:
       - Radokh
       - Talorgen
       - Uore
-  &dwarf_jutting Dwarf (Jutting): *dwarf_meniri_names
+  &dwarf_jutting dwarf (Jutting): *dwarf_meniri_names
   &elf elf:
     male names:
       - Aodan
