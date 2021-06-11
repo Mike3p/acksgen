@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2 class = "pageheading">Character Editor</h2>
-    <form method="POST" action="{{ url_for('character_editor_page.upload_character')}}" enctype="multipart/form-data">
-      <p><input class="button" type="file" name="file", accept=".yaml"></p>
-        <p><input class="button" type="submit" value="Upload"></p>
+    <h2 class = "pageheading">Character Up- / Download</h2>
+    <form method="POST" action="{{ url_for('character_editor_page.upload_character')}}" enctype="multipart/form-data" style="display: inline;">
+      <input class="button" type="file" name="file", accept=".yaml">
+      <input class="button" type="submit" value="Upload">
     </form>
-    <form method="POST" action="{{ url_for('character_editor_page.download_character')}}" enctype="multipart/form-data">
+    <form method="POST" action="{{ url_for('character_editor_page.download_character')}}" enctype="multipart/form-data", style="display: inline;">
       <input class="button" type="submit" value="Download">
     </form>
+    <h2 class = "pageheading">Level Up Character</h2>
     <form method="POST" action="{{ url_for('character_editor_page.levelup_character')}}">
       <p><input class="button" type="submit" value="Level Up Character"></p>
     </form>
@@ -21,4 +22,5 @@
 		</p>
 {% endif %}
 </div>
+    <h2 class = "pageheading">Edit Leveled Character</h2>
 {% endblock %}

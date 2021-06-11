@@ -585,7 +585,7 @@ class Character:
             return "("+str(enc[0])+" st. & "+str(enc[1])+" it.)"
 
 
-        character = "<b>{}:</b> {}{} {}: Str: {}, Dex: {}, Con: {}, Int: {}, Wis: {}, Cha: {}; <b>XP:</b> {}\n" \
+        character = "<b>{}:</b> {}{} {}: Str: {}, Int: {}, Wis: {}, Dex: {}, Con: {}, Cha: {}; <b>XP:</b> {}\n" \
                     "<b>MV</b> {}, <b>AC</b> {}, <b>HD</b> {}, <b>hp</b> {}, <b>SP</b> {}+, <b>INI</b> {}, " \
                     "<b>PP</b> {}+, <b>PD</b> {}+, <b>BB</b> {}+, <b>SW</b> {}+, <b>S</b> {}+, <b>AL</b> {};\n" \
                     "<b>Attacks:</b> (<b>Melee:</b> {}+, {} dmg; <b>Missile:</b> {}+, {} dmg);\n" \
@@ -596,7 +596,7 @@ class Character:
                     "<b>Equipment:</b> {}. {};"
 
         character = character.format(
-            self.name, self.class_name, self.pathname, self.level, self.strength, self.dexterity, self.constitution, self.intelligence, self.wisdom, self.charisma, self.experiencepoints,
+            self.name, self.class_name, self.pathname, self.level, self.strength, self.intelligence, self.wisdom, self.dexterity, self.constitution, self.charisma, self.experiencepoints,
             self.mod_mv, max(self.ac, self.acm), self.hdtype, self.hp, self.surprise, self.initiative,
             self.PP, self.PD, self.BB, self.SW, self.S, self.alignment,
             self.meleethrow, formatBonus(self.meleedamage), self.missilethrow, formatBonus(self.missiledamage),

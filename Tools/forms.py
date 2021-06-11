@@ -12,6 +12,28 @@ class CharacterGenerationForm(Form):
     loadCharacter = TextAreaField(u'Load Character')
     createExcelSheet = BooleanField(u'create Excel Sheet')
 
+class CharacterEditingForm(Form):
+    character_STR = IntegerField
+    character_INT = IntegerField
+    character_WIS = IntegerField
+    character_DEX = IntegerField
+    character_CON = IntegerField
+    character_CHA = IntegerField
+    character_HP = IntegerField
+    character_AL = SelectField
+    character_armor_remove = SelectField
+    character_armor_add = SelectField
+    character_weapon_remove = SelectField
+    character_weapon_add = SelectField
+    character_item_remove = SelectField
+    character_item_add = SelectField
+    character_proficiency_add = SelectField
+    character_proficiency_remove = SelectField
+    character_ability_add = SelectField
+    character_ability_remove = SelectField
+    character_personality = TextAreaField
+    character_style = TextAreaField
+    character_features = TextAreaField
 
 class InitiativeForm(Form):
     initiativeInput = TextAreaField(u'Initiative', default="combatant 1: ini bonus 1\ncombatant 2: ini bonus 2\n...")
