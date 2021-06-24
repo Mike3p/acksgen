@@ -46,6 +46,6 @@ def get_ability_mod(a):
 	elif a >= 9: return 0
 	elif a >= 6: return -1
 	elif a >= 4: return -2
-	else: return 3
+	else: return -3
 
 
