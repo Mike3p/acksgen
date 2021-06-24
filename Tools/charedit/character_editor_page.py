@@ -20,6 +20,7 @@ def page():
 @bp.route('/upload', methods=('GET', 'POST'))
 def upload_character():
     character_file = request.files['file']
+    print("test")
     if character_file:
         character_object = load_character(yaml.safe_load(character_file))
         session['uploaded_character'] = character_object

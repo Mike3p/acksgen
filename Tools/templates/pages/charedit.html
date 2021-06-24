@@ -2,9 +2,10 @@
 {% block content %}
     <h2 class = "pageheading">Character Up- / Download</h2>
     <form method="POST" enctype="multipart/form-data" style="display: inline;">
-      <input class="button" type="file" name="file" accept=".yaml">
+      <input class="button" type="file" id="file" name="file" accept=".yaml">
+    <a href=# id=upload name="upload"><button class="button">upload and display char</button></a>
      </form>
-    <p><a href=# id=upload>upload and display char</a>
+
     <form method="POST" action="{{ url_for('character_editor_page.download_character')}}" enctype="multipart/form-data" style="display: inline;">
       <input class="button" type="submit" value="Download">
     </form>
@@ -18,18 +19,16 @@
           integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
           crossorigin="anonymous"></script>
     <script type=text/javascript>
-  $SCRIPT_ROOT = {{ request.script_root|tojson }};
+  $SCRIPT_URL = "{{ url_for('character_editor_page.upload_character')}}";
 </script>
     <script type=text/javascript>
   $(function() {
     $('a#upload').bind('click', function() {
-
-      $.getJSON($SCRIPT_ROOT + '/upload', {
-        a: $('input[name="result"]').val(),
-      }, function(data) {
+        console.log($SCRIPT_URL)
+      $.getJSON('/charedit/upload',
+          function(data) {
         $("#result").text(result);
       });
-      console.log("blabla")
       return false;
     });
   });
