@@ -4,7 +4,7 @@ from flask import request
 from Tools.ACKS.chargen.characterGenerator import load_character, get_yaml_of_character
 from Tools.ACKS.chargen.character import Character
 import yaml
-from flask_jsonpify import jsonify
+#from flask_jsonpify import jsonify
 
 bp = Blueprint('character_editor_page', __name__, url_prefix='/ACKS/charedit')
 
@@ -23,11 +23,11 @@ def upload_character():
         character_object = load_character(yaml.safe_load(character_file))
         session['uploaded_character'] = character_object
 
-        #return render_template('pagesACKS/charedit.html', char = session.get('uploaded_character').__repr__())
-        return jsonify(result=session.get('uploaded_character').__repr__())
+        return render_template('pagesACKS/charedit.html', char = session.get('uploaded_character').__repr__())
+        #return jsonify(result=session.get('uploaded_character').__repr__())
     else:
-        #return render_template('pagesACKS/charedit.html', char = ["no file chosen!"])
-        return jsonify(result="No File chosen!")
+        return render_template('pagesACKS/charedit.html', char = ["no file chosen!"])
+        #return jsonify(result="No File chosen!")
 
 # @bp.route('/levelup', methods=('GET', 'POST'))
 # def levelup_character():
@@ -40,9 +40,9 @@ def upload_character():
 #             return """
 #             <h1 style='color: red;'>Invalid Character File!</h1>
 #             """
-#         #return render_template('pagesACKS/charedit.html', char = session.get('uploaded_character').__repr__())
-#         return render_template('pagesACKS/charedit.html', embed=get_yaml_of_character(session.get('uploaded_character')))
-#     return render_template('pagesACKS/charedit.html', char = ["no character uploaded!"])
+#         #return render_template('pagesACKS/chareditJAVASCRIPT.html', char = session.get('uploaded_character').__repr__())
+#         return render_template('pagesACKS/chareditJAVASCRIPT.html', embed=get_yaml_of_character(session.get('uploaded_character')))
+#     return render_template('pagesACKS/chareditJAVASCRIPT.html', char = ["no character uploaded!"])
 
 @bp.route('/levelup', methods=('GET', 'POST'))
 def levelup_character():
@@ -55,8 +55,8 @@ def levelup_character():
             return """
             <h1 style='color: red;'>Invalid Character File!</h1>
             """
-        return jsonify(char=c.__repr__())
-        #return render_template('pagesACKS/charedit.html')
+        #return jsonify(char=c.__repr__())
+        return render_template('pagesACKS/charedit.html', char = session.get('uploaded_character').__repr__())
     return render_template('pagesACKS/charedit.html', char = ["no character uploaded!"])
 
 @bp.route('/download', methods = ('GET', 'POST'))

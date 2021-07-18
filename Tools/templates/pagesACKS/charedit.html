@@ -1,39 +1,26 @@
 {% extends 'sidebarACKS.html' %}
 {% block content %}
     <h2 class = "pageheading">Character Up- / Download</h2>
-    <form method="POST" enctype="multipart/form-data" style="display: inline;">
-      <input class="button" type="file" id="file" name="file" accept=".yaml">
-    <a href=# id=upload name="upload"><button class="button">upload and display char</button></a>
-     </form>
-
-    <form method="POST" action="{{ url_for('character_editor_page.download_character')}}" enctype="multipart/form-data" style="display: inline;">
+    <form method="POST" action="{{ url_for('character_editor_page.upload_character')}}" enctype="multipart/form-data" style="display: inline;">
+      <input class="button" type="file" name="file", accept=".yaml">
+      <input class="button" type="submit" value="Upload">
+    </form>
+    <form method="POST" action="{{ url_for('character_editor_page.download_character')}}" enctype="multipart/form-data", style="display: inline;">
       <input class="button" type="submit" value="Download">
     </form>
     <h2 class = "pageheading">Level Up Character</h2>
-    <form method="POST" action="{{ url_for('character_editor_page.levelup_character')}}" id="levelup">
+    <form method="POST" action="{{ url_for('character_editor_page.levelup_character')}}">
       <p><input class="button" type="submit" value="Level Up Character"></p>
     </form>
     <div class="character">
-        <span id=result>?</span>
-        <script src="https://code.jquery.com/jquery-3.5.1.js"
-          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-          crossorigin="anonymous"></script>
-    <script type=text/javascript>
-  $SCRIPT_URL = "{{ url_for('character_editor_page.upload_character')}}";
-</script>
-    <script type=text/javascript>
-  $(function() {
-    $('a#upload').bind('click', function() {
-        console.log($SCRIPT_URL)
-      $.getJSON('/charedit/upload',
-          function(data) {
-        $("#result").text(result);
-      });
-      return false;
-    });
-  });
-</script>
-
+{% if char %}
+		<p>
+			{% for line in char %}
+			{{line | safe}} <br>
+			{% endfor %}
+            <br>
+		</p>
+{% endif %}
 </div>
     <h2 class = "pageheading">Edit Leveled Character</h2>
 {% endblock %}
