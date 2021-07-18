@@ -1,9 +1,9 @@
 from flask import (Blueprint, render_template, request, session)
 from Tools.forms import InitiativeForm
 from Tools.dice import roll
-from Tools.init import initiative
+from Tools.ACKS.initiative import initiative
 
-bp = Blueprint('initiativepage', __name__, url_prefix='/initiative')
+bp = Blueprint('initiativepage', __name__, url_prefix='/ACKS/initiative')
 data = {}
 
 @bp.route('/', methods=('GET', 'POST'))
@@ -16,10 +16,10 @@ def page():
     #session['ini'] = request.form.get('initiativeInput')
     #initiativeTextbox.initiativeInput.process_data(session.get('ini', ""))
 
-    return render_template('pages/initiative.html', cfg = initiativeTextbox)
+    return render_template('pagesACKS/initiative.html', cfg = initiativeTextbox)
 
 
-@bp.route('/rollinitiative/', methods=('GET', 'POST'))
+@bp.route('/rollInitiative', methods=('GET', 'POST'))
 def rollInitiative():
 
     session['ini'] = request.form.get('initiativeInput')
@@ -42,4 +42,4 @@ def rollInitiative():
     initiativeTextbox = InitiativeForm()
     initiativeTextbox.initiativeInput.process_data(session.get('ini', ""))
 
-    return render_template('pages/initiative.html', cfg = initiativeTextbox, initiativeRolls = i)
+    return render_template('pagesACKS/initiative.html', cfg = initiativeTextbox, initiativeRolls = i)

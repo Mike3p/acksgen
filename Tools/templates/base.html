@@ -15,21 +15,15 @@
 </div>
 
 <div class="navbar">
-  <a href="#">ACKS Generators</a>
-  <!-- <a href="#">MYZ Generators</a> -->
+  <a href="{{ url_for('mainpageACKS.page') }}">ACKS Tools</a>
+  <a href="{{ url_for('mainpageSWN.page') }}">SWN Tools</a>
   <!-- <a href="#">SotDL Generators</a> -->
   <!-- <a href="#" class="right">About</a> -->
 </div>
 
 <div class="row">
   <div class="side">
-    <ul>
-        <li class='sidebarElem'><h1>ACKSGen</h1></li>
-        <li class='sidebarElem'><a href="{{ url_for('chargenpage.page') }}">Character Generator</a></li>
-        <li class='sidebarElem'><a href="{{ url_for('character_editor_page.page') }}">Character Editor</a></li>
-        <li class='sidebarElem'><a href="{{ url_for('initiativepage.page') }}">Initiative Roller</a></li>
-        <li class='sidebarElem'><a href="{{ url_for('uploadpage.page') }}">Generator Upload</a></li>
-    </ul>
+      {% block sidebar %} {% endblock %}
   </div>
 
   <div class="main">
@@ -40,7 +34,7 @@
 
 
 <div class="footer">
-  <p class="subtext">Copyright 2020, Michael Hohenstein</p>
+  <p class="subtext">Copyright 2021, Michael Hohenstein</p>
 </div>
 
 </body>

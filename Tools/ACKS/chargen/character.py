@@ -1,7 +1,7 @@
 import math, random
 from Tools.dice import roll
 from Tools.tableroller import rollOnTable_string, rollOnTable
-from Tools.chargen.personalityGenerator import create_personality_string
+from Tools.ACKS.chargen.personalityGenerator import create_personality_string
 
 
 # noinspection PyAttributeOutsideInit

@@ -5,13 +5,13 @@ from flask import Flask, flash, request, redirect, url_for
 import yaml
 from werkzeug.utils import secure_filename
 
-bp = Blueprint('uploadpage', __name__, url_prefix='/upload')
+bp = Blueprint('uploadpage', __name__, url_prefix='/ACKS//upload')
 
 
 @bp.route('/')
 def page():
 
-    return render_template('pages/upload.html')
+    return render_template('pagesACKS/upload.html')
 
 
 @bp.route('/upload', methods=('GET', 'POST'))
@@ -22,7 +22,7 @@ def upload_file():
     session['gen_dict'] = yaml_config
     #print(yaml_config)
 
-    return render_template('pages/upload.html')
+    return render_template('pagesACKS/upload.html')
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -33,4 +33,4 @@ def reset_generator():
     if 'gen_dict' in session: session.pop('gen_dict')
     print("generator file resetted")
 
-    return render_template('pages/upload.html')
+    return render_template('pagesACKS/upload.html')

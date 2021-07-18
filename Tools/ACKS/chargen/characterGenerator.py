@@ -1,7 +1,6 @@
-from Tools.chargen.character import Character
+from Tools.ACKS.chargen.character import Character
 from Tools.tableroller import rollOnTable, rollOnTable_string
 from Tools.dice import roll
-from flask import jsonify
 import yaml, random, copy
 
 

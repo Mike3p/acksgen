@@ -1,10 +1,10 @@
 import yaml
 from flask import (Blueprint, render_template, request, session, Response, url_for)
 from Tools.forms import CharacterGenerationForm
-from Tools.chargen.characterGenerator import (roll_party, get_yaml_of_character)
+from Tools.ACKS.chargen.characterGenerator import get_yaml_of_character, roll_party
 from pathlib import Path
 
-bp = Blueprint('chargenpage', __name__, url_prefix='/chargen')
+bp = Blueprint('chargenpage', __name__, url_prefix='/ACKS/chargen')
 #data = {}
 gen_dict = {}
 
@@ -17,7 +17,7 @@ def page():
     charGenForm.ethnicity.choices.extend([(x, x) for x in list(session['gen_dict']['ethnicity'].keys())])
     charGenForm.characterClass.choices = [(None, 'random')]
     charGenForm.characterClass.choices.extend([(x, x) for x in session['choices']])
-    return render_template('pages/chargen.html', cfg=charGenForm)
+    return render_template('pagesACKS/chargen.html', cfg=charGenForm)
 
 
 @bp.route('/download/<character_id>')
@@ -87,14 +87,14 @@ def generate():
     charGenForm.rollForParty.process_data(rollForParty)
     #charGenForm.createExcelSheet.process_data(createExcelSheet)
 
-    return render_template('pages/chargen.html', char=out_strings, cfg=charGenForm)
+    return render_template('pagesACKS/chargen.html', char=out_strings, cfg=charGenForm)
     #return jsonify({'chars': out_strings, 'chars_yaml': out_characters})
 
 def loadData():
     if 'gen_dict' not in session:
         print("fresh reload")
 
-        path = Path(__file__).parent / "../../generator_basic_acks.yaml"
+        path = Path(__file__).parent / "../../../generator_basic_acks.yaml"
         a = path.open()
         with open(a.name, 'r') as stream:
             try:

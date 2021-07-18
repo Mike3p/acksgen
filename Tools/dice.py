@@ -2,6 +2,14 @@ import random
 import re
 import operator
 
+def highest_x_of_y(number: int, rolls: int, dicecode: str):
+	highest = []
+	for i in range(rolls):
+		highest.append(roll(dicecode))
+
+	highest.sort(reverse=True)
+	return highest[0:number]
+
 
 
 def roll(dicecode: str):
@@ -46,6 +54,5 @@ def get_ability_mod(a):
 	elif a >= 9: return 0
 	elif a >= 6: return -1
 	elif a >= 4: return -2
-	else: return 3
-
+	else: return -3
 

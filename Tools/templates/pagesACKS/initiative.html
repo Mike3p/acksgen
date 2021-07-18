@@ -1,0 +1,20 @@
+{% extends 'sidebarACKS.html' %}
+{% block content %}
+    <h2 class = "pageheading">Initiative Roller</h2>
+<form action="{{ url_for('initiativepage.rollInitiative')}}" method="POST">
+    {{ cfg.initiativeInput(rows='10',cols='40') }} <br>
+<input id="initiativeButton" type="submit" value="Roll Initiative">
+</form>
+
+
+<div class="ini">
+{% if initiativeRolls %}
+{% for line in initiativeRolls %}
+		<p>
+			{{line | safe}}
+		</p>
+{% endfor %}
+{% endif %} 
+</div>
+
+{% endblock %}
