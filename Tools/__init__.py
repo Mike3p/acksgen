@@ -10,6 +10,7 @@ from Tools.ACKS.upload import uploadpage
 from Tools.ACKS.initiative import initiativepage
 from Tools.ACKS.chargen import chargenpage
 from Tools.ACKS.charedit import character_editor_page
+from Tools.ACKS.ability_array_generator import array_generator_page
 
 from Tools.SWN import mainpageSWN
 from Tools.SWN.initiative import initiativepageSWN
@@ -43,6 +44,7 @@ def create_app(test_config=None):
     app.register_blueprint(initiativepage.bp)
     app.register_blueprint(uploadpage.bp)
     app.register_blueprint(character_editor_page.bp)
+    app.register_blueprint(array_generator_page)
 
     app.register_blueprint(mainpageSWN.bp)
     app.register_blueprint(initiativepageSWN.bp)
