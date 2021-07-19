@@ -1,0 +1,18 @@
+{% extends 'sidebarACKS.html' %}
+{% block content %}
+    <h2 class = "pageheading">Ability Score Generator</h2>
+<form action="{{ url_for('array_generator_page.generate_scores')}}" method="POST">
+<input class="button" id="array_button" type="submit" value="Generate Ability Scores">
+</form>
+
+<div class="ability_scores">
+{% if scores %}
+{% for score in scores %}
+		<p>
+			score
+		</p>
+{% endfor %}
+{% endif %} 
+</div>
+
+{% endblock %}
