@@ -2,9 +2,10 @@
 {% block sidebar %}
     <ul>
         <li class='sidebarElem'><h1>ACKS Tools</h1></li>
+        <li class='sidebarElem'><a href="{{ url_for('array_generator_page.page') }}">Ability Scores</a></li>
         <li class='sidebarElem'><a href="{{ url_for('chargenpage.page') }}">Character Generator</a></li>
         <li class='sidebarElem'><a href="{{ url_for('character_editor_page.page') }}">Character Editor</a></li>
-        <li class='sidebarElem'><a href="{{ url_for('initiativepage.page') }}">Initiative Roller</a></li>
         <li class='sidebarElem'><a href="{{ url_for('uploadpage.page') }}">Generator Upload</a></li>
+        <li class='sidebarElem'><a href="{{ url_for('initiativepage.page') }}">Initiative Roller</a></li>
     </ul>
 {% endblock %}

@@ -56,3 +56,10 @@ def get_ability_mod(a):
 	elif a >= 4: return -2
 	else: return -3
 
+def get_ability_mod_str(a):
+	mod = get_ability_mod(a)
+	if mod >= 0:
+		res = "+"+str(mod)
+	else:
+		res = str(mod)
+	return res

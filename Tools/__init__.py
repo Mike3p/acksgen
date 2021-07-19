@@ -44,7 +44,7 @@ def create_app(test_config=None):
     app.register_blueprint(initiativepage.bp)
     app.register_blueprint(uploadpage.bp)
     app.register_blueprint(character_editor_page.bp)
-    app.register_blueprint(array_generator_page)
+    app.register_blueprint(array_generator_page.bp)
 
     app.register_blueprint(mainpageSWN.bp)
     app.register_blueprint(initiativepageSWN.bp)

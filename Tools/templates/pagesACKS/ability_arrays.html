@@ -9,7 +9,9 @@
 {% if scores %}
 {% for score in scores %}
 		<p>
-			score
+            <b>Str:</b> {{ score["STR"]["a"] }} ({{ score["STR"]["m"] }}), <b>Int:</b> {{ score["INT"]["a"] }} ({{ score["INT"]["m"] }}),
+            <b>Wis:</b> {{ score["WIS"]["a"] }} ({{ score["WIS"]["m"] }}), <b>Dex:</b> {{ score["DEX"]["a"] }} ({{ score["DEX"]["m"] }}),
+            <b>Con:</b> {{ score["CON"]["a"] }} ({{ score["CON"]["m"] }}), <b>Cha:</b> {{ score["CHA"]["a"] }} ({{ score["CHA"]["m"] }});
 		</p>
 {% endfor %}
 {% endif %} 

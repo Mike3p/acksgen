@@ -1,9 +1,7 @@
 from flask import (Blueprint, render_template, request, session)
-from Tools.forms import InitiativeForm
-from Tools.dice import roll
-from Tools.ACKS.initiative import initiative
+from Tools.dice import roll, get_ability_mod_str
 
-bp = Blueprint('initiativepage', __name__, url_prefix='/ACKS/ability_scores')
+bp = Blueprint('array_generator_page', __name__, url_prefix='/ACKS/ability_scores')
 data = {}
 
 @bp.route('/', methods=('GET', 'POST'))
@@ -11,7 +9,7 @@ def page():
 
     ability_scores = []
 
-    return render_template('pagesACKS/ability_scores.html', scores = ability_scores)
+    return render_template('pagesACKS/ability_arrays.html', scores = ability_scores)
 
 
 @bp.route('/generate', methods=('GET', 'POST'))
@@ -20,8 +18,15 @@ def generate_scores():
     ability_scores = []
 
     for i in range(5):
-        abilities = {"STR":roll("3d6"),"INT":roll("3d6"),"WIS":roll("3d6"),
-                     "DEX":roll("3d6"),"CON":roll("3d6"),"CHA":roll("3d6"),}
+        abl = []
+        mod = []
+        for i in range(6):
+            abl_roll = roll("3d6")
+            abl.append(abl_roll)
+            mod.append(get_ability_mod_str(abl_roll))
+
+        abilities = {"STR":{"a":abl[0],"m":mod[0]},"INT":{"a":abl[1],"m":mod[1]},"WIS":{"a":abl[2],"m":mod[2]},
+                     "DEX":{"a":abl[3],"m":mod[3]},"CON":{"a":abl[4],"m":mod[4]},"CHA":{"a":abl[5],"m":mod[5]}}
         ability_scores.append(abilities)
 
-    return render_template('pagesACKS/ability_scores.html', scores = ability_scores)
+    return render_template('pagesACKS/ability_arrays.html', scores = ability_scores)
