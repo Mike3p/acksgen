@@ -14,6 +14,7 @@ from Tools.ACKS.ability_array_generator import array_generator_page
 
 from Tools.SWN import mainpageSWN
 from Tools.SWN.initiative import initiativepageSWN
+from Tools.SWN.chargen import chargenpageSWN
 
 
 def create_app(test_config=None):
@@ -48,6 +49,7 @@ def create_app(test_config=None):
 
     app.register_blueprint(mainpageSWN.bp)
     app.register_blueprint(initiativepageSWN.bp)
+    app.register_blueprint(chargenpageSWN.bp)
 
     app.add_url_rule('/', endpoint='index')
     

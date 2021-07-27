@@ -63,3 +63,10 @@ def get_ability_mod_str(a):
 	else:
 		res = str(mod)
 	return res
+
+def get_ability_mod_swn(a):
+	if a >= 18: return 2
+	elif a >= 14: return 1
+	elif a >= 8: return 0
+	elif a >= 4: return -1
+	else: return -2

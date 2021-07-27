@@ -1,0 +1,684 @@
+all_skills: &all_skills
+  die: 1d19
+  res:
+    1: Administer
+    2: Connect
+    3: Exert
+    4: Fix
+    5: Heal
+    6: Know
+    7: Lead
+    8: Notice
+    9: Perform
+    10: Pilot
+    11: Program
+    12: Punch
+    13: Shoot
+    14: Sneak
+    15: Stab
+    16: Survive
+    17: Talk
+    18: Trade
+    19: Work
+non_combat_skills: &non_combat_skills
+  die: 1d17
+  res:
+    1: Administer
+    2: Connect
+    3: Exert
+    4: Fix
+    5: Heal
+    6: Know
+    7: Lead
+    8: Notice
+    9: Perform
+    10: Pilot
+    11: Program
+    13: Sneak
+    14: Survive
+    15: Talk
+    16: Trade
+    17: Work
+combat_skills: &combat_skills
+  die: 1d12
+  res:
+    1-6: Shoot
+    7-10: Stab
+    11-12: Punch
+psychic_skills: &psychic_skills
+  die: 1d6
+  res:
+    1: Biopsionics
+    2: Metapsionics
+    3: Precognition
+    4: Telekinesis
+    5: Telepathy
+    6: Teleportation
+all_foci:
+  Alert:
+    name: Alert
+    1: Notice
+  Armsman:
+    name: Armsman
+    1: Stab
+  Assassin:
+    name: Assassin
+    1: Sneak
+  Close Combatant:
+    name: Close Combatant
+    1: *combat_skills
+  Die Hard:
+    name: Die Hard
+  Gunslinger:
+    name: Gunslinger
+    1: Shoot
+  Ironhide:
+    name: Ironhide
+  Savage Fray:
+    name: Savage Fray
+    1: Stab
+  Shocking Assault:
+    name: Shocking Assault
+    1: {die: 1d4, res: {1-3: Stab, 4: Punch}}
+  Sniper:
+    name: Sniper
+    1: Shoot
+  Unarmed Combatant:
+    name: Unarmed Combatant
+    1: Punch
+  Authority:
+    name: Authority
+    1: Lead
+  Connected:
+    name: Connected
+    1: Connect
+  Diplomat:
+    name: Diplomat
+    1: Talk
+  Hacker:
+    name: Hacker
+    1: Program
+  Healer:
+    name: Healer
+    1: Heal
+  Henchkeeper:
+    name: Henchkeeper
+  Psychic Training:
+    name: Psychic Training
+  Specialist:
+    name: Specialist
+    1: *non_combat_skills
+  Star Captain:
+    name: Star Captain
+    1: Lead
+  Starfarer:
+    name: Starfarer
+    1: Pilot
+  Tinker:
+    name: Tinker
+    1: Fix
+  Wanderer:
+    name: Wanderer
+    1: Survive
+  Wild Psychic:
+    name: Wild Psychic
+combat_foci: &combat_foci
+  Alert:
+    name: Alert
+    1: Notice
+  Armsman:
+    name: Armsman
+    1: Stab
+  Assassin:
+    name: Assassin
+    1: Sneak
+  Close Combatant:
+    name: Close Combatant
+    1: *combat_skills
+  Die Hard:
+    name: Die Hard
+  Gunslinger:
+    name: Gunslinger
+    1: Shoot
+  Ironhide:
+    name: Ironhide
+  Savage Fray:
+    name: Savage Fray
+    1: Stab
+  Shocking Assault:
+    name: Shocking Assault
+    1: {die: 1d4, res: {1-3: Stab, 4: Punch}}
+  Sniper:
+    name: Sniper
+    1: Shoot
+  Unarmed Combatant:
+    name: Unarmed Combatant
+    1: Punch
+non_combat_foci: &non_combat_foci
+  Authority:
+    name: Authority
+    1: Lead
+  Connected:
+    name: Connected
+    1: Connect
+  Diplomat:
+    name: Diplomat
+    1: Talk
+  Hacker:
+    name: Hacker
+    1: Program
+  Healer:
+    name: Healer
+    1: Heal
+  Henchkeeper:
+    name: Henchkeeper
+  Psychic Training:
+    name: Psychic Training
+  Specialist:
+    name: Specialist
+    1: *non_combat_skills
+  Star Captain:
+    name: Star Captain
+    1: Lead
+  Starfarer:
+    name: Starfarer
+    1: Pilot
+  Tinker:
+    name: Tinker
+    1: Fix
+  Wanderer:
+    name: Wanderer
+    1: Survive
+  Wild Psychic:
+    name: Wild Psychic
+backgrounds:
+  barbarian: &barbarian
+    name: Barbarian
+    free: Survive
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Physical
+        3: +2 Physical
+        4: +2 Mental
+        5: Exert
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: *combat_skills
+        2: Connect
+        3: Exert
+        4: Lead
+        5: Notice
+        6: Punch
+        7: Sneak
+        8: Survive
+  clergy: &clergy
+    name: Clergy
+    free: talk
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Mental
+        3: +2 Physical
+        4: +2 Mental
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: Administer
+        2: Connect
+        3: Know
+        4: Lead
+        5: Notice
+        6: Perform
+        7: Talk
+        8: Talk
+  courtesan: &courtesan
+    name: Courtesan
+    free: Perform
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Physical
+        3: +2 Mental
+        4: +2 Mental
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: *combat_skills
+        2: Connect
+        3: Exert
+        4: Notice
+        5: Perform
+        6: Talk
+        7: Trade
+        8: Survive
+  criminal: &criminal
+    name: Criminal
+    free: Sneak
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Mental
+        3: +2 Physical
+        4: +2 Mental
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: Administer
+        2: *combat_skills
+        3: Connect
+        4: Notice
+        5: Program
+        6: Sneak
+        7: Talk
+        8: Trade
+  dilettante: &dilettante
+    name: barbarian
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +1 Any
+        3: +1 Any
+        4: +1 Any
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: *all_skills
+        2: *all_skills
+        3: Connect
+        4: Know
+        5: perform
+        6: Pilot
+        7: Talk
+        8: Trade
+  entertainer: &entertainer
+    name: entertainer
+    free: Perform
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Mental
+        3: +2 Physical
+        4: +2 Mental
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: *combat_skills
+        2: Connect
+        3: Exert
+        4: Notice
+        5: Perform
+        6: perform
+        7: Sneak
+        8: Talk
+  Merchant: &merchant
+    name: Merchant
+    free: Trade
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Mental
+        3: +2 Mental
+        4: +2 Mental
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: Administer
+        2: *combat_skills
+        3: Connect
+        4: Fix
+        5: Know
+        6: Notice
+        7: Trade
+        8: Talk
+  Noble: &noble
+    name: Noble
+    free: Lead
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Mental
+        3: +2 Mental
+        4: +2 Mental
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: Administer
+        2: *combat_skills
+        3: Connect
+        4: Know
+        5: Lead
+        6: Notice
+        7: Pilot
+        8: Talk
+  Official: &official
+    name: Official
+    free: Administer
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Mental
+        3: +2 Mental
+        4: +2 Mental
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: Administer
+        2: *all_skills
+        3: Connect
+        4: Know
+        5: Lead
+        6: Notice
+        7: Talk
+        8: Trade
+  Peasant: &peasant
+    name: Peasant
+    free: Exert
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Physical
+        3: +2 Physical
+        4: +2 Physical
+        5: Exert
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: Connect
+        2: Exert
+        3: Fix
+        4: Notice
+        5: Sneak
+        6: Survive
+        7: Trade
+        8: Work
+  Physician: &physician
+    name: Physician
+    free: Heal
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Physical
+        3: +2 Mental
+        4: +2 Mental
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: Administer
+        2: Connect
+        3: Fix
+        4: Heal
+        5: Know
+        6: Notice
+        7: Talk
+        8: Trade
+  Pilot: &pilot
+    name: Pilot
+    free: Pilot
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Physical
+        3: +2 Physical
+        4: +2 Mental
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: Connect
+        2: Exert
+        3: Fix
+        4: Notice
+        5: Pilot
+        6: Pilot
+        7: Shoot
+        8: Trade
+  Politician: &politician
+    name: Politician
+    free: Talk
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        3: +2 Mental
+        2: +2 Mental
+        4: +2 Mental
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: Administer
+        2: Connect
+        3: Connect
+        4: Lead
+        5: Notice
+        6: Perform
+        7: Talk
+        8: Talk
+  Scholar: &scholar
+    name: Scholar
+    free: Know
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Mental
+        3: +2 Mental
+        4: +2 Mental
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: Administer
+        2: Connect
+        3: Fix
+        4: Know
+        5: Notice
+        6: Perform
+        7: Program
+        8: Talk
+  Soldier: &soldier
+    name: Soldier
+    free: *combat_skills
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Physical
+        3: +2 Physical
+        4: +2 Physical
+        5: Exert
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: Andminister
+        2: *combat_skills
+        3: Exert
+        4: Fix
+        5: Lead
+        6: Notice
+        7: Sneak
+        8: Survive
+  Spacer: &spacer
+    name: Spacer
+    free: Fix
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Physical
+        3: +2 Physical
+        4: +2 Mental
+        5: Exert
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: Administer
+        2: Connect
+        3: Exert
+        4: Fix
+        5: Know
+        6: Pilot
+        7: Program
+        8: Talk
+  Technician: &technician
+    name: Technician
+    free: Fix
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Physical
+        3: +2 Mental
+        4: +2 Mental
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: Administer
+        2: Connect
+        3: Exert
+        4: Fix
+        5: Fix
+        6: Know
+        7: Notice
+        8: Pilot
+  Thug: &thug
+    name: Thug
+    free: *combat_skills
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Physical
+        3: +2 Physical
+        4: +2 Mental
+        5: Connect
+        6: *all_skills
+    learn:
+      die: 1d8
+      res:
+        1: *combat_skills
+        2: Connect
+        3: Exert
+        4: Notice
+        5: Sneak
+        6: {die: 1d2, res: {1: Stab, 2: Shoot}}
+        7: Survive
+        8: Talk
+  Vagabond: &vagabond
+    name: Vagabond
+    free: Survive
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Physical
+        3: +2 Physical
+        4: +2 Mental
+        5: Exert
+        6: Any
+    learn:
+      die: 1d8
+      res:
+        1: *combat_skills
+        2: Connect
+        3: Notice
+        4: Perform
+        5: Pilot
+        6: Sneak
+        7: Survive
+        8: Work
+  name: &link
+    name: name
+    free:
+    grow:
+      die: 1d6
+      res:
+        1: +1 Any
+        2: +2 Physical
+        3: +2 Physical
+        4: +2 Mental
+        5: Exert
+        6: Any
+    learn:
+      die: 1d8
+      res:
+        1: Any Combat
+        2:
+        3:
+        4:
+        5:
+        6:
+        7:
+        8:
+equipment_packages: &equipment_packages
+  - Barbarian
+  - Blade
+  - Thief
+  - hacker
+  - Gunslinger
+  - Soldier
+  - Scout
+  - Medic
+  - Civilian
+  - Technician
+classes:
+  &warrior Warrior:
+    name: Warrior
+    mv: 10
+    hd: d6+2
+    abilities:
+      - *combat_foci
+  &specialist Specialist:
+    name: Specialist
+    mv: 10
+    hd: d6
+    abilities:
+      - *non_combat_foci
+  &psychic Psychic:
+    name: Psychic
+    mv: 10
+    hd: d6
+    abilities:
+      - *psychic_skills
+      - *psychic_skills

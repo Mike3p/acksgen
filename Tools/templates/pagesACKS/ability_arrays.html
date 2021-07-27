@@ -2,19 +2,39 @@
 {% block content %}
     <h2 class = "pageheading">Ability Score Generator</h2>
 <form action="{{ url_for('array_generator_page.generate_scores')}}" method="POST">
-<input class="button" id="array_button" type="submit" value="Generate Ability Scores">
+    {{ cfg.generate(class_="submit") }}<b class="bigtext" style="font-family: Calibri"> Generate table:</b>
+<label class="switch">
+        {{ cfg.table }}
+        <span class="slider round"></span>
+    </label>
 </form>
+<br>
 
-<div class="ability_scores">
+{% if table %}
 {% if scores %}
-{% for score in scores %}
-		<p>
+    <table>
+        <tr><th><b>#</b></th><th><b>STR</b></th><th><b>INT</b></th><th><b>WIS</b></th><th><b>DEX</b></th><th><b>CON</b></th><th><b>CHA</b></th></tr>
+    {% for score in scores %}
+
+        <tr><td>{{ loop.index }}</td> <td>{{ score["STR"]["a"] }} ({{ score["STR"]["m"] }})</td> <td>{{ score["INT"]["a"] }} ({{ score["INT"]["m"] }})</td>
+            <td>{{ score["WIS"]["a"] }} ({{ score["WIS"]["m"] }})</td> <td>{{ score["DEX"]["a"] }} ({{ score["DEX"]["m"] }})</td>
+            <td>{{ score["CON"]["a"] }} ({{ score["CON"]["m"] }})</td> <td>{{ score["CHA"]["a"] }} ({{ score["CHA"]["m"] }})</td> </tr>
+
+    {% endfor %}
+    </table>
+{% endif %}
+{% else %}
+    {% if scores %}
+        <div class="ability_scores">
+        {% for score in scores %}
+
             <b>Str:</b> {{ score["STR"]["a"] }} ({{ score["STR"]["m"] }}), <b>Int:</b> {{ score["INT"]["a"] }} ({{ score["INT"]["m"] }}),
             <b>Wis:</b> {{ score["WIS"]["a"] }} ({{ score["WIS"]["m"] }}), <b>Dex:</b> {{ score["DEX"]["a"] }} ({{ score["DEX"]["m"] }}),
-            <b>Con:</b> {{ score["CON"]["a"] }} ({{ score["CON"]["m"] }}), <b>Cha:</b> {{ score["CHA"]["a"] }} ({{ score["CHA"]["m"] }});
-		</p>
-{% endfor %}
-{% endif %} 
-</div>
+            <b>Con:</b> {{ score["CON"]["a"] }} ({{ score["CON"]["m"] }}), <b>Cha:</b> {{ score["CHA"]["a"] }} ({{ score["CHA"]["m"] }});<br>
+
+        {% endfor %}
+        </div>
+    {% endif %}
+{% endif %}
 
 {% endblock %}

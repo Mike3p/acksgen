@@ -1,0 +1,22 @@
+{% extends 'sidebarSWN.html' %}
+{% block content %}
+    <h2 class = "pageheading">Initiative Roller</h2>
+<form action="{{ url_for('chargenpageSWN.create_character')}}" method="POST">
+<input id="chargenButton" type="submit" value="Create Character">
+</form>
+
+
+<div class="futurefont">
+{% if char %}
+{% for character in char %}
+		<p>
+			{% for line in character %}
+			{{line | safe}} <br>
+			{% endfor %}
+            <br>
+		</p>
+{% endfor %}
+{% endif %} 
+</div>
+
+{% endblock %}

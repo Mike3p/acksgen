@@ -1,5 +1,10 @@
 from wtforms import (Form, SelectField, StringField, validators, IntegerField, SubmitField, BooleanField, TextAreaField, FloatField)
 
+class AbilityScoreForm(Form):
+    table = BooleanField(u'table')
+    generate = SubmitField(u'Generate Ability Scores')
+
+
 # form to generate classed characters
 class CharacterGenerationForm(Form):
     characterClass = SelectField(u'Class')
@@ -7,7 +12,7 @@ class CharacterGenerationForm(Form):
         (8,'8'), (9,'9'), (10,'10'), (11,'11'), (12,'12'), (13,'13'), (14,'14'), ])
     characterNumber = IntegerField(u'Number', default = 1)
     submit = SubmitField(u'Generate')
-    rollForParty = BooleanField(u'Personality')
+    rollForParty = BooleanField(u'Party?')
     ethnicity = SelectField(u'Ethnicity')
     loadCharacter = TextAreaField(u'Load Character')
     createExcelSheet = BooleanField(u'create Excel Sheet')

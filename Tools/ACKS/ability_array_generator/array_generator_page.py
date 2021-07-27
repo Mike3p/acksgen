@@ -1,5 +1,6 @@
 from flask import (Blueprint, render_template, request, session)
 from Tools.dice import roll, get_ability_mod_str
+from Tools.forms import AbilityScoreForm
 
 bp = Blueprint('array_generator_page', __name__, url_prefix='/ACKS/ability_scores')
 data = {}
@@ -8,13 +9,17 @@ data = {}
 def page():
 
     ability_scores = []
+    ability_score_form = AbilityScoreForm()
 
-    return render_template('pagesACKS/ability_arrays.html', scores = ability_scores)
+    return render_template('pagesACKS/ability_arrays.html', scores = ability_scores, cfg = ability_score_form)
 
 
 @bp.route('/generate', methods=('GET', 'POST'))
 def generate_scores():
 
+    ability_score_form = AbilityScoreForm()
+    table = request.form.get('table')
+    ability_score_form.table.process_data(table)
     ability_scores = []
 
     for i in range(5):
@@ -29,4 +34,4 @@ def generate_scores():
                      "DEX":{"a":abl[3],"m":mod[3]},"CON":{"a":abl[4],"m":mod[4]},"CHA":{"a":abl[5],"m":mod[5]}}
         ability_scores.append(abilities)
 
-    return render_template('pagesACKS/ability_arrays.html', scores = ability_scores)
+    return render_template('pagesACKS/ability_arrays.html', scores = ability_scores, cfg = ability_score_form, table = table)

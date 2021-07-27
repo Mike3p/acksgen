@@ -23,7 +23,7 @@ def page():
 
 
 @bp.route('/rollinitiative/', methods=('GET', 'POST'))
-def rollInitiative():
+def roll_initiative():
 
     session['ini'] = request.form.get('initiativeInput')
 
