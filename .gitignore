@@ -2,5 +2,6 @@
 *.pyc
 /linux-env/
 
+flask_session
 .idea
 /venv
