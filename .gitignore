@@ -2,4 +2,5 @@
 *.pyc
 /linux-env/
 
+.idea
 /venv
