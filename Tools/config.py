@@ -1,7 +1,7 @@
 import os
 
 class Config(object):
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'acksismyfavoriteroleplayinggame'
+    SECRET_KEY = os.environ.get('SECRET_KEY')
     UPLOAD_FOLDER = "var/www/uploads"
     ALLOWED_EXTENSIONS = {'txt', 'yaml'}
     SESSION_TYPE = 'filesystem'
